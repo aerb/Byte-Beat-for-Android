@@ -30,7 +30,7 @@ public class ByteBeatActivity extends Activity implements
 	static float p1 = 1;
 	static float p2 = 1;
 	static float p3 = 1;
-	static boolean die = false;
+	static boolean die = true;
 	static SeekBar speed;
 	static SeekBar param1;
 	static SeekBar param2;
@@ -49,6 +49,13 @@ public class ByteBeatActivity extends Activity implements
 	static int previousIndexer = 0;
 	static float[][] byteParams = { { 1, 1, 1 }, { 1, 1, 1 }, { 1, 1, 1 },
 			{ 1, 1, 1 }, { 1, 1, 1 }, { 1, 1, 1 } };
+	static String[] eqadapter = {
+			"((t%(int)(p1*777))|(int)(p3*t)) & ((int)(0xFF*p2))-t",
+			"(( (p1 * t) >> 1 %  (p2 * 128)) + 20) * 3 * t >> 14 * t >>  (p3 * 18)",
+			"t* (((t >> 9) &  (p3 * 10)) | (( (p2 * t) >> 11) & 24)^ ((t >> 10) & 15 & ( (p1 * t) >> 15)))",
+			" (p1 * t) * 5 & ( (p2 * t) >> 7)|  (p3 * t * 3) & (t * 4 >> 10)",
+			"(( (p1 * t) * ( (p2 * t) >> 8 | t >> 9)&  (p3 * 46) & t >> 8))^ (t & t >> 13 | t >> 6)",
+			"( (p1 * t) * ( (p2 * t) >> 5 | t >> 8)) >> ( (p3 * t) >> 16)" };
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -82,7 +89,6 @@ public class ByteBeatActivity extends Activity implements
 		resetargs = (Button) findViewById(R.id.button3);
 		resetargs.setOnClickListener(this);
 
-		
 		speed.setOnSeekBarChangeListener(this);
 		param1.setOnSeekBarChangeListener(this);
 		param2.setOnSeekBarChangeListener(this);
@@ -93,7 +99,7 @@ public class ByteBeatActivity extends Activity implements
 
 	private void startAudioThread() {
 		die = false;
-		
+
 		new Thread(new Runnable() {
 			public void run() {
 				AndroidAudioDevice device = new AndroidAudioDevice();
@@ -106,7 +112,7 @@ public class ByteBeatActivity extends Activity implements
 					}
 
 					device.writeSamples(samples);
-					
+
 					stackView.updateT((int) t);
 					stackView.postInvalidate();
 
@@ -122,8 +128,9 @@ public class ByteBeatActivity extends Activity implements
 	private static int f(int t, int index) {
 		switch (index) {
 		case 0:
-			return (t * (int) (p1 * 5) & t >> (7))
-					| (t * (int) (p2 * 3) & (int) (p3 * t) >> 10);
+			return ((t%(int)(p1*777))|(int)(p3*t)) & ((int)(0xFF*p2))-t;
+//			return (t * (int) (p1 * 5) & t >> (7))
+//					| (t * (int) (p2 * 3) & (int) (p3 * t) >> 10);
 		case 1:
 			return (((int) (p1 * t) >> 1 % (int) (p2 * 128)) + 20) * 3 * t >> 14 * t >> (int) (p3 * 18);
 		case 2:
@@ -192,7 +199,7 @@ public class ByteBeatActivity extends Activity implements
 			stop.refreshDrawableState();
 		} else if (arg0 == reset) {
 			t = 0;
-		} else if (arg0 == resetargs){
+		} else if (arg0 == resetargs) {
 			timescale = 0.5f;
 			p1 = 1;
 			p2 = 1;
@@ -231,6 +238,8 @@ public class ByteBeatActivity extends Activity implements
 		param1.setProgress((int) (p1 * 100 / 2));
 		param2.setProgress((int) (p2 * 100 / 2));
 		param3.setProgress((int) (p3 * 100 / 2));
+
+		stackView.updateEq(this.eqadapter[arg2]);
 	}
 
 	@Override
