@@ -19,6 +19,7 @@ public final class R {
     public static final class id {
         public static final int button1=0x7f06000b;
         public static final int button2=0x7f06000c;
+        public static final int button3=0x7f06000d;
         public static final int imageView1=0x7f060000;
         public static final int linearLayout1=0x7f06000a;
         public static final int seekBar1=0x7f060002;
