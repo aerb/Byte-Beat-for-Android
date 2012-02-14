@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, ByteBeatActivity!</string>
+    <string name="app_name">ByteBeat</string>
+    <string-array name="bytes">
+        <item >1</item>
+        <item >2</item>
+        <item >3</item>
+        <item >4</item>
+        <item >5</item>
+        <item >6</item>
+    </string-array>
+
+</resources>
