@@ -4,16 +4,12 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.ShapeDrawable;
-import android.graphics.drawable.shapes.OvalShape;
 import android.util.AttributeSet;
-import android.view.DragEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.*;
 
-public class SStackView extends View implements OnTouchListener, OnDragListener {
+public class SStackView extends View implements OnTouchListener {
 
 	byte samples[] = null;
 	int t = 0;
@@ -79,14 +75,6 @@ public class SStackView extends View implements OnTouchListener, OnDragListener 
 	@Override
 	public boolean onTouch(View v, MotionEvent event) {  
 		int s = (int) (event.getX() / 100 * 2);
-		scaleamount = (s<=0) ? 1 : s;
-		System.out.println(scaleamount);
-		return false;
-	}
-
-	@Override
-	public boolean onDrag(View arg0, DragEvent arg1) {
-		int s = (int) (arg1.getX() / 100);
 		scaleamount = (s<=0) ? 1 : s;
 		System.out.println(scaleamount);
 		return false;

@@ -6,7 +6,7 @@
 
     <com.tasty.fish.SStackView
         android:id="@+id/imageView1"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="154dp"
         android:layout_weight="0.69"/>
 
@@ -18,7 +18,7 @@
 
     <SeekBar
         android:id="@+id/seekBar1"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content" />
 
     <TextView
@@ -29,7 +29,7 @@
 
     <SeekBar
         android:id="@+id/seekBar2"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content" />
 
     <TextView
@@ -40,7 +40,7 @@
 
     <SeekBar
         android:id="@+id/seekBar3"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content" />
 
     <TextView
@@ -51,17 +51,17 @@
 
     <SeekBar
         android:id="@+id/seekBar4"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content" />
 
     <Spinner
         android:id="@+id/spinner1"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content" />
 
     <LinearLayout
         android:id="@+id/linearLayout1"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content" >
 
         <Button

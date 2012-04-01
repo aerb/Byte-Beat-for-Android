@@ -20,6 +20,8 @@ import java.lang.System;
 import java.util.ArrayList;
 import java.util.Random;
 
+import com.tasty.fish.FastParse.ParseNode;
+
 public class ByteBeatActivity extends Activity implements
 		SeekBar.OnSeekBarChangeListener, OnClickListener,
 		OnItemSelectedListener {
@@ -50,7 +52,7 @@ public class ByteBeatActivity extends Activity implements
 	static float[][] byteParams = { { 1, 1, 1 }, { 1, 1, 1 }, { 1, 1, 1 },
 			{ 1, 1, 1 }, { 1, 1, 1 }, { 1, 1, 1 } };
 	static String[] eqadapter = {
-			"((t%(int)(p1*777))|(int)(p3*t)) & ((int)(0xFF*p2))-t",
+			"((t%(p1*777))|(p3*t)) & ((0xFF*p2))-t",
 			"(( (p1 * t) >> 1 %  (p2 * 128)) + 20) * 3 * t >> 14 * t >>  (p3 * 18)",
 			"t* (((t >> 9) &  (p3 * 10)) | (( (p2 * t) >> 11) & 24)^ ((t >> 10) & 15 & ( (p1 * t) >> 15)))",
 			" (p1 * t) * 5 & ( (p2 * t) >> 7)|  (p3 * t * 3) & (t * 4 >> 10)",
@@ -105,10 +107,17 @@ public class ByteBeatActivity extends Activity implements
 				AndroidAudioDevice device = new AndroidAudioDevice();
 				byte samples[] = new byte[1024];
 				stackView.setSamples(samples);
+				FastParse fp = new FastParse();
+				fp.SetVariable("p1", (int)p1);
+				fp.SetVariable("p2", (int)p2);
+				fp.SetVariable("p3", (int)p3);
+				ParseNode node = fp.Parse(eqadapter[beatMachineIndexer]);
 				while (true) {
 					for (int n = 0; n < samples.length; n++) {
 						t += timescale;
-						samples[n] = (byte) f((int) t, beatMachineIndexer);
+						//samples[n] = (byte) f((int) t, beatMachineIndexer);
+						fp.SetVariable("t", (int)t);
+						samples[n] = (byte) node.Eval();
 					}
 
 					device.writeSamples(samples);
