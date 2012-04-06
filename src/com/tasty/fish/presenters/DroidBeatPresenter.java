@@ -48,17 +48,15 @@ public class DroidBeatPresenter {
 			public void run() {
 				AndroidAudioDevice audio = new AndroidAudioDevice();
 				byte samples[] = new byte[1024];
-				
-				
-				_view.DisplayBuffer(samples);
 				while (true) {
+					
 					for (int i = 0; i < samples.length; i++)
 						samples[i] = _exp.getNext();
 
 					audio.writeSamples(samples);
 
+					_view.displayBuffer(samples, _exp.getTime());
 					_view.updateT(_exp.getTime());
-					_view.postInvalidate();
 
 					if (_die) {
 						audio.stop();

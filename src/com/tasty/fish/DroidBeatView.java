@@ -175,7 +175,10 @@ public class DroidBeatView extends Activity implements
 	}
 
 	@Override
-	public void DisplayBuffer(byte[] samples) {
+	public void displayBuffer(byte[] samples, int t) {
+		bufferView.setSamples(samples);
+		bufferView.updateT(t);
+		bufferView.postInvalidate();
 	}
 
 	@Override

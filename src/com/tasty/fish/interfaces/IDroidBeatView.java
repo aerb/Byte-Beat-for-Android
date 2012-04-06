@@ -1,7 +1,7 @@
 package com.tasty.fish.interfaces;
 
 public interface IDroidBeatView {
-	void DisplayBuffer(byte[] samples);
+	void displayBuffer(byte[] samples, int t);
 	void updateT(int time);
 	void postInvalidate();
 	public void updateSeekerSpeedPostion(double value);

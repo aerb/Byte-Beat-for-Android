@@ -9,22 +9,19 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.*;
 
-public class BufferView extends View implements OnTouchListener {
+public class BufferView extends View{
 
 	byte samples[] = null;
 	int t = 0;
 	int scaleamount = 4;
 	String eq = "";
 	
-
 	public BufferView(Context context) {
 		super(context);
-
 	}
 
 	public BufferView(Context context, AttributeSet attrs) {
 		super(context, attrs);
-		this.setOnTouchListener(this);
 	}
 
 	public void setSamples(byte[] samples) {
@@ -70,14 +67,6 @@ public class BufferView extends View implements OnTouchListener {
 
 		c.drawText(String.format("%d", t), 10, 60, p);
 		c.drawText(eq, 10, 30, p2);
-	}
-
-	@Override
-	public boolean onTouch(View v, MotionEvent event) {  
-		int s = (int) (event.getX() / 100 * 2);
-		scaleamount = (s<=0) ? 1 : s;
-		System.out.println(scaleamount);
-		return false;
 	}
 
 }
