@@ -4,58 +4,58 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >
 
-    <com.tasty.fish.SStackView
-        android:id="@+id/imageView1"
+    <com.tasty.fish.BufferView
+        android:id="@+id/bufferView"
         android:layout_width="fill_parent"
         android:layout_height="154dp"
-        android:layout_weight="0.69"/>
+        android:layout_weight="0.69" />
 
     <TextView
-        android:id="@+id/text0"
+        android:id="@+id/textSpeed"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="speed" />
 
     <SeekBar
-        android:id="@+id/seekBar1"
+        android:id="@+id/seekBarSpeed"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" />
 
     <TextView
-        android:id="@+id/text1"
+        android:id="@+id/textArg1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="arg0" />
 
     <SeekBar
-        android:id="@+id/seekBar2"
+        android:id="@+id/seekBarArg1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" />
 
     <TextView
-        android:id="@+id/text2"
+        android:id="@+id/textArg2"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="arg1" />
 
     <SeekBar
-        android:id="@+id/seekBar3"
+        android:id="@+id/seekBarArg2"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" />
 
     <TextView
-        android:id="@+id/text3"
+        android:id="@+id/textArg3"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="arg2" />
 
     <SeekBar
-        android:id="@+id/seekBar4"
+        android:id="@+id/seekBarArg3"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" />
 
     <Spinner
-        android:id="@+id/spinner1"
+        android:id="@+id/spinnerPredefined"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" />
 
@@ -65,22 +65,21 @@
         android:layout_height="wrap_content" >
 
         <Button
-            android:id="@+id/button1"
+            android:id="@+id/buttonStop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Start" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/buttonResetTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Reset t" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/buttonResetArgs"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Reset Args" />
     </LinearLayout>
-
 </LinearLayout>
