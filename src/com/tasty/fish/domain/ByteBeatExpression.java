@@ -49,8 +49,10 @@ public class ByteBeatExpression {
 	}
 
 	public void updateArgument(int i, float x) {
-		if(i < 3 && i >= 0)
+		if(i < 3 && i >= 0){
 			_args[i] = x;
+			_parser.setVariable("p" + (i+1), x);
+		}
 	}
 
 	public void resetTime() {

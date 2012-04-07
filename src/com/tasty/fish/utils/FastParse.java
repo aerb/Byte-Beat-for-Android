@@ -8,58 +8,58 @@ public class FastParse {
 	static private Map<String, Op> opMap;
 
 	public interface Op {
-		int Ex(double a, double b);
+		double Ex(double a, double b);
 	}
 
 	static {
 		opMap = new HashMap<String, Op>();
 		opMap.put("|", new Op() {
-			public int Ex(double a, double b) {
+			public double Ex(double a, double b) {
 				return (int) a | (int) b;
 			}
 		});
 		opMap.put("^", new Op() {
-			public int Ex(double a, double b) {
+			public double Ex(double a, double b) {
 				return (int) a ^ (int) b;
 			}
 		});
 		opMap.put("&", new Op() {
-			public int Ex(double a, double b) {
+			public double Ex(double a, double b) {
 				return (int) a & (int) b;
 			}
 		});
 		opMap.put("%", new Op() {
-			public int Ex(double a, double b) {
-				return (int) (a % b);
+			public double Ex(double a, double b) {
+				return (a % b);
 			}
 		});
 		opMap.put("+", new Op() {
-			public int Ex(double a, double b) {
-				return (int) (a + b);
+			public double Ex(double a, double b) {
+				return (a + b);
 			}
 		});
 		opMap.put("-", new Op() {
-			public int Ex(double a, double b) {
-				return (int) (a - b);
+			public double Ex(double a, double b) {
+				return (a - b);
 			}
 		});
 		opMap.put("*", new Op() {
-			public int Ex(double a, double b) {
-				return (int) a * (int) b;
+			public double Ex(double a, double b) {
+				return (a * b);
 			}
 		});
 		opMap.put("/", new Op() {
-			public int Ex(double a, double b) {
-				return (int) (a / b);
+			public double Ex(double a, double b) {
+				return (a / b);
 			}
 		});
 		opMap.put(">>", new Op() {
-			public int Ex(double a, double b) {
+			public double Ex(double a, double b) {
 				return (int) a >> (int) b;
 			}
 		});
 		opMap.put("<<", new Op() {
-			public int Ex(double a, double b) {
+			public double Ex(double a, double b) {
 				return (int) a << (int) b;
 			}
 		});
@@ -72,24 +72,24 @@ public class FastParse {
 		private int intValue;
 		private String variableKey = null;
 		private parseType ptype = null;
-	
+
 		private ParseNode(int value) {
 			intValue = value;
 			ptype = parseType.Value;
 		}
-	
+
 		public ParseNode(Op o, ParseNode p0, ParseNode p1) {
 			this.o = o;
 			this.p0 = p0;
 			this.p1 = p1;
 			ptype = parseType.Expression;
 		}
-	
+
 		private ParseNode(String s) {
 			variableKey = s;
 			ptype = parseType.Variable;
 		}
-	
+
 		private double eval() {
 			switch (ptype) {
 			case Expression:
@@ -104,13 +104,13 @@ public class FastParse {
 			return 0;
 		}
 	}
-	
+
 	private Map<String, Double> varMap;
-	
+
 	private String[][] operators = { { "|" }, { "^" }, { "&" }, { ">>", "<<" },
-	{ "+", "-" }, { "*", "/", "%" } };
+			{ "+", "-" }, { "*", "/", "%" } };
 	private char lb = '(', rb = ')';
-	
+
 	private Pattern num = Pattern.compile("[0-9()]+");
 	private Pattern hex = Pattern.compile("\\b0[xX][0-9a-fA-F]+\\b");
 	private Pattern var = Pattern.compile("[a-zA-Z0-9()]+");
