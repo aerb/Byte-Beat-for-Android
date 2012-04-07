@@ -10,7 +10,7 @@ public class AndroidAudioDevice {
 
 	public AndroidAudioDevice() {
 		int bufferSize = AudioTrack.getMinBufferSize(sampleRate,
-				AudioFormat.CHANNEL_CONFIGURATION_MONO, format)*3;
+				AudioFormat.CHANNEL_CONFIGURATION_MONO, format);
 		track = new AudioTrack(AudioManager.STREAM_MUSIC, sampleRate,
 				AudioFormat.CHANNEL_CONFIGURATION_MONO, format, bufferSize,
 				AudioTrack.MODE_STREAM);
