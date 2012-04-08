@@ -95,7 +95,9 @@ public class DroidBeatView extends Activity implements
 		keyboardView = inflater.inflate(R.layout.keyboard, null);
 		paramView = inflater.inflate(R.layout.params, null);
 		
+		KeyboardHandler handler = new KeyboardHandler(keyboardView);
 		
+
 		_presenter = new DroidBeatPresenter(this);
 
 		for (int i = 0; i < _predefinedExpressions.length; ++i)
