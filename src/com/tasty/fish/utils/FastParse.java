@@ -17,52 +17,52 @@ public class FastParse {
         opMap = new HashMap<String, Op>();
         opMap.put("|", new Op() {
             public double Ex(double a, double b) {
-                return (int) a | (int) b;
+                return (long) a | (long) b;
             }
         });
         opMap.put("^", new Op() {
             public double Ex(double a, double b) {
-                return (int) a ^ (int) b;
+                return (long) a ^ (long) b;
             }
         });
         opMap.put("&", new Op() {
             public double Ex(double a, double b) {
-                return (int) a & (int) b;
+                return (long) a & (long) b;
             }
         });
         opMap.put("%", new Op() {
             public double Ex(double a, double b) {
-                return (a % b);
+                return (long)(a % b);
             }
         });
         opMap.put("+", new Op() {
             public double Ex(double a, double b) {
-                return (a + b);
+                return (long)(a + b);
             }
         });
         opMap.put("-", new Op() {
             public double Ex(double a, double b) {
-                return (a - b);
+                return (long)(a - b);
             }
         });
         opMap.put("*", new Op() {
             public double Ex(double a, double b) {
-                return (a * b);
+                return (long)(a * b);
             }
         });
         opMap.put("/", new Op() {
             public double Ex(double a, double b) {
-                return (a / b);
+                return (long)(a / b);
             }
         });
         opMap.put(">>", new Op() {
             public double Ex(double a, double b) {
-                return (int) a >> (int) b;
+                return (long)((long) a >> (long) b);
             }
         });
         opMap.put("<<", new Op() {
             public double Ex(double a, double b) {
-                return (int) a << (int) b;
+                return (long)((long) a << (long) b);
             }
         });
     }

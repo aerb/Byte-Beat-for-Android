@@ -64,9 +64,8 @@ public class ByteBeatExpression {
             _parser.setT((int) _t);
             return (byte) _parser.evaluate();
         case compiled:
-            _parser.setT((int) _t);
-            return (byte) ((byte) _compiled.evaluate((int) _t, _args[0], _args[1],
-                    _args[2]) - (byte) _parser.evaluate());
+            return (byte) ( _compiled.evaluate((int) _t, _args[0], _args[1],
+                    _args[2]));
         }
         return 0;
     }
@@ -81,8 +80,9 @@ public class ByteBeatExpression {
 
     public void updateArgument(int i, float x) {
         if (i < 3 && i >= 0) {
-            _args[i] = x;
-            if (_type == ExpressionType.dynamic)
+            if (_type == ExpressionType.compiled)
+                _args[i] = x;
+            else if (_type == ExpressionType.dynamic)
                 _parser.setVariable(i, x);
         }
     }

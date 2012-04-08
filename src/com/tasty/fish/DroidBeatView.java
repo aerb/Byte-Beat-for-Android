@@ -67,15 +67,14 @@ public class DroidBeatView extends Activity implements
                 }
             }, new CompiledExpression() {
                 public byte evaluate(int t, double p1, double p2, double p3) {
-                    return (byte) ((int) (p1 * t) * 5 & ((int) (p2 * t) >> 7) | (int) (p3
-                            * t * 3)
-                            & (t * 4 >> 10));
+                    return (byte) ((int) (p1 * t) * 5 & ((int) (p2 * t) >> 7) | (int) (p3 * t)
+                            * 3 & (t * 4 >> 10));
                 }
             }, new CompiledExpression() {
                 public byte evaluate(int t, double p1, double p2, double p3) {
                     return (byte) ((((int) (p1 * t)
-                            * ((int) (p2 * t) >> 8 | t >> 9) & (int) (p3 * 46) & t >> 8)) ^ (t
-                            & t >> 13 | t >> 6));
+                            * ((int) (p2 * t) >> 8 | t >> 9)
+                            & ((int) (p3 * 46)) & t >> 8)) ^ (t & t >> 13 | t >> 6));
                 }
             }, new CompiledExpression() {
                 public byte evaluate(int t, double p1, double p2, double p3) {
@@ -101,10 +100,10 @@ public class DroidBeatView extends Activity implements
         for (int i = 0; i < _predefinedExpressions.length; ++i)
             _presenter.addNewExpression(_predefinedTitles[i],
                     _predefinedExpressions[i], _compiledExpressions[i]);
-        
-//        for (int i = 0; i < _predefinedExpressions.length; ++i)
-//            _presenter.addNewExpression(_predefinedTitles[i],
-//                    _predefinedExpressions[i]);
+
+//         for (int i = 0; i < _predefinedExpressions.length; ++i)
+//         _presenter.addNewExpression(_predefinedTitles[i],
+//         _predefinedExpressions[i]);
 
         _presenter.addNewExpression("custom", "t>>t|t");
 
