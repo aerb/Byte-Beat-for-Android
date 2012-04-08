@@ -101,6 +101,10 @@ public class DroidBeatView extends Activity implements
         for (int i = 0; i < _predefinedExpressions.length; ++i)
             _presenter.addNewExpression(_predefinedTitles[i],
                     _predefinedExpressions[i], _compiledExpressions[i]);
+        
+//        for (int i = 0; i < _predefinedExpressions.length; ++i)
+//            _presenter.addNewExpression(_predefinedTitles[i],
+//                    _predefinedExpressions[i]);
 
         _presenter.addNewExpression("custom", "t>>t|t");
 

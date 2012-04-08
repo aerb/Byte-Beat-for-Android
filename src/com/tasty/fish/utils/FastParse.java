@@ -1,5 +1,6 @@
 package com.tasty.fish.utils;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Matcher;
@@ -66,12 +67,21 @@ public class FastParse {
         });
     }
 
+    private class MutableDouble {
+        public double Value;
+
+        public MutableDouble(Double d) {
+            Value = d;
+        }
+    }
+    
     private class ParseNode {
         private Op o;
         private ParseNode p0;
         private ParseNode p1;
         private int intValue;
         private String variableKey = null;
+        private MutableDouble variableValue = null;
         private parseType ptype = null;
 
         private ParseNode(int value) {
@@ -88,6 +98,7 @@ public class FastParse {
 
         private ParseNode(String s) {
             variableKey = s;
+            variableValue = getMutableVariable(s);
             ptype = parseType.Variable;
         }
 
@@ -98,7 +109,7 @@ public class FastParse {
             case Value:
                 return intValue;
             case Variable:
-                return varMap.get(variableKey).doubleValue();
+                return variableValue.Value;
             default:
                 break;
             }
@@ -107,6 +118,7 @@ public class FastParse {
     }
 
     private Map<String, Double> varMap;
+    private ArrayList<MutableDouble> simpleMap;
 
     private String[][] operators = { { "|" }, { "^" }, { "&" }, { ">>", "<<" },
             { "+", "-" }, { "*", "/", "%" } };
@@ -128,6 +140,9 @@ public class FastParse {
 
     public FastParse() {
         varMap = new HashMap<String, Double>();
+        simpleMap = new ArrayList<MutableDouble>();
+        for (int i = 0; i < 4; ++i)
+            simpleMap.add(new MutableDouble(0d));
     }
 
     private parseType determineParseType(String s) {
@@ -143,6 +158,30 @@ public class FastParse {
 
     public double evaluate() {
         return rootNode != null ? rootNode.eval() : 0;
+    }
+    
+    private MutableDouble getMutableVariable(String key) {
+        int id = 0;
+        if(key.charAt(0) == 't')
+            id = 0;
+        else if (key.charAt(1) == '1')
+            id = 1;
+        else if (key.charAt(1) == '2')
+            id = 2;
+        else if (key.charAt(1) == '3')
+            id = 3;
+        
+        switch (id) {
+        case 0:
+            return simpleMap.get(0);
+        case 1:
+            return simpleMap.get(1);
+        case 2:
+            return simpleMap.get(2);
+        case 3:
+            return simpleMap.get(3);
+        }
+        return null;
     }
 
     private int findClosingBracket(String s, int index) {
@@ -259,12 +298,13 @@ public class FastParse {
         return s;
     }
 
-    public void setVariable(String key, double value) {
-        varMap.put(key, new Double(value));
+    
+    public void setT(double value) {
+        simpleMap.get(0).Value = value;
     }
-
-    public void setVariable(String key, Double value) {
-        varMap.put(key, value);
+    
+    public void setVariable(int key, double value) {
+        simpleMap.get(key+1).Value = value;
     }
 
     private String[] splitExpression(String s, int begin, int end) {
