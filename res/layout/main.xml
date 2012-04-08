@@ -4,6 +4,13 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >
 
+    <TextView
+        android:typeface="monospace"
+        android:id="@+id/textExpression"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.04"/>
+
     <com.tasty.fish.BufferView
         android:id="@+id/bufferView"
         android:layout_width="fill_parent"
