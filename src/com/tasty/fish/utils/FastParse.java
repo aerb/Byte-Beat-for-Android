@@ -32,37 +32,37 @@ public class FastParse {
         });
         opMap.put("%", new Op() {
             public double Ex(double a, double b) {
-                return (long)(a % b);
+                return (long) (a % b);
             }
         });
         opMap.put("+", new Op() {
             public double Ex(double a, double b) {
-                return (long)(a + b);
+                return (long) (a + b);
             }
         });
         opMap.put("-", new Op() {
             public double Ex(double a, double b) {
-                return (long)(a - b);
+                return (long) (a - b);
             }
         });
         opMap.put("*", new Op() {
             public double Ex(double a, double b) {
-                return (long)(a * b);
+                return (long) (a * b);
             }
         });
         opMap.put("/", new Op() {
             public double Ex(double a, double b) {
-                return (long)(a / b);
+                return (long) (a / b);
             }
         });
         opMap.put(">>", new Op() {
             public double Ex(double a, double b) {
-                return (long)((long) a >> (long) b);
+                return (long) ((long) a >> (long) b);
             }
         });
         opMap.put("<<", new Op() {
             public double Ex(double a, double b) {
-                return (long)((long) a << (long) b);
+                return (long) ((long) a << (long) b);
             }
         });
     }
@@ -74,13 +74,12 @@ public class FastParse {
             Value = d;
         }
     }
-    
+
     private class ParseNode {
         private Op o;
         private ParseNode p0;
         private ParseNode p1;
         private int intValue;
-        private String variableKey = null;
         private MutableDouble variableValue = null;
         private parseType ptype = null;
 
@@ -96,9 +95,8 @@ public class FastParse {
             ptype = parseType.Expression;
         }
 
-        private ParseNode(String s) {
-            variableKey = s;
-            variableValue = getMutableVariable(s);
+        private ParseNode(MutableDouble d) {
+            variableValue = d;
             ptype = parseType.Variable;
         }
 
@@ -159,28 +157,17 @@ public class FastParse {
     public double evaluate() {
         return rootNode != null ? rootNode.eval() : 0;
     }
-    
+
     private MutableDouble getMutableVariable(String key) {
-        int id = 0;
-        if(key.compareTo("t") == 0)
-            id = 0;
-        else if (key.compareTo("p1") == 0)
-            id = 1;
-        else if (key.compareTo("p2") == 0)
-            id = 2;
-        else if (key.compareTo("p3") == 0)
-            id = 3;
-        
-        switch (id) {
-        case 0:
+        if (key.compareTo("t") == 0)
             return simpleMap.get(0);
-        case 1:
+        else if (key.compareTo("p1") == 0)
             return simpleMap.get(1);
-        case 2:
+        else if (key.compareTo("p2") == 0)
             return simpleMap.get(2);
-        case 3:
+        else if (key.compareTo("p3") == 0)
             return simpleMap.get(3);
-        }
+
         return null;
     }
 
@@ -269,7 +256,8 @@ public class FastParse {
             int value = parseValue(s);
             return new ParseNode(value);
         case Variable:
-            return new ParseNode(s);
+            MutableDouble d = getMutableVariable(s);
+            return (d != null) ? new ParseNode(d) : null;
         default:
             break;
         }
@@ -277,11 +265,15 @@ public class FastParse {
     }
 
     private int parseValue(String s) {
+        if (s.length() > 9) {
+            s = s.substring(0, 9);
+        }
         if (hex.matcher(s).matches()) {
             s = s.replaceAll("\\b0[xX]", "");
             return Integer.parseInt(s, 16);
-        } else
+        } else {
             return Integer.parseInt(s);
+        }
     }
 
     private String removeRedundantBrackets(String s) {
@@ -298,13 +290,12 @@ public class FastParse {
         return s;
     }
 
-    
     public void setT(double value) {
         simpleMap.get(0).Value = value;
     }
-    
+
     public void setVariable(int key, double value) {
-        simpleMap.get(key+1).Value = value;
+        simpleMap.get(key + 1).Value = value;
     }
 
     private String[] splitExpression(String s, int begin, int end) {

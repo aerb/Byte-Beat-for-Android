@@ -1,6 +1,7 @@
 package com.tasty.fish.presenters;
 
 import com.tasty.fish.R;
+
 import com.tasty.fish.R.id;
 import com.tasty.fish.domain.ByteBeatExpression;
 import com.tasty.fish.interfaces.IKeyboardDisplayView;
@@ -13,6 +14,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.graphics.PorterDuff;
 
 public class KeyboardPresenter implements OnClickListener {
     private IKeyboardDisplayView _view;
@@ -28,7 +30,15 @@ public class KeyboardPresenter implements OnClickListener {
 
     public void registerButtonListeners(View view) {
         if (view instanceof Button) {
-            ((Button) view).setOnClickListener(this);
+            Button b = ((Button) view);
+            b.setOnClickListener(this);
+            if ("0123456789".indexOf((String) b.getText()) >= 0)
+                b.getBackground().setColorFilter(0xFFCCCC00,
+                        PorterDuff.Mode.MULTIPLY);
+            else if ("%/*<<>>+-&^|".indexOf((String) b.getText()) >= 0)
+                b.getBackground().setColorFilter(0xFFFF5555,
+                        PorterDuff.Mode.MULTIPLY);
+
             return;
         }
 
@@ -73,9 +83,11 @@ public class KeyboardPresenter implements OnClickListener {
                 advanceCursor(1);
                 break;
             case R.id.buttonDel:
-                _text = _text.substring(0, _cursor - 1)
-                        + _text.substring(_cursor);
-                advanceCursor(-1);
+                if (_cursor - 1 >= 0) {
+                    _text = _text.substring(0, _cursor - 1)
+                            + _text.substring(_cursor);
+                    advanceCursor(-1);
+                }
                 break;
             }
         }
