@@ -7,6 +7,7 @@ import android.text.style.UnderlineSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
@@ -94,8 +95,9 @@ public class DroidBeatView extends Activity implements
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.main);
-
+        
         LayoutInflater inflater = getLayoutInflater();
         keyboardView = inflater.inflate(R.layout.keyboard, null);
         paramView = inflater.inflate(R.layout.params, null);
@@ -154,22 +156,22 @@ public class DroidBeatView extends Activity implements
         if (arg0 == seekBarSpeed) {
             float inc = ((float) arg1) / 100;
             _presenter.updateTimeScale(inc);
-            textSpeed.setText("Speed = " + inc);
+            textSpeed.setText("speed = " + inc);
         } else if (arg0 == seekBarArgs[0]) {
             float x = ((float) arg1) / 100 * 2;
             x = (float) (x == 0 ? 0.01 : x);
             _presenter.updateArgument(0, x);
-            textArgs[0].setText("Arg0 = " + x);
+            textArgs[0].setText("p1 = " + x);
         } else if (arg0 == seekBarArgs[1]) {
             float x = ((float) arg1) / 100 * 2;
             x = (float) (x == 0 ? 0.01 : x);
             _presenter.updateArgument(1, x);
-            textArgs[1].setText("Arg1 = " + x);
+            textArgs[1].setText("p2 = " + x);
         } else if (arg0 == seekBarArgs[2]) {
             float x = ((float) arg1) / 100 * 2;
             x = (float) (x == 0 ? 0.01 : x);
             _presenter.updateArgument(2, x);
-            textArgs[2].setText("Arg2 = " + x);
+            textArgs[2].setText("p3 = " + x);
         }
     }
 
@@ -200,14 +202,18 @@ public class DroidBeatView extends Activity implements
         } else if (arg0 == resetArgs) {
             _presenter.resetArgs();
         } else if (arg0 == switchViewButton) {
-            inputLayout.removeAllViews();
-            if (!keyboardInputOn)
-                inputLayout.addView(keyboardView);
-            else
-                inputLayout.addView(paramView);
             keyboardInputOn = !keyboardInputOn;
-            inputLayout.invalidate();
+            setKeyboardView(keyboardInputOn);
+            if (keyboardInputOn){
+                spinner.setSelection(spinner.getCount()-1);
+            }
         }
+    }
+    
+    private void setKeyboardView(boolean on){
+        keyboardInputOn = on;
+        inputLayout.removeAllViews();
+        inputLayout.addView(on ? keyboardView : paramView);
     }
 
     public void updateSeekerSpeedPostion(double value) {
@@ -233,6 +239,10 @@ public class DroidBeatView extends Activity implements
                 .getItemAtPosition(pos);
         _presenter.setActiveExpression(pos);
         _keyboardPresenter.setEditableExpression(e);
+        
+        if(pos < spinner.getCount()-1)
+            setKeyboardView(false);
+        
     }
 
     @Override

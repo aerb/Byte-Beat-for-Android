@@ -13,7 +13,9 @@
     <SeekBar
         android:id="@+id/seekBarSpeed"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dip"
+        android:paddingRight="20dip" />
 
     <TextView
         android:id="@+id/textArg1"
@@ -24,7 +26,9 @@
     <SeekBar
         android:id="@+id/seekBarArg1"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dip"
+        android:paddingRight="20dip" />
 
     <TextView
         android:id="@+id/textArg2"
@@ -35,7 +39,9 @@
     <SeekBar
         android:id="@+id/seekBarArg2"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dip" 
+        android:paddingRight="20dip" />
 
     <TextView
         android:id="@+id/textArg3"
@@ -46,7 +52,9 @@
     <SeekBar
         android:id="@+id/seekBarArg3"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dip" 
+        android:paddingRight="20dip" />
 
     <LinearLayout
         android:id="@+id/linearLayout2"

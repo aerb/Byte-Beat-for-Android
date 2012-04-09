@@ -58,7 +58,7 @@ public class ByteBeatExpression {
         parser.setVariable(2, _args[2]);
         if (parser.tryParse(e)) {
             _parser = parser;
-            _expression = e;
+            _expression = e.trim();
             return true;
         }
         return false;
@@ -96,9 +96,8 @@ public class ByteBeatExpression {
 
     public void updateArgument(int i, float x) {
         if (i < 3 && i >= 0) {
-            if (_type == ExpressionType.compiled)
-                _args[i] = x;
-            else if (_type == ExpressionType.dynamic)
+            _args[i] = x;
+            if (_type == ExpressionType.dynamic)
                 _parser.setVariable(i, x);
         }
     }

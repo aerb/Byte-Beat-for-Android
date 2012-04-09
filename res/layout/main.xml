@@ -22,13 +22,6 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical" >
-
-<!--         <include
-            android:id="@+id/paramView"
-            android:layout_height="fill_parent"
-            android:layout_weight="1.88"
-            layout="@layout/params" /> -->
-            
     </LinearLayout>
 
     <LinearLayout
@@ -38,13 +31,13 @@
 
         <Button
             android:id="@+id/buttonStop"
-            android:layout_width="wrap_content"
+            android:layout_width="89dp"
             android:layout_height="wrap_content"
             android:text="Start" />
 
         <Spinner
             android:id="@+id/spinnerPredefined"
-            android:layout_width="fill_parent"
+            android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
 

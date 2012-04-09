@@ -63,8 +63,8 @@ public class BufferView extends View{
 			c.drawLine(x, y, x1, y1, p);
 		}
 
-		c.drawText(String.format("%d", t), 10, 60, p);
-		c.drawText(eq, 10, 30, p2);
+		c.drawText(String.format("%d", t), 10, 30, p);
+		//c.drawText(eq, 10, 30, p2);
 	}
 
 }
