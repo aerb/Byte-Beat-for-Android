@@ -2,6 +2,8 @@ package com.tasty.fish;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.style.UnderlineSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -18,11 +20,13 @@ import com.tasty.fish.R;
 import com.tasty.fish.domain.ByteBeatExpression;
 import com.tasty.fish.domain.ByteBeatExpression.CompiledExpression;
 import com.tasty.fish.interfaces.IDroidBeatView;
+import com.tasty.fish.interfaces.IKeyboardDisplayView;
 import com.tasty.fish.presenters.DroidBeatPresenter;
+import com.tasty.fish.presenters.KeyboardPresenter;
 
 public class DroidBeatView extends Activity implements
         SeekBar.OnSeekBarChangeListener, OnClickListener,
-        OnItemSelectedListener, IDroidBeatView {
+        OnItemSelectedListener, IDroidBeatView, IKeyboardDisplayView {
 
     private static boolean _die = true;
     private static boolean keyboardInputOn = false;
@@ -37,6 +41,7 @@ public class DroidBeatView extends Activity implements
     private static Button resetArgs;
     private static BufferView bufferView;
     private static DroidBeatPresenter _presenter;
+    private static KeyboardPresenter _keyboardPresenter;
 
     private static String[] _predefinedTitles = { "bleullama-fun", "harism",
             "tangent128", "miiro", "xpansive", "tejeez" };
@@ -96,16 +101,13 @@ public class DroidBeatView extends Activity implements
         paramView = inflater.inflate(R.layout.params, null);
 
         _presenter = new DroidBeatPresenter(this);
+        _keyboardPresenter = new KeyboardPresenter(this);
 
         for (int i = 0; i < _predefinedExpressions.length; ++i)
             _presenter.addNewExpression(_predefinedTitles[i],
                     _predefinedExpressions[i], _compiledExpressions[i]);
 
-//         for (int i = 0; i < _predefinedExpressions.length; ++i)
-//         _presenter.addNewExpression(_predefinedTitles[i],
-//         _predefinedExpressions[i]);
-
-        _presenter.addNewExpression("custom", "t>>t|t");
+        _presenter.addNewExpression("custom", "t");
 
         @SuppressWarnings({ "rawtypes", "unchecked" })
         ArrayAdapter adapter = new ArrayAdapter(this,
@@ -133,8 +135,6 @@ public class DroidBeatView extends Activity implements
 
         spinner.setAdapter(adapter);
         inputLayout.addView(paramView);
-        KeyboardHandler handler = new KeyboardHandler(textExpression,
-                keyboardView);
 
         switchViewButton.setOnClickListener(this);
         spinner.setOnItemSelectedListener(this);
@@ -232,8 +232,7 @@ public class DroidBeatView extends Activity implements
         ByteBeatExpression e = (ByteBeatExpression) adapter
                 .getItemAtPosition(pos);
         _presenter.setActiveExpression(pos);
-        bufferView.updateEq("");
-        textExpression.setText(e.expressions());
+        _keyboardPresenter.setEditableExpression(e);
     }
 
     @Override
@@ -254,5 +253,20 @@ public class DroidBeatView extends Activity implements
     @Override
     public void updateT(int time) {
 
+    }
+
+    @Override
+    public View getInflatedKeyboard() {
+        return keyboardView;
+    }
+
+    private UnderlineSpan ul = new UnderlineSpan();
+
+    @Override
+    public void updateDisplayedExpression(String s, int cursor) {
+        SpannableString content = new SpannableString(s);
+        content.removeSpan(ul);
+        content.setSpan(ul, cursor, cursor + 1, 0);
+        textExpression.setText(content);
     }
 }

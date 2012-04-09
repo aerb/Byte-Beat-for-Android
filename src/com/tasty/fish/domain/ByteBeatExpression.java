@@ -44,8 +44,24 @@ public class ByteBeatExpression {
         _type = ExpressionType.dynamic;
     }
 
-    public String expressions() {
+    public String expressionString() {
         return _expression;
+    }
+
+    public boolean updateExpression(String e) {
+        if (_type == ExpressionType.compiled)
+            return false;
+        FastParse parser = new FastParse();
+        parser.setT(0);
+        parser.setVariable(0, _args[0]);
+        parser.setVariable(1, _args[1]);
+        parser.setVariable(2, _args[2]);
+        if (parser.tryParse(e)) {
+            _parser = parser;
+            _expression = e;
+            return true;
+        }
+        return false;
     }
 
     public boolean tryParse() {
@@ -64,7 +80,7 @@ public class ByteBeatExpression {
             _parser.setT((int) _t);
             return (byte) _parser.evaluate();
         case compiled:
-            return (byte) ( _compiled.evaluate((int) _t, _args[0], _args[1],
+            return (byte) (_compiled.evaluate((int) _t, _args[0], _args[1],
                     _args[2]));
         }
         return 0;

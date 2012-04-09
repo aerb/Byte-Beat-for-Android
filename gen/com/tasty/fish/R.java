@@ -49,7 +49,7 @@ public final class R {
         public static final int LinearLayout04=0x7f060000;
         public static final int bufferView=0x7f060023;
         public static final int button2=0x7f060011;
-        public static final int button4=0x7f060018;
+        public static final int buttonDel=0x7f060018;
         public static final int buttonLeft=0x7f060012;
         public static final int buttonResetArgs=0x7f060032;
         public static final int buttonResetTime=0x7f060031;

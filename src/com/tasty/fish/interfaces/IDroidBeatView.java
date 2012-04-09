@@ -6,4 +6,5 @@ public interface IDroidBeatView {
 	void postInvalidate();
 	public void updateSeekerSpeedPostion(double value);
 	void updateSeekerPostion(int id, double speed);
+	void updateDisplayedExpression(String s, int cursor);
 }
