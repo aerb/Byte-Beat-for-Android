@@ -124,9 +124,9 @@ public class FastParse {
             { "+", "-" }, { "*", "/", "%" } };
     private char lb = '(', rb = ')';
 
-    private Pattern num = Pattern.compile("[0-9()]+");
+    private Pattern num = Pattern.compile("[0-9]+");
     private Pattern hex = Pattern.compile("\\b0[xX][0-9a-fA-F]+\\b");
-    private Pattern var = Pattern.compile("[a-zA-Z0-9()]+");
+    private Pattern var = Pattern.compile("[a-zA-Z0-9]+");
 
     private ParseNode rootNode = null;
 
@@ -162,13 +162,13 @@ public class FastParse {
     
     private MutableDouble getMutableVariable(String key) {
         int id = 0;
-        if(key.charAt(0) == 't')
+        if(key.compareTo("t") == 0)
             id = 0;
-        else if (key.charAt(1) == '1')
+        else if (key.compareTo("p1") == 0)
             id = 1;
-        else if (key.charAt(1) == '2')
+        else if (key.compareTo("p2") == 0)
             id = 2;
-        else if (key.charAt(1) == '3')
+        else if (key.compareTo("p3") == 0)
             id = 3;
         
         switch (id) {
