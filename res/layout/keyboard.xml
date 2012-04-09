@@ -180,7 +180,7 @@
                 android:text="&gt;&gt;" />
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/buttonDel"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="DEL" />
