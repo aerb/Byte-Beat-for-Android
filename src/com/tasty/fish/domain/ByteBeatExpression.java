@@ -77,10 +77,10 @@ public class ByteBeatExpression {
         _t += _timescale;
         switch (_type) {
         case dynamic:
-            _parser.setT((int) _t);
+            _parser.setT((long)_t);
             return (byte) _parser.evaluate();
         case compiled:
-            return (byte) (_compiled.evaluate((int) _t, _args[0], _args[1],
+            return (byte) (_compiled.evaluate( (int) _t, _args[0], _args[1],
                     _args[2]));
         }
         return 0;

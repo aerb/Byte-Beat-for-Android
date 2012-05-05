@@ -171,13 +171,13 @@
                 android:id="@+id/Button14"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="&lt;&lt;" />
+                android:text="&lt;" />
 
             <Button
                 android:id="@+id/Button13"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="&gt;&gt;" />
+                android:text="&gt;" />
 
             <Button
                 android:id="@+id/buttonDel"
@@ -226,7 +226,7 @@
 
         <LinearLayout
             android:layout_width="0dip"
-            android:layout_height="fill_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="0.25"
             android:orientation="vertical" >
 
@@ -249,10 +249,22 @@
                 android:text="-" />
 
             <Button
-                android:id="@+id/Button26"
+                android:id="@+id/Button23"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="^" />
+
+            <Button
+                android:id="@+id/Button27"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="=" />
+
+            <Button
+                android:id="@+id/Button26"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="!" />
         </LinearLayout>
 
     </LinearLayout>

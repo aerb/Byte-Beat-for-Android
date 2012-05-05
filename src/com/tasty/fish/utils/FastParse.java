@@ -15,6 +15,26 @@ public class FastParse {
 
     static {
         opMap = new HashMap<String, Op>();
+        opMap.put("<=", new Op() {
+            public double Ex(double a, double b) {
+                return a <= b ? 1 : 0;
+            }
+        });
+        opMap.put(">=", new Op() {
+            public double Ex(double a, double b) {
+                return a >= b ? 1 : 0;
+            }
+        });
+        opMap.put("!=", new Op() {
+            public double Ex(double a, double b) {
+                return a != b ? 1 : 0;
+            }
+        });
+        opMap.put("==", new Op() {
+            public double Ex(double a, double b) {
+                return a == b ? 1 : 0;
+            }
+        });
         opMap.put("|", new Op() {
             public double Ex(double a, double b) {
                 return (long) a | (long) b;
@@ -103,7 +123,7 @@ public class FastParse {
         private double eval() {
             switch (ptype) {
             case Expression:
-                return o.Ex(p0.eval(), p1.eval());
+                return o.Ex(p0.eval (), p1.eval());
             case Value:
                 return intValue;
             case Variable:
@@ -118,8 +138,8 @@ public class FastParse {
     private Map<String, Double> varMap;
     private ArrayList<MutableDouble> simpleMap;
 
-    private String[][] operators = { { "|" }, { "^" }, { "&" }, { ">>", "<<" },
-            { "+", "-" }, { "*", "/", "%" } };
+    private String[][] operators = { { "|" }, { "^" }, { "&" }, { "==", "!=" },
+            { ">=", "<=" }, { ">>", "<<" }, { "+", "-" }, { "*", "/", "%" } };
     private char lb = '(', rb = ')';
 
     private Pattern num = Pattern.compile("[0-9]+");

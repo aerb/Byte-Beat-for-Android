@@ -35,7 +35,7 @@ public class KeyboardPresenter implements OnClickListener {
             if ("0123456789".indexOf((String) b.getText()) >= 0)
                 b.getBackground().setColorFilter(0xFFCCCC00,
                         PorterDuff.Mode.MULTIPLY);
-            else if ("%/*<<>>+-&^|".indexOf((String) b.getText()) >= 0)
+            else if ("%/*<<>>+-&^|=!".indexOf((String) b.getText()) >= 0)
                 b.getBackground().setColorFilter(0xFFFF5555,
                         PorterDuff.Mode.MULTIPLY);
 
