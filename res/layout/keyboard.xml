@@ -259,12 +259,6 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="=" />
-
-            <Button
-                android:id="@+id/Button26"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="!" />
         </LinearLayout>
 
     </LinearLayout>

@@ -14,7 +14,7 @@ public class ByteBeatExpression {
 
     private FastParse _parser;
     private double[] _args = { 0, 0, 0 };
-    private float _timescale = 0;
+    private double _timescale = 0;
     private String _expression;
     private CompiledExpression _compiled;
     private float _t = 0;
@@ -90,11 +90,11 @@ public class ByteBeatExpression {
         return (int) _t;
     }
 
-    public void updateTimeScale(float inc) {
+    public void updateTimeScale(double inc) {
         _timescale = inc;
     }
 
-    public void updateArgument(int i, float x) {
+    public void updateArgument(int i, double x) {
         if (i < 3 && i >= 0) {
             _args[i] = x;
             if (_type == ExpressionType.dynamic)
@@ -110,7 +110,7 @@ public class ByteBeatExpression {
         return _name;
     }
 
-    public float getSpeed() {
+    public double getSpeed() {
         return _timescale;
     }
 

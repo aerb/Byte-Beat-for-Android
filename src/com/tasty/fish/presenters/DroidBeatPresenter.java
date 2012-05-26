@@ -1,14 +1,12 @@
 package com.tasty.fish.presenters;
 
 import java.util.ArrayList;
-
 import com.tasty.fish.domain.ByteBeatExpression;
-import com.tasty.fish.domain.ByteBeatExpression.CompiledExpression;
 import com.tasty.fish.interfaces.IDroidBeatView;
 import com.tasty.fish.utils.AndroidAudioDevice;
+import com.tasty.fish.domain.ByteBeatExpression.CompiledExpression;
 
 public class DroidBeatPresenter {
-
 	private IDroidBeatView _view;
 	private boolean _die;
 	private ArrayList<ByteBeatExpression> _exps = null;
@@ -58,18 +56,18 @@ public class DroidBeatPresenter {
 	public void startVideoThread() {
 		new Thread(new Runnable() {
 			public void run() {
-				while(true){
+				while (true) {
 					_view.displayBuffer(samples, _exp.getTime());
 					_view.updateT(_exp.getTime());
 					if (_die) {
 						return;
 					}
 					try {
-						Thread.sleep(15);
+						Thread.sleep(100);
 					} catch (InterruptedException e) {
 					}
 				}
-			}	
+			}
 		}).start();
 	}
 
@@ -95,11 +93,11 @@ public class DroidBeatPresenter {
 		}).start();
 	}
 
-	public void updateTimeScale(float inc) {
+	public void updateTimeScale(double inc) {
 		_exp.updateTimeScale(inc);
 	}
 
-	public void updateArgument(int i, float x) {
+	public void updateArgument(int i, double x) {
 		_exp.updateArgument(i, x);
 	}
 

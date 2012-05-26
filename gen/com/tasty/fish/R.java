@@ -15,8 +15,7 @@ public final class R {
     }
     public static final class drawable {
         public static final int bb=0x7f020000;
-        public static final int colored_button=0x7f020001;
-        public static final int ic_launcher=0x7f020002;
+        public static final int ic_launcher=0x7f020001;
     }
     public static final class id {
         public static final int Button01=0x7f06000d;
@@ -44,34 +43,33 @@ public final class R {
         public static final int Button23=0x7f060021;
         public static final int Button24=0x7f06001f;
         public static final int Button25=0x7f060020;
-        public static final int Button26=0x7f060023;
         public static final int Button27=0x7f060022;
         public static final int LinearLayout01=0x7f06000c;
         public static final int LinearLayout02=0x7f060008;
         public static final int LinearLayout03=0x7f060004;
         public static final int LinearLayout04=0x7f060000;
-        public static final int bufferView=0x7f060025;
+        public static final int bufferView=0x7f060024;
         public static final int button2=0x7f060011;
         public static final int buttonDel=0x7f060018;
         public static final int buttonLeft=0x7f060012;
-        public static final int buttonResetArgs=0x7f060034;
-        public static final int buttonResetTime=0x7f060033;
+        public static final int buttonResetArgs=0x7f060033;
+        public static final int buttonResetTime=0x7f060032;
         public static final int buttonRight=0x7f060013;
-        public static final int buttonStop=0x7f060027;
-        public static final int buttonSwitchInput=0x7f060029;
+        public static final int buttonStop=0x7f060026;
+        public static final int buttonSwitchInput=0x7f060028;
         public static final int linearLayout1=0x7f060010;
-        public static final int linearLayout2=0x7f060032;
-        public static final int linearLayout3=0x7f060026;
-        public static final int seekBarArg1=0x7f06002d;
-        public static final int seekBarArg2=0x7f06002f;
-        public static final int seekBarArg3=0x7f060031;
-        public static final int seekBarSpeed=0x7f06002b;
-        public static final int spinnerPredefined=0x7f060028;
-        public static final int textArg1=0x7f06002c;
-        public static final int textArg2=0x7f06002e;
-        public static final int textArg3=0x7f060030;
-        public static final int textExpression=0x7f060024;
-        public static final int textSpeed=0x7f06002a;
+        public static final int linearLayout2=0x7f060031;
+        public static final int linearLayout3=0x7f060025;
+        public static final int seekBarArg1=0x7f06002c;
+        public static final int seekBarArg2=0x7f06002e;
+        public static final int seekBarArg3=0x7f060030;
+        public static final int seekBarSpeed=0x7f06002a;
+        public static final int spinnerPredefined=0x7f060027;
+        public static final int textArg1=0x7f06002b;
+        public static final int textArg2=0x7f06002d;
+        public static final int textArg3=0x7f06002f;
+        public static final int textExpression=0x7f060023;
+        public static final int textSpeed=0x7f060029;
     }
     public static final class layout {
         public static final int keyboard=0x7f030000;
