@@ -2,6 +2,10 @@ package com.tasty.fish.domain;
 
 public class ByteBeatExpression {
 
+    public String getName() {
+        return _name;
+    }
+
     public interface CompiledExpression {
 
         public byte evaluate(int t, double p1, double p2, double p3);

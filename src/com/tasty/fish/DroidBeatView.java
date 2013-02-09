@@ -23,6 +23,8 @@ import com.tasty.fish.interfaces.IKeyboardDisplayView;
 import com.tasty.fish.presenters.DroidBeatPresenter;
 import com.tasty.fish.presenters.KeyboardPresenter;
 
+import java.util.ArrayList;
+
 public class DroidBeatView extends Activity implements SeekBar.OnSeekBarChangeListener, 
                                                        OnClickListener,
                                                        OnItemSelectedListener,
@@ -56,9 +58,10 @@ public class DroidBeatView extends Activity implements SeekBar.OnSeekBarChangeLi
     private View m_parameterView;
     private TextView m_textExpressionView;
 
+    private ArrayList<IDroidBeatViewListener> _listeners;
+
     private static String[] s_predefinedTitles = { "bleullama-fun", "harism",
             "tangent128", "miiro", "xpansive", "tejeez" };
-
     private static String[] s_predefinedExpressions = {
             "((t % (p1 * 777)) | (p3 * t)) & ((0xFF * p2)) - t",
             "(((p1 * t) >> 1 % (p2 * 128)) + 20) * 3 * t >> 14 * t >> (p3 * 18)",
@@ -149,6 +152,8 @@ public class DroidBeatView extends Activity implements SeekBar.OnSeekBarChangeLi
         s_seekBarArgs[2].setOnSeekBarChangeListener(this);
 
         s_performancePresenter.setActiveExpression(0);
+
+        _listeners = new ArrayList<IDroidBeatViewListener>();
     }
     public void onPause() {
         super.onPause();
@@ -223,8 +228,12 @@ public class DroidBeatView extends Activity implements SeekBar.OnSeekBarChangeLi
 
         ByteBeatExpression e = (ByteBeatExpression) adapter
                 .getItemAtPosition(pos);
-        s_performancePresenter.setActiveExpression(pos);
-        s_editorPresenter.setEditableExpression(e);
+
+        for(IDroidBeatViewListener listener : _listeners){
+            listener.OnExpressionChanged(e.getName());
+        }
+
+        //s_editorPresenter.setEditableExpression(e);
 
         if (pos < s_spinner.getCount() - 1)
             setEditorView(false);
@@ -258,6 +267,11 @@ public class DroidBeatView extends Activity implements SeekBar.OnSeekBarChangeLi
         content.removeSpan(m_underlineSpan);
         content.setSpan(m_underlineSpan, cursor, cursor + 1, 0);
         m_textExpressionView.setText(content);
+    }
+
+    @Override
+    public void registerIDroidBeatViewListener(IDroidBeatViewListener listener) {
+        _listeners.add(listener);
     }
     //endregion
 

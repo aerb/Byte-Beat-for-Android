@@ -6,7 +6,7 @@ import com.tasty.fish.interfaces.IDroidBeatView;
 import com.tasty.fish.utils.AndroidAudioDevice;
 import com.tasty.fish.domain.ByteBeatExpression.CompiledExpression;
 
-public class DroidBeatPresenter {
+public class DroidBeatPresenter implements IDroidBeatView.IDroidBeatViewListener{
     private IDroidBeatView _view;
     private boolean _die;
     private ArrayList<ByteBeatExpression> _exps = null;
@@ -18,7 +18,7 @@ public class DroidBeatPresenter {
         _exps = new ArrayList<ByteBeatExpression>();
     }
 
-    public void stopAudioThread() {
+    private void stopAudioThread() {
         _die = true;
     }
 
@@ -29,12 +29,12 @@ public class DroidBeatPresenter {
         _view.updateSeekerPostion(2, _exp.getArguement(2));
     }
 
-    public void setActiveExpression(int id) {
+    private void setActiveExpression(int id) {
         _exp = _exps.get(id);
         updateView();
     }
 
-    public boolean addNewExpression(String title, String exp) {
+    private boolean addNewExpression(String title, String exp) {
         ByteBeatExpression e = new ByteBeatExpression(title, exp, 0.5f, 1f, 1f,
                 1f);
         if (!e.tryParse())
@@ -43,7 +43,7 @@ public class DroidBeatPresenter {
         return true;
     }
 
-    public boolean addNewExpression(String title, String exp,
+    private boolean addNewExpression(String title, String exp,
             CompiledExpression cexp) {
         ByteBeatExpression e = new ByteBeatExpression(title, exp, 0.5f, 1f, 1f, 1f, cexp
         );
@@ -53,7 +53,7 @@ public class DroidBeatPresenter {
         return true;
     }
 
-    public void startVideoThread() {
+    private void startVideoThread() {
         new Thread(new Runnable() {
             public void run() {
                 while (true) {
@@ -71,7 +71,7 @@ public class DroidBeatPresenter {
         }).start();
     }
 
-    public void startAudioThread() {
+    private void startAudioThread() {
         _die = false;
         new Thread(new Runnable() {
             public void run() {
@@ -93,19 +93,19 @@ public class DroidBeatPresenter {
         }).start();
     }
 
-    public void updateTimeScale(double inc) {
+    private void updateTimeScale(double inc) {
         _exp.setTimeScale(inc);
     }
 
-    public void updateArgument(int i, double x) {
+    private void updateArgument(int i, double x) {
         _exp.setArguement(i, x);
     }
 
-    public void resetTime() {
+    private void resetTime() {
         _exp.resetTime();
     }
 
-    public void resetArgs() {
+    private void resetArgs() {
         _exp.setTimeScale(0.5f);
         _exp.setArguement(0, 1f);
         _exp.setArguement(1, 1f);
@@ -113,7 +113,24 @@ public class DroidBeatPresenter {
         updateView();
     }
 
-    public ArrayList<ByteBeatExpression> getExpressions() {
+    private ArrayList<ByteBeatExpression> getExpressions() {
         return _exps;
     }
+
+    //region IDroidBeatViewListener methods
+    @Override
+    public void OnExpressionChanged(String newExpression) {
+
+    }
+
+    @Override
+    public void OnArgumentChanged(int index, double value) {
+
+    }
+
+    @Override
+    public void OnTimeScaleChanged(double value) {
+
+    }
+    //endregion
 }
