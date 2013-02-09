@@ -17,273 +17,254 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.tasty.fish.R;
 import com.tasty.fish.domain.ByteBeatExpression;
-import com.tasty.fish.domain.ByteBeatExpression.CompiledExpression;
 import com.tasty.fish.interfaces.IDroidBeatView;
 import com.tasty.fish.interfaces.IKeyboardDisplayView;
 import com.tasty.fish.presenters.DroidBeatPresenter;
 import com.tasty.fish.presenters.KeyboardPresenter;
 
 public class DroidBeatView extends Activity implements SeekBar.OnSeekBarChangeListener, 
-													   OnClickListener,
-													   OnItemSelectedListener, 
-													   IDroidBeatView, IKeyboardDisplayView {
-	private static boolean _die = true;
-	private static boolean keyboardInputOn = false;
-	private static SeekBar seekBarSpeed;
-	private static SeekBar[] seekBarArgs = new SeekBar[3];
-	private static TextView textSpeed;
-	private static TextView[] textArgs = new TextView[3];
-	private static Spinner spinner;
-	private static Button switchViewButton;
-	private static Button stop;
-	private static Button resetTime;
-	private static Button resetArgs;
-	private static BufferView bufferView;
-	private static DroidBeatPresenter _presenter;
-	private static KeyboardPresenter _keyboardPresenter;
+                                                       OnClickListener,
+                                                       OnItemSelectedListener,
+                                                       IDroidBeatView,
+                                                       IKeyboardDisplayView {
+    private static boolean s_dieFlag = true;
+    private static boolean s_keyboardInputOnFlag = false;
 
-	private static String[] _predefinedTitles = { "bleullama-fun", "harism",
-			"tangent128", "miiro", "xpansive", "tejeez" };
+    private static SeekBar s_seekBarSpeed;
+    private static SeekBar[] s_seekBarArgs = new SeekBar[3];
 
-	private static String[] _predefinedExpressions = {
-			"((t % (p1 * 777)) | (p3 * t)) & ((0xFF * p2)) - t",
-			"(((p1 * t) >> 1 % (p2 * 128)) + 20) * 3 * t >> 14 * t >> (p3 * 18)",
-			"t * (((t >> 9) & (p3 * 10)) | (((p2 * t) >> 11) & 24) ^ ((t >> 10) & 15 & ((p1 * t) >> 15)))",
-			"(p1 * t) * 5 & ((p2 * t) >> 7) | (p3 * t * 3) & (t * 4 >> 10)",
-			"(((p1 * t) * ((p2 * t) >> 8 | t >> 9) & (p3 * 46) & t >> 8)) ^ (t & t >> 13 | t >> 6)",
-			"((p1 * t) * ((p2 * t) >> 5 | t >> 8)) >> ((p3 * t) >> 16)" };
+    private static TextView s_textSpeed;
+    private static TextView[] s_textArgs = new TextView[3];
 
-	private static CompiledExpression[] _compiledExpressions = {
-			new CompiledExpression() {
-				public byte evaluate(int t, double p1, double p2, double p3) {
-					return (byte) (((t % (int) (p1 * 777)) | (int) (p3 * t)) & (int) (0xFF * p2)
-							- t);
-				}
-			}, new CompiledExpression() {
-				public byte evaluate(int t, double p1, double p2, double p3) {
-					return (byte) ((((int) (p1 * t) >> 1 % (int) (p2 * 128)) + 20)
-							* 3 * t >> 14 * t >> (int) (p3 * 18));
-				}
-			}, new CompiledExpression() {
-				public byte evaluate(int t, double p1, double p2, double p3) {
-					return (byte) (t * (((t >> 9) & (int) (p3 * 10)) | (((int) (p2 * t) >> 11) & 24)
-							^ ((t >> 10) & 15 & ((int) (p1 * t) >> 15))));
-				}
-			}, new CompiledExpression() {
-				public byte evaluate(int t, double p1, double p2, double p3) {
-					return (byte) ((int) (p1 * t) * 5 & ((int) (p2 * t) >> 7) | (int) (p3 * t)
-							* 3 & (t * 4 >> 10));
-				}
-			}, new CompiledExpression() {
-				public byte evaluate(int t, double p1, double p2, double p3) {
-					return (byte) ((((int) (p1 * t)
-							* ((int) (p2 * t) >> 8 | t >> 9)
-							& ((int) (p3 * 46)) & t >> 8)) ^ (t & t >> 13 | t >> 6));
-				}
-			}, new CompiledExpression() {
-				public byte evaluate(int t, double p1, double p2, double p3) {
-					return (byte) (((int) (p1 * t) * ((int) (p2 * t) >> 5 | t >> 8)) >> ((int) (p3 * t) >> 16));
-				}
-			} };
-	private LinearLayout inputLayout;
-	private View keyboardView;
-	private View paramView;
-	private TextView textExpression;
+    private static Spinner s_spinner;
 
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
-		setContentView(R.layout.main);
+    private static Button s_switchViewBtn;
+    private static Button s_stopBtn;
+    private static Button s_resetTimeBtn;
+    private static Button s_resetArgsBtn;
 
-		LayoutInflater inflater = getLayoutInflater();
-		keyboardView = inflater.inflate(R.layout.keyboard, null);
-		paramView = inflater.inflate(R.layout.params, null);
+    private static BufferView s_bufferView;
+    private static DroidBeatPresenter s_performancePresenter;
+    private static KeyboardPresenter s_editorPresenter;
 
-		_presenter = new DroidBeatPresenter(this);
-		_keyboardPresenter = new KeyboardPresenter(this);
+    private UnderlineSpan m_underlineSpan = new UnderlineSpan();
 
-		for (int i = 0; i < _predefinedExpressions.length; ++i)
-			_presenter.addNewExpression(_predefinedTitles[i],
-					_predefinedExpressions[i]);
+    private LinearLayout m_inputLayout;
 
-		_presenter.addNewExpression("custom", "t");
+    private View m_editorView;
+    private View m_parameterView;
+    private TextView m_textExpressionView;
 
-		@SuppressWarnings({ "rawtypes", "unchecked" })
-		ArrayAdapter adapter = new ArrayAdapter(this,
-				android.R.layout.simple_spinner_item,
-				_presenter.getExpressions());
+    private static String[] s_predefinedTitles = { "bleullama-fun", "harism",
+            "tangent128", "miiro", "xpansive", "tejeez" };
 
-		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+    private static String[] s_predefinedExpressions = {
+            "((t % (p1 * 777)) | (p3 * t)) & ((0xFF * p2)) - t",
+            "(((p1 * t) >> 1 % (p2 * 128)) + 20) * 3 * t >> 14 * t >> (p3 * 18)",
+            "t * (((t >> 9) & (p3 * 10)) | (((p2 * t) >> 11) & 24) ^ ((t >> 10) & 15 & ((p1 * t) >> 15)))",
+            "(p1 * t) * 5 & ((p2 * t) >> 7) | (p3 * t * 3) & (t * 4 >> 10)",
+            "(((p1 * t) * ((p2 * t) >> 8 | t >> 9) & (p3 * 46) & t >> 8)) ^ (t & t >> 13 | t >> 6)",
+            "((p1 * t) * ((p2 * t) >> 5 | t >> 8)) >> ((p3 * t) >> 16)" };
 
-		textExpression = (TextView) findViewById(R.id.textExpression);
-		inputLayout = (LinearLayout) findViewById(R.id.linearLayout3);
-		switchViewButton = (Button) findViewById(R.id.buttonSwitchInput);
-		textSpeed = (TextView) paramView.findViewById(R.id.textSpeed);
-		textArgs[0] = (TextView) paramView.findViewById(R.id.textArg1);
-		textArgs[1] = (TextView) paramView.findViewById(R.id.textArg2);
-		textArgs[2] = (TextView) paramView.findViewById(R.id.textArg3);
-		seekBarSpeed = (SeekBar) paramView.findViewById(R.id.seekBarSpeed);
-		seekBarArgs[0] = (SeekBar) paramView.findViewById(R.id.seekBarArg1);
-		seekBarArgs[1] = (SeekBar) paramView.findViewById(R.id.seekBarArg2);
-		seekBarArgs[2] = (SeekBar) paramView.findViewById(R.id.seekBarArg3);
-		spinner = (Spinner) findViewById(R.id.spinnerPredefined);
-		resetArgs = (Button) paramView.findViewById(R.id.buttonResetArgs);
-		resetTime = (Button) paramView.findViewById(R.id.buttonResetTime);
-		stop = (Button) findViewById(R.id.buttonStop);
-		bufferView = (BufferView) findViewById(R.id.bufferView);
+    private double mapArgSeekBar(double arg1) {
+        double x = ((float) arg1) / 100 * 2;
+        x = (float) (x == 0 ? 0.01 : x);
+        return x;
+    }
 
-		spinner.setAdapter(adapter);
-		inputLayout.addView(paramView);
+    private double mapTimeSeekBar(double arg1) {
+        return arg1 / 100;
+    }
 
-		switchViewButton.setOnClickListener(this);
-		spinner.setOnItemSelectedListener(this);
-		stop.setOnClickListener(this);
-		resetTime.setOnClickListener(this);
-		resetArgs.setOnClickListener(this);
-		seekBarSpeed.setOnSeekBarChangeListener(this);
-		seekBarArgs[0].setOnSeekBarChangeListener(this);
-		seekBarArgs[1].setOnSeekBarChangeListener(this);
-		seekBarArgs[2].setOnSeekBarChangeListener(this);
+    private void setEditorView(boolean on) {
+        s_keyboardInputOnFlag = on;
+        m_inputLayout.removeAllViews();
+        m_inputLayout.addView(on ? m_editorView : m_parameterView);
+    }
 
-		_presenter.setActiveExpression(0);
-	}
+    public void updateSeekerSpeedPostion(double value) {
+        s_seekBarSpeed.setProgress((int) (value * 100));
+    }
 
-	private double mapTimeSeekBar(double arg1) {
-		return arg1 / 100;
-	}
+    public void updateSeekerPostion(int i, double value) {
+        s_seekBarArgs[i].setProgress((int) (value * 100 / 2));
+    }
 
-	private double mapArgSeekBar(double arg1) {
-		double x = ((float) arg1) / 100 * 2;
-		x = (float) (x == 0 ? 0.01 : x);
-		return x;
-	}
+    //region Activity methods
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        setContentView(R.layout.main);
 
-	@Override
-	public void onProgressChanged(SeekBar arg0, int arg1, boolean arg2) {
-		if (arg0 == seekBarSpeed) {
-			double inc = mapTimeSeekBar(arg1);
-			_presenter.updateTimeScale(inc);
-			textSpeed.setText("speed = " + inc);
-		} else {
-			double x = mapArgSeekBar(arg1);
-			if (arg0 == seekBarArgs[0]) {
-				_presenter.updateArgument(0, x);
-				textArgs[0].setText(String.format("p1 = %.2f",x));
-			} else if (arg0 == seekBarArgs[1]) {
-				_presenter.updateArgument(1, x);
-				textArgs[1].setText(String.format("p2 = %.2f",x));
-			} else if (arg0 == seekBarArgs[2]) {
-				_presenter.updateArgument(2, x);
-				textArgs[2].setText(String.format("p3 = %.2f",x));
-			}
-		}
-	}
+        LayoutInflater inflater = getLayoutInflater();
+        m_editorView = inflater.inflate(R.layout.keyboard, null);
+        m_parameterView = inflater.inflate(R.layout.params, null);
 
-	@Override
-	public void onStartTrackingTouch(SeekBar arg0) {
-	}
+        s_performancePresenter = new DroidBeatPresenter(this);
+        s_editorPresenter = new KeyboardPresenter(this);
 
-	@Override
-	public void onStopTrackingTouch(SeekBar arg0) {
-	}
+        for (int i = 0; i < s_predefinedExpressions.length; ++i)
+            s_performancePresenter.addNewExpression(s_predefinedTitles[i],
+                    s_predefinedExpressions[i]);
 
-	@Override
-	public void onClick(View arg0) {
-		if (arg0 == stop) {
-			if (_die == false) {
-				_presenter.stopAudioThread();
-				stop.setText("Start");
-				_die = true;
-			} else {
-				_presenter.startAudioThread();
-				_presenter.startVideoThread();
-				stop.setText("Stop");
-				_die = false;
-			}
-			stop.refreshDrawableState();
-		} else if (arg0 == resetTime) {
-			_presenter.resetTime();
-		} else if (arg0 == resetArgs) {
-			_presenter.resetArgs();
-		} else if (arg0 == switchViewButton) {
-			keyboardInputOn = !keyboardInputOn;
-			setKeyboardView(keyboardInputOn);
-			if (keyboardInputOn) {
-				spinner.setSelection(spinner.getCount() - 1);
-			}
-		}
-	}
+        s_performancePresenter.addNewExpression("custom", "t");
 
-	private void setKeyboardView(boolean on) {
-		keyboardInputOn = on;
-		inputLayout.removeAllViews();
-		inputLayout.addView(on ? keyboardView : paramView);
-	}
+        @SuppressWarnings({ "rawtypes", "unchecked" })
+        ArrayAdapter adapter = new ArrayAdapter(this,
+                android.R.layout.simple_spinner_item,
+                s_performancePresenter.getExpressions());
 
-	public void updateSeekerSpeedPostion(double value) {
-		seekBarSpeed.setProgress((int) (value * 100));
-	}
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-	public void updateSeekerPostion(int i, double value) {
-		seekBarArgs[i].setProgress((int) (value * 100 / 2));
-	}
+        m_textExpressionView = (TextView) findViewById(R.id.textExpression);
+        m_inputLayout = (LinearLayout) findViewById(R.id.linearLayout3);
+        s_switchViewBtn = (Button) findViewById(R.id.buttonSwitchInput);
+        s_textSpeed = (TextView) m_parameterView.findViewById(R.id.textSpeed);
+        s_textArgs[0] = (TextView) m_parameterView.findViewById(R.id.textArg1);
+        s_textArgs[1] = (TextView) m_parameterView.findViewById(R.id.textArg2);
+        s_textArgs[2] = (TextView) m_parameterView.findViewById(R.id.textArg3);
+        s_seekBarSpeed = (SeekBar) m_parameterView.findViewById(R.id.seekBarSpeed);
+        s_seekBarArgs[0] = (SeekBar) m_parameterView.findViewById(R.id.seekBarArg1);
+        s_seekBarArgs[1] = (SeekBar) m_parameterView.findViewById(R.id.seekBarArg2);
+        s_seekBarArgs[2] = (SeekBar) m_parameterView.findViewById(R.id.seekBarArg3);
+        s_spinner = (Spinner) findViewById(R.id.spinnerPredefined);
+        s_resetArgsBtn = (Button) m_parameterView.findViewById(R.id.buttonResetArgs);
+        s_resetTimeBtn = (Button) m_parameterView.findViewById(R.id.buttonResetTime);
+        s_stopBtn = (Button) findViewById(R.id.buttonStop);
+        s_bufferView = (BufferView) findViewById(R.id.bufferView);
 
-	public void onPause() {
-		super.onPause();
-		_die = true;
-		_presenter.stopAudioThread();
-		stop.setText("Start");
-	}
+        s_spinner.setAdapter(adapter);
+        m_inputLayout.addView(m_parameterView);
 
-	@Override
-	public void onItemSelected(AdapterView<?> adapter, View view, int pos,
-			long id) {
+        s_switchViewBtn.setOnClickListener(this);
+        s_spinner.setOnItemSelectedListener(this);
+        s_stopBtn.setOnClickListener(this);
+        s_resetTimeBtn.setOnClickListener(this);
+        s_resetArgsBtn.setOnClickListener(this);
+        s_seekBarSpeed.setOnSeekBarChangeListener(this);
+        s_seekBarArgs[0].setOnSeekBarChangeListener(this);
+        s_seekBarArgs[1].setOnSeekBarChangeListener(this);
+        s_seekBarArgs[2].setOnSeekBarChangeListener(this);
 
-		ByteBeatExpression e = (ByteBeatExpression) adapter
-				.getItemAtPosition(pos);
-		_presenter.setActiveExpression(pos);
-		_keyboardPresenter.setEditableExpression(e);
+        s_performancePresenter.setActiveExpression(0);
+    }
+    public void onPause() {
+        super.onPause();
+        s_dieFlag = true;
+        s_performancePresenter.stopAudioThread();
+        s_stopBtn.setText("Start");
+    }
+    //endregion
 
-		if (pos < spinner.getCount() - 1)
-			setKeyboardView(false);
+    //region OnSeekBarChangeListeners methods
+    @Override
+    public void onProgressChanged(SeekBar arg0, int arg1, boolean arg2) {
+        if (arg0 == s_seekBarSpeed) {
+            double inc = mapTimeSeekBar(arg1);
+            s_performancePresenter.updateTimeScale(inc);
+            s_textSpeed.setText("speed = " + inc);
+        } else {
+            double x = mapArgSeekBar(arg1);
+            if (arg0 == s_seekBarArgs[0]) {
+                s_performancePresenter.updateArgument(0, x);
+                s_textArgs[0].setText(String.format("p1 = %.2f", x));
+            } else if (arg0 == s_seekBarArgs[1]) {
+                s_performancePresenter.updateArgument(1, x);
+                s_textArgs[1].setText(String.format("p2 = %.2f", x));
+            } else if (arg0 == s_seekBarArgs[2]) {
+                s_performancePresenter.updateArgument(2, x);
+                s_textArgs[2].setText(String.format("p3 = %.2f", x));
+            }
+        }
+    }
 
-	}
+    @Override
+    public void onStartTrackingTouch(SeekBar arg0) {}
 
-	@Override
-	public void onNothingSelected(AdapterView<?> arg0) {
-	}
+    @Override
+    public void onStopTrackingTouch(SeekBar arg0) {}
+    //endregion
 
-	@Override
-	public void displayBuffer(byte[] samples, int t) {
-		bufferView.setSamples(samples);
-		bufferView.updateT(t);
-		bufferView.postInvalidate();
-	}
+    //region OnClickListener methods
+    @Override
+    public void onClick(View arg0) {
+        if (arg0 == s_stopBtn) {
+            if (s_dieFlag == false) {
+                s_performancePresenter.stopAudioThread();
+                s_stopBtn.setText("Start");
+                s_dieFlag = true;
+            } else {
+                s_performancePresenter.startAudioThread();
+                s_performancePresenter.startVideoThread();
+                s_stopBtn.setText("Stop");
+                s_dieFlag = false;
+            }
+            s_stopBtn.refreshDrawableState();
+        } else if (arg0 == s_resetTimeBtn) {
+            s_performancePresenter.resetTime();
+        } else if (arg0 == s_resetArgsBtn) {
+            s_performancePresenter.resetArgs();
+        } else if (arg0 == s_switchViewBtn) {
+            s_keyboardInputOnFlag = !s_keyboardInputOnFlag;
+            setEditorView(s_keyboardInputOnFlag);
+            if (s_keyboardInputOnFlag) {
+                s_spinner.setSelection(s_spinner.getCount() - 1);
+            }
+        }
+    }
+    //endregion
 
-	@Override
-	public void postInvalidate() {
-	}
+    //region OnItemSelectedListener methods
+    @Override
+    public void onItemSelected(AdapterView<?> adapter, View view, int pos,
+            long id) {
 
-	@Override
-	public void updateT(int time) {
+        ByteBeatExpression e = (ByteBeatExpression) adapter
+                .getItemAtPosition(pos);
+        s_performancePresenter.setActiveExpression(pos);
+        s_editorPresenter.setEditableExpression(e);
 
-	}
+        if (pos < s_spinner.getCount() - 1)
+            setEditorView(false);
 
-	@Override
-	public View getInflatedKeyboard() {
-		return keyboardView;
-	}
+    }
 
-	private UnderlineSpan ul = new UnderlineSpan();
+    @Override
+    public void onNothingSelected(AdapterView<?> arg0) {
+    }
+    //endregion
 
-	@Override
-	public void updateDisplayedExpression(String s, int cursor) {
-		SpannableString content = new SpannableString(s);
-		content.removeSpan(ul);
-		content.setSpan(ul, cursor, cursor + 1, 0);
-		textExpression.setText(content);
-	}
+    //region IDroidBeatView methods
+    @Override
+    public void displayBuffer(byte[] samples, int t) {
+        s_bufferView.setSamples(samples);
+        s_bufferView.updateT(t);
+        s_bufferView.postInvalidate();
+    }
+
+    @Override
+    public void postInvalidate() {
+    }
+
+    @Override
+    public void updateT(int time) {
+    }
+
+    @Override
+    public void updateDisplayedExpression(String s, int cursor) {
+        SpannableString content = new SpannableString(s);
+        content.removeSpan(m_underlineSpan);
+        content.setSpan(m_underlineSpan, cursor, cursor + 1, 0);
+        m_textExpressionView.setText(content);
+    }
+    //endregion
+
+    //region IKeyBoardDisplayView methods
+    @Override
+    public View getInflatedKeyboard() {
+        return m_editorView;
+    }
+    //endregion
 }
