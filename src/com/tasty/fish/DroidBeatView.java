@@ -111,8 +111,8 @@ public class DroidBeatView extends Activity implements SeekBar.OnSeekBarChangeLi
 
         s_performancePresenter.addNewExpression("custom", "t");
 
-        @SuppressWarnings({ "rawtypes", "unchecked" })
-        ArrayAdapter adapter = new ArrayAdapter(this,
+        ArrayAdapter<ByteBeatExpression> adapter =
+                new ArrayAdapter<ByteBeatExpression>(this,
                 android.R.layout.simple_spinner_item,
                 s_performancePresenter.getExpressions());
 

@@ -1,121 +1,91 @@
 package com.tasty.fish.domain;
 
-import com.tasty.fish.utils.FastParse;
-
 public class ByteBeatExpression {
 
     public interface CompiledExpression {
+
         public byte evaluate(int t, double p1, double p2, double p3);
     }
 
     private enum ExpressionType {
-        dynamic, compiled
+        dynamic, compiled;
     }
-
-    private FastParse _parser;
     private double[] _args = { 0, 0, 0 };
+
     private double _timescale = 0;
     private String _expression;
-    private CompiledExpression _compiled;
+    private CompiledExpression _compiledExpression;
     private float _t = 0;
-    private String _name;
     private ExpressionType _type;
+    private String _name;
 
-    public ByteBeatExpression(String name, String expression,
-            CompiledExpression e, float timescale, float a1, float a2, float a3) {
+    public ByteBeatExpression(
+            String name,
+            String expression,
+            float timescale,
+            float a1,
+            float a2,
+            float a3)
+    {
+        this(name,expression, timescale, a1, a2, a3, null);
+    }
+
+    public ByteBeatExpression(
+            String name,
+            String expression,
+            float timescale,
+            float a1,
+            float a2,
+            float a3,
+            CompiledExpression compiledExpression)
+    {
         _name = name;
         _timescale = timescale;
         _args[0] = a1;
         _args[1] = a2;
         _args[2] = a3;
-        _compiled = e;
         _expression = expression;
-        _type = ExpressionType.compiled;
+        _compiledExpression = compiledExpression;
+        _type = _compiledExpression != null ?
+                ExpressionType.compiled :
+                ExpressionType.dynamic;
     }
 
-    public ByteBeatExpression(String name, String expression, float timescale,
-            float a1, float a2, float a3) {
-        _name = name;
-        _timescale = timescale;
-        _args[0] = a1;
-        _args[1] = a2;
-        _args[2] = a3;
-        _expression = expression;
-        _type = ExpressionType.dynamic;
-    }
-
-    public String expressionString() {
+    public String getExpression() {
         return _expression;
     }
 
-    public boolean updateExpression(String e) {
-        if (_type == ExpressionType.compiled)
-            return false;
-        FastParse parser = new FastParse();
-        parser.setT(0);
-        parser.setVariable(0, _args[0]);
-        parser.setVariable(1, _args[1]);
-        parser.setVariable(2, _args[2]);
-        if (parser.tryParse(e)) {
-            _parser = parser;
-            _expression = e.trim();
-            return true;
-        }
-        return false;
+    public void setExpression(String expression) {
+        _expression = expression;
     }
 
-    public boolean tryParse() {
-        _parser = new FastParse();
-        _parser.setT(0);
-        _parser.setVariable(0, _args[0]);
-        _parser.setVariable(1, _args[1]);
-        _parser.setVariable(2, _args[2]);
-        return _parser.tryParse(_expression);
-    }
-
-    public byte getNext() {
-        _t += _timescale;
-        switch (_type) {
-        case dynamic:
-            _parser.setT((long)_t);
-            return (byte) _parser.evaluate();
-        case compiled:
-            return (byte) (_compiled.evaluate( (int) _t, _args[0], _args[1],
-                    _args[2]));
-        }
-        return 0;
-    }
-
-    public int getTime() {
-        return (int) _t;
-    }
-
-    public void updateTimeScale(double inc) {
+    public void setTimeScale(double inc) {
         _timescale = inc;
     }
 
-    public void updateArgument(int i, double x) {
+    public void setArguement(int i, double x) {
         if (i < 3 && i >= 0) {
             _args[i] = x;
-            if (_type == ExpressionType.dynamic)
-                _parser.setVariable(i, x);
         }
-    }
-
-    public void resetTime() {
-        _t = 0;
-    }
-
-    public String toString() {
-        return _name;
     }
 
     public double getSpeed() {
         return _timescale;
     }
 
-    public double getArgs(int i) {
+    public double getArguement(int i) {
         return _args[i];
     }
 
+    public double getTimeScale() {
+        return _timescale;
+    }
+
+    public boolean compiled() {
+        return _type == ExpressionType.compiled;
+    }
+
+    public CompiledExpression getCompiled() {
+        return _compiledExpression;
+    }
 }

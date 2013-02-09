@@ -2,18 +2,13 @@ package com.tasty.fish.presenters;
 
 import com.tasty.fish.R;
 
-import com.tasty.fish.R.id;
 import com.tasty.fish.domain.ByteBeatExpression;
 import com.tasty.fish.interfaces.IKeyboardDisplayView;
 
-import android.text.SpannableString;
-import android.text.TextUtils;
-import android.text.style.UnderlineSpan;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
 import android.graphics.PorterDuff;
 
 public class KeyboardPresenter implements OnClickListener {
@@ -50,7 +45,7 @@ public class KeyboardPresenter implements OnClickListener {
 
     public void setEditableExpression(ByteBeatExpression e) {
         _e = e;
-        _text = e.expressionString() + " ";
+        _text = e.getExpression() + " ";
         _cursor = _text.length() - 1;
         _view.updateDisplayedExpression(_text, _cursor);
     }
@@ -92,6 +87,6 @@ public class KeyboardPresenter implements OnClickListener {
             }
         }
         _view.updateDisplayedExpression(_text, _cursor);
-        _e.updateExpression(_text);
+        _e.setExpression(_text);
     }
 }
