@@ -25,10 +25,10 @@ import com.tasty.fish.interfaces.IKeyboardDisplayView;
 import com.tasty.fish.presenters.DroidBeatPresenter;
 import com.tasty.fish.presenters.KeyboardPresenter;
 
-public class DroidBeatView extends Activity implements
-		SeekBar.OnSeekBarChangeListener, OnClickListener,
-		OnItemSelectedListener, IDroidBeatView, IKeyboardDisplayView {
-
+public class DroidBeatView extends Activity implements SeekBar.OnSeekBarChangeListener, 
+													   OnClickListener,
+													   OnItemSelectedListener, 
+													   IDroidBeatView, IKeyboardDisplayView {
 	private static boolean _die = true;
 	private static boolean keyboardInputOn = false;
 	private static SeekBar seekBarSpeed;
