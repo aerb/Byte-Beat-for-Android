@@ -47,7 +47,7 @@ public class DroidBeatView extends Activity implements SeekBar.OnSeekBarChangeLi
     private static Button s_resetArgsBtn;
 
     private static BufferView s_bufferView;
-    private static DroidBeatPresenter s_performancePresenter;
+    private static DroidBeatPresenter s_droidbeatPresenter;
     private static KeyboardPresenter s_editorPresenter;
 
     private UnderlineSpan m_underlineSpan = new UnderlineSpan();
@@ -59,16 +59,6 @@ public class DroidBeatView extends Activity implements SeekBar.OnSeekBarChangeLi
     private TextView m_textExpressionView;
 
     private ArrayList<IDroidBeatViewListener> _listeners;
-
-    private static String[] s_predefinedTitles = { "bleullama-fun", "harism",
-            "tangent128", "miiro", "xpansive", "tejeez" };
-    private static String[] s_predefinedExpressions = {
-            "((t % (p1 * 777)) | (p3 * t)) & ((0xFF * p2)) - t",
-            "(((p1 * t) >> 1 % (p2 * 128)) + 20) * 3 * t >> 14 * t >> (p3 * 18)",
-            "t * (((t >> 9) & (p3 * 10)) | (((p2 * t) >> 11) & 24) ^ ((t >> 10) & 15 & ((p1 * t) >> 15)))",
-            "(p1 * t) * 5 & ((p2 * t) >> 7) | (p3 * t * 3) & (t * 4 >> 10)",
-            "(((p1 * t) * ((p2 * t) >> 8 | t >> 9) & (p3 * 46) & t >> 8)) ^ (t & t >> 13 | t >> 6)",
-            "((p1 * t) * ((p2 * t) >> 5 | t >> 8)) >> ((p3 * t) >> 16)" };
 
     private double mapArgSeekBar(double arg1) {
         double x = ((float) arg1) / 100 * 2;
@@ -86,14 +76,6 @@ public class DroidBeatView extends Activity implements SeekBar.OnSeekBarChangeLi
         m_inputLayout.addView(on ? m_editorView : m_parameterView);
     }
 
-    public void updateSeekerSpeedPostion(double value) {
-        s_seekBarSpeed.setProgress((int) (value * 100));
-    }
-
-    public void updateSeekerPostion(int i, double value) {
-        s_seekBarArgs[i].setProgress((int) (value * 100 / 2));
-    }
-
     //region Activity methods
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -101,23 +83,19 @@ public class DroidBeatView extends Activity implements SeekBar.OnSeekBarChangeLi
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.main);
 
+        _listeners = new ArrayList<IDroidBeatViewListener>();
+
         LayoutInflater inflater = getLayoutInflater();
         m_editorView = inflater.inflate(R.layout.keyboard, null);
         m_parameterView = inflater.inflate(R.layout.params, null);
 
-        s_performancePresenter = new DroidBeatPresenter(this);
+        s_droidbeatPresenter = new DroidBeatPresenter(this);
         s_editorPresenter = new KeyboardPresenter(this);
-
-        for (int i = 0; i < s_predefinedExpressions.length; ++i)
-            s_performancePresenter.addNewExpression(s_predefinedTitles[i],
-                    s_predefinedExpressions[i]);
-
-        s_performancePresenter.addNewExpression("custom", "t");
 
         ArrayAdapter<ByteBeatExpression> adapter =
                 new ArrayAdapter<ByteBeatExpression>(this,
                 android.R.layout.simple_spinner_item,
-                s_performancePresenter.getExpressions());
+                s_droidbeatPresenter.getExpressions());
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
@@ -151,15 +129,15 @@ public class DroidBeatView extends Activity implements SeekBar.OnSeekBarChangeLi
         s_seekBarArgs[1].setOnSeekBarChangeListener(this);
         s_seekBarArgs[2].setOnSeekBarChangeListener(this);
 
-        s_performancePresenter.setActiveExpression(0);
+        NotifyExpressionChanged(0);
 
-        _listeners = new ArrayList<IDroidBeatViewListener>();
+
     }
     public void onPause() {
         super.onPause();
         s_dieFlag = true;
-        s_performancePresenter.stopAudioThread();
         s_stopBtn.setText("Start");
+        NotifyStopPlay();
     }
     //endregion
 
@@ -168,18 +146,18 @@ public class DroidBeatView extends Activity implements SeekBar.OnSeekBarChangeLi
     public void onProgressChanged(SeekBar arg0, int arg1, boolean arg2) {
         if (arg0 == s_seekBarSpeed) {
             double inc = mapTimeSeekBar(arg1);
-            s_performancePresenter.updateTimeScale(inc);
+            NotifyTimeScaleChanged(inc);
             s_textSpeed.setText("speed = " + inc);
         } else {
             double x = mapArgSeekBar(arg1);
             if (arg0 == s_seekBarArgs[0]) {
-                s_performancePresenter.updateArgument(0, x);
+                NotifyArguementChanged(0, x);
                 s_textArgs[0].setText(String.format("p1 = %.2f", x));
             } else if (arg0 == s_seekBarArgs[1]) {
-                s_performancePresenter.updateArgument(1, x);
+                NotifyArguementChanged(1, x);
                 s_textArgs[1].setText(String.format("p2 = %.2f", x));
             } else if (arg0 == s_seekBarArgs[2]) {
-                s_performancePresenter.updateArgument(2, x);
+                NotifyArguementChanged(2, x);
                 s_textArgs[2].setText(String.format("p3 = %.2f", x));
             }
         }
@@ -197,20 +175,19 @@ public class DroidBeatView extends Activity implements SeekBar.OnSeekBarChangeLi
     public void onClick(View arg0) {
         if (arg0 == s_stopBtn) {
             if (s_dieFlag == false) {
-                s_performancePresenter.stopAudioThread();
                 s_stopBtn.setText("Start");
                 s_dieFlag = true;
+                NotifyStopPlay();
             } else {
-                s_performancePresenter.startAudioThread();
-                s_performancePresenter.startVideoThread();
                 s_stopBtn.setText("Stop");
                 s_dieFlag = false;
+                NotifyStartPlay();
             }
             s_stopBtn.refreshDrawableState();
         } else if (arg0 == s_resetTimeBtn) {
-            s_performancePresenter.resetTime();
+            NotifyResetTime();
         } else if (arg0 == s_resetArgsBtn) {
-            s_performancePresenter.resetArgs();
+            NotifyResetArgs();
         } else if (arg0 == s_switchViewBtn) {
             s_keyboardInputOnFlag = !s_keyboardInputOnFlag;
             setEditorView(s_keyboardInputOnFlag);
@@ -229,9 +206,7 @@ public class DroidBeatView extends Activity implements SeekBar.OnSeekBarChangeLi
         ByteBeatExpression e = (ByteBeatExpression) adapter
                 .getItemAtPosition(pos);
 
-        for(IDroidBeatViewListener listener : _listeners){
-            listener.OnExpressionChanged(e.getName());
-        }
+        NotifyExpressionChanged(pos);
 
         //s_editorPresenter.setEditableExpression(e);
 
@@ -241,35 +216,78 @@ public class DroidBeatView extends Activity implements SeekBar.OnSeekBarChangeLi
     }
 
     @Override
-    public void onNothingSelected(AdapterView<?> arg0) {
+    public void onNothingSelected(AdapterView<?> arg0) {}
+    //endregion
+
+    //region Notification methods
+    private void NotifyStartPlay(){
+        for(IDroidBeatViewListener listener : _listeners){
+            listener.OnStartPlay();
+        }
+    }
+
+    private void NotifyStopPlay(){
+        for(IDroidBeatViewListener listener : _listeners){
+            listener.OnStopPlay();
+        }
+    }
+
+    private void NotifyTimeScaleChanged(double value){
+        for(IDroidBeatViewListener listener : _listeners){
+            listener.OnTimeScaleChanged(value);
+        }
+    }
+
+    private void NotifyArguementChanged(int index, double value){
+        for(IDroidBeatViewListener listener : _listeners){
+            listener.OnArgumentChanged(index, value);
+        }
+    }
+
+    private void NotifyExpressionChanged(int id){
+        for(IDroidBeatViewListener listener : _listeners){
+            listener.OnExpressionChanged(id);
+        }
+    }
+
+    private void NotifyResetArgs() {
+        for(IDroidBeatViewListener listener : _listeners){
+            listener.OnResetArgs();
+        }
+    }
+
+    private void NotifyResetTime() {
+        for(IDroidBeatViewListener listener : _listeners){
+            listener.OnResetTime();
+        }
     }
     //endregion
 
     //region IDroidBeatView methods
-    @Override
-    public void displayBuffer(byte[] samples, int t) {
+    public void setDisplayBuffer(byte[] samples, int t) {
         s_bufferView.setSamples(samples);
         s_bufferView.updateT(t);
         s_bufferView.postInvalidate();
     }
 
-    @Override
-    public void postInvalidate() {
+    public void setTime(int time) {
     }
 
-    @Override
-    public void updateT(int time) {
-    }
-
-    @Override
-    public void updateDisplayedExpression(String s, int cursor) {
+    public void setExpression(String s, int cursor) {
         SpannableString content = new SpannableString(s);
         content.removeSpan(m_underlineSpan);
         content.setSpan(m_underlineSpan, cursor, cursor + 1, 0);
         m_textExpressionView.setText(content);
     }
 
-    @Override
+    public void updateSeekerSpeedPostion(double value) {
+        s_seekBarSpeed.setProgress((int) (value * 100));
+    }
+
+    public void updateSeekerPostion(int i, double value) {
+        s_seekBarArgs[i].setProgress((int) (value * 100 / 2));
+    }
+
     public void registerIDroidBeatViewListener(IDroidBeatViewListener listener) {
         _listeners.add(listener);
     }

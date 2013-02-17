@@ -18,6 +18,7 @@ public class KeyboardPresenter implements OnClickListener {
 
     private int _cursor = 0;
 
+
     public KeyboardPresenter(IKeyboardDisplayView view) {
         _view = view;
         registerButtonListeners(_view.getInflatedKeyboard());
@@ -47,7 +48,7 @@ public class KeyboardPresenter implements OnClickListener {
         _e = e;
         _text = e.getExpression() + " ";
         _cursor = _text.length() - 1;
-        _view.updateDisplayedExpression(_text, _cursor);
+        _view.setExpression(_text, _cursor);
     }
 
     private void advanceCursor(int spaces) {
@@ -86,7 +87,7 @@ public class KeyboardPresenter implements OnClickListener {
                 break;
             }
         }
-        _view.updateDisplayedExpression(_text, _cursor);
+        _view.setExpression(_text, _cursor);
         _e.setExpression(_text);
     }
 }

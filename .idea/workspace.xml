@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gen/com/tasty/fish/BuildConfig.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Byte-Beat-for-Android.iml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/tasty/fish/domain/ExpressionEvaluator.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/tasty/fish/domain/IExpressionEvaluator.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gen/com/tasty/fish/Manifest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/tasty/fish/presenters/DroidBeatPresenter.java" afterPath="$PROJECT_DIR$/src/com/tasty/fish/presenters/DroidBeatPresenter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/tasty/fish/DroidBeatView.java" afterPath="$PROJECT_DIR$/src/com/tasty/fish/DroidBeatView.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/tasty/fish/interfaces/IDroidBeatView.java" afterPath="$PROJECT_DIR$/src/com/tasty/fish/interfaces/IDroidBeatView.java" />

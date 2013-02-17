@@ -2,6 +2,7 @@ package com.tasty.fish.presenters;
 
 import java.util.ArrayList;
 import com.tasty.fish.domain.ByteBeatExpression;
+import com.tasty.fish.domain.IExpressionEvaluator;
 import com.tasty.fish.interfaces.IDroidBeatView;
 import com.tasty.fish.utils.AndroidAudioDevice;
 import com.tasty.fish.domain.ByteBeatExpression.CompiledExpression;
@@ -12,10 +13,35 @@ public class DroidBeatPresenter implements IDroidBeatView.IDroidBeatViewListener
     private ArrayList<ByteBeatExpression> _exps = null;
     private ByteBeatExpression _exp = null;
     byte samples[] = new byte[1024];
+    private boolean _dieFlag;
 
-    public DroidBeatPresenter(IDroidBeatView view) {
+    private static String[] s_predefinedTitles = { "bleullama-fun", "harism",
+            "tangent128", "miiro", "xpansive", "tejeez" };
+    private static String[] s_predefinedExpressions = {
+            "((t % (p1 * 777)) | (p3 * t)) & ((0xFF * p2)) - t",
+            "(((p1 * t) >> 1 % (p2 * 128)) + 20) * 3 * t >> 14 * t >> (p3 * 18)",
+            "t * (((t >> 9) & (p3 * 10)) | (((p2 * t) >> 11) & 24) ^ ((t >> 10) & 15 & ((p1 * t) >> 15)))",
+            "(p1 * t) * 5 & ((p2 * t) >> 7) | (p3 * t * 3) & (t * 4 >> 10)",
+            "(((p1 * t) * ((p2 * t) >> 8 | t >> 9) & (p3 * 46) & t >> 8)) ^ (t & t >> 13 | t >> 6)",
+            "((p1 * t) * ((p2 * t) >> 5 | t >> 8)) >> ((p3 * t) >> 16)" };
+
+    private final IExpressionEvaluator _evaluator;
+
+
+    public DroidBeatPresenter(IDroidBeatView view, IExpressionEvaluator evaluator) {
         _view = view;
+        _evaluator = evaluator;
         _exps = new ArrayList<ByteBeatExpression>();
+
+        initializeExpressions();
+    }
+
+    private void initializeExpressions(){
+        for (int i = 0; i < s_predefinedExpressions.length; ++i)
+            addNewExpression(s_predefinedTitles[i],
+                    s_predefinedExpressions[i]);
+
+        addNewExpression("custom", "t");
     }
 
     private void stopAudioThread() {
@@ -57,8 +83,8 @@ public class DroidBeatPresenter implements IDroidBeatView.IDroidBeatViewListener
         new Thread(new Runnable() {
             public void run() {
                 while (true) {
-                    _view.displayBuffer(samples, _exp.getTime());
-                    _view.updateT(_exp.getTime());
+                    _view.setDisplayBuffer(samples, _exp.getTime());
+                    _view.setTime(_exp.getTime());
                     if (_die) {
                         return;
                     }
@@ -102,7 +128,7 @@ public class DroidBeatPresenter implements IDroidBeatView.IDroidBeatViewListener
     }
 
     private void resetTime() {
-        _exp.resetTime();
+        _evaluator.setTime(0);
     }
 
     private void resetArgs() {
@@ -113,24 +139,52 @@ public class DroidBeatPresenter implements IDroidBeatView.IDroidBeatViewListener
         updateView();
     }
 
-    private ArrayList<ByteBeatExpression> getExpressions() {
+    public ArrayList<ByteBeatExpression> getExpressions() {
         return _exps;
     }
 
     //region IDroidBeatViewListener methods
     @Override
-    public void OnExpressionChanged(String newExpression) {
+    public void OnExpressionChanged(int id) {
 
     }
 
     @Override
-    public void OnArgumentChanged(int index, double value) {
+    public void OnStartPlay() {
+        //To change body of implemented methods use File | Settings | File Templates.
+    }
 
+    @Override
+    public void OnStopPlay() {
+        if (_dieFlag == false) {
+            stopAudioThread();
+            _dieFlag = true;
+        } else {
+            startAudioThread();
+            startVideoThread();
+            _dieFlag = false;
+        }
+    }
+
+
+    @Override
+    public void OnArgumentChanged(int index, double value) {
+        updateArgument(index, value);
     }
 
     @Override
     public void OnTimeScaleChanged(double value) {
+        updateTimeScale(value);
+    }
 
+    @Override
+    public void OnResetArgs() {
+        resetArgs();
+    }
+
+    @Override
+    public void OnResetTime() {
+        resetTime();
     }
     //endregion
 }

@@ -4,17 +4,23 @@ public interface IDroidBeatView
 {
     public interface IDroidBeatViewListener
     {
-        void OnExpressionChanged(String name);
+        void OnStartPlay();
+        void OnStopPlay();
+
+        void OnExpressionChanged(int id);
         void OnArgumentChanged(int index, double value);
         void OnTimeScaleChanged(double value);
+
+        void OnResetArgs();
+        void OnResetTime();
     }
 
     void registerIDroidBeatViewListener(IDroidBeatViewListener listener);
 
-    void displayBuffer(byte[] samples, int t);
-    void updateT(int time);
-    void postInvalidate();
+    void setExpression(String s, int cursor);
+    void setDisplayBuffer(byte[] samples, int t);
+    void setTime(int time);
+
     public void updateSeekerSpeedPostion(double value);
     void updateSeekerPostion(int id, double speed);
-    void updateDisplayedExpression(String s, int cursor);
 }
