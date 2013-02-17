@@ -310,7 +310,7 @@ public class FastParse {
         return s;
     }
 
-    public void setT(double value) {
+    public void setTime(double value) {
         simpleMap.get(0).Value = value;
     }
 

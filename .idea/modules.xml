@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Byte-Beat-for-Android.iml" filepath="$PROJECT_DIR$/Byte-Beat-for-Android.iml" />
-      <module fileurl="file://$PROJECT_DIR$/DroidBeat.iml" filepath="$PROJECT_DIR$/DroidBeat.iml" />
     </modules>
   </component>
 </project>

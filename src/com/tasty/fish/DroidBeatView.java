@@ -18,6 +18,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.tasty.fish.domain.ByteBeatExpression;
+import com.tasty.fish.domain.ExpressionEvaluator;
 import com.tasty.fish.interfaces.IDroidBeatView;
 import com.tasty.fish.interfaces.IKeyboardDisplayView;
 import com.tasty.fish.presenters.DroidBeatPresenter;
@@ -89,7 +90,7 @@ public class DroidBeatView extends Activity implements SeekBar.OnSeekBarChangeLi
         m_editorView = inflater.inflate(R.layout.keyboard, null);
         m_parameterView = inflater.inflate(R.layout.params, null);
 
-        s_droidbeatPresenter = new DroidBeatPresenter(this);
+        s_droidbeatPresenter = new DroidBeatPresenter(this, new ExpressionEvaluator());
         s_editorPresenter = new KeyboardPresenter(this);
 
         ArrayAdapter<ByteBeatExpression> adapter =
