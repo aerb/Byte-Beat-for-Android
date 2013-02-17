@@ -1,6 +1,5 @@
 package com.tasty.fish;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.text.SpannableString;
@@ -15,7 +14,6 @@ import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.Button;
-import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.tasty.fish.domain.ByteBeatExpression;
@@ -41,7 +39,7 @@ public class DroidBeatView extends FragmentActivity implements SeekBar.OnSeekBar
     private static TextView s_textSpeed;
     private static TextView[] s_textArgs = new TextView[3];
 
-    private static Spinner s_spinner;
+    private static Button s_loadBtn;
 
     private static Button s_switchViewBtn;
     private static Button s_stopBtn;
@@ -112,17 +110,17 @@ public class DroidBeatView extends FragmentActivity implements SeekBar.OnSeekBar
         s_seekBarArgs[0] = (SeekBar) m_parameterView.findViewById(R.id.seekBarArg1);
         s_seekBarArgs[1] = (SeekBar) m_parameterView.findViewById(R.id.seekBarArg2);
         s_seekBarArgs[2] = (SeekBar) m_parameterView.findViewById(R.id.seekBarArg3);
-        s_spinner = (Spinner) findViewById(R.id.loadView);
+        s_loadBtn = (Button) findViewById(R.id.loadView);
         s_resetArgsBtn = (Button) m_parameterView.findViewById(R.id.buttonResetArgs);
         s_resetTimeBtn = (Button) m_parameterView.findViewById(R.id.buttonResetTime);
         s_stopBtn = (Button) findViewById(R.id.buttonStop);
         s_bufferView = (BufferView) findViewById(R.id.bufferView);
 
-        s_spinner.setAdapter(adapter);
+
         //m_inputLayout.addView(m_parameterView);
 
         s_switchViewBtn.setOnClickListener(this);
-        s_spinner.setOnItemSelectedListener(this);
+        s_loadBtn.setOnClickListener(this);
         s_stopBtn.setOnClickListener(this);
         s_resetTimeBtn.setOnClickListener(this);
         s_resetArgsBtn.setOnClickListener(this);
@@ -132,11 +130,6 @@ public class DroidBeatView extends FragmentActivity implements SeekBar.OnSeekBar
         s_seekBarArgs[2].setOnSeekBarChangeListener(this);
 
         NotifyExpressionChanged(0);
-
-        getSupportFragmentManager()
-            .beginTransaction()
-            .add(R.id.viewFrame, new ExpressionSelectionView())
-            .commit();
     }
     public void onPause() {
         super.onPause();
@@ -196,9 +189,12 @@ public class DroidBeatView extends FragmentActivity implements SeekBar.OnSeekBar
         } else if (arg0 == s_switchViewBtn) {
             s_keyboardInputOnFlag = !s_keyboardInputOnFlag;
             setEditorView(s_keyboardInputOnFlag);
-            if (s_keyboardInputOnFlag) {
-                s_spinner.setSelection(s_spinner.getCount() - 1);
-            }
+        } else if(arg0 == s_loadBtn){
+
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.viewFrame, new ExpressionSelectionView())
+                    .commit();
         }
     }
     //endregion
@@ -214,10 +210,6 @@ public class DroidBeatView extends FragmentActivity implements SeekBar.OnSeekBar
         NotifyExpressionChanged(pos);
 
         //s_editorPresenter.setEditableExpression(e);
-
-        if (pos < s_spinner.getCount() - 1)
-            setEditorView(false);
-
     }
 
     @Override

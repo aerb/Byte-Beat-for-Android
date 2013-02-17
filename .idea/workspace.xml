@@ -25,27 +25,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/tasty/fish/DroidBeatApplication.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/tasty/fish/ExpressionSelectionAdapter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/tasty/fish/ExpressionSelectionPresenter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/tasty/fish/ExpressionSelectionView.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/tasty/fish/ExpressionsRepository.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/tasty/fish/IExpressionSelectionView.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/tasty/fish/IExpressionsRepository.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/expression_selector.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/expression_selector_row.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Byte-Beat-for-Android.iml" afterPath="$PROJECT_DIR$/Byte-Beat-for-Android.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/tasty/fish/presenters/DroidBeatPresenter.java" afterPath="$PROJECT_DIR$/src/com/tasty/fish/presenters/DroidBeatPresenter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/tasty/fish/DroidBeatView.java" afterPath="$PROJECT_DIR$/src/com/tasty/fish/DroidBeatView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/main.xml" afterPath="$PROJECT_DIR$/res/layout/main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Byte-Beat-for-Android.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1361107334751" ignored="false" />
     <file path="/IDroidBeatView.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1361056371297" ignored="false" />
-    <file path="/DroidBeatView.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1361114876864" ignored="false" />
+    <file path="/DroidBeatView.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1361115767160" ignored="false" />
     <file path="/DroidBeatPresenter.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1361105323392" ignored="false" />
     <file path="/KeyboardPresenter.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1361054365387" ignored="false" />
     <file path="/fragment.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1361112965573" ignored="false" />
@@ -151,7 +137,7 @@
       <file leaf-file-name="main.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="45" selection-start="821" selection-end="821" vertical-scroll-proportion="-4.76">
+            <state line="23" column="45" selection-start="821" selection-end="821" vertical-scroll-proportion="-7.82">
               <folding />
             </state>
           </provider>
@@ -175,18 +161,13 @@
       <file leaf-file-name="DroidBeatView.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/DroidBeatView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="120" column="102" selection-start="4970" selection-end="4970" vertical-scroll-proportion="0.46330777">
+            <state line="93" column="45" selection-start="3324" selection-end="3324" vertical-scroll-proportion="0.43678162">
               <folding>
                 <element signature="method#mapArgSeekBar#0;class#DroidBeatView#0" expanded="false" />
                 <element signature="method#mapTimeSeekBar#0;class#DroidBeatView#0" expanded="false" />
                 <element signature="method#setEditorView#0;class#DroidBeatView#0" expanded="false" />
                 <element signature="method#onPause#0;class#DroidBeatView#0" expanded="false" />
-                <element signature="n#!!doc;n#onProgressChanged#0;n#DroidBeatView#0" expanded="false" />
                 <element signature="method#onProgressChanged#0;class#DroidBeatView#0" expanded="false" />
-                <element signature="n#!!doc;n#onClick#0;n#DroidBeatView#0" expanded="false" />
-                <element signature="method#onClick#0;class#DroidBeatView#0" expanded="false" />
-                <element signature="n#!!doc;n#onItemSelected#0;n#DroidBeatView#0" expanded="false" />
-                <element signature="method#onItemSelected#0;class#DroidBeatView#0" expanded="false" />
                 <element signature="n#!!doc;n#NotifyStartPlay#0;n#DroidBeatView#0" expanded="false" />
                 <element signature="method#NotifyStartPlay#0;class#DroidBeatView#0" expanded="false" />
                 <element signature="method#NotifyStopPlay#0;class#DroidBeatView#0" expanded="false" />
@@ -195,6 +176,7 @@
                 <element signature="method#NotifyExpressionChanged#0;class#DroidBeatView#0" expanded="false" />
                 <element signature="method#NotifyResetArgs#0;class#DroidBeatView#0" expanded="false" />
                 <element signature="method#NotifyResetTime#0;class#DroidBeatView#0" expanded="false" />
+                <element signature="n#!!doc;n#setDisplayBuffer#0;n#DroidBeatView#0" expanded="false" />
                 <element signature="method#setDisplayBuffer#0;class#DroidBeatView#0" expanded="false" />
                 <element signature="method#setTime#0;class#DroidBeatView#0" expanded="false" />
                 <element signature="method#updateSeekerSpeedPostion#0;class#DroidBeatView#0" expanded="false" />
@@ -245,10 +227,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1824" />
-    <option name="height" value="1096" />
+    <option name="x" value="340" />
+    <option name="y" value="22" />
+    <option name="width" value="930" />
+    <option name="height" value="774" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -600,8 +582,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1824" height="1096" extended-state="6" />
-    <editor active="true" />
+    <frame x="340" y="22" width="930" height="774" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32973894" sideWeight="0.6709265" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32973894" sideWeight="0.6709265" order="-1" side_tool="false" content_ui="tabs" />
@@ -622,7 +604,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21793416" sideWeight="0.6709265" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290735" sideWeight="0.4954597" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5008104" sideWeight="0.4954597" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -824,7 +806,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="45" selection-start="821" selection-end="821" vertical-scroll-proportion="-4.76">
+        <state line="23" column="45" selection-start="821" selection-end="821" vertical-scroll-proportion="-7.82">
           <folding />
         </state>
       </provider>
@@ -834,18 +816,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/DroidBeatView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="120" column="102" selection-start="4970" selection-end="4970" vertical-scroll-proportion="0.46330777">
+        <state line="93" column="45" selection-start="3324" selection-end="3324" vertical-scroll-proportion="0.43678162">
           <folding>
             <element signature="method#mapArgSeekBar#0;class#DroidBeatView#0" expanded="false" />
             <element signature="method#mapTimeSeekBar#0;class#DroidBeatView#0" expanded="false" />
             <element signature="method#setEditorView#0;class#DroidBeatView#0" expanded="false" />
             <element signature="method#onPause#0;class#DroidBeatView#0" expanded="false" />
-            <element signature="n#!!doc;n#onProgressChanged#0;n#DroidBeatView#0" expanded="false" />
             <element signature="method#onProgressChanged#0;class#DroidBeatView#0" expanded="false" />
-            <element signature="n#!!doc;n#onClick#0;n#DroidBeatView#0" expanded="false" />
-            <element signature="method#onClick#0;class#DroidBeatView#0" expanded="false" />
-            <element signature="n#!!doc;n#onItemSelected#0;n#DroidBeatView#0" expanded="false" />
-            <element signature="method#onItemSelected#0;class#DroidBeatView#0" expanded="false" />
             <element signature="n#!!doc;n#NotifyStartPlay#0;n#DroidBeatView#0" expanded="false" />
             <element signature="method#NotifyStartPlay#0;class#DroidBeatView#0" expanded="false" />
             <element signature="method#NotifyStopPlay#0;class#DroidBeatView#0" expanded="false" />
@@ -854,6 +831,7 @@
             <element signature="method#NotifyExpressionChanged#0;class#DroidBeatView#0" expanded="false" />
             <element signature="method#NotifyResetArgs#0;class#DroidBeatView#0" expanded="false" />
             <element signature="method#NotifyResetTime#0;class#DroidBeatView#0" expanded="false" />
+            <element signature="n#!!doc;n#setDisplayBuffer#0;n#DroidBeatView#0" expanded="false" />
             <element signature="method#setDisplayBuffer#0;class#DroidBeatView#0" expanded="false" />
             <element signature="method#setTime#0;class#DroidBeatView#0" expanded="false" />
             <element signature="method#updateSeekerSpeedPostion#0;class#DroidBeatView#0" expanded="false" />
