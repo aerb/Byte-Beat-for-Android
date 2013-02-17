@@ -8,8 +8,8 @@
 
     <application
         android:icon="@drawable/bb"
-        android:label="@string/app_name" android:enabled="true" 
-        >
+        android:label="@string/app_name" android:enabled="true"
+        android:name=".DroidBeatApplication">
         
         <activity
             android:name=".DroidBeatView"

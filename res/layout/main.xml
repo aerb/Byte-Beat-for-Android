@@ -18,7 +18,7 @@
         android:layout_weight="0.69" />
 
     <LinearLayout
-        android:id="@+id/linearLayout3"
+        android:id="@+id/viewFrame"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical" >
@@ -35,11 +35,12 @@
             android:layout_height="wrap_content"
             android:text="Start" />
 
-        <Spinner
-            android:id="@+id/spinnerPredefined"
+        <Button
+            android:id="@+id/loadView"
             android:layout_width="0dip"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:text="Load"/>
 
         <Button
             android:id="@+id/buttonSwitchInput"
@@ -48,5 +49,4 @@
             android:text="Keyboard" />
 
     </LinearLayout>
-
 </LinearLayout>

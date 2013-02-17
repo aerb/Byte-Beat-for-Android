@@ -2,6 +2,7 @@ package com.tasty.fish;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.text.SpannableString;
 import android.text.style.UnderlineSpan;
 import android.view.LayoutInflater;
@@ -26,7 +27,7 @@ import com.tasty.fish.presenters.KeyboardPresenter;
 
 import java.util.ArrayList;
 
-public class DroidBeatView extends Activity implements SeekBar.OnSeekBarChangeListener, 
+public class DroidBeatView extends FragmentActivity implements SeekBar.OnSeekBarChangeListener,
                                                        OnClickListener,
                                                        OnItemSelectedListener,
                                                        IDroidBeatView,
@@ -101,7 +102,7 @@ public class DroidBeatView extends Activity implements SeekBar.OnSeekBarChangeLi
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         m_textExpressionView = (TextView) findViewById(R.id.textExpression);
-        m_inputLayout = (LinearLayout) findViewById(R.id.linearLayout3);
+        m_inputLayout = (LinearLayout) findViewById(R.id.viewFrame);
         s_switchViewBtn = (Button) findViewById(R.id.buttonSwitchInput);
         s_textSpeed = (TextView) m_parameterView.findViewById(R.id.textSpeed);
         s_textArgs[0] = (TextView) m_parameterView.findViewById(R.id.textArg1);
@@ -111,14 +112,14 @@ public class DroidBeatView extends Activity implements SeekBar.OnSeekBarChangeLi
         s_seekBarArgs[0] = (SeekBar) m_parameterView.findViewById(R.id.seekBarArg1);
         s_seekBarArgs[1] = (SeekBar) m_parameterView.findViewById(R.id.seekBarArg2);
         s_seekBarArgs[2] = (SeekBar) m_parameterView.findViewById(R.id.seekBarArg3);
-        s_spinner = (Spinner) findViewById(R.id.spinnerPredefined);
+        s_spinner = (Spinner) findViewById(R.id.loadView);
         s_resetArgsBtn = (Button) m_parameterView.findViewById(R.id.buttonResetArgs);
         s_resetTimeBtn = (Button) m_parameterView.findViewById(R.id.buttonResetTime);
         s_stopBtn = (Button) findViewById(R.id.buttonStop);
         s_bufferView = (BufferView) findViewById(R.id.bufferView);
 
         s_spinner.setAdapter(adapter);
-        m_inputLayout.addView(m_parameterView);
+        //m_inputLayout.addView(m_parameterView);
 
         s_switchViewBtn.setOnClickListener(this);
         s_spinner.setOnItemSelectedListener(this);
@@ -132,7 +133,10 @@ public class DroidBeatView extends Activity implements SeekBar.OnSeekBarChangeLi
 
         NotifyExpressionChanged(0);
 
-
+        getSupportFragmentManager()
+            .beginTransaction()
+            .add(R.id.viewFrame, new ExpressionSelectionView())
+            .commit();
     }
     public void onPause() {
         super.onPause();
