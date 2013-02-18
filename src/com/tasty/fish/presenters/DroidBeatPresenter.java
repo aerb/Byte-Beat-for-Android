@@ -1,12 +1,14 @@
 package com.tasty.fish.presenters;
 
 import java.util.ArrayList;
+
+import com.tasty.fish.IParameterView;
 import com.tasty.fish.domain.ByteBeatExpression;
 import com.tasty.fish.domain.IExpressionEvaluator;
 import com.tasty.fish.interfaces.IDroidBeatView;
 import com.tasty.fish.utils.AndroidAudioDevice;
 
-public class DroidBeatPresenter implements IDroidBeatView.IDroidBeatViewListener{
+public class DroidBeatPresenter implements IDroidBeatView.IDroidBeatViewListener, IParameterView.IParameterViewListener {
     private IDroidBeatView _view;
     private boolean _die;
 
@@ -16,9 +18,8 @@ public class DroidBeatPresenter implements IDroidBeatView.IDroidBeatViewListener
     byte samples[] = new byte[1024];
     private boolean _dieFlag;
 
-
-
     private final IExpressionEvaluator _evaluator;
+    private IParameterView _paramView;
 
     public DroidBeatPresenter(IDroidBeatView view, IExpressionEvaluator evaluator) {
         _view = view;
@@ -26,15 +27,22 @@ public class DroidBeatPresenter implements IDroidBeatView.IDroidBeatViewListener
         _expressions = new ArrayList<ByteBeatExpression>();
     }
 
+    public void setParameterView(IParameterView view){
+        _paramView = view;
+        _paramView.registerIDroidBeatViewListener(this);
+    }
+
     private void stopAudioThread() {
         _die = true;
     }
 
     private void updateView() {
-        _view.updateSeekerSpeedPostion(_activeExpression.getSpeed());
-        _view.updateSeekerPostion(0, _activeExpression.getArguement(0));
-        _view.updateSeekerPostion(1, _activeExpression.getArguement(1));
-        _view.updateSeekerPostion(2, _activeExpression.getArguement(2));
+        if(_paramView == null) return;
+
+        _paramView.updateSeekerSpeedPostion(_activeExpression.getSpeed());
+        _paramView.updateSeekerPostion(0, _activeExpression.getArguement(0));
+        _paramView.updateSeekerPostion(1, _activeExpression.getArguement(1));
+        _paramView.updateSeekerPostion(2, _activeExpression.getArguement(2));
     }
 
     private void setActiveExpression(int id) {

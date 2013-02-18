@@ -25,14 +25,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/tasty/fish/EditorView.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/tasty/fish/IParameterView.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/tasty/fish/ParametersView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/tasty/fish/presenters/DroidBeatPresenter.java" afterPath="$PROJECT_DIR$/src/com/tasty/fish/presenters/DroidBeatPresenter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/tasty/fish/DroidBeatView.java" afterPath="$PROJECT_DIR$/src/com/tasty/fish/DroidBeatView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/tasty/fish/interfaces/IDroidBeatView.java" afterPath="$PROJECT_DIR$/src/com/tasty/fish/interfaces/IDroidBeatView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/tasty/fish/interfaces/IKeyboardDisplayView.java" afterPath="$PROJECT_DIR$/src/com/tasty/fish/interfaces/IKeyboardDisplayView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/tasty/fish/presenters/KeyboardPresenter.java" afterPath="$PROJECT_DIR$/src/com/tasty/fish/presenters/KeyboardPresenter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Byte-Beat-for-Android.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1361107334751" ignored="false" />
+    <file path="/Dummy.txt" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1361207440901" ignored="false" />
     <file path="/IDroidBeatView.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1361056371297" ignored="false" />
     <file path="/DroidBeatView.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1361115767160" ignored="false" />
-    <file path="/DroidBeatPresenter.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1361105323392" ignored="false" />
+    <file path="/DroidBeatPresenter.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1361210204741" ignored="false" />
     <file path="/KeyboardPresenter.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1361054365387" ignored="false" />
     <file path="/fragment.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1361112965573" ignored="false" />
     <file path="/IExpressionEvaluator.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1361104584945" ignored="false" />
@@ -45,6 +53,9 @@
     <file path="/ExpressionSelectionPresenter.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1361112442228" ignored="false" />
     <file path="/DroidBeatApplication.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1361112377670" ignored="false" />
     <file path="/ExpressionsRepository.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1361112923794" ignored="false" />
+    <file path="/ParametersView.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1361208687057" ignored="false" />
+    <file path="/IParameterView.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1361208599852" ignored="false" />
+    <file path="/EditorView.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1361209081143" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +70,6 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -94,6 +104,7 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -103,13 +114,106 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ExpressionSelectionAdapter.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/ExpressionSelectionAdapter.java">
+      <file leaf-file-name="DroidBeatView.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/DroidBeatView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="0" selection-start="1036" selection-end="1036" vertical-scroll-proportion="0.0">
+            <state line="78" column="50" selection-start="2742" selection-end="2742" vertical-scroll-proportion="0.56845564">
+              <folding>
+                <element signature="method#onPause#0;class#DroidBeatView#0" expanded="false" />
+                <element signature="n#!!doc;n#onClick#0;n#DroidBeatView#0" expanded="false" />
+                <element signature="method#onClick#0;class#DroidBeatView#0" expanded="false" />
+                <element signature="n#!!doc;n#onItemSelected#0;n#DroidBeatView#0" expanded="false" />
+                <element signature="method#onItemSelected#0;class#DroidBeatView#0" expanded="false" />
+                <element signature="method#NotifyStartPlay#0;class#DroidBeatView#0" expanded="false" />
+                <element signature="method#NotifyStopPlay#0;class#DroidBeatView#0" expanded="false" />
+                <element signature="method#NotifyExpressionChanged#0;class#DroidBeatView#0" expanded="false" />
+                <element signature="method#setDisplayBuffer#0;class#DroidBeatView#0" expanded="false" />
+                <element signature="method#setTime#0;class#DroidBeatView#0" expanded="false" />
+                <element signature="method#registerIDroidBeatViewListener#0;class#DroidBeatView#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DroidBeatPresenter.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/presenters/DroidBeatPresenter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="26" column="55" selection-start="958" selection-end="958" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="method#stopAudioThread#0;class#DroidBeatPresenter#0" expanded="false" />
+                <element signature="method#setActiveExpression#0;class#DroidBeatPresenter#0" expanded="false" />
+                <element signature="method#startVideoThread#0;class#DroidBeatPresenter#0" expanded="false" />
+                <element signature="method#startAudioThread#0;class#DroidBeatPresenter#0" expanded="false" />
+                <element signature="method#updateTimeScale#0;class#DroidBeatPresenter#0" expanded="false" />
+                <element signature="method#updateArgument#0;class#DroidBeatPresenter#0" expanded="false" />
+                <element signature="method#resetTime#0;class#DroidBeatPresenter#0" expanded="false" />
+                <element signature="method#resetArgs#0;class#DroidBeatPresenter#0" expanded="false" />
+                <element signature="method#getExpressions#0;class#DroidBeatPresenter#0" expanded="false" />
+                <element signature="n#!!doc;n#OnExpressionChanged#0;n#DroidBeatPresenter#0" expanded="false" />
+                <element signature="method#OnExpressionChanged#0;class#DroidBeatPresenter#0" expanded="false" />
+                <element signature="method#OnStartPlay#0;class#DroidBeatPresenter#0" expanded="false" />
+                <element signature="method#OnStopPlay#0;class#DroidBeatPresenter#0" expanded="false" />
+                <element signature="method#OnArgumentChanged#0;class#DroidBeatPresenter#0" expanded="false" />
+                <element signature="method#OnTimeScaleChanged#0;class#DroidBeatPresenter#0" expanded="false" />
+                <element signature="method#OnResetArgs#0;class#DroidBeatPresenter#0" expanded="false" />
+                <element signature="method#OnResetTime#0;class#DroidBeatPresenter#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EditorView.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/EditorView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="27" column="0" selection-start="959" selection-end="959" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="KeyboardPresenter.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/presenters/KeyboardPresenter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="30" selection-start="437" selection-end="437" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ParametersView.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/ParametersView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="90" column="59" selection-start="3527" selection-end="3527" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="method#onCreate#0;class#ParametersView#0" expanded="false" />
+                <element signature="method#onClick#0;class#ParametersView#0" expanded="false" />
+                <element signature="method#mapArgSeekBar#0;class#ParametersView#0" expanded="false" />
+                <element signature="method#mapTimeSeekBar#0;class#ParametersView#0" expanded="false" />
+                <element signature="n#!!doc;n#onProgressChanged#0;n#ParametersView#0" expanded="false" />
+                <element signature="method#onProgressChanged#0;class#ParametersView#0" expanded="false" />
+                <element signature="method#updateSeekerSpeedPostion#0;class#ParametersView#0" expanded="false" />
+                <element signature="method#updateSeekerPostion#0;class#ParametersView#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IDroidBeatView.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/interfaces/IDroidBeatView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="47" selection-start="380" selection-end="380" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IParameterView.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/IParameterView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="28" selection-start="269" selection-end="269" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -117,74 +221,8 @@
       <file leaf-file-name="ExpressionSelectionView.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/ExpressionSelectionView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="33" selection-start="660" selection-end="660" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ExpressionSelectionPresenter.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/ExpressionSelectionPresenter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="86" selection-start="480" selection-end="480" vertical-scroll-proportion="0.0">
+            <state line="25" column="33" selection-start="908" selection-end="908" vertical-scroll-proportion="0.0">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="45" selection-start="821" selection-end="821" vertical-scroll-proportion="-7.82">
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="params.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/layout/params.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="76" selection-start="412" selection-end="412" vertical-scroll-proportion="-4.08">
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DroidBeatView.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/DroidBeatView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="93" column="45" selection-start="3324" selection-end="3324" vertical-scroll-proportion="0.43678162">
-              <folding>
-                <element signature="method#mapArgSeekBar#0;class#DroidBeatView#0" expanded="false" />
-                <element signature="method#mapTimeSeekBar#0;class#DroidBeatView#0" expanded="false" />
-                <element signature="method#setEditorView#0;class#DroidBeatView#0" expanded="false" />
-                <element signature="method#onPause#0;class#DroidBeatView#0" expanded="false" />
-                <element signature="method#onProgressChanged#0;class#DroidBeatView#0" expanded="false" />
-                <element signature="n#!!doc;n#NotifyStartPlay#0;n#DroidBeatView#0" expanded="false" />
-                <element signature="method#NotifyStartPlay#0;class#DroidBeatView#0" expanded="false" />
-                <element signature="method#NotifyStopPlay#0;class#DroidBeatView#0" expanded="false" />
-                <element signature="method#NotifyTimeScaleChanged#0;class#DroidBeatView#0" expanded="false" />
-                <element signature="method#NotifyArguementChanged#0;class#DroidBeatView#0" expanded="false" />
-                <element signature="method#NotifyExpressionChanged#0;class#DroidBeatView#0" expanded="false" />
-                <element signature="method#NotifyResetArgs#0;class#DroidBeatView#0" expanded="false" />
-                <element signature="method#NotifyResetTime#0;class#DroidBeatView#0" expanded="false" />
-                <element signature="n#!!doc;n#setDisplayBuffer#0;n#DroidBeatView#0" expanded="false" />
-                <element signature="method#setDisplayBuffer#0;class#DroidBeatView#0" expanded="false" />
-                <element signature="method#setTime#0;class#DroidBeatView#0" expanded="false" />
-                <element signature="method#updateSeekerSpeedPostion#0;class#DroidBeatView#0" expanded="false" />
-                <element signature="method#updateSeekerPostion#0;class#DroidBeatView#0" expanded="false" />
-                <element signature="method#registerIDroidBeatViewListener#0;class#DroidBeatView#0" expanded="false" />
-                <element signature="n#!!doc;n#getInflatedKeyboard#0;n#DroidBeatView#0" expanded="false" />
-                <element signature="method#getInflatedKeyboard#0;class#DroidBeatView#0" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -207,30 +245,30 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/tasty/fish/interfaces/IDroidBeatView.java" />
-        <option value="$PROJECT_DIR$/src/com/tasty/fish/domain/ExpressionEvaluator.java" />
-        <option value="$PROJECT_DIR$/src/com/tasty/fish/domain/IExpressionEvaluator.java" />
-        <option value="$PROJECT_DIR$/res/layout/expression_selector.xml" />
-        <option value="$PROJECT_DIR$/res/layout/expression_selector_row.xml" />
-        <option value="$PROJECT_DIR$/gen/com/tasty/fish/ExpressionSelectionAdapter.java" />
         <option value="$PROJECT_DIR$/src/com/tasty/fish/IExpressionSelectionView.java" />
         <option value="$PROJECT_DIR$/src/com/tasty/fish/DroidBeatApplication.java" />
         <option value="$PROJECT_DIR$/gen/com/tasty/fish/ExpressionSelectionPresenter.java" />
         <option value="$PROJECT_DIR$/gen/com/tasty/fish/IExpressionsRepository.java" />
         <option value="$PROJECT_DIR$/src/com/tasty/fish/ExpressionSelectionAdapter.java" />
         <option value="$PROJECT_DIR$/gen/com/tasty/fish/ExpressionsRepository.java" />
-        <option value="$PROJECT_DIR$/src/com/tasty/fish/presenters/DroidBeatPresenter.java" />
         <option value="$PROJECT_DIR$/src/com/tasty/fish/ExpressionSelectionView.java" />
         <option value="$PROJECT_DIR$/res/layout/main.xml" />
+        <option value="$PROJECT_DIR$/src/com/tasty/fish/IParameterView.java" />
+        <option value="$PROJECT_DIR$/src/com/tasty/fish/ParametersView.java" />
+        <option value="$PROJECT_DIR$/src/com/tasty/fish/interfaces/IKeyboardDisplayView.java" />
+        <option value="$PROJECT_DIR$/src/com/tasty/fish/presenters/KeyboardPresenter.java" />
+        <option value="$PROJECT_DIR$/src/com/tasty/fish/EditorView.java" />
+        <option value="$PROJECT_DIR$/src/com/tasty/fish/interfaces/IDroidBeatView.java" />
+        <option value="$PROJECT_DIR$/src/com/tasty/fish/presenters/DroidBeatPresenter.java" />
         <option value="$PROJECT_DIR$/src/com/tasty/fish/DroidBeatView.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="340" />
-    <option name="y" value="22" />
-    <option name="width" value="930" />
-    <option name="height" value="774" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1824" />
+    <option name="height" value="1096" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -286,6 +324,9 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="All" />
+      </pane>
       <pane id="PackagesPane">
         <subPane />
       </pane>
@@ -373,9 +414,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope">
-        <subPane subId="All" />
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -396,8 +434,8 @@
     <property name="restartRequiresConfirmation" value="true" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -440,6 +478,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -465,19 +516,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -582,16 +620,13 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="340" y="22" width="930" height="774" extended-state="0" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1824" height="1096" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32973894" sideWeight="0.6709265" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32973894" sideWeight="0.6709265" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32973894" sideWeight="0.67199147" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32973894" sideWeight="0.67199147" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32800853" sideWeight="0.41089672" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32800853" sideWeight="0.5851305" order="7" side_tool="true" content_ui="tabs" />
@@ -603,11 +638,14 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21793416" sideWeight="0.6709265" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21793416" sideWeight="0.6709265" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24971624" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5008104" sideWeight="0.4954597" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32973894" sideWeight="0.6709265" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32973894" sideWeight="0.6709265" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32800853" sideWeight="0.41089672" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -671,77 +709,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/android-sdk-win/platforms/android-7/android.jar!/android/view/LayoutInflater.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="29" selection-start="1070" selection-end="1070" vertical-scroll-proportion="0.45333335">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/expression_selector_row.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="29" selection-start="435" selection-end="460" vertical-scroll-proportion="-3.74">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gen/com/tasty/fish/Manifest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="1" selection-start="152" selection-end="152" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/android-sdk-win/platforms/android-7/android.jar!/android/app/Activity.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="302" column="0" selection-start="13886" selection-end="13886" vertical-scroll-proportion="0.76443416">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="19" selection-start="895" selection-end="895" vertical-scroll-proportion="0.8766816">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/DroidBeatApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="60" selection-start="610" selection-end="610" vertical-scroll-proportion="0.39101863">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/presenters/DroidBeatPresenter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="59" selection-start="846" selection-end="846" vertical-scroll-proportion="0.39101863">
-          <folding>
-            <element signature="method#stopAudioThread#0;class#DroidBeatPresenter#0" expanded="false" />
-            <element signature="method#updateView#0;class#DroidBeatPresenter#0" expanded="false" />
-            <element signature="method#setActiveExpression#0;class#DroidBeatPresenter#0" expanded="false" />
-            <element signature="method#startVideoThread#0;class#DroidBeatPresenter#0" expanded="false" />
-            <element signature="method#startAudioThread#0;class#DroidBeatPresenter#0" expanded="false" />
-            <element signature="method#updateTimeScale#0;class#DroidBeatPresenter#0" expanded="false" />
-            <element signature="method#updateArgument#0;class#DroidBeatPresenter#0" expanded="false" />
-            <element signature="method#resetTime#0;class#DroidBeatPresenter#0" expanded="false" />
-            <element signature="method#resetArgs#0;class#DroidBeatPresenter#0" expanded="false" />
-            <element signature="method#getExpressions#0;class#DroidBeatPresenter#0" expanded="false" />
-            <element signature="n#!!doc;n#OnExpressionChanged#0;n#DroidBeatPresenter#0" expanded="false" />
-            <element signature="method#OnExpressionChanged#0;class#DroidBeatPresenter#0" expanded="false" />
-            <element signature="method#OnStartPlay#0;class#DroidBeatPresenter#0" expanded="false" />
-            <element signature="method#OnStopPlay#0;class#DroidBeatPresenter#0" expanded="false" />
-            <element signature="method#OnArgumentChanged#0;class#DroidBeatPresenter#0" expanded="false" />
-            <element signature="method#OnTimeScaleChanged#0;class#DroidBeatPresenter#0" expanded="false" />
-            <element signature="method#OnResetArgs#0;class#DroidBeatPresenter#0" expanded="false" />
-            <element signature="method#OnResetTime#0;class#DroidBeatPresenter#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/ExpressionsRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="32" selection-start="197" selection-end="197" vertical-scroll-proportion="0.14895947">
@@ -770,75 +737,139 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/params.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="76" selection-start="412" selection-end="412" vertical-scroll-proportion="-4.08">
-          <folding />
-        </state>
-      </provider>
       <provider editor-type-id="android-designer">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/ExpressionSelectionAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="0" selection-start="1036" selection-end="1036" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="12" column="76" selection-start="412" selection-end="412" vertical-scroll-proportion="0.019653179">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="45" selection-start="821" selection-end="821" vertical-scroll-proportion="0.3317919">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/ExpressionSelectionPresenter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="86" selection-start="480" selection-end="480" vertical-scroll-proportion="0.0">
+        <state line="15" column="86" selection-start="480" selection-end="480" vertical-scroll-proportion="0.27868852">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/ExpressionSelectionAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="0" selection-start="1036" selection-end="1036" vertical-scroll-proportion="0.12677595">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/ExpressionSelectionView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="33" selection-start="660" selection-end="660" vertical-scroll-proportion="0.0">
+        <state line="25" column="33" selection-start="908" selection-end="908" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/IParameterView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="28" selection-start="269" selection-end="269" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/ParametersView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="90" column="59" selection-start="3527" selection-end="3527" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="method#onCreate#0;class#ParametersView#0" expanded="false" />
+            <element signature="method#onClick#0;class#ParametersView#0" expanded="false" />
+            <element signature="method#mapArgSeekBar#0;class#ParametersView#0" expanded="false" />
+            <element signature="method#mapTimeSeekBar#0;class#ParametersView#0" expanded="false" />
+            <element signature="n#!!doc;n#onProgressChanged#0;n#ParametersView#0" expanded="false" />
+            <element signature="method#onProgressChanged#0;class#ParametersView#0" expanded="false" />
+            <element signature="method#updateSeekerSpeedPostion#0;class#ParametersView#0" expanded="false" />
+            <element signature="method#updateSeekerPostion#0;class#ParametersView#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/presenters/KeyboardPresenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="30" selection-start="437" selection-end="437" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/EditorView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="0" selection-start="959" selection-end="959" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/interfaces/IDroidBeatView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="45" selection-start="821" selection-end="821" vertical-scroll-proportion="-7.82">
+        <state line="17" column="47" selection-start="380" selection-end="380" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="android-designer">
-        <state />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/interfaces/IKeyboardDisplayView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="17" selection-start="120" selection-end="120" vertical-scroll-proportion="0.1457976">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/presenters/DroidBeatPresenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="55" selection-start="958" selection-end="958" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="method#stopAudioThread#0;class#DroidBeatPresenter#0" expanded="false" />
+            <element signature="method#setActiveExpression#0;class#DroidBeatPresenter#0" expanded="false" />
+            <element signature="method#startVideoThread#0;class#DroidBeatPresenter#0" expanded="false" />
+            <element signature="method#startAudioThread#0;class#DroidBeatPresenter#0" expanded="false" />
+            <element signature="method#updateTimeScale#0;class#DroidBeatPresenter#0" expanded="false" />
+            <element signature="method#updateArgument#0;class#DroidBeatPresenter#0" expanded="false" />
+            <element signature="method#resetTime#0;class#DroidBeatPresenter#0" expanded="false" />
+            <element signature="method#resetArgs#0;class#DroidBeatPresenter#0" expanded="false" />
+            <element signature="method#getExpressions#0;class#DroidBeatPresenter#0" expanded="false" />
+            <element signature="n#!!doc;n#OnExpressionChanged#0;n#DroidBeatPresenter#0" expanded="false" />
+            <element signature="method#OnExpressionChanged#0;class#DroidBeatPresenter#0" expanded="false" />
+            <element signature="method#OnStartPlay#0;class#DroidBeatPresenter#0" expanded="false" />
+            <element signature="method#OnStopPlay#0;class#DroidBeatPresenter#0" expanded="false" />
+            <element signature="method#OnArgumentChanged#0;class#DroidBeatPresenter#0" expanded="false" />
+            <element signature="method#OnTimeScaleChanged#0;class#DroidBeatPresenter#0" expanded="false" />
+            <element signature="method#OnResetArgs#0;class#DroidBeatPresenter#0" expanded="false" />
+            <element signature="method#OnResetTime#0;class#DroidBeatPresenter#0" expanded="false" />
+          </folding>
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/DroidBeatView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="93" column="45" selection-start="3324" selection-end="3324" vertical-scroll-proportion="0.43678162">
+        <state line="78" column="50" selection-start="2742" selection-end="2742" vertical-scroll-proportion="0.56845564">
           <folding>
-            <element signature="method#mapArgSeekBar#0;class#DroidBeatView#0" expanded="false" />
-            <element signature="method#mapTimeSeekBar#0;class#DroidBeatView#0" expanded="false" />
-            <element signature="method#setEditorView#0;class#DroidBeatView#0" expanded="false" />
             <element signature="method#onPause#0;class#DroidBeatView#0" expanded="false" />
-            <element signature="method#onProgressChanged#0;class#DroidBeatView#0" expanded="false" />
-            <element signature="n#!!doc;n#NotifyStartPlay#0;n#DroidBeatView#0" expanded="false" />
+            <element signature="n#!!doc;n#onClick#0;n#DroidBeatView#0" expanded="false" />
+            <element signature="method#onClick#0;class#DroidBeatView#0" expanded="false" />
+            <element signature="n#!!doc;n#onItemSelected#0;n#DroidBeatView#0" expanded="false" />
+            <element signature="method#onItemSelected#0;class#DroidBeatView#0" expanded="false" />
             <element signature="method#NotifyStartPlay#0;class#DroidBeatView#0" expanded="false" />
             <element signature="method#NotifyStopPlay#0;class#DroidBeatView#0" expanded="false" />
-            <element signature="method#NotifyTimeScaleChanged#0;class#DroidBeatView#0" expanded="false" />
-            <element signature="method#NotifyArguementChanged#0;class#DroidBeatView#0" expanded="false" />
             <element signature="method#NotifyExpressionChanged#0;class#DroidBeatView#0" expanded="false" />
-            <element signature="method#NotifyResetArgs#0;class#DroidBeatView#0" expanded="false" />
-            <element signature="method#NotifyResetTime#0;class#DroidBeatView#0" expanded="false" />
-            <element signature="n#!!doc;n#setDisplayBuffer#0;n#DroidBeatView#0" expanded="false" />
             <element signature="method#setDisplayBuffer#0;class#DroidBeatView#0" expanded="false" />
             <element signature="method#setTime#0;class#DroidBeatView#0" expanded="false" />
-            <element signature="method#updateSeekerSpeedPostion#0;class#DroidBeatView#0" expanded="false" />
-            <element signature="method#updateSeekerPostion#0;class#DroidBeatView#0" expanded="false" />
             <element signature="method#registerIDroidBeatViewListener#0;class#DroidBeatView#0" expanded="false" />
-            <element signature="n#!!doc;n#getInflatedKeyboard#0;n#DroidBeatView#0" expanded="false" />
-            <element signature="method#getInflatedKeyboard#0;class#DroidBeatView#0" expanded="false" />
           </folding>
         </state>
       </provider>
