@@ -26,8 +26,6 @@ public class ParametersView extends Fragment implements View.OnClickListener,
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        ((DroidBeatView)getActivity()).getDroidbeatPresenter().setParameterView(this);
-
         View parameterView = inflater.inflate(R.layout.params, null);
         _listeners = new ArrayList<IParameterViewListener>();
 
@@ -48,6 +46,8 @@ public class ParametersView extends Fragment implements View.OnClickListener,
         s_seekBarArgs[0].setOnSeekBarChangeListener(this);
         s_seekBarArgs[1].setOnSeekBarChangeListener(this);
         s_seekBarArgs[2].setOnSeekBarChangeListener(this);
+
+        ((DroidBeatView)getActivity()).getDroidbeatPresenter().setParameterView(this);
 
         return parameterView;
     }

@@ -11,12 +11,6 @@
         android:layout_height="wrap_content"
         android:layout_weight="0.04"/>
 
-    <com.tasty.fish.BufferView
-        android:id="@+id/bufferView"
-        android:layout_width="fill_parent"
-        android:layout_height="154dp"
-        android:layout_weight="0.69" />
-
     <LinearLayout
         android:id="@+id/viewFrame"
         android:layout_width="fill_parent"

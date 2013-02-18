@@ -2,13 +2,16 @@ package com.tasty.fish.presenters;
 
 import java.util.ArrayList;
 
+import com.tasty.fish.IBufferView;
 import com.tasty.fish.IParameterView;
 import com.tasty.fish.domain.ByteBeatExpression;
 import com.tasty.fish.domain.IExpressionEvaluator;
 import com.tasty.fish.interfaces.IDroidBeatView;
 import com.tasty.fish.utils.AndroidAudioDevice;
 
-public class DroidBeatPresenter implements IDroidBeatView.IDroidBeatViewListener, IParameterView.IParameterViewListener {
+public class DroidBeatPresenter implements IDroidBeatView.IDroidBeatViewListener,
+                                           IParameterView.IParameterViewListener
+{
     private IDroidBeatView _view;
     private boolean _die;
 
@@ -20,11 +23,16 @@ public class DroidBeatPresenter implements IDroidBeatView.IDroidBeatViewListener
 
     private final IExpressionEvaluator _evaluator;
     private IParameterView _paramView;
+    private IBufferView _bufferView;
 
     public DroidBeatPresenter(IDroidBeatView view, IExpressionEvaluator evaluator) {
         _view = view;
         _evaluator = evaluator;
         _expressions = new ArrayList<ByteBeatExpression>();
+    }
+
+    public void setBufferView(IBufferView view){
+        _bufferView = view;
     }
 
     public void setParameterView(IParameterView view){
@@ -54,8 +62,8 @@ public class DroidBeatPresenter implements IDroidBeatView.IDroidBeatViewListener
         new Thread(new Runnable() {
             public void run() {
                 while (true) {
-                    _view.setDisplayBuffer(samples, _evaluator.getTime());
-                    _view.setTime(_evaluator.getTime());
+                    _bufferView.setDisplayBuffer(samples, _evaluator.getTime());
+                    _bufferView.setTime(_evaluator.getTime());
                     if (_die) {
                         return;
                     }

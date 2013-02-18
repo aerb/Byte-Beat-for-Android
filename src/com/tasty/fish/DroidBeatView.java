@@ -31,7 +31,6 @@ public class DroidBeatView extends FragmentActivity implements
     private static Button s_switchViewBtn;
     private static Button s_stopBtn;
 
-    private static BufferView s_bufferView;
     private DroidBeatPresenter _droidbeatPresenter;
 
     private LinearLayout m_inputLayout;
@@ -60,7 +59,7 @@ public class DroidBeatView extends FragmentActivity implements
         s_switchViewBtn = (Button) findViewById(R.id.buttonSwitchInput);
         s_loadBtn = (Button) findViewById(R.id.loadView);
         s_stopBtn = (Button) findViewById(R.id.buttonStop);
-        s_bufferView = (BufferView) findViewById(R.id.bufferView);
+
 
         //m_inputLayout.addView(m_parameterView);
 
@@ -143,14 +142,6 @@ public class DroidBeatView extends FragmentActivity implements
     //endregion
 
     //region IDroidBeatView methods
-    public void setDisplayBuffer(byte[] samples, int t) {
-        s_bufferView.setSamples(samples);
-        s_bufferView.updateT(t);
-        s_bufferView.postInvalidate();
-    }
-
-    public void setTime(int time) {
-    }
 
     public void registerIDroidBeatViewListener(IDroidBeatViewListener listener) {
         _listeners.add(listener);

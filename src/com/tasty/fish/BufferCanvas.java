@@ -7,18 +7,18 @@ import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.View;
 
-public class BufferView extends View {
+public class BufferCanvas extends View {
 
 	byte samples[] = null;
 	int t = 0;
-	int scaleamount = 4;
+	int scaleAmount = 4;
 	String eq = "";
 
-	public BufferView(Context context) {
+	public BufferCanvas(Context context) {
 		super(context);
 	}
 
-	public BufferView(Context context, AttributeSet attrs) {
+	public BufferCanvas(Context context, AttributeSet attrs) {
 		super(context, attrs);
 	}
 
@@ -52,13 +52,13 @@ public class BufferView extends View {
 		int h = this.getHeight();
 		int w = this.getWidth();
 
-		for (int i = 0; i < (samples.length - 1) / scaleamount; ++i) {
+		for (int i = 0; i < (samples.length - 1) / scaleAmount; ++i) {
 			float y = h - (float) h * ((float) samples[i]) / (float) 255 * 2;
 			float y1 = h - (float) h * ((float) samples[i + 1]) / (float) 255
 					* 2;
-			float x = ((float) i) / ((float) samples.length) * w * scaleamount;
+			float x = ((float) i) / ((float) samples.length) * w * scaleAmount;
 			float x1 = ((float) i + 1) / ((float) samples.length) * w
-					* scaleamount;
+					* scaleAmount;
 			c.drawLine(x, y, x1, y1, p);
 		}
 

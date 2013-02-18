@@ -11,7 +11,4 @@ public interface IDroidBeatView
     }
 
     void registerIDroidBeatViewListener(IDroidBeatViewListener listener);
-
-    void setDisplayBuffer(byte[] samples, int t);
-    void setTime(int time);
 }

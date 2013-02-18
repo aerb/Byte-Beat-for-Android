@@ -25,16 +25,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/tasty/fish/BufferFragment.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/tasty/fish/IBufferView.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/buffer_display.xml" />
+      <change type="MOVED" beforePath="C:\Users\ade\Dev\Byte-Beat-for-Android-2\src\com\tasty\fish\BufferView.java" afterPath="$PROJECT_DIR$/src/com/tasty/fish/BufferCanvas.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/tasty/fish/presenters/DroidBeatPresenter.java" afterPath="$PROJECT_DIR$/src/com/tasty/fish/presenters/DroidBeatPresenter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/tasty/fish/DroidBeatView.java" afterPath="$PROJECT_DIR$/src/com/tasty/fish/DroidBeatView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/tasty/fish/EditorView.java" afterPath="$PROJECT_DIR$/src/com/tasty/fish/EditorView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/tasty/fish/interfaces/IDroidBeatView.java" afterPath="$PROJECT_DIR$/src/com/tasty/fish/interfaces/IDroidBeatView.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/tasty/fish/ParametersView.java" afterPath="$PROJECT_DIR$/src/com/tasty/fish/ParametersView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/main.xml" afterPath="$PROJECT_DIR$/res/layout/main.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Byte-Beat-for-Android.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1361207440901" ignored="false" />
+    <file path="/Dummy.txt" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1361211516057" ignored="false" />
     <file path="/IDroidBeatView.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1361056371297" ignored="false" />
     <file path="/DroidBeatView.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1361115767160" ignored="false" />
-    <file path="/DroidBeatPresenter.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1361210204741" ignored="false" />
+    <file path="/DroidBeatPresenter.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1361212071623" ignored="false" />
     <file path="/KeyboardPresenter.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1361054365387" ignored="false" />
     <file path="/fragment.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1361112965573" ignored="false" />
     <file path="/IExpressionEvaluator.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1361104584945" ignored="false" />
@@ -50,6 +57,8 @@
     <file path="/ParametersView.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1361210700775" ignored="false" />
     <file path="/IParameterView.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1361208599852" ignored="false" />
     <file path="/EditorView.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1361209081143" ignored="false" />
+    <file path="/BufferView.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1361211265865" ignored="false" />
+    <file path="/BufferFragmnet.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1361212155349" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,115 +117,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DroidBeatView.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="DroidBeatView.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/DroidBeatView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="44" selection-start="1412" selection-end="1412" vertical-scroll-proportion="0.0">
+            <state line="43" column="50" selection-start="1375" selection-end="1375" vertical-scroll-proportion="0.50273824">
               <folding>
+                <element signature="n#!!doc;n#onCreate#0;n#DroidBeatView#0" expanded="false" />
+                <element signature="method#onCreate#0;class#DroidBeatView#0" expanded="false" />
                 <element signature="method#onPause#0;class#DroidBeatView#0" expanded="false" />
                 <element signature="n#!!doc;n#onClick#0;n#DroidBeatView#0" expanded="false" />
                 <element signature="method#onClick#0;class#DroidBeatView#0" expanded="false" />
                 <element signature="n#!!doc;n#onItemSelected#0;n#DroidBeatView#0" expanded="false" />
                 <element signature="method#onItemSelected#0;class#DroidBeatView#0" expanded="false" />
+                <element signature="n#!!doc;n#NotifyStartPlay#0;n#DroidBeatView#0" expanded="false" />
                 <element signature="method#NotifyStartPlay#0;class#DroidBeatView#0" expanded="false" />
                 <element signature="method#NotifyStopPlay#0;class#DroidBeatView#0" expanded="false" />
                 <element signature="method#NotifyExpressionChanged#0;class#DroidBeatView#0" expanded="false" />
-                <element signature="method#setDisplayBuffer#0;class#DroidBeatView#0" expanded="false" />
-                <element signature="method#setTime#0;class#DroidBeatView#0" expanded="false" />
                 <element signature="method#registerIDroidBeatViewListener#0;class#DroidBeatView#0" expanded="false" />
+                <element signature="method#getDroidbeatPresenter#0;class#DroidBeatView#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DroidBeatPresenter.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/presenters/DroidBeatPresenter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="55" selection-start="958" selection-end="958" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="method#stopAudioThread#0;class#DroidBeatPresenter#0" expanded="false" />
-                <element signature="method#setActiveExpression#0;class#DroidBeatPresenter#0" expanded="false" />
-                <element signature="method#startVideoThread#0;class#DroidBeatPresenter#0" expanded="false" />
-                <element signature="method#startAudioThread#0;class#DroidBeatPresenter#0" expanded="false" />
-                <element signature="method#updateTimeScale#0;class#DroidBeatPresenter#0" expanded="false" />
-                <element signature="method#updateArgument#0;class#DroidBeatPresenter#0" expanded="false" />
-                <element signature="method#resetTime#0;class#DroidBeatPresenter#0" expanded="false" />
-                <element signature="method#resetArgs#0;class#DroidBeatPresenter#0" expanded="false" />
-                <element signature="method#getExpressions#0;class#DroidBeatPresenter#0" expanded="false" />
-                <element signature="n#!!doc;n#OnExpressionChanged#0;n#DroidBeatPresenter#0" expanded="false" />
-                <element signature="method#OnExpressionChanged#0;class#DroidBeatPresenter#0" expanded="false" />
-                <element signature="method#OnStartPlay#0;class#DroidBeatPresenter#0" expanded="false" />
-                <element signature="method#OnStopPlay#0;class#DroidBeatPresenter#0" expanded="false" />
-                <element signature="method#OnArgumentChanged#0;class#DroidBeatPresenter#0" expanded="false" />
-                <element signature="method#OnTimeScaleChanged#0;class#DroidBeatPresenter#0" expanded="false" />
-                <element signature="method#OnResetArgs#0;class#DroidBeatPresenter#0" expanded="false" />
-                <element signature="method#OnResetTime#0;class#DroidBeatPresenter#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EditorView.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/EditorView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="25" selection-start="1155" selection-end="1155" vertical-scroll-proportion="0.26067907">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="KeyboardPresenter.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/presenters/KeyboardPresenter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="30" selection-start="437" selection-end="437" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ParametersView.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/ParametersView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="0" selection-start="934" selection-end="934" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="method#onCreate#0;class#ParametersView#0" expanded="false" />
-                <element signature="method#onClick#0;class#ParametersView#0" expanded="false" />
-                <element signature="method#mapArgSeekBar#0;class#ParametersView#0" expanded="false" />
-                <element signature="method#mapTimeSeekBar#0;class#ParametersView#0" expanded="false" />
-                <element signature="n#!!doc;n#onProgressChanged#0;n#ParametersView#0" expanded="false" />
-                <element signature="method#onProgressChanged#0;class#ParametersView#0" expanded="false" />
-                <element signature="method#updateSeekerSpeedPostion#0;class#ParametersView#0" expanded="false" />
-                <element signature="method#updateSeekerPostion#0;class#ParametersView#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IDroidBeatView.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/interfaces/IDroidBeatView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="47" selection-start="380" selection-end="380" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IParameterView.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/IParameterView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="28" selection-start="269" selection-end="269" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ExpressionSelectionView.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/ExpressionSelectionView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="33" selection-start="908" selection-end="908" vertical-scroll-proportion="0.0">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -239,22 +158,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/tasty/fish/IExpressionSelectionView.java" />
-        <option value="$PROJECT_DIR$/src/com/tasty/fish/DroidBeatApplication.java" />
-        <option value="$PROJECT_DIR$/gen/com/tasty/fish/ExpressionSelectionPresenter.java" />
-        <option value="$PROJECT_DIR$/gen/com/tasty/fish/IExpressionsRepository.java" />
-        <option value="$PROJECT_DIR$/src/com/tasty/fish/ExpressionSelectionAdapter.java" />
-        <option value="$PROJECT_DIR$/gen/com/tasty/fish/ExpressionsRepository.java" />
         <option value="$PROJECT_DIR$/src/com/tasty/fish/ExpressionSelectionView.java" />
-        <option value="$PROJECT_DIR$/res/layout/main.xml" />
         <option value="$PROJECT_DIR$/src/com/tasty/fish/IParameterView.java" />
         <option value="$PROJECT_DIR$/src/com/tasty/fish/interfaces/IKeyboardDisplayView.java" />
         <option value="$PROJECT_DIR$/src/com/tasty/fish/presenters/KeyboardPresenter.java" />
-        <option value="$PROJECT_DIR$/src/com/tasty/fish/interfaces/IDroidBeatView.java" />
-        <option value="$PROJECT_DIR$/src/com/tasty/fish/presenters/DroidBeatPresenter.java" />
-        <option value="$PROJECT_DIR$/src/com/tasty/fish/DroidBeatView.java" />
-        <option value="$PROJECT_DIR$/src/com/tasty/fish/ParametersView.java" />
         <option value="$PROJECT_DIR$/src/com/tasty/fish/EditorView.java" />
+        <option value="$PROJECT_DIR$/src/com/tasty/fish/BufferView.java" />
+        <option value="$PROJECT_DIR$/res/layout/main.xml" />
+        <option value="$PROJECT_DIR$/res/layout/buffer_display.xml" />
+        <option value="$PROJECT_DIR$/src/com/tasty/fish/BufferFragmnet.java" />
+        <option value="$PROJECT_DIR$/src/com/tasty/fish/interfaces/IDroidBeatView.java" />
+        <option value="$PROJECT_DIR$/src/com/tasty/fish/BufferCanvas.java" />
+        <option value="$PROJECT_DIR$/src/com/tasty/fish/IBufferView.java" />
+        <option value="$PROJECT_DIR$/src/com/tasty/fish/presenters/DroidBeatPresenter.java" />
+        <option value="$PROJECT_DIR$/src/com/tasty/fish/BufferFragment.java" />
+        <option value="$PROJECT_DIR$/src/com/tasty/fish/ParametersView.java" />
+        <option value="$PROJECT_DIR$/src/com/tasty/fish/DroidBeatView.java" />
       </list>
     </option>
   </component>
@@ -357,38 +276,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="fish" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Byte-Beat-for-Android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Byte-Beat-for-Android-2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Byte-Beat-for-Android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Byte-Beat-for-Android-2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -703,84 +590,9 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/ExpressionsRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="32" selection-start="197" selection-end="197" vertical-scroll-proportion="0.14895947">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/IExpressionsRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="45" selection-start="186" selection-end="186" vertical-scroll-proportion="0.13033953">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/IExpressionSelectionView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="60" selection-start="203" selection-end="203" vertical-scroll-proportion="0.13033953">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/params.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="76" selection-start="412" selection-end="412" vertical-scroll-proportion="0.019653179">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="45" selection-start="821" selection-end="821" vertical-scroll-proportion="0.3317919">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/ExpressionSelectionPresenter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="86" selection-start="480" selection-end="480" vertical-scroll-proportion="0.27868852">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/ExpressionSelectionAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="40" column="0" selection-start="1036" selection-end="1036" vertical-scroll-proportion="0.12677595">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/ExpressionSelectionView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="33" selection-start="908" selection-end="908" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/IParameterView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="28" selection-start="269" selection-end="269" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/interfaces/IDroidBeatView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="47" selection-start="380" selection-end="380" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -792,13 +604,89 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/EditorView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="111" selection-start="1985" selection-end="1985" vertical-scroll-proportion="-0.04271632">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/presenters/KeyboardPresenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="30" selection-start="437" selection-end="437" vertical-scroll-proportion="0.13033953">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/IParameterView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="28" selection-start="269" selection-end="269" vertical-scroll-proportion="0.16757941">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/ExpressionSelectionView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="33" selection-start="908" selection-end="908" vertical-scroll-proportion="0.35377875">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/keyboard.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="46" selection-start="341" selection-end="341" vertical-scroll-proportion="-3.06">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/buffer_display.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="0" selection-start="258" selection-end="258" vertical-scroll-proportion="-2.04">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/BufferCanvas.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="16" selection-start="479" selection-end="479" vertical-scroll-proportion="0.36589405">
+          <folding>
+            <element signature="method#BufferCanvas#0;class#BufferCanvas#0" expanded="false" />
+            <element signature="method#BufferCanvas#1;class#BufferCanvas#0" expanded="false" />
+            <element signature="method#setSamples#0;class#BufferCanvas#0" expanded="false" />
+            <element signature="method#updateT#0;class#BufferCanvas#0" expanded="false" />
+            <element signature="method#updateEq#0;class#BufferCanvas#0" expanded="false" />
+            <element signature="method#onDraw#0;class#BufferCanvas#0" expanded="false" />
+            <element signature="e#1904#1917#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="38" selection-start="447" selection-end="447" vertical-scroll-proportion="0.33754513">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/presenters/DroidBeatPresenter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="55" selection-start="958" selection-end="958" vertical-scroll-proportion="0.0">
+        <state line="39" column="74" selection-start="1307" selection-end="1307" vertical-scroll-proportion="0.24834438">
           <folding>
             <element signature="method#stopAudioThread#0;class#DroidBeatPresenter#0" expanded="false" />
             <element signature="method#setActiveExpression#0;class#DroidBeatPresenter#0" expanded="false" />
-            <element signature="method#startVideoThread#0;class#DroidBeatPresenter#0" expanded="false" />
+            <element signature="e#1951#2448#0" expanded="true" />
+            <element signature="e#2437#2438#0" expanded="true" />
             <element signature="method#startAudioThread#0;class#DroidBeatPresenter#0" expanded="false" />
             <element signature="method#updateTimeScale#0;class#DroidBeatPresenter#0" expanded="false" />
             <element signature="method#updateArgument#0;class#DroidBeatPresenter#0" expanded="false" />
@@ -817,28 +705,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/DroidBeatView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="44" selection-start="1412" selection-end="1412" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="method#onPause#0;class#DroidBeatView#0" expanded="false" />
-            <element signature="n#!!doc;n#onClick#0;n#DroidBeatView#0" expanded="false" />
-            <element signature="method#onClick#0;class#DroidBeatView#0" expanded="false" />
-            <element signature="n#!!doc;n#onItemSelected#0;n#DroidBeatView#0" expanded="false" />
-            <element signature="method#onItemSelected#0;class#DroidBeatView#0" expanded="false" />
-            <element signature="method#NotifyStartPlay#0;class#DroidBeatView#0" expanded="false" />
-            <element signature="method#NotifyStopPlay#0;class#DroidBeatView#0" expanded="false" />
-            <element signature="method#NotifyExpressionChanged#0;class#DroidBeatView#0" expanded="false" />
-            <element signature="method#setDisplayBuffer#0;class#DroidBeatView#0" expanded="false" />
-            <element signature="method#setTime#0;class#DroidBeatView#0" expanded="false" />
-            <element signature="method#registerIDroidBeatViewListener#0;class#DroidBeatView#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/ParametersView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="0" selection-start="934" selection-end="934" vertical-scroll-proportion="0.0">
+        <state line="20" column="111" selection-start="778" selection-end="778" vertical-scroll-proportion="0.33774835">
           <folding>
             <element signature="method#onCreate#0;class#ParametersView#0" expanded="false" />
             <element signature="method#onClick#0;class#ParametersView#0" expanded="false" />
@@ -852,18 +721,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/presenters/KeyboardPresenter.java">
+    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/BufferFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="30" selection-start="437" selection-end="437" vertical-scroll-proportion="0.0">
+        <state line="16" column="23" selection-start="579" selection-end="579" vertical-scroll-proportion="0.45033112">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/IBufferView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="4" selection-start="109" selection-end="109" vertical-scroll-proportion="0.16887417">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/EditorView.java">
+    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/interfaces/IDroidBeatView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="25" selection-start="1155" selection-end="1155" vertical-scroll-proportion="0.26067907">
+        <state line="4" column="16" selection-start="86" selection-end="86" vertical-scroll-proportion="0.11258278">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/DroidBeatView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="50" selection-start="1375" selection-end="1375" vertical-scroll-proportion="0.50273824">
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="n#!!doc;n#onCreate#0;n#DroidBeatView#0" expanded="false" />
+            <element signature="method#onCreate#0;class#DroidBeatView#0" expanded="false" />
+            <element signature="method#onPause#0;class#DroidBeatView#0" expanded="false" />
+            <element signature="n#!!doc;n#onClick#0;n#DroidBeatView#0" expanded="false" />
+            <element signature="method#onClick#0;class#DroidBeatView#0" expanded="false" />
+            <element signature="n#!!doc;n#onItemSelected#0;n#DroidBeatView#0" expanded="false" />
+            <element signature="method#onItemSelected#0;class#DroidBeatView#0" expanded="false" />
+            <element signature="n#!!doc;n#NotifyStartPlay#0;n#DroidBeatView#0" expanded="false" />
+            <element signature="method#NotifyStartPlay#0;class#DroidBeatView#0" expanded="false" />
+            <element signature="method#NotifyStopPlay#0;class#DroidBeatView#0" expanded="false" />
+            <element signature="method#NotifyExpressionChanged#0;class#DroidBeatView#0" expanded="false" />
+            <element signature="method#registerIDroidBeatViewListener#0;class#DroidBeatView#0" expanded="false" />
+            <element signature="method#getDroidbeatPresenter#0;class#DroidBeatView#0" expanded="false" />
           </folding>
         </state>
       </provider>
