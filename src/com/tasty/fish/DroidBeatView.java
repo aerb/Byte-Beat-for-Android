@@ -2,26 +2,19 @@ package com.tasty.fish;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.text.SpannableString;
-import android.text.style.UnderlineSpan;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
-import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
-import android.widget.SeekBar;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.tasty.fish.domain.ByteBeatExpression;
 import com.tasty.fish.domain.ExpressionEvaluator;
 import com.tasty.fish.interfaces.IDroidBeatView;
-import com.tasty.fish.interfaces.IKeyboardDisplayView;
 import com.tasty.fish.presenters.DroidBeatPresenter;
-import com.tasty.fish.presenters.KeyboardPresenter;
 
 import java.util.ArrayList;
 
@@ -39,7 +32,7 @@ public class DroidBeatView extends FragmentActivity implements
     private static Button s_stopBtn;
 
     private static BufferView s_bufferView;
-    private static DroidBeatPresenter s_droidbeatPresenter;
+    private DroidBeatPresenter _droidbeatPresenter;
 
     private LinearLayout m_inputLayout;
 
@@ -60,7 +53,7 @@ public class DroidBeatView extends FragmentActivity implements
 
         _listeners = new ArrayList<IDroidBeatViewListener>();
 
-        s_droidbeatPresenter = new DroidBeatPresenter(this, new ExpressionEvaluator());
+        _droidbeatPresenter = new DroidBeatPresenter(this, new ExpressionEvaluator());
 
         m_textExpressionView = (TextView) findViewById(R.id.textExpression);
         m_inputLayout = (LinearLayout) findViewById(R.id.viewFrame);
@@ -142,7 +135,6 @@ public class DroidBeatView extends FragmentActivity implements
         }
     }
 
-
     private void NotifyExpressionChanged(int id){
         for(IDroidBeatViewListener listener : _listeners){
             listener.OnExpressionChanged(id);
@@ -162,6 +154,10 @@ public class DroidBeatView extends FragmentActivity implements
 
     public void registerIDroidBeatViewListener(IDroidBeatViewListener listener) {
         _listeners.add(listener);
+    }
+
+    public DroidBeatPresenter getDroidbeatPresenter() {
+        return _droidbeatPresenter;
     }
     //endregion
 }

@@ -45,7 +45,6 @@ public class EditorView extends Fragment implements View.OnClickListener, IKeybo
             else if ("%/*<<>>+-&^|=!".indexOf((String) b.getText()) >= 0)
                 b.getBackground().setColorFilter(0xFFFF5555,
                         PorterDuff.Mode.MULTIPLY);
-
             return;
         }
 

@@ -5,13 +5,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
 import android.widget.*;
-import com.tasty.fish.domain.ByteBeatExpression;
-import com.tasty.fish.domain.ExpressionEvaluator;
-import com.tasty.fish.interfaces.IDroidBeatView;
 import com.tasty.fish.presenters.DroidBeatPresenter;
-import com.tasty.fish.presenters.KeyboardPresenter;
 
 import java.util.ArrayList;
 
@@ -31,6 +26,8 @@ public class ParametersView extends Fragment implements View.OnClickListener,
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        ((DroidBeatView)getActivity()).getDroidbeatPresenter().setParameterView(this);
+
         View parameterView = inflater.inflate(R.layout.params, null);
         _listeners = new ArrayList<IParameterViewListener>();
 
