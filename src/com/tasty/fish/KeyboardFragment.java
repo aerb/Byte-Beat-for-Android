@@ -3,28 +3,29 @@ package com.tasty.fish;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.text.SpannableString;
-import android.text.style.UnderlineSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import com.tasty.fish.domain.ByteBeatExpression;
 import com.tasty.fish.interfaces.IKeyboardDisplayView;
 
-public class EditorView extends Fragment implements View.OnClickListener, IKeyboardDisplayView {
+import java.util.ArrayList;
 
-    private String _text;
-    private ByteBeatExpression _e;
-    private int _cursor = 0;
+public class KeyboardFragment extends Fragment implements
+        View.OnClickListener,
+        IKeyboardDisplayView
+{
 
-    private UnderlineSpan m_underlineSpan = new UnderlineSpan();
+    private ExpressionPresenter _presenter;
+    private ArrayList<IKeyboardDisplayViewListener> _listeners;
 
-    public void setExpression(String s, int cursor) {
-        SpannableString content = new SpannableString(s);
-        content.removeSpan(m_underlineSpan);
-        content.setSpan(m_underlineSpan, cursor, cursor + 1, 0);
-        //m_textExpressionView.setText(content);
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        _listeners = new ArrayList<IKeyboardDisplayViewListener>();
+
+        _presenter = ((DroidBeatView)getActivity()).getExpressionPresenter();
+        _presenter.setKeyboardView(this);
     }
 
     @Override
@@ -54,51 +55,40 @@ public class EditorView extends Fragment implements View.OnClickListener, IKeybo
         }
     }
 
-    public void setEditableExpression(ByteBeatExpression e) {
-        _e = e;
-        _text = e.getExpression() + " ";
-        _cursor = _text.length() - 1;
-        setExpression(_text, _cursor);
-    }
-
-    private void advanceCursor(int spaces) {
-        _cursor = (_cursor + spaces < _text.length() && _cursor + spaces >= 0) ? _cursor
-                + spaces
-                : _cursor;
-    }
-
     @Override
     public void onClick(View v) {
         if (!(v instanceof Button))
             return;
         Button b = (Button) v;
         int bid = b.getId();
-        String btex = (String) b.getText();
+        String btnText = (String) b.getText();
 
-        if (bid != R.id.buttonLeft && bid != R.id.buttonRight
-                && bid != R.id.buttonDel) {
-            _text = _text.substring(0, _cursor) + btex
-                    + _text.substring(_cursor);
-            advanceCursor(btex.length());
+        if (bid != R.id.buttonLeft &&
+            bid != R.id.buttonRight &&
+            bid != R.id.buttonDel)
+        {
+            for(IKeyboardDisplayViewListener l : _listeners)
+                l.OnAddElement(btnText);
         } else {
             switch (bid) {
                 case R.id.buttonLeft:
-                    advanceCursor(-1);
+                    for(IKeyboardDisplayViewListener l : _listeners)
+                        l.OnMoveLeft();
                     break;
                 case R.id.buttonRight:
-                    advanceCursor(1);
+                    for(IKeyboardDisplayViewListener l : _listeners)
+                        l.OnMoveRight();
                     break;
                 case R.id.buttonDel:
-                    if (_cursor - 1 >= 0) {
-                        _text = _text.substring(0, _cursor - 1)
-                                + _text.substring(_cursor);
-                        advanceCursor(-1);
-                    }
+                    for(IKeyboardDisplayViewListener l : _listeners)
+                        l.OnDelete();
                     break;
             }
         }
+    }
 
-        setExpression(_text, _cursor);
-        _e.setExpression(_text);
+    @Override
+    public void registerIKeyboardDisplayViewListener(IKeyboardDisplayViewListener listener) {
+        _listeners.add(listener);
     }
 }

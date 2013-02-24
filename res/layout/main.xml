@@ -3,19 +3,35 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
+    <FrameLayout
+            android:id="@+id/upperFragmentContainer"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            />
 
-    <TextView
-        android:typeface="monospace"
-        android:id="@+id/textExpression"
+    <FrameLayout
+        android:id="@+id/lowerFragmentContainer"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.04"/>
+        android:layout_height="wrap_content">
+    </FrameLayout>
 
     <LinearLayout
-        android:id="@+id/viewFrame"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical" >
+            android:orientation="horizontal"
+            android:id="@+id/selectNewExpressionLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+        <ImageView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:src="@drawable/google_4_collections_collection"
+            />
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Test Expresion Name"
+                android:id="@+id/textView" android:layout_gravity="center"/>
     </LinearLayout>
 
     <LinearLayout
@@ -29,12 +45,6 @@
             android:layout_height="wrap_content"
             android:text="Start" />
 
-        <Button
-            android:id="@+id/loadView"
-            android:layout_width="0dip"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Load"/>
 
         <Button
             android:id="@+id/buttonSwitchInput"
