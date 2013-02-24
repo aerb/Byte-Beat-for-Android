@@ -10,9 +10,9 @@
             />
 
     <FrameLayout
-        android:id="@+id/lowerFragmentContainer"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
+            android:id="@+id/bufferFragmentContainer"
+            android:layout_width="fill_parent"
+            android:layout_height="100dp">
     </FrameLayout>
 
     <LinearLayout
@@ -25,14 +25,20 @@
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 android:src="@drawable/google_4_collections_collection"
-            />
+                android:layout_margin="10dp"/>
 
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Test Expresion Name"
-                android:id="@+id/textView" android:layout_gravity="center"/>
+                android:id="@+id/expressionTitleTextView" android:layout_gravity="center" android:typeface="normal"/>
     </LinearLayout>
+
+    <FrameLayout
+            android:id="@+id/lowerFragmentContainer"
+            android:layout_width="fill_parent"
+            android:layout_height="250dp">
+    </FrameLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout1"
@@ -45,12 +51,6 @@
             android:layout_height="wrap_content"
             android:text="Start" />
 
-
-        <Button
-            android:id="@+id/buttonSwitchInput"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Keyboard" />
 
     </LinearLayout>
 </LinearLayout>

@@ -3,23 +3,32 @@ package com.tasty.fish;
 import com.tasty.fish.domain.ByteBeatExpression;
 import com.tasty.fish.interfaces.IKeyboardDisplayView;
 
-public class ExpressionPresenter implements IKeyboardDisplayView.IKeyboardDisplayViewListener {
+public class ExpressionPresenter implements
+        IKeyboardDisplayView.IKeyboardDisplayViewListener,
+        IExpressionsRepository.IExpressionsRepositoryListener
+{
     private IExpressionView _view;
-    private final ByteBeatExpression _expression;
+    private ByteBeatExpression _expression;
 
-    private String _text = "aaaaa";
+    private String _text;
     private int _cursor = 0;
     private IKeyboardDisplayView _keyboardView;
+    private final IExpressionsRepository _expressionRepo;
 
-    public ExpressionPresenter() {
-        _expression = new ByteBeatExpression("sgsdg", "sdgsdg",1,1,1,1);
+    public ExpressionPresenter(IExpressionsRepository expressionsRepository) {
+        _expressionRepo = expressionsRepository;
+        _expressionRepo.setIExpressionsRepositoryListener(this);
+        setActiveExpression(_expressionRepo.getActive());
+    }
+
+    private void setActiveExpression(ByteBeatExpression exp){
+        _expression = exp;
+        _text = _expression.getExpressionAsString() + " ";
+        _cursor = _text.length() - 1;
     }
 
     public void setExpressionView(IExpressionView view) {
         _view = view;
-
-        //String text = _expression.getExpression() + " ";
-        //int cursor = text.length() - 1;
         _view.setExpression(_text, _cursor);
     }
 
@@ -48,6 +57,7 @@ public class ExpressionPresenter implements IKeyboardDisplayView.IKeyboardDispla
                     + _text.substring(_cursor);
             advanceCursor(-1);
         }
+        updateView();
     }
 
     @Override
@@ -69,5 +79,9 @@ public class ExpressionPresenter implements IKeyboardDisplayView.IKeyboardDispla
         _view.setExpression(_text,_cursor);
     }
 
-
+    @Override
+        public void OnActiveExpressionChanged() {
+        setActiveExpression(_expressionRepo.getActive());
+        updateView();
+    }
 }

@@ -6,9 +6,8 @@ public interface IDroidBeatView
     {
         void OnStartPlay();
         void OnStopPlay();
-
-        void OnExpressionChanged(int id);
     }
 
     void registerIDroidBeatViewListener(IDroidBeatViewListener listener);
+    void setTitle(String title);
 }

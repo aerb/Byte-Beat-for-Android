@@ -24,7 +24,7 @@ public class KeyboardFragment extends Fragment implements
         super.onCreate(savedInstanceState);
         _listeners = new ArrayList<IKeyboardDisplayViewListener>();
 
-        _presenter = ((DroidBeatView)getActivity()).getExpressionPresenter();
+        _presenter = ((DroidBeatActivity)getActivity()).getExpressionPresenter();
         _presenter.setKeyboardView(this);
     }
 

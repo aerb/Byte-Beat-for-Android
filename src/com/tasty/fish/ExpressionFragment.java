@@ -7,30 +7,41 @@ import android.text.style.UnderlineSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
-/**
- * Created with IntelliJ IDEA.
- * User: ade
- * Date: 2/24/13
- * Time: 6:01 PM
- * To change this template use File | Settings | File Templates.
- */
-public class ExpressionFragment extends Fragment implements IExpressionView {
+import java.util.ArrayList;
+
+public class ExpressionFragment extends Fragment implements IExpressionView, View.OnClickListener {
 
     private UnderlineSpan _underlineSpan = new UnderlineSpan();
     private ExpressionPresenter _presenter;
     private TextView _expressionTextView;
+    private ArrayList<IExpressionViewListener> _listeners;
+    private ImageButton _editExpressionBtn;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+        _listeners = new ArrayList<IExpressionViewListener>();
+        setIExpressionViewListener((DroidBeatActivity)getActivity());
+
         View layout = inflater.inflate(R.layout.expression_layout, null);
         _expressionTextView = (TextView)layout.findViewById(R.id.expressionTextView);
+        _editExpressionBtn = (ImageButton)layout.findViewById(R.id.editExpressionBtn);
+        _editExpressionBtn.setOnClickListener(this);
 
-        _presenter = ((DroidBeatView)getActivity()).getExpressionPresenter();
+
+
+        _presenter = ((DroidBeatActivity)getActivity()).getExpressionPresenter();
         _presenter.setExpressionView(this);
 
         return layout;
+    }
+
+    @Override
+    public void setIExpressionViewListener(IExpressionViewListener listener) {
+        _listeners.add(listener);
     }
 
     public void setExpression(String s, int cursor) {
@@ -38,5 +49,11 @@ public class ExpressionFragment extends Fragment implements IExpressionView {
         content.removeSpan(_underlineSpan);
         content.setSpan(_underlineSpan, cursor, cursor + 1, 0);
         _expressionTextView.setText(content);
+    }
+
+    @Override
+    public void onClick(View view) {
+        for(IExpressionViewListener l : _listeners)
+            l.OnRequestEdit();
     }
 }

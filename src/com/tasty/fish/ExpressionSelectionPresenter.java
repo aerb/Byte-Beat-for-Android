@@ -1,6 +1,6 @@
 package com.tasty.fish;
 
-public class ExpressionSelectionPresenter {
+public class ExpressionSelectionPresenter implements IExpressionSelectionView.IExpressionSelectionViewListener {
     private IExpressionSelectionView _view;
     private IExpressionsRepository _expressionsRepository;
 
@@ -11,5 +11,11 @@ public class ExpressionSelectionPresenter {
     public void setView(IExpressionSelectionView view){
         _view = view;
         _view.setDataSource(_expressionsRepository.getExpressions());
+        _view.addIExpressionSelectionViewListener(this);
+    }
+
+    @Override
+    public void OnExpressionSelected(int position) {
+        _expressionsRepository.setActiveExpression(position);
     }
 }

@@ -47,7 +47,7 @@ public class ParametersView extends Fragment implements View.OnClickListener,
         s_seekBarArgs[1].setOnSeekBarChangeListener(this);
         s_seekBarArgs[2].setOnSeekBarChangeListener(this);
 
-        ((DroidBeatView)getActivity()).getDroidbeatPresenter().setParameterView(this);
+        ((DroidBeatActivity)getActivity()).getDroidbeatPresenter().setParameterView(this);
 
         return parameterView;
     }

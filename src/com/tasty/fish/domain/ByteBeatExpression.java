@@ -55,7 +55,7 @@ public class ByteBeatExpression {
                 ExpressionType.dynamic;
     }
 
-    public String getExpression() {
+    public String getExpressionAsString() {
         return _expression;
     }
 

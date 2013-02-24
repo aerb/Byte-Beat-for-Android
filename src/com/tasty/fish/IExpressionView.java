@@ -1,5 +1,11 @@
 package com.tasty.fish;
 
 public interface IExpressionView {
-    public void setExpression(String s, int cursor);
+    interface IExpressionViewListener
+    {
+        void OnRequestEdit();
+    }
+
+    void setIExpressionViewListener(IExpressionViewListener listener);
+    void setExpression(String s, int cursor);
 }

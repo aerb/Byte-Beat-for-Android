@@ -13,7 +13,7 @@ public class BufferFragment extends Fragment implements IBufferView {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         _bufferCanvas = (BufferCanvas) inflater.inflate(R.id.bufferView, null);
 
-        ((DroidBeatView)getActivity()).getDroidbeatPresenter().setBufferView(this);
+        ((DroidBeatActivity)getActivity()).getDroidbeatPresenter().setBufferView(this);
 
         return _bufferCanvas;
     }

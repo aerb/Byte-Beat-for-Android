@@ -9,13 +9,12 @@
             android:layout_height="wrap_content"
             android:layout_width="fill_parent"
 
-            android:text="taadgsdg saet set "
             android:id="@+id/expressionTextView"
             android:padding="10dp"
 
             android:layout_alignParentRight="false"
             android:layout_alignParentLeft="true"
-            />
+            android:typeface="monospace" android:inputType="textMultiLine"/>
 
     <ImageButton
             android:id="@+id/editExpressionBtn"

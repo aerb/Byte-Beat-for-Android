@@ -9,34 +9,27 @@ import android.widget.*;
 import android.widget.AdapterView.OnItemSelectedListener;
 
 import com.tasty.fish.domain.ByteBeatExpression;
-import com.tasty.fish.domain.ExpressionEvaluator;
 import com.tasty.fish.interfaces.IDroidBeatView;
 import com.tasty.fish.presenters.DroidBeatPresenter;
 
 import java.util.ArrayList;
 
-public class DroidBeatView extends FragmentActivity implements
+public class DroidBeatActivity extends FragmentActivity implements
                                                        OnClickListener,
-                                                       OnItemSelectedListener,
+                                                       IExpressionView.IExpressionViewListener,
                                                        IDroidBeatView
 {
     private static boolean s_dieFlag = true;
-    private static boolean s_keyboardInputOnFlag = false;
 
     private LinearLayout _loadNewExpressionBtn;
 
-    private static Button s_switchViewBtn;
     private static Button s_stopBtn;
 
     private DroidBeatPresenter _droidbeatPresenter;
 
-    private FrameLayout _inputLayout;
-
-    private TextView m_textExpressionView;
-
-    private ArrayList<IDroidBeatViewListener> _listeners;
+    private ArrayList<IDroidBeatView.IDroidBeatViewListener> _listeners;
     private ExpressionPresenter _expressionPresenter;
-
+    private TextView _expressionTitleTextView;
 
     //region Activity methods
     @Override
@@ -45,12 +38,11 @@ public class DroidBeatView extends FragmentActivity implements
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.main);
 
-        _listeners = new ArrayList<IDroidBeatViewListener>();
+        _listeners = new ArrayList<IDroidBeatView.IDroidBeatViewListener>();
 
-        _droidbeatPresenter = new DroidBeatPresenter(this, new ExpressionEvaluator());
-        _expressionPresenter = new ExpressionPresenter();
-
-        _inputLayout = (FrameLayout) findViewById(R.id.lowerFragmentContainer);
+        DroidBeatApplication app =((DroidBeatApplication)getApplication());
+        _droidbeatPresenter = new DroidBeatPresenter(this, app.getExpressionEvaluator(), app.getExpressionsRepository());
+        _expressionPresenter = new ExpressionPresenter(app.getExpressionsRepository());
 
         getSupportFragmentManager()
                 .beginTransaction()
@@ -62,15 +54,12 @@ public class DroidBeatView extends FragmentActivity implements
                 .add(R.id.upperFragmentContainer, new ExpressionFragment())
                 .commit();
 
-        s_switchViewBtn = (Button) findViewById(R.id.buttonSwitchInput);
+        _expressionTitleTextView = (TextView)findViewById(R.id.expressionTitleTextView);
         _loadNewExpressionBtn = (LinearLayout) findViewById(R.id.selectNewExpressionLayout);
         s_stopBtn = (Button) findViewById(R.id.buttonStop);
 
-        s_switchViewBtn.setOnClickListener(this);
         _loadNewExpressionBtn.setOnClickListener(this);
         s_stopBtn.setOnClickListener(this);
-
-        NotifyExpressionChanged(0);
     }
 
     public void onPause() {
@@ -95,37 +84,14 @@ public class DroidBeatView extends FragmentActivity implements
                 NotifyStartPlay();
             }
             s_stopBtn.refreshDrawableState();
-        } else if (arg0 == s_switchViewBtn) {
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.lowerFragmentContainer, new KeyboardFragment())
-                    .commit();
-
         } else if(arg0 == _loadNewExpressionBtn){
 
             getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.lowerFragmentContainer, new ExpressionSelectionView())
+                    .replace(R.id.lowerFragmentContainer, new ExpressionSelectionFragment())
                     .commit();
         }
     }
-    //endregion
-
-    //region OnItemSelectedListener methods
-    @Override
-    public void onItemSelected(AdapterView<?> adapter, View view, int pos,
-            long id) {
-
-        ByteBeatExpression e = (ByteBeatExpression) adapter
-                .getItemAtPosition(pos);
-
-        NotifyExpressionChanged(pos);
-
-        //s_editorPresenter.setEditableExpression(e);
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> arg0) {}
     //endregion
 
     //region Notification methods
@@ -141,17 +107,17 @@ public class DroidBeatView extends FragmentActivity implements
         }
     }
 
-    private void NotifyExpressionChanged(int id){
-        for(IDroidBeatViewListener listener : _listeners){
-            listener.OnExpressionChanged(id);
-        }
-    }
     //endregion
 
     //region IDroidBeatView methods
 
     public void registerIDroidBeatViewListener(IDroidBeatViewListener listener) {
         _listeners.add(listener);
+    }
+
+    @Override
+    public void setTitle(String title) {
+        _expressionTitleTextView.setText(title);
     }
 
     public DroidBeatPresenter getDroidbeatPresenter() {
@@ -161,5 +127,18 @@ public class DroidBeatView extends FragmentActivity implements
     public ExpressionPresenter getExpressionPresenter() {
         return _expressionPresenter;
     }
+
+    @Override
+    public void OnRequestEdit() {
+        loadKeyboardFragment();
+    }
     //endregion
+
+    private void loadKeyboardFragment() {
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.lowerFragmentContainer, new KeyboardFragment())
+                .commit();
+    }
+
 }

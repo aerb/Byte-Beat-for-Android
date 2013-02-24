@@ -3,6 +3,7 @@ package com.tasty.fish.presenters;
 import java.util.ArrayList;
 
 import com.tasty.fish.IBufferView;
+import com.tasty.fish.IExpressionsRepository;
 import com.tasty.fish.IParameterView;
 import com.tasty.fish.domain.ByteBeatExpression;
 import com.tasty.fish.domain.IExpressionEvaluator;
@@ -10,8 +11,7 @@ import com.tasty.fish.interfaces.IDroidBeatView;
 import com.tasty.fish.utils.AndroidAudioDevice;
 
 public class DroidBeatPresenter implements IDroidBeatView.IDroidBeatViewListener,
-                                           IParameterView.IParameterViewListener
-{
+                                           IParameterView.IParameterViewListener, IExpressionsRepository.IExpressionsRepositoryListener {
     private IDroidBeatView _view;
     private boolean _die;
 
@@ -24,10 +24,18 @@ public class DroidBeatPresenter implements IDroidBeatView.IDroidBeatViewListener
     private final IExpressionEvaluator _evaluator;
     private IParameterView _paramView;
     private IBufferView _bufferView;
+    private final IExpressionsRepository _repo;
 
-    public DroidBeatPresenter(IDroidBeatView view, IExpressionEvaluator evaluator) {
+    public DroidBeatPresenter(
+            IDroidBeatView view,
+            IExpressionEvaluator evaluator,
+            IExpressionsRepository repo
+    )
+    {
         _view = view;
         _evaluator = evaluator;
+        _repo = repo;
+        _repo.setIExpressionsRepositoryListener(this);
         _expressions = new ArrayList<ByteBeatExpression>();
     }
 
@@ -51,12 +59,9 @@ public class DroidBeatPresenter implements IDroidBeatView.IDroidBeatViewListener
         _paramView.updateSeekerPostion(0, _activeExpression.getArguement(0));
         _paramView.updateSeekerPostion(1, _activeExpression.getArguement(1));
         _paramView.updateSeekerPostion(2, _activeExpression.getArguement(2));
+        _view.setTitle(_activeExpression.getName());
     }
 
-    private void setActiveExpression(int id) {
-        _activeExpression = _expressions.get(id);
-        updateView();
-    }
 
     private void startVideoThread() {
         new Thread(new Runnable() {
@@ -123,10 +128,6 @@ public class DroidBeatPresenter implements IDroidBeatView.IDroidBeatViewListener
     }
 
     //region IDroidBeatViewListener methods
-    @Override
-    public void OnExpressionChanged(int id) {
-        setActiveExpression(id);
-    }
 
     @Override
     public void OnStartPlay() {
@@ -137,6 +138,8 @@ public class DroidBeatPresenter implements IDroidBeatView.IDroidBeatViewListener
     public void OnStopPlay() {
         stopAudioThread();
     }
+
+    //endregion
 
     @Override
     public void OnArgumentChanged(int index, double value) {
@@ -157,5 +160,11 @@ public class DroidBeatPresenter implements IDroidBeatView.IDroidBeatViewListener
     public void OnResetTime() {
         resetTime();
     }
-    //endregion
+
+
+    @Override
+    public void OnActiveExpressionChanged() {
+        _activeExpression = _repo.getActive();
+        updateView();
+    }
 }
