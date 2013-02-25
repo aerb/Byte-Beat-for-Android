@@ -35,54 +35,54 @@ public class FastParse {
                 return a == b ? 1 : 0;
             }
         });
-        opMap.put("|", new Op() {
+        opMap.put("|",  new Op() {
             public double Ex(double a, double b) {
                 return (long) a | (long) b;
             }
         });
-        opMap.put("^", new Op() {
+        opMap.put("^",  new Op() {
             public double Ex(double a, double b) {
                 return (long) a ^ (long) b;
             }
         });
-        opMap.put("&", new Op() {
+        opMap.put("&",  new Op() {
             public double Ex(double a, double b) {
                 return (long) a & (long) b;
             }
         });
-        opMap.put("%", new Op() {
+        opMap.put("%",  new Op() {
             public double Ex(double a, double b) {
                 return (long) (a % b);
             }
         });
-        opMap.put("+", new Op() {
+        opMap.put("+",  new Op() {
             public double Ex(double a, double b) {
                 return (long) (a + b);
             }
         });
-        opMap.put("-", new Op() {
+        opMap.put("-",  new Op() {
             public double Ex(double a, double b) {
                 return (long) (a - b);
             }
         });
-        opMap.put("*", new Op() {
+        opMap.put("*",  new Op() {
             public double Ex(double a, double b) {
                 return (long) (a * b);
             }
         });
-        opMap.put("/", new Op() {
+        opMap.put("/",  new Op() {
             public double Ex(double a, double b) {
                 return (long) (a / b);
             }
         });
         opMap.put(">>", new Op() {
             public double Ex(double a, double b) {
-                return (long) ((long) a >> (long) b);
+                return ((long) a >> (long) b);
             }
         });
         opMap.put("<<", new Op() {
             public double Ex(double a, double b) {
-                return (long) ((long) a << (long) b);
+                return ((long) a << (long) b);
             }
         });
     }

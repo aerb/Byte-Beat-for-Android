@@ -11,20 +11,23 @@ import com.tasty.fish.interfaces.IDroidBeatView;
 import com.tasty.fish.utils.AndroidAudioDevice;
 
 public class DroidBeatPresenter implements IDroidBeatView.IDroidBeatViewListener,
-                                           IParameterView.IParameterViewListener, IExpressionsRepository.IExpressionsRepositoryListener {
+                                           IParameterView.IParameterViewListener,
+                                           IExpressionsRepository.IExpressionsRepositoryListener
+{
     private IDroidBeatView _view;
     private boolean _die;
 
     private ArrayList<ByteBeatExpression> _expressions = null;
     private ByteBeatExpression _activeExpression = null;
 
-    byte samples[] = new byte[1024];
+    byte samples[];
     private boolean _dieFlag;
 
     private final IExpressionEvaluator _evaluator;
     private IParameterView _paramView;
     private IBufferView _bufferView;
     private final IExpressionsRepository _repo;
+    private final AndroidAudioDevice _audioDevice;
 
     public DroidBeatPresenter(
             IDroidBeatView view,
@@ -32,6 +35,8 @@ public class DroidBeatPresenter implements IDroidBeatView.IDroidBeatViewListener
             IExpressionsRepository repo
     )
     {
+        _audioDevice = new AndroidAudioDevice();
+        samples = new byte[_audioDevice.getBufferSize() - 1];
         _view = view;
         _evaluator = evaluator;
         _repo = repo;
@@ -62,13 +67,13 @@ public class DroidBeatPresenter implements IDroidBeatView.IDroidBeatViewListener
         _view.setTitle(_activeExpression.getName());
     }
 
-
     private void startVideoThread() {
         new Thread(new Runnable() {
             public void run() {
                 while (true) {
                     _bufferView.setDisplayBuffer(samples, _evaluator.getTime());
                     _bufferView.setTime(_evaluator.getTime());
+
                     if (_die) {
                         return;
                     }
@@ -85,17 +90,18 @@ public class DroidBeatPresenter implements IDroidBeatView.IDroidBeatViewListener
         _die = false;
         new Thread(new Runnable() {
             public void run() {
-                AndroidAudioDevice audio = new AndroidAudioDevice();
-
+                _audioDevice.play();
                 while (true) {
-
-                    for (int i = 0; i < samples.length; i++)
+                    for (int i = 0; i < samples.length; i++){
                         samples[i] = _evaluator.getNextSample();
-
-                    audio.writeSamples(samples);
+                        //t += 0.1;
+                        //samples[i] = (byte)((Math.sin((double)t)+1)*50);
+                        //System.out.println(samples[i]);
+                    }
+                    _audioDevice.writeSamples(samples);
 
                     if (_die) {
-                        audio.stop();
+                        _audioDevice.stop();
                         return;
                     }
                 }
@@ -112,7 +118,7 @@ public class DroidBeatPresenter implements IDroidBeatView.IDroidBeatViewListener
     }
 
     private void resetTime() {
-        _evaluator.setTime(0);
+        _evaluator.resetTime();
     }
 
     private void resetArgs() {
@@ -128,17 +134,16 @@ public class DroidBeatPresenter implements IDroidBeatView.IDroidBeatViewListener
     }
 
     //region IDroidBeatViewListener methods
-
     @Override
     public void OnStartPlay() {
         startAudioThread();
+        //startVideoThread();
     }
 
     @Override
     public void OnStopPlay() {
         stopAudioThread();
     }
-
     //endregion
 
     @Override
@@ -164,7 +169,9 @@ public class DroidBeatPresenter implements IDroidBeatView.IDroidBeatViewListener
 
     @Override
     public void OnActiveExpressionChanged() {
-        _activeExpression = _repo.getActive();
+        ByteBeatExpression exp = _repo.getActive();
+        _evaluator.setExpression(exp);
+        _activeExpression = exp;
         updateView();
     }
 }

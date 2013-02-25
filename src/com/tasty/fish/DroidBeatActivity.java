@@ -41,12 +41,20 @@ public class DroidBeatActivity extends FragmentActivity implements
         _listeners = new ArrayList<IDroidBeatView.IDroidBeatViewListener>();
 
         DroidBeatApplication app =((DroidBeatApplication)getApplication());
+
         _droidbeatPresenter = new DroidBeatPresenter(this, app.getExpressionEvaluator(), app.getExpressionsRepository());
+        registerIDroidBeatViewListener(_droidbeatPresenter);
+
         _expressionPresenter = new ExpressionPresenter(app.getExpressionsRepository());
 
         getSupportFragmentManager()
                 .beginTransaction()
                 .add(R.id.lowerFragmentContainer, new ParametersView())
+                .commit();
+
+        getSupportFragmentManager()
+                .beginTransaction()
+                .add(R.id.bufferFragmentContainer, new BufferFragment())
                 .commit();
 
         getSupportFragmentManager()

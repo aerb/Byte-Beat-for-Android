@@ -30,10 +30,6 @@ public class BufferCanvas extends View {
 		this.t = t;
 	}
 
-	public void updateEq(String c) {
-		this.eq = c;
-	}
-
 	@Override
 	protected void onDraw(Canvas c) {
 		Paint p = new Paint();
@@ -52,12 +48,12 @@ public class BufferCanvas extends View {
 		int h = this.getHeight();
 		int w = this.getWidth();
 
-		for (int i = 0; i < (samples.length - 1) / scaleAmount; ++i) {
+		for (int i = 0; i < (1024 - 1) / scaleAmount; ++i) {
 			float y = h - (float) h * ((float) samples[i]) / (float) 255 * 2;
 			float y1 = h - (float) h * ((float) samples[i + 1]) / (float) 255
 					* 2;
-			float x = ((float) i) / ((float) samples.length) * w * scaleAmount;
-			float x1 = ((float) i + 1) / ((float) samples.length) * w
+			float x = ((float) i) / ((float) 1024) * w * scaleAmount;
+			float x1 = ((float) i + 1) / ((float) 1024) * w
 					* scaleAmount;
 			c.drawLine(x, y, x1, y1, p);
 		}

@@ -9,16 +9,11 @@ public class ExpressionEvaluator implements IExpressionEvaluator  {
 
     private double _timescale;
     private double _t;
-    private double[] _args;
+    private double[] _args = {1,1,1};
 
     public ExpressionEvaluator() {
         _parser = new FastParse();
         _t = 0;
-    }
-
-    @Override
-    public void setTime(int value) {
-        _t = value;
     }
 
     public void setExpression(ByteBeatExpression expression){
@@ -30,6 +25,7 @@ public class ExpressionEvaluator implements IExpressionEvaluator  {
         _args[0] = _expression.getArguement(0);
         _args[1] = _expression.getArguement(1);
         _args[2] = _expression.getArguement(2);
+        _parser.tryParse(expression.getExpressionAsString());
     }
 
     public boolean updateExpression(String e) {
@@ -48,19 +44,8 @@ public class ExpressionEvaluator implements IExpressionEvaluator  {
 
     public byte getNextSample() {
         _t += _timescale;
-
-        if (!_expression.compiled()) {
-            _parser.setTime((long) _t);
-            return (byte) _parser.evaluate();
-        }
-
-        return (byte) (_expression
-                .getCompiled()
-                .evaluate(
-                        (int) _t,
-                        _expression.getArguement(0),
-                        _expression.getArguement(1),
-                        _expression.getArguement(2)));
+        _parser.setTime((long) _t);
+        return (byte) _parser.evaluate();
     }
 
     public int getTime() {
