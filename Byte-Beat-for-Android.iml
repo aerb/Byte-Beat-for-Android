@@ -36,6 +36,7 @@
       <sourceFolder url="file://$MODULE_DIR$/gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
     </content>
+    <orderEntry type="library" exported="" name="groovy-2.1.1" level="application" />
     <orderEntry type="jdk" jdkName="Android 2.1 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library" exported="">
