@@ -1,6 +1,7 @@
 package com.tasty.fish.domain;
 
-import com.tasty.fish.utils.FastParse;
+import com.tasty.fish.utils.parser.ExpressionParsingException;
+import com.tasty.fish.utils.parser.FastParse;
 
 public class ExpressionEvaluator implements IExpressionEvaluator  {
 
@@ -16,7 +17,7 @@ public class ExpressionEvaluator implements IExpressionEvaluator  {
         _t = 0;
     }
 
-    public void setExpression(ByteBeatExpression expression){
+    public void setExpression(ByteBeatExpression expression) throws ExpressionParsingException {
         if(expression == null)
             throw new IllegalArgumentException("Expression cannot be null");
 
@@ -25,21 +26,25 @@ public class ExpressionEvaluator implements IExpressionEvaluator  {
         _args[0] = _expression.getArguement(0);
         _args[1] = _expression.getArguement(1);
         _args[2] = _expression.getArguement(2);
+
+        _parser.setVariable(0, _expression.getArguement(0));
+        _parser.setVariable(1, _expression.getArguement(1));
+        _parser.setVariable(2, _expression.getArguement(2));
+
         _parser.tryParse(expression.getExpressionAsString());
     }
 
-    public boolean updateExpression(String e) {
+    public void updateExpression(String e) throws ExpressionParsingException {
         FastParse parser = new FastParse();
         parser.setTime(0);
         parser.setVariable(0, _expression.getArguement(0));
         parser.setVariable(1, _expression.getArguement(1));
         parser.setVariable(2, _expression.getArguement(2));
-        if (parser.tryParse(e)) {
-            _parser = parser;
-            _expression.setExpression(e.trim());
-            return true;
-        }
-        return false;
+
+        parser.tryParse(e);
+
+        _parser = parser;
+        _expression.setExpression(e.trim());
     }
 
     public byte getNextSample() {
@@ -53,10 +58,9 @@ public class ExpressionEvaluator implements IExpressionEvaluator  {
     }
 
     public void updateArguement(int i, double x) {
-        if (i < 3 && i >= 0) {
-            if (!_expression.compiled())
-                _parser.setVariable(i, x);
-        }
+        if (i >= 3 || i < 0)
+            return;
+        _parser.setVariable(i, x);
     }
 
     public void resetTime() {

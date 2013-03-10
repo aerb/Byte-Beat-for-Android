@@ -9,6 +9,7 @@ import com.tasty.fish.domain.ByteBeatExpression;
 import com.tasty.fish.domain.IExpressionEvaluator;
 import com.tasty.fish.interfaces.IDroidBeatView;
 import com.tasty.fish.utils.AndroidAudioDevice;
+import com.tasty.fish.utils.parser.ExpressionParsingException;
 
 public class DroidBeatPresenter implements IDroidBeatView.IDroidBeatViewListener,
                                            IParameterView.IParameterViewListener,
@@ -170,7 +171,11 @@ public class DroidBeatPresenter implements IDroidBeatView.IDroidBeatViewListener
     @Override
     public void OnActiveExpressionChanged() {
         ByteBeatExpression exp = _repo.getActive();
-        _evaluator.setExpression(exp);
+        try {
+            _evaluator.setExpression(exp);
+        } catch (ExpressionParsingException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        }
         _activeExpression = exp;
         updateView();
     }

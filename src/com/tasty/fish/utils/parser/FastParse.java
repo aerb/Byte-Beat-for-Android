@@ -1,4 +1,4 @@
-package com.tasty.fish.utils;
+package com.tasty.fish.utils.parser;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -8,11 +8,15 @@ import java.util.regex.Pattern;
 
 public class FastParse {
     static private Map<String, Op> opMap;
+    private ArrayList<MutableFloating> simpleMap;
+    private IExpressionNode rootNode = null;
+    private MutableFixed _t = new MutableFixed(0);
+
+    //region Operator definitions
 
     public interface Op {
         double Ex(double a, double b);
     }
-
     static {
         opMap = new HashMap<String, Op>();
         opMap.put("<=", new Op() {
@@ -40,39 +44,39 @@ public class FastParse {
                 return (long) a | (long) b;
             }
         });
+        opMap.put("&",  new Op() {
+            public double Ex(double a, double b) {
+                return (long)a & (long)b;
+            }
+        });
         opMap.put("^",  new Op() {
             public double Ex(double a, double b) {
                 return (long) a ^ (long) b;
             }
         });
-        opMap.put("&",  new Op() {
-            public double Ex(double a, double b) {
-                return (long) a & (long) b;
-            }
-        });
         opMap.put("%",  new Op() {
             public double Ex(double a, double b) {
-                return (long) (a % b);
+                return a % b;
             }
         });
         opMap.put("+",  new Op() {
             public double Ex(double a, double b) {
-                return (long) (a + b);
+                return a + b;
             }
         });
         opMap.put("-",  new Op() {
             public double Ex(double a, double b) {
-                return (long) (a - b);
+                return  a - b;
             }
         });
         opMap.put("*",  new Op() {
             public double Ex(double a, double b) {
-                return (long) (a * b);
+                return a * b;
             }
         });
         opMap.put("/",  new Op() {
             public double Ex(double a, double b) {
-                return (long) (a / b);
+                return a / b;
             }
         });
         opMap.put(">>", new Op() {
@@ -87,110 +91,40 @@ public class FastParse {
         });
     }
 
-    private class MutableDouble {
-        public double Value;
+    //endregion
 
-        public MutableDouble(Double d) {
-            Value = d;
-        }
-    }
-
-    private class ParseNode {
-        private Op o;
-        private ParseNode p0;
-        private ParseNode p1;
-        private int intValue;
-        private MutableDouble variableValue = null;
-        private parseType ptype = null;
-
-        private ParseNode(int value) {
-            intValue = value;
-            ptype = parseType.Value;
-        }
-
-        public ParseNode(Op o, ParseNode p0, ParseNode p1) {
-            this.o = o;
-            this.p0 = p0;
-            this.p1 = p1;
-            ptype = parseType.Expression;
-        }
-
-        private ParseNode(MutableDouble d) {
-            variableValue = d;
-            ptype = parseType.Variable;
-        }
-
-        private double eval() {
-            switch (ptype) {
-            case Expression:
-                return o.Ex(p0.eval (), p1.eval());
-            case Value:
-                return intValue;
-            case Variable:
-                return variableValue.Value;
-            default:
-                break;
-            }
-            return 0;
-        }
-    }
-
-    private Map<String, Double> varMap;
-    private ArrayList<MutableDouble> simpleMap;
-
+    //region Operator precedence definitions
     private String[][] operators = { { "|" }, { "^" }, { "&" }, { "==", "!=" },
             { ">=", "<=" }, { ">>", "<<" }, { "+", "-" }, { "*", "/", "%" } };
+
+    private String[] fixedPointOperators = { "&", "|", "^", ">>", "<<" };
+
     private char lb = '(', rb = ')';
+    //endregion
 
-    private Pattern num = Pattern.compile("[0-9]+");
-    private Pattern hex = Pattern.compile("\\b0[xX][0-9a-fA-F]+\\b");
-    private Pattern var = Pattern.compile("[a-zA-Z0-9]+");
+    //region Parsing definitions
 
-    private ParseNode rootNode = null;
-
-    private enum parseType {
-        Expression, Value, Variable
+    public enum parseType {
+        SubExpression, Value, Variable
     }
-
     private enum direction {
         left_to_right, right_to_left
     }
+    //endregion
+
+    //region Regex
+    private Pattern num = Pattern.compile("[0-9]+");
+    private Pattern hex = Pattern.compile("\\b0[xX][0-9a-fA-F]+\\b");
+    private Pattern var = Pattern.compile("[a-zA-Z0-9]+");
+    //endregion
 
     public FastParse() {
-        varMap = new HashMap<String, Double>();
-        simpleMap = new ArrayList<MutableDouble>();
+        simpleMap = new ArrayList<MutableFloating>();
         for (int i = 0; i < 4; ++i)
-            simpleMap.add(new MutableDouble(0d));
+            simpleMap.add(new MutableFloating(0d));
     }
 
-    private parseType determineParseType(String s) {
-        Matcher numMatcher = num.matcher(s);
-        Matcher hexMatcher = hex.matcher(s);
-        Matcher varMatcher = var.matcher(s);
-        if (numMatcher.matches() || hexMatcher.matches())
-            return parseType.Value;
-        if (varMatcher.matches())
-            return parseType.Variable;
-        return parseType.Expression;
-    }
-
-    public double evaluate() {
-        return rootNode != null ? rootNode.eval() : 0;
-    }
-
-    private MutableDouble getMutableVariable(String key) {
-        if (key.compareTo("t") == 0)
-            return simpleMap.get(0);
-        else if (key.compareTo("p1") == 0)
-            return simpleMap.get(1);
-        else if (key.compareTo("p2") == 0)
-            return simpleMap.get(2);
-        else if (key.compareTo("p3") == 0)
-            return simpleMap.get(3);
-
-        return null;
-    }
-
+    //region Bracket matching
     private int findClosingBracket(String s, int index) {
         return findClosingBracket(s, index, direction.left_to_right);
     }
@@ -228,7 +162,9 @@ public class FastParse {
         }
         return -1;
     }
+    //endregion
 
+    //region Parsing methods
     private int[] findNextOperator(String s) {
         int strlen = s.length();
         for (String[] ops : operators) {
@@ -253,8 +189,19 @@ public class FastParse {
         return null;
     }
 
-    private ParseNode parse(String s) {
-        ParseNode p0 = null, p1 = null;
+    private parseType determineParseType(String s) {
+        Matcher numMatcher = num.matcher(s);
+        Matcher hexMatcher = hex.matcher(s);
+        Matcher varMatcher = var.matcher(s);
+        if (numMatcher.matches() || hexMatcher.matches())
+            return parseType.Value;
+        if (varMatcher.matches())
+            return parseType.Variable;
+        return parseType.SubExpression;
+    }
+
+    private IExpressionNode parse(String s) throws ExpressionParsingException {
+        IExpressionNode p0 = null, p1 = null;
 
         s = s.replace(" ", "");
         String[] subExp = null;
@@ -262,22 +209,35 @@ public class FastParse {
         s = removeRedundantBrackets(s);
         parseType t = determineParseType(s);
         switch (t) {
-        case Expression:
+        case SubExpression:
             int[] result = findNextOperator(s);
             if (result != null) {
                 subExp = splitExpression(s, result[0], result[1]);
                 p0 = parse(subExp[0]);
                 p1 = parse(subExp[2]);
-                return (p0 != null && p1 != null) ? new ParseNode(
-                        opMap.get(subExp[1]), p0, p1) : null;
+                String opStr = subExp[1];
+                Op operator = opMap.get(opStr);
+                if ((p0 != null && p1 != null) && (
+                        !requiresFixedArgument(opStr) ||
+                            (p0.isFixed() && p1.isFixed())
+                        )
+                    )
+                {
+                    return new OperatorNode(operator, p0, p1);
+                }
+                else
+                    throw new ExpressionParsingException("Operator " + opStr + " cannot have floating arguments.");
             }
             break;
         case Value:
             int value = parseValue(s);
-            return new ParseNode(value);
+            return new ValueNode(value);
         case Variable:
-            MutableDouble d = getMutableVariable(s);
-            return (d != null) ? new ParseNode(d) : null;
+            FixedVariableNode fixedNode = getFixedNode(s);
+            FloatingVariableNode floatingNode = getFloatingNode(s);
+            return fixedNode != null ? fixedNode :
+                   floatingNode != null ? floatingNode :
+                   null;
         default:
             break;
         }
@@ -296,6 +256,16 @@ public class FastParse {
         }
     }
 
+    private boolean requiresFixedArgument(String operator){
+        for(String o : fixedPointOperators){
+            if(o.compareTo(operator) == 0)
+                return true;
+        }
+        return false;
+    }
+    //endregion
+
+    //region String operations
     private String removeRedundantBrackets(String s) {
         for (int i = 0; i < s.length(); ++i) {
             char c = s.charAt(i);
@@ -310,23 +280,46 @@ public class FastParse {
         return s;
     }
 
-    public void setTime(double value) {
-        simpleMap.get(0).Value = value;
-    }
-
-    public void setVariable(int key, double value) {
-        simpleMap.get(key + 1).Value = value;
-    }
-
     private String[] splitExpression(String s, int begin, int end) {
         String s0 = s.substring(0, begin);
         String s1 = s.substring(begin, end);
         String s2 = s.substring(end);
         return new String[] { s0, s1, s2 };
     }
+    //endregion
 
-    public boolean tryParse(String expression) {
+    //region Getters & Setters
+    public void setTime(long value) {
+        _t.Value = value;
+    }
+
+    public void setVariable(int key, double value) {
+        simpleMap.get(key + 1).Value = value;
+    }
+
+    private FloatingVariableNode getFloatingNode(String key) {
+        MutableFloating found = null;
+        if (key.compareTo("p1") == 0)
+            found =  simpleMap.get(1);
+        else if (key.compareTo("p2") == 0)
+            found =  simpleMap.get(2);
+        else if (key.compareTo("p3") == 0)
+            found =  simpleMap.get(3);
+        return found != null ? new FloatingVariableNode(found) : null;
+    }
+
+    private FixedVariableNode getFixedNode(String key){
+        if (key.compareTo("t") == 0)
+            return new FixedVariableNode(_t);
+        return null;
+    }
+    //endregion
+
+    public double evaluate() {
+        return rootNode != null ? rootNode.eval() : 0;
+    }
+
+    public void tryParse(String expression) throws ExpressionParsingException {
         rootNode = parse(expression);
-        return rootNode != null;
     }
 }
