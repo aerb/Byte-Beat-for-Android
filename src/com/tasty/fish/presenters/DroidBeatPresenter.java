@@ -37,7 +37,7 @@ public class DroidBeatPresenter implements IDroidBeatView.IDroidBeatViewListener
     )
     {
         _audioDevice = new AndroidAudioDevice();
-        samples = new byte[_audioDevice.getBufferSize() - 1];
+        samples = new byte[_audioDevice.getBufferSize()];
         _view = view;
         _evaluator = evaluator;
         _repo = repo;
