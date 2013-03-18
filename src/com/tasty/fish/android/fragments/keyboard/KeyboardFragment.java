@@ -1,4 +1,4 @@
-package com.tasty.fish;
+package com.tasty.fish.android.fragments.keyboard;
 
 import android.graphics.PorterDuff;
 import android.os.Bundle;
@@ -7,7 +7,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import com.tasty.fish.interfaces.IKeyboardDisplayView;
+import com.tasty.fish.android.DroidBeatActivity;
+import com.tasty.fish.R;
+import com.tasty.fish.presenters.ExpressionPresenter;
+import com.tasty.fish.views.IKeyboardDisplayView;
 
 import java.util.ArrayList;
 

@@ -1,6 +1,6 @@
-package com.tasty.fish;
+package com.tasty.fish.domain;
 
-import com.tasty.fish.domain.ByteBeatExpression;
+import com.tasty.fish.domain.implementation.ByteBeatExpression;
 
 import java.util.List;
 

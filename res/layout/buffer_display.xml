@@ -5,7 +5,7 @@
               android:layout_width="fill_parent"
               android:layout_height="fill_parent">
 
-    <com.tasty.fish.BufferCanvas
+    <com.tasty.fish.android.fragments.visuals.buffer.BufferCanvas
             android:id="@+id/bufferCanvas"
             android:layout_width="fill_parent"
             android:layout_height="154dp"

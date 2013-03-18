@@ -1,4 +1,4 @@
-package com.tasty.fish.interfaces;
+package com.tasty.fish.views;
 
 public interface IDroidBeatView
 {

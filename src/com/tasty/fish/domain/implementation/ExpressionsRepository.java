@@ -1,11 +1,11 @@
-package com.tasty.fish;
+package com.tasty.fish.domain.implementation;
 
-import com.tasty.fish.domain.ByteBeatExpression;
+import com.tasty.fish.domain.IExpressionsRepository;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ExpressionsRepository implements IExpressionsRepository{
+public class ExpressionsRepository implements IExpressionsRepository {
 
     private final ArrayList<ByteBeatExpression> _expressions;
     private ByteBeatExpression _active;

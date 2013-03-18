@@ -1,7 +1,9 @@
-package com.tasty.fish;
+package com.tasty.fish.presenters;
 
-import com.tasty.fish.domain.ByteBeatExpression;
-import com.tasty.fish.interfaces.IKeyboardDisplayView;
+import com.tasty.fish.domain.IExpressionsRepository;
+import com.tasty.fish.domain.implementation.ByteBeatExpression;
+import com.tasty.fish.views.IKeyboardDisplayView;
+import com.tasty.fish.views.IExpressionView;
 
 public class ExpressionPresenter implements
         IKeyboardDisplayView.IKeyboardDisplayViewListener,

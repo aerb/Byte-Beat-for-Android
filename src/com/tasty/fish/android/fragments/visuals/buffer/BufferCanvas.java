@@ -1,4 +1,4 @@
-package com.tasty.fish;
+package com.tasty.fish.android.fragments.visuals.buffer;
 
 import android.content.Context;
 import android.graphics.Canvas;

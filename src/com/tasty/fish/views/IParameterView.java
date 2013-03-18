@@ -1,4 +1,4 @@
-package com.tasty.fish;
+package com.tasty.fish.views;
 
 public interface IParameterView {
     public interface IParameterViewListener

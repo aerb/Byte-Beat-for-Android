@@ -2,12 +2,12 @@ package com.tasty.fish.presenters;
 
 import java.util.ArrayList;
 
-import com.tasty.fish.IBufferView;
-import com.tasty.fish.IExpressionsRepository;
-import com.tasty.fish.IParameterView;
-import com.tasty.fish.domain.ByteBeatExpression;
+import com.tasty.fish.views.IBufferView;
+import com.tasty.fish.domain.IExpressionsRepository;
+import com.tasty.fish.views.IParameterView;
+import com.tasty.fish.domain.implementation.ByteBeatExpression;
 import com.tasty.fish.domain.IExpressionEvaluator;
-import com.tasty.fish.interfaces.IDroidBeatView;
+import com.tasty.fish.views.IDroidBeatView;
 import com.tasty.fish.utils.AndroidAudioDevice;
 import com.tasty.fish.utils.parser.ExpressionParsingException;
 

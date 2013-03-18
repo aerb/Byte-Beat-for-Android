@@ -1,9 +1,10 @@
-package com.tasty.fish.domain;
+package com.tasty.fish.domain.implementation;
 
+import com.tasty.fish.domain.IExpressionEvaluator;
 import com.tasty.fish.utils.parser.ExpressionParsingException;
 import com.tasty.fish.utils.parser.FastParse;
 
-public class ExpressionEvaluator implements IExpressionEvaluator  {
+public class ExpressionEvaluator implements IExpressionEvaluator {
 
     private ByteBeatExpression _expression;
     private FastParse _parser;

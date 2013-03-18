@@ -1,4 +1,4 @@
-package com.tasty.fish;
+package com.tasty.fish.android.fragments.visuals.expression;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,6 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import com.tasty.fish.android.DroidBeatActivity;
+import com.tasty.fish.R;
+import com.tasty.fish.presenters.ExpressionPresenter;
+import com.tasty.fish.views.IExpressionView;
 
 import java.util.ArrayList;
 

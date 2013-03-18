@@ -1,4 +1,4 @@
-package com.tasty.fish;
+package com.tasty.fish.android.fragments.selection;
 
 import android.database.DataSetObserver;
 import android.view.LayoutInflater;
@@ -6,7 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListAdapter;
 import android.widget.TextView;
-import com.tasty.fish.domain.ByteBeatExpression;
+import com.tasty.fish.R;
+import com.tasty.fish.domain.implementation.ByteBeatExpression;
 
 import java.util.List;
 

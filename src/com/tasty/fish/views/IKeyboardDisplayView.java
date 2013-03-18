@@ -1,4 +1,4 @@
-package com.tasty.fish.interfaces;
+package com.tasty.fish.views;
 
 import android.view.View;
 

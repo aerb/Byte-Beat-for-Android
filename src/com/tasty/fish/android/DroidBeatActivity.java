@@ -1,4 +1,4 @@
-package com.tasty.fish;
+package com.tasty.fish.android;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -6,11 +6,17 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.*;
-import android.widget.AdapterView.OnItemSelectedListener;
 
-import com.tasty.fish.domain.ByteBeatExpression;
-import com.tasty.fish.interfaces.IDroidBeatView;
+import com.tasty.fish.R;
+import com.tasty.fish.android.fragments.keyboard.KeyboardFragment;
+import com.tasty.fish.android.fragments.parameters.ParametersFragment;
+import com.tasty.fish.android.fragments.visuals.buffer.BufferFragment;
+import com.tasty.fish.android.fragments.selection.ExpressionSelectionFragment;
+import com.tasty.fish.android.fragments.visuals.expression.ExpressionFragment;
+import com.tasty.fish.presenters.ExpressionPresenter;
+import com.tasty.fish.views.IDroidBeatView;
 import com.tasty.fish.presenters.DroidBeatPresenter;
+import com.tasty.fish.views.IExpressionView;
 
 import java.util.ArrayList;
 
@@ -49,7 +55,7 @@ public class DroidBeatActivity extends FragmentActivity implements
 
         getSupportFragmentManager()
                 .beginTransaction()
-                .add(R.id.lowerFragmentContainer, new ParametersView())
+                .add(R.id.lowerFragmentContainer, new ParametersFragment())
                 .commit();
 
         getSupportFragmentManager()

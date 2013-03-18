@@ -1,4 +1,4 @@
-package com.tasty.fish.domain;
+package com.tasty.fish.domain.implementation;
 
 public class ByteBeatExpression {
     private double[] _args = { 0, 0, 0 };

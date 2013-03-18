@@ -1,4 +1,4 @@
-package com.tasty.fish;
+package com.tasty.fish.android.fragments.parameters;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -6,13 +6,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
+import com.tasty.fish.android.DroidBeatActivity;
+import com.tasty.fish.R;
 import com.tasty.fish.presenters.DroidBeatPresenter;
+import com.tasty.fish.views.IParameterView;
 
 import java.util.ArrayList;
 
-public class ParametersView extends Fragment implements View.OnClickListener,
+public class ParametersFragment extends Fragment implements View.OnClickListener,
                                                         SeekBar.OnSeekBarChangeListener,
-                                                        IParameterView
+        IParameterView
 {
     private static SeekBar s_seekBarSpeed;
     private static SeekBar[] s_seekBarArgs = new SeekBar[3];

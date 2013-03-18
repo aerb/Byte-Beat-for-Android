@@ -1,11 +1,14 @@
-package com.tasty.fish;
+package com.tasty.fish.android.fragments.selection;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.view.View;
 import android.widget.ListView;
-import com.tasty.fish.domain.ByteBeatExpression;
+import com.tasty.fish.android.DroidBeatApplication;
+import com.tasty.fish.domain.implementation.ByteBeatExpression;
+import com.tasty.fish.presenters.ExpressionSelectionPresenter;
+import com.tasty.fish.views.IExpressionSelectionView;
 
 import java.util.ArrayList;
 import java.util.List;

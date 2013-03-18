@@ -1,4 +1,7 @@
-package com.tasty.fish;
+package com.tasty.fish.presenters;
+
+import com.tasty.fish.domain.IExpressionsRepository;
+import com.tasty.fish.views.IExpressionSelectionView;
 
 public class ExpressionSelectionPresenter implements IExpressionSelectionView.IExpressionSelectionViewListener {
     private IExpressionSelectionView _view;

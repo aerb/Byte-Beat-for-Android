@@ -1,5 +1,5 @@
-import com.tasty.fish.domain.ByteBeatExpression
-import com.tasty.fish.domain.ExpressionEvaluator
+import com.tasty.fish.domain.implementation.ByteBeatExpression
+import com.tasty.fish.domain.implementation.ExpressionEvaluator
 
 class ExpressionEvaluatorTest extends GroovyTestCase{
     def p1 = 1;
