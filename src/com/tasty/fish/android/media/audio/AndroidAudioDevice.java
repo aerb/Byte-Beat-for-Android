@@ -1,4 +1,4 @@
-package com.tasty.fish.utils;
+package com.tasty.fish.android.media.audio;
 
 import android.media.*;
 

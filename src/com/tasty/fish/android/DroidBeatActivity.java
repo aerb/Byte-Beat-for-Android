@@ -10,7 +10,7 @@ import android.widget.*;
 import com.tasty.fish.R;
 import com.tasty.fish.android.fragments.keyboard.KeyboardFragment;
 import com.tasty.fish.android.fragments.parameters.ParametersFragment;
-import com.tasty.fish.android.fragments.visuals.buffer.BufferFragment;
+import com.tasty.fish.android.fragments.visuals.buffer.BufferVisualsFragment;
 import com.tasty.fish.android.fragments.selection.ExpressionSelectionFragment;
 import com.tasty.fish.android.fragments.visuals.expression.ExpressionFragment;
 import com.tasty.fish.presenters.ExpressionPresenter;
@@ -60,7 +60,7 @@ public class DroidBeatActivity extends FragmentActivity implements
 
         getSupportFragmentManager()
                 .beginTransaction()
-                .add(R.id.bufferFragmentContainer, new BufferFragment())
+                .add(R.id.bufferFragmentContainer, new BufferVisualsFragment())
                 .commit();
 
         getSupportFragmentManager()

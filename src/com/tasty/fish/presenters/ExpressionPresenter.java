@@ -82,7 +82,7 @@ public class ExpressionPresenter implements
     }
 
     @Override
-        public void OnActiveExpressionChanged() {
+    public void OnActiveExpressionChanged() {
         setActiveExpression(_expressionRepo.getActive());
         updateView();
     }

@@ -16,7 +16,10 @@ import com.tasty.fish.views.IExpressionView;
 
 import java.util.ArrayList;
 
-public class ExpressionFragment extends Fragment implements IExpressionView, View.OnClickListener {
+public class ExpressionFragment extends Fragment implements
+        IExpressionView,
+        View.OnClickListener
+{
 
     private UnderlineSpan _underlineSpan = new UnderlineSpan();
     private ExpressionPresenter _presenter;
@@ -43,21 +46,26 @@ public class ExpressionFragment extends Fragment implements IExpressionView, Vie
         return layout;
     }
 
+    //region IExpressionView methods
     @Override
     public void setIExpressionViewListener(IExpressionViewListener listener) {
         _listeners.add(listener);
     }
 
+    @Override
     public void setExpression(String s, int cursor) {
         SpannableString content = new SpannableString(s);
         content.removeSpan(_underlineSpan);
         content.setSpan(_underlineSpan, cursor, cursor + 1, 0);
         _expressionTextView.setText(content);
     }
+    //endregion
 
+    //region View.OnClickListener methods
     @Override
     public void onClick(View view) {
         for(IExpressionViewListener l : _listeners)
             l.OnRequestEdit();
     }
+    //endregion
 }

@@ -8,24 +8,25 @@ import android.view.ViewGroup;
 import android.widget.*;
 import com.tasty.fish.android.DroidBeatActivity;
 import com.tasty.fish.R;
-import com.tasty.fish.presenters.DroidBeatPresenter;
 import com.tasty.fish.views.IParameterView;
 
 import java.util.ArrayList;
 
-public class ParametersFragment extends Fragment implements View.OnClickListener,
-                                                        SeekBar.OnSeekBarChangeListener,
+public class ParametersFragment extends Fragment implements
+        View.OnClickListener,
+        SeekBar.OnSeekBarChangeListener,
         IParameterView
 {
     private static SeekBar s_seekBarSpeed;
     private static SeekBar[] s_seekBarArgs = new SeekBar[3];
+
     private static TextView s_textSpeed;
     private static TextView[] s_textArgs = new TextView[3];
+
     private static Button s_resetTimeBtn;
     private static Button s_resetArgsBtn;
 
     private ArrayList<IParameterViewListener> _listeners;
-    private DroidBeatPresenter s_droidbeatPresenter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -55,23 +56,33 @@ public class ParametersFragment extends Fragment implements View.OnClickListener
         return parameterView;
     }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    //region Conversion methods
+    private double convertSeekBarToParameterValue(double arg1) {
+        double x = ((float) arg1) / 100 * 2;
+        x = (float) (x == 0 ? 0.01 : x);
+        return x;
     }
 
+    private double convertSeekBarToTimescaleValue(double arg1) {
+        return arg1 / 100;
+    }
+    //endregion
+
+    //region OnClickListener methods
     @Override
     public void onClick(View arg0) {
         if (arg0 == s_resetTimeBtn) {
             NotifyResetTime();
         } else if (arg0 == s_resetArgsBtn) {
-            NotifyResetArgs();
+            NotifyResetParameters();
         }
     }
+    //endregion
 
-    private void NotifyResetArgs() {
+    //region Notification methods
+    private void NotifyResetParameters() {
         for(IParameterViewListener listener : _listeners){
-            listener.OnResetArgs();
+            listener.OnResetParameters();
         }
     }
 
@@ -87,39 +98,30 @@ public class ParametersFragment extends Fragment implements View.OnClickListener
         }
     }
 
-    private void NotifyArguementChanged(int index, double value){
+    private void NotifyParameterChanged(int index, double value){
         for(IParameterViewListener listener : _listeners){
-            listener.OnArgumentChanged(index, value);
+            listener.OnParameterChanged(index, value);
         }
     }
-
-    private double mapArgSeekBar(double arg1) {
-        double x = ((float) arg1) / 100 * 2;
-        x = (float) (x == 0 ? 0.01 : x);
-        return x;
-    }
-
-    private double mapTimeSeekBar(double arg1) {
-        return arg1 / 100;
-    }
+    //endregion
 
     //region OnSeekBarChangeListeners methods
     @Override
     public void onProgressChanged(SeekBar arg0, int arg1, boolean arg2) {
         if (arg0 == s_seekBarSpeed) {
-            double inc = mapTimeSeekBar(arg1);
+            double inc = convertSeekBarToTimescaleValue(arg1);
             NotifyTimeScaleChanged(inc);
             s_textSpeed.setText("speed = " + inc);
         } else {
-            double x = mapArgSeekBar(arg1);
+            double x = convertSeekBarToParameterValue(arg1);
             if (arg0 == s_seekBarArgs[0]) {
-                NotifyArguementChanged(0, x);
+                NotifyParameterChanged(0, x);
                 s_textArgs[0].setText(String.format("p1 = %.2f", x));
             } else if (arg0 == s_seekBarArgs[1]) {
-                NotifyArguementChanged(1, x);
+                NotifyParameterChanged(1, x);
                 s_textArgs[1].setText(String.format("p2 = %.2f", x));
             } else if (arg0 == s_seekBarArgs[2]) {
-                NotifyArguementChanged(2, x);
+                NotifyParameterChanged(2, x);
                 s_textArgs[2].setText(String.format("p3 = %.2f", x));
             }
         }
@@ -132,16 +134,20 @@ public class ParametersFragment extends Fragment implements View.OnClickListener
     public void onStopTrackingTouch(SeekBar arg0) {}
     //endregion
 
+    //region IParameterView methods
     @Override
     public void registerIDroidBeatViewListener(IParameterViewListener listener) {
         _listeners.add(listener);
     }
 
-    public void updateSeekerSpeedPostion(double value) {
+    @Override
+    public void setTimescale(double value) {
         s_seekBarSpeed.setProgress((int) (value * 100));
     }
 
-    public void updateSeekerPostion(int i, double value) {
+    @Override
+    public void setParameter(int i, double value) {
         s_seekBarArgs[i].setProgress((int) (value * 100 / 2));
     }
+    //endregion
 }

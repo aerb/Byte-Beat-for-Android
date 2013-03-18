@@ -10,7 +10,7 @@ import com.tasty.fish.android.DroidBeatActivity;
 import com.tasty.fish.R;
 import com.tasty.fish.views.IBufferView;
 
-public class BufferFragment extends Fragment implements IBufferView {
+public class BufferVisualsFragment extends Fragment implements IBufferView {
     private LinearLayout _layout;
     private BufferCanvas _canvas;
 

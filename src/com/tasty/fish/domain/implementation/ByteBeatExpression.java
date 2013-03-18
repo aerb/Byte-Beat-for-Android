@@ -32,11 +32,11 @@ public class ByteBeatExpression {
         _expression = expression;
     }
 
-    public void setTimeScale(double inc) {
+    public void setTimescale(double inc) {
         _timescale = inc;
     }
 
-    public void setArguement(int i, double x) {
+    public void setParameter(int i, double x) {
         if (i < 3 && i >= 0) {
             _args[i] = x;
         }
@@ -56,5 +56,12 @@ public class ByteBeatExpression {
 
     public String getName() {
         return _name;
+    }
+
+    public void resetParametersAndTimescale() {
+        setTimescale(0.5f);
+        setParameter(0, 1f);
+        setParameter(1, 1f);
+        setParameter(2, 1f);
     }
 }
