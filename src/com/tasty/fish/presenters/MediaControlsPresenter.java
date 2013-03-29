@@ -1,55 +1,55 @@
 package com.tasty.fish.presenters;
 
+import com.tasty.fish.android.DroidBeatActivity;
 import com.tasty.fish.android.media.audio.IAudioPlayer;
 import com.tasty.fish.domain.IExpressionEvaluator;
 import com.tasty.fish.domain.IExpressionsRepository;
 import com.tasty.fish.domain.implementation.ByteBeatExpression;
 import com.tasty.fish.utils.parser.ExpressionParsingException;
-import com.tasty.fish.views.IBufferView;
-import com.tasty.fish.views.IDroidBeatView;
-import com.tasty.fish.views.IParameterView;
+import com.tasty.fish.views.IMediaControlsView;
 
-public class DroidBeatPresenter implements
-        IDroidBeatView.IDroidBeatViewListener,
+public class MediaControlsPresenter implements
+        IMediaControlsView.IMediaControlsListener,
         IExpressionsRepository.IExpressionsRepositoryListener
 {
-    private IDroidBeatView _view;
+    private IMediaControlsView _view;
 
     private ByteBeatExpression _activeExpression = null;
 
     private final IExpressionEvaluator _evaluator;
     private final IExpressionsRepository _repo;
+    private final IAudioPlayer _audio;
 
 
-    public DroidBeatPresenter(
-            IDroidBeatView view,
+    public MediaControlsPresenter(
             IExpressionEvaluator evaluator,
             IExpressionsRepository repo,
-            IAudioPlayer _audio,
-            BufferVisualsPresenter _bufferPresenter
+            IAudioPlayer audio
     )
     {
-        _view = view;
         _evaluator = evaluator;
         _repo = repo;
         _repo.setIExpressionsRepositoryListener(this);
+        _audio = audio;
     }
-
 
     private void updateView() {
         _view.setTitle(_activeExpression.getName());
     }
 
+    public void setView(IMediaControlsView view) {
+        _view = view;
+    }
 
-    //region IDroidBeatViewListener methods
+    //region IMediaControlsListener methods
     @Override
     public void OnStartPlay() {
-        //startAudioThread();
-        //startVideoThread();
+        _audio.start();
     }
 
     @Override
     public void OnStopPlay() {
+        _audio.stop();
     }
     //endregion
 

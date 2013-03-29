@@ -19,7 +19,7 @@ public class AudioPlayer implements IAudioPlayer {
     }
 
     @Override
-    public void startAudio() {
+    public void start() {
         _die = false;
         new Thread(new Runnable() {
             public void run() {
@@ -29,7 +29,6 @@ public class AudioPlayer implements IAudioPlayer {
                         samples[i] = _evaluator.getNextSample();
                     }
                     _audioDevice.writeSamples(samples);
-
                     if (_die) {
                         _audioDevice.stop();
                         return;
@@ -37,5 +36,10 @@ public class AudioPlayer implements IAudioPlayer {
                 }
             }
         }).start();
+    }
+
+    @Override
+    public void stop() {
+        _die = true;
     }
 }

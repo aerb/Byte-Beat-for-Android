@@ -24,7 +24,7 @@ public class ParametersPresenter implements
         _evaluator = evaluator;
     }
 
-    public void setParameterView(IParameterView view){
+    public void setView(IParameterView view){
         _parametersView = view;
         _parametersView.registerIDroidBeatViewListener(this);
     }

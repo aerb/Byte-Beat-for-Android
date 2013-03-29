@@ -8,18 +8,25 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import com.tasty.fish.android.DroidBeatActivity;
 import com.tasty.fish.R;
+import com.tasty.fish.presenters.BufferVisualsPresenter;
 import com.tasty.fish.views.IBufferView;
 
 public class BufferVisualsFragment extends Fragment implements IBufferView {
     private LinearLayout _layout;
     private BufferCanvas _canvas;
+    private BufferVisualsPresenter _presenter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         _layout = (LinearLayout) inflater.inflate(R.layout.buffer_display, null);
         _canvas = (BufferCanvas)_layout.findViewById(R.id.bufferCanvas);
 
-        ((DroidBeatActivity)getActivity()).getDroidbeatPresenter().setBufferView(this);
+        _presenter =
+            ((DroidBeatActivity)getActivity())
+            .getCompositionRoot()
+            .getBufferVisualsPresenter();
+
+        _presenter.setView(this);
         return _layout;
     }
 

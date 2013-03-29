@@ -38,9 +38,10 @@ public class ExpressionFragment extends Fragment implements
         _editExpressionBtn = (ImageButton)layout.findViewById(R.id.editExpressionBtn);
         _editExpressionBtn.setOnClickListener(this);
 
-
-
-        _presenter = ((DroidBeatActivity)getActivity()).getExpressionPresenter();
+        _presenter =
+            ((DroidBeatActivity)getActivity())
+            .getCompositionRoot()
+            .getExpressionPresenter();
         _presenter.setExpressionView(this);
 
         return layout;

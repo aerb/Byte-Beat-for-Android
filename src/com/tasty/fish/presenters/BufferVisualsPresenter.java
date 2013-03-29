@@ -18,7 +18,7 @@ public class BufferVisualsPresenter {
         _samples = samples;
     }
 
-    public void setBufferView(IBufferView view){
+    public void setView(IBufferView view){
         _bufferView = view;
     }
 

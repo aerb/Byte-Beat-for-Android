@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.*;
 import com.tasty.fish.android.DroidBeatActivity;
 import com.tasty.fish.R;
+import com.tasty.fish.presenters.ParametersPresenter;
 import com.tasty.fish.views.IParameterView;
 
 import java.util.ArrayList;
@@ -27,6 +28,7 @@ public class ParametersFragment extends Fragment implements
     private static Button s_resetArgsBtn;
 
     private ArrayList<IParameterViewListener> _listeners;
+    private ParametersPresenter _presenter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -51,8 +53,12 @@ public class ParametersFragment extends Fragment implements
         s_seekBarArgs[1].setOnSeekBarChangeListener(this);
         s_seekBarArgs[2].setOnSeekBarChangeListener(this);
 
-        ((DroidBeatActivity)getActivity()).getDroidbeatPresenter().setParameterView(this);
+        _presenter =
+            ((DroidBeatActivity)getActivity())
+            .getCompositionRoot()
+            .getParametersPresenter();
 
+        _presenter.setView(this);
         return parameterView;
     }
 

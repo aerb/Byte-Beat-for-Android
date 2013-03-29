@@ -14,8 +14,9 @@ import com.tasty.fish.android.fragments.visuals.buffer.BufferVisualsFragment;
 import com.tasty.fish.android.fragments.selection.ExpressionSelectionFragment;
 import com.tasty.fish.android.fragments.visuals.expression.ExpressionFragment;
 import com.tasty.fish.presenters.ExpressionPresenter;
-import com.tasty.fish.views.IDroidBeatView;
-import com.tasty.fish.presenters.DroidBeatPresenter;
+import com.tasty.fish.presenters.MediaControlsPresenter;
+import com.tasty.fish.utils.CompositionRoot;
+import com.tasty.fish.views.IMediaControlsView;
 import com.tasty.fish.views.IExpressionView;
 
 import java.util.ArrayList;
@@ -23,7 +24,7 @@ import java.util.ArrayList;
 public class DroidBeatActivity extends FragmentActivity implements
                                                        OnClickListener,
                                                        IExpressionView.IExpressionViewListener,
-                                                       IDroidBeatView
+        IMediaControlsView
 {
     private static boolean s_dieFlag = true;
 
@@ -31,11 +32,18 @@ public class DroidBeatActivity extends FragmentActivity implements
 
     private static Button s_stopBtn;
 
-    private DroidBeatPresenter _droidbeatPresenter;
+    private MediaControlsPresenter _mediaControlsPresenter;
 
-    private ArrayList<IDroidBeatView.IDroidBeatViewListener> _listeners;
+    private ArrayList<IMediaControlsListener> _listeners;
     private ExpressionPresenter _expressionPresenter;
     private TextView _expressionTitleTextView;
+    private CompositionRoot _root;
+
+    public CompositionRoot getCompositionRoot() {
+        return _root != null ?
+               _root :
+              (_root = new CompositionRoot());
+    }
 
     //region Activity methods
     @Override
@@ -44,14 +52,13 @@ public class DroidBeatActivity extends FragmentActivity implements
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.main);
 
-        _listeners = new ArrayList<IDroidBeatView.IDroidBeatViewListener>();
+        _listeners = new ArrayList<IMediaControlsListener>();
 
-        DroidBeatApplication app =((DroidBeatApplication)getApplication());
+        getCompositionRoot();
 
-        _droidbeatPresenter = new DroidBeatPresenter(this, app.getExpressionEvaluator(), app.getExpressionsRepository());
-        registerIDroidBeatViewListener(_droidbeatPresenter);
-
-        _expressionPresenter = new ExpressionPresenter(app.getExpressionsRepository());
+        _mediaControlsPresenter = _root.getMediaControlsPresenter();
+        _mediaControlsPresenter.setView(this);
+        registerIDroidBeatViewListener(_mediaControlsPresenter);
 
         getSupportFragmentManager()
                 .beginTransaction()
@@ -110,36 +117,28 @@ public class DroidBeatActivity extends FragmentActivity implements
 
     //region Notification methods
     private void NotifyStartPlay(){
-        for(IDroidBeatViewListener listener : _listeners){
+        for(IMediaControlsListener listener : _listeners){
             listener.OnStartPlay();
         }
     }
 
     private void NotifyStopPlay(){
-        for(IDroidBeatViewListener listener : _listeners){
+        for(IMediaControlsListener listener : _listeners){
             listener.OnStopPlay();
         }
     }
 
     //endregion
 
-    //region IDroidBeatView methods
+    //region IMediaControlsView methods
 
-    public void registerIDroidBeatViewListener(IDroidBeatViewListener listener) {
+    public void registerIDroidBeatViewListener(IMediaControlsListener listener) {
         _listeners.add(listener);
     }
 
     @Override
     public void setTitle(String title) {
         _expressionTitleTextView.setText(title);
-    }
-
-    public DroidBeatPresenter getDroidbeatPresenter() {
-        return _droidbeatPresenter;
-    }
-
-    public ExpressionPresenter getExpressionPresenter() {
-        return _expressionPresenter;
     }
 
     @Override
@@ -154,5 +153,4 @@ public class DroidBeatActivity extends FragmentActivity implements
                 .replace(R.id.lowerFragmentContainer, new KeyboardFragment())
                 .commit();
     }
-
 }

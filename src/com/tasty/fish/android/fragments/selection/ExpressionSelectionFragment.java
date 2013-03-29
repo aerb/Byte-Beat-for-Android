@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.view.View;
 import android.widget.ListView;
+import com.tasty.fish.android.DroidBeatActivity;
 import com.tasty.fish.android.DroidBeatApplication;
 import com.tasty.fish.domain.implementation.ByteBeatExpression;
 import com.tasty.fish.presenters.ExpressionSelectionPresenter;
@@ -22,7 +23,10 @@ public class ExpressionSelectionFragment extends ListFragment implements IExpres
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         _listeners = new ArrayList<IExpressionSelectionViewListener>();
-        _presenter =  ((DroidBeatApplication)activity.getApplication()).getExpressionSelectorPresenter();
+        _presenter =
+                ((DroidBeatActivity)activity)
+                .getCompositionRoot()
+                .getExpressionSelectorPresenter();
         _presenter.setView(this);
     }
 

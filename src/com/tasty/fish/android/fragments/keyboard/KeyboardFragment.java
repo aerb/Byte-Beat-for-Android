@@ -18,7 +18,6 @@ public class KeyboardFragment extends Fragment implements
         View.OnClickListener,
         IKeyboardDisplayView
 {
-
     private ExpressionPresenter _presenter;
     private ArrayList<IKeyboardDisplayViewListener> _listeners;
 
@@ -27,7 +26,10 @@ public class KeyboardFragment extends Fragment implements
         super.onCreate(savedInstanceState);
         _listeners = new ArrayList<IKeyboardDisplayViewListener>();
 
-        _presenter = ((DroidBeatActivity)getActivity()).getExpressionPresenter();
+        _presenter = ((DroidBeatActivity)getActivity())
+                .getCompositionRoot()
+                .getExpressionPresenter();
+
         _presenter.setKeyboardView(this);
     }
 
