@@ -28,9 +28,9 @@ public class DroidBeatActivity extends FragmentActivity implements
 {
     private static boolean s_dieFlag = true;
 
-    private LinearLayout _loadNewExpressionBtn;
+    private View _loadNewExpressionBtn;
 
-    private static Button s_stopBtn;
+    private View _stopBtn;
 
     private MediaControlsPresenter _mediaControlsPresenter;
 
@@ -38,6 +38,8 @@ public class DroidBeatActivity extends FragmentActivity implements
     private ExpressionPresenter _expressionPresenter;
     private TextView _expressionTitleTextView;
     private CompositionRoot _root;
+    private View _refreshBtn;
+    private View _paramsBtn;
 
     public CompositionRoot getCompositionRoot() {
         return _root != null ?
@@ -62,12 +64,12 @@ public class DroidBeatActivity extends FragmentActivity implements
 
         getSupportFragmentManager()
                 .beginTransaction()
-                .add(R.id.lowerFragmentContainer, new ParametersFragment())
+                .add(R.id.mainActionsFragmentContainer, new ParametersFragment())
                 .commit();
 
         getSupportFragmentManager()
                 .beginTransaction()
-                .add(R.id.bufferFragmentContainer, new BufferVisualsFragment())
+                .add(R.id.mainBufferFragmentContainer, new BufferVisualsFragment())
                 .commit();
 
         getSupportFragmentManager()
@@ -76,17 +78,21 @@ public class DroidBeatActivity extends FragmentActivity implements
                 .commit();
 
         _expressionTitleTextView = (TextView)findViewById(R.id.expressionTitleTextView);
-        _loadNewExpressionBtn = (LinearLayout) findViewById(R.id.selectNewExpressionLayout);
-        s_stopBtn = (Button) findViewById(R.id.buttonStop);
+
+        _loadNewExpressionBtn = findViewById(R.id.selectNewExpressionLayout);
+        _stopBtn = findViewById(R.id.buttonStop);
+        _refreshBtn = findViewById(R.id.refreshButton);
+        _paramsBtn = findViewById(R.id.parametersButton);
 
         _loadNewExpressionBtn.setOnClickListener(this);
-        s_stopBtn.setOnClickListener(this);
+        _stopBtn.setOnClickListener(this);
+        _refreshBtn.setOnClickListener(this);
+        _paramsBtn.setOnClickListener(this);
     }
 
     public void onPause() {
         super.onPause();
         s_dieFlag = true;
-        s_stopBtn.setText("Start");
         NotifyStopPlay();
     }
     //endregion
@@ -94,22 +100,23 @@ public class DroidBeatActivity extends FragmentActivity implements
     //region OnClickListener methods
     @Override
     public void onClick(View arg0) {
-        if (arg0 == s_stopBtn) {
+        if (arg0 == _stopBtn) {
             if (s_dieFlag == false) {
-                s_stopBtn.setText("Start");
                 s_dieFlag = true;
                 NotifyStopPlay();
             } else {
-                s_stopBtn.setText("Stop");
                 s_dieFlag = false;
                 NotifyStartPlay();
             }
-            s_stopBtn.refreshDrawableState();
         } else if(arg0 == _loadNewExpressionBtn){
-
             getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.lowerFragmentContainer, new ExpressionSelectionFragment())
+                    .replace(R.id.mainActionsFragmentContainer, new ExpressionSelectionFragment())
+                    .commit();
+        } else if(arg0 == _paramsBtn){
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.mainActionsFragmentContainer, new ParametersFragment())
                     .commit();
         }
     }
@@ -150,7 +157,7 @@ public class DroidBeatActivity extends FragmentActivity implements
     private void loadKeyboardFragment() {
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.lowerFragmentContainer, new KeyboardFragment())
+                .replace(R.id.mainBufferFragmentContainer, new KeyboardFragment())
                 .commit();
     }
 }

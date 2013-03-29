@@ -2,8 +2,6 @@ package com.tasty.fish.presenters;
 
 import com.tasty.fish.domain.IExpressionEvaluator;
 import com.tasty.fish.domain.IExpressionsRepository;
-import com.tasty.fish.domain.implementation.ByteBeatExpression;
-import com.tasty.fish.utils.parser.ExpressionParsingException;
 import com.tasty.fish.views.IParameterView;
 
 public class ParametersPresenter implements
@@ -13,7 +11,6 @@ public class ParametersPresenter implements
 
     private IParameterView _parametersView;
     private final IExpressionsRepository _repo;
-    private ByteBeatExpression _activeExpression;
     private final IExpressionEvaluator _evaluator;
 
     public ParametersPresenter(
@@ -32,18 +29,18 @@ public class ParametersPresenter implements
     private void updateView(){
         if(_parametersView == null) return;
 
-        _parametersView.setTimescale(_activeExpression.getSpeed());
-        _parametersView.setParameter(0, _activeExpression.getArguement(0));
-        _parametersView.setParameter(1, _activeExpression.getArguement(1));
-        _parametersView.setParameter(2, _activeExpression.getArguement(2));
+        _parametersView.setTimescale(_repo.getActive().getSpeed());
+        _parametersView.setParameter(0, _repo.getActive().getArguement(0));
+        _parametersView.setParameter(1, _repo.getActive().getArguement(1));
+        _parametersView.setParameter(2, _repo.getActive().getArguement(2));
     }
 
     private void updateTimeScale(double inc) {
-        _activeExpression.setTimescale(inc);
+        _repo.getActive().setTimescale(inc);
     }
 
     private void updateArgument(int i, double x) {
-        _activeExpression.setParameter(i, x);
+        _repo.getActive().setParameter(i, x);
     }
 
     private void resetTime() {
@@ -51,7 +48,7 @@ public class ParametersPresenter implements
     }
 
     private void resetArgs() {
-        _activeExpression.resetParametersAndTimescale();
+        _repo.getActive().resetParametersAndTimescale();
         updateView();
     }
 
@@ -80,8 +77,6 @@ public class ParametersPresenter implements
     //region IExpressionRepository methods
     @Override
     public void OnActiveExpressionChanged() {
-        ByteBeatExpression exp = _repo.getActive();
-        _activeExpression = exp;
         updateView();
     }
     //endregion

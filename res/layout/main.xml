@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
+
     <FrameLayout
             android:id="@+id/upperFragmentContainer"
             android:layout_height="wrap_content"
@@ -10,47 +11,82 @@
             />
 
     <FrameLayout
-            android:id="@+id/bufferFragmentContainer"
+            android:id="@+id/mainBufferFragmentContainer"
             android:layout_width="fill_parent"
-            android:layout_height="100dp">
+            android:layout_height="100dp"
+            android:layout_above="@+id/mainActionsFragmentContainer">
     </FrameLayout>
-
-    <LinearLayout
-            android:orientation="horizontal"
-            android:id="@+id/selectNewExpressionLayout"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content" >
-
-        <ImageView
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:src="@drawable/google_4_collections_collection"
-                android:layout_margin="10dp"/>
-
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Test Expresion Name"
-                android:id="@+id/expressionTitleTextView" android:layout_gravity="center" android:typeface="normal"/>
-    </LinearLayout>
 
     <FrameLayout
-            android:id="@+id/lowerFragmentContainer"
+            android:id="@+id/mainActionsFragmentContainer"
             android:layout_width="fill_parent"
-            android:layout_height="250dp">
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/mainBottomControls">
     </FrameLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout1"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content" >
+            android:id="@+id/mainBottomControls"
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+        <RelativeLayout
+                android:id="@+id/selectNewExpressionLayout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" android:background="#fdecc2"
+                >
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Expression"
+                    android:id="@+id/expressionTitleTextView" android:layout_gravity="center" android:typeface="normal"
+                    android:textColor="#000000" android:textStyle="bold" android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:textSize="20dp" android:layout_marginLeft="30dp"/>
 
-        <Button
-            android:id="@+id/buttonStop"
-            android:layout_width="89dp"
-            android:layout_height="wrap_content"
-            android:text="Start" />
+            <ImageView
+                    android:layout_height="40dp"
+                    android:layout_width="40dp"
+                    android:src="@drawable/folder_button_style"
+                    android:layout_alignParentRight="true" android:layout_marginRight="20dp"/>
+        </RelativeLayout>
 
 
+        <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+            <LinearLayout
+                android:id="@+id/buttonStop"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+                <ImageView
+                    android:id="@+id/playImage"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/start_button_white_style"
+                        />
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Start"
+                        android:textSize="20dp"
+                        android:id="@+id/textView" android:textStyle="bold" android:layout_gravity="center_vertical"/>
+            </LinearLayout>
+            <ImageView
+                    android:id="@+id/parametersButton"
+                    android:layout_toLeftOf="@+id/refreshButton"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/controls_button_white_style"
+                    />
+            <ImageView
+                    android:id="@+id/refreshButton"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/refresh_button_white_style"
+                    />
+        </RelativeLayout>
     </LinearLayout>
-</LinearLayout>
+</RelativeLayout>

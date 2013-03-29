@@ -43,11 +43,7 @@ public class ParametersFragment extends Fragment implements
         s_seekBarArgs[0] = (SeekBar) parameterView.findViewById(R.id.seekBarArg1);
         s_seekBarArgs[1] = (SeekBar) parameterView.findViewById(R.id.seekBarArg2);
         s_seekBarArgs[2] = (SeekBar) parameterView.findViewById(R.id.seekBarArg3);
-        s_resetArgsBtn = (Button) parameterView.findViewById(R.id.buttonResetArgs);
-        s_resetTimeBtn = (Button) parameterView.findViewById(R.id.buttonResetTime);
 
-        s_resetTimeBtn.setOnClickListener(this);
-        s_resetArgsBtn.setOnClickListener(this);
         s_seekBarSpeed.setOnSeekBarChangeListener(this);
         s_seekBarArgs[0].setOnSeekBarChangeListener(this);
         s_seekBarArgs[1].setOnSeekBarChangeListener(this);
