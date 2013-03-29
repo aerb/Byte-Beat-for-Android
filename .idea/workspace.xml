@@ -25,14 +25,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/flat_seekbar_style.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable/flat_seekbar_thumb_style.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/tasty/fish/android/DroidBeatActivity.java" afterPath="$PROJECT_DIR$/src/com/tasty/fish/android/DroidBeatActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/tasty/fish/android/fragments/parameters/ParametersFragment.java" afterPath="$PROJECT_DIR$/src/com/tasty/fish/android/fragments/parameters/ParametersFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/tasty/fish/presenters/ParametersPresenter.java" afterPath="$PROJECT_DIR$/src/com/tasty/fish/presenters/ParametersPresenter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/main.xml" afterPath="$PROJECT_DIR$/res/layout/main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/params.xml" afterPath="$PROJECT_DIR$/res/layout/params.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Byte-Beat-for-Android.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -65,7 +59,7 @@
     <file path="/IExpressionView.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1361731598829" ignored="false" />
     <file path="/ExpressionSelectionFragment.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1364562700189" ignored="false" />
     <file path="/IExpressionsRepository.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1361736456817" ignored="false" />
-    <file path="/DroidBeatActivity.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1364575684905" ignored="false" />
+    <file path="/DroidBeatActivity.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1364578316106" ignored="false" />
     <file path="/BufferFragment.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1363600940224" ignored="false" />
     <file path="/buffer_display.xml" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1361824351624" ignored="false" />
     <file path="/BufferCanvas.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1361824596443" ignored="false" />
@@ -154,20 +148,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DroidBeatActivity.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="DroidBeatActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/android/DroidBeatActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="112" column="39" selection-start="3932" selection-end="3932" vertical-scroll-proportion="0.0">
+            <state line="119" column="33" selection-start="4123" selection-end="4123" vertical-scroll-proportion="0.7504078">
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#getCompositionRoot#0;class#DroidBeatActivity#0" expanded="true" />
                 <element signature="method#onCreate#0;class#DroidBeatActivity#0" expanded="true" />
                 <element signature="method#onPause#0;class#DroidBeatActivity#0" expanded="true" />
+                <element signature="method#onClick#0;class#DroidBeatActivity#0" expanded="true" />
                 <element signature="method#NotifyStartPlay#0;class#DroidBeatActivity#0" expanded="true" />
                 <element signature="method#NotifyStopPlay#0;class#DroidBeatActivity#0" expanded="true" />
                 <element signature="method#registerIDroidBeatViewListener#0;class#DroidBeatActivity#0" expanded="true" />
                 <element signature="method#setTitle#0;class#DroidBeatActivity#0" expanded="true" />
                 <element signature="method#OnRequestEdit#0;class#DroidBeatActivity#0" expanded="true" />
+                <element signature="method#setActionsFragment#0;class#DroidBeatActivity#0" expanded="true" />
                 <element signature="method#loadKeyboardFragment#0;class#DroidBeatActivity#0" expanded="true" />
               </folding>
             </state>
@@ -186,10 +182,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ParametersFragment.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ParametersFragment.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/android/fragments/parameters/ParametersFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="0" selection-start="1884" selection-end="1884" vertical-scroll-proportion="0.4600326">
+            <state line="50" column="0" selection-start="2119" selection-end="2119" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+          <provider selected="true" editor-type-id="android-designer">
+            <state />
+          </provider>
+          <provider editor-type-id="text-editor">
+            <state line="89" column="25" selection-start="4031" selection-end="4031" vertical-scroll-proportion="-18.08">
               <folding />
             </state>
           </provider>
@@ -222,13 +230,13 @@
         <option value="$PROJECT_DIR$/src/com/tasty/fish/android/fragments/visuals/expression/ExpressionFragment.java" />
         <option value="$PROJECT_DIR$/src/com/tasty/fish/utils/CompositionRoot.java" />
         <option value="$PROJECT_DIR$/src/com/tasty/fish/android/fragments/keyboard/KeyboardFragment.java" />
-        <option value="$PROJECT_DIR$/res/layout/main.xml" />
         <option value="$PROJECT_DIR$/src/com/tasty/fish/android/fragments/parameters/ParametersFragment.java" />
-        <option value="$PROJECT_DIR$/src/com/tasty/fish/android/DroidBeatActivity.java" />
         <option value="$PROJECT_DIR$/src/com/tasty/fish/presenters/ParametersPresenter.java" />
         <option value="$PROJECT_DIR$/res/drawable/flat_seekbar_style.xml" />
         <option value="$PROJECT_DIR$/res/drawable/flat_seekbar_thumb_style.xml" />
         <option value="$PROJECT_DIR$/res/layout/params.xml" />
+        <option value="$PROJECT_DIR$/res/layout/main.xml" />
+        <option value="$PROJECT_DIR$/src/com/tasty/fish/android/DroidBeatActivity.java" />
       </list>
     </option>
   </component>
@@ -514,24 +522,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Byte-Beat-for-Android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Byte-Beat-for-Android-2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drawable" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -548,7 +538,7 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="options.lastSelected" value="editor" />
     <property name="last_opened_file_path" value="$USER_HOME$/android-sdk-win/extras/android/support/v13/android-support-v13.jar!/" />
-    <property name="AndroidLayoutSelectedEditor" value="text-editor" />
+    <property name="AndroidLayoutSelectedEditor" value="android-designer" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
@@ -940,8 +930,8 @@
     <frame x="-8" y="-8" width="1824" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31895572" sideWeight="0.67199147" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22077185" sideWeight="0.67199147" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3183882" sideWeight="0.6805112" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22020431" sideWeight="0.6805112" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290735" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32973894" sideWeight="0.67199147" order="3" side_tool="false" content_ui="tabs" />
@@ -958,7 +948,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24971624" sideWeight="0.5782748" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2167991" sideWeight="0.6805112" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21704546" sideWeight="0.6805112" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24971624" sideWeight="0.6805112" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31948882" sideWeight="0.49318954" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1057,16 +1047,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="89" column="25" selection-start="3971" selection-end="3971" vertical-scroll-proportion="0.697201">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/android/fragments/keyboard/KeyboardFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="29" column="37" selection-start="987" selection-end="987" vertical-scroll-proportion="0.6523702">
@@ -1110,24 +1090,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/android/DroidBeatActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="112" column="39" selection-start="3932" selection-end="3932" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getCompositionRoot#0;class#DroidBeatActivity#0" expanded="true" />
-            <element signature="method#onCreate#0;class#DroidBeatActivity#0" expanded="true" />
-            <element signature="method#onPause#0;class#DroidBeatActivity#0" expanded="true" />
-            <element signature="method#NotifyStartPlay#0;class#DroidBeatActivity#0" expanded="true" />
-            <element signature="method#NotifyStopPlay#0;class#DroidBeatActivity#0" expanded="true" />
-            <element signature="method#registerIDroidBeatViewListener#0;class#DroidBeatActivity#0" expanded="true" />
-            <element signature="method#setTitle#0;class#DroidBeatActivity#0" expanded="true" />
-            <element signature="method#OnRequestEdit#0;class#DroidBeatActivity#0" expanded="true" />
-            <element signature="method#loadKeyboardFragment#0;class#DroidBeatActivity#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/drawable/flat_seekbar_thumb_style.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="40" selection-start="264" selection-end="264" vertical-scroll-proportion="0.1734694">
@@ -1164,8 +1126,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/android/fragments/parameters/ParametersFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="0" selection-start="1884" selection-end="1884" vertical-scroll-proportion="0.4600326">
+        <state line="50" column="0" selection-start="2119" selection-end="2119" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state line="89" column="25" selection-start="4031" selection-end="4031" vertical-scroll-proportion="-18.08">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/android/DroidBeatActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="119" column="33" selection-start="4123" selection-end="4123" vertical-scroll-proportion="0.7504078">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getCompositionRoot#0;class#DroidBeatActivity#0" expanded="true" />
+            <element signature="method#onCreate#0;class#DroidBeatActivity#0" expanded="true" />
+            <element signature="method#onPause#0;class#DroidBeatActivity#0" expanded="true" />
+            <element signature="method#onClick#0;class#DroidBeatActivity#0" expanded="true" />
+            <element signature="method#NotifyStartPlay#0;class#DroidBeatActivity#0" expanded="true" />
+            <element signature="method#NotifyStopPlay#0;class#DroidBeatActivity#0" expanded="true" />
+            <element signature="method#registerIDroidBeatViewListener#0;class#DroidBeatActivity#0" expanded="true" />
+            <element signature="method#setTitle#0;class#DroidBeatActivity#0" expanded="true" />
+            <element signature="method#OnRequestEdit#0;class#DroidBeatActivity#0" expanded="true" />
+            <element signature="method#setActionsFragment#0;class#DroidBeatActivity#0" expanded="true" />
+            <element signature="method#loadKeyboardFragment#0;class#DroidBeatActivity#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

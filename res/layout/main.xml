@@ -65,7 +65,7 @@
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:src="@drawable/start_button_white_style"
-                        />
+                    android:padding="10dp"/>
                 <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -79,14 +79,14 @@
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:src="@drawable/controls_button_white_style"
-                    />
+                    android:padding="5dp"/>
             <ImageView
                     android:id="@+id/refreshButton"
                     android:layout_alignParentRight="true"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:src="@drawable/refresh_button_white_style"
-                    />
+                    android:padding="5dp"/>
         </RelativeLayout>
     </LinearLayout>
 </RelativeLayout>

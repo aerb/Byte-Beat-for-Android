@@ -1,6 +1,7 @@
 package com.tasty.fish.android;
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -109,15 +110,9 @@ public class DroidBeatActivity extends FragmentActivity implements
                 NotifyStartPlay();
             }
         } else if(arg0 == _loadNewExpressionBtn){
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.mainActionsFragmentContainer, new ExpressionSelectionFragment())
-                    .commit();
+            setActionsFragment(new ExpressionSelectionFragment());
         } else if(arg0 == _paramsBtn){
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.mainActionsFragmentContainer, new ParametersFragment())
-                    .commit();
+            setActionsFragment(new ParametersFragment());
         }
     }
     //endregion
@@ -154,10 +149,14 @@ public class DroidBeatActivity extends FragmentActivity implements
     }
     //endregion
 
-    private void loadKeyboardFragment() {
+    private void setActionsFragment(Fragment fragment){
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.mainBufferFragmentContainer, new KeyboardFragment())
+                .replace(R.id.mainActionsFragmentContainer, fragment)
                 .commit();
+    }
+
+    private void loadKeyboardFragment() {
+        setActionsFragment(new KeyboardFragment());
     }
 }
