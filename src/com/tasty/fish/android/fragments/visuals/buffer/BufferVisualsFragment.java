@@ -33,14 +33,13 @@ public class BufferVisualsFragment extends Fragment implements IBufferView {
     @Override
     public void registerIBufferViewListener(IBufferView listener) {
         //don't really care right now.
-}
-
-    public void setDisplayBuffer(byte[] samples, int t) {
-        _canvas.setSamples(samples);
-        _canvas.updateT(t);
-        _canvas.postInvalidate();
     }
 
-    public void setTime(int time) {
+    public void setDisplayBuffer(byte[] samples) {
+        _canvas.setDisplayBuffer(samples);
+    }
+
+    public void update(){
+        _canvas.postInvalidate();
     }
 }

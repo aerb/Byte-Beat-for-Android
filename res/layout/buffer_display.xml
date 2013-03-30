@@ -9,5 +9,5 @@
             android:id="@+id/bufferCanvas"
             android:layout_width="fill_parent"
             android:layout_height="154dp"
-            android:layout_weight="0.69" />
+            android:layout_weight="0.69" android:background="#338C9A"/>
 </LinearLayout>

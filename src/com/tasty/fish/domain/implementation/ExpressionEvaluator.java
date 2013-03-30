@@ -51,11 +51,16 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
     public byte getNextSample() {
         _t += _timescale;
         _parser.setTime((long) _t);
-        return (byte) _parser.evaluate();
+        byte result = (byte) _parser.evaluate();
+        return result;
     }
 
     public int getTime() {
         return (int) _t;
+    }
+
+    public void updateTimescale(double t){
+        _timescale = t;
     }
 
     public void updateArguement(int i, double x) {

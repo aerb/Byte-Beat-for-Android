@@ -1,6 +1,8 @@
 package com.tasty.fish.views;
 
 public interface IParameterView {
+
+
     public interface IParameterViewListener
     {
         void OnParameterChanged(int index, double value);
@@ -10,8 +12,9 @@ public interface IParameterView {
         void OnResetTime();
     }
 
-    void registerIDroidBeatViewListener(IParameterViewListener listener);
+    void registerIParameterViewListener(IParameterViewListener listener);
 
     public void setTimescale(double value);
     void setParameter(int id, double speed);
+    void update();
 }

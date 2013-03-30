@@ -1,6 +1,5 @@
 package com.tasty.fish.presenters;
 
-import com.tasty.fish.android.DroidBeatActivity;
 import com.tasty.fish.android.media.audio.IAudioPlayer;
 import com.tasty.fish.domain.IExpressionEvaluator;
 import com.tasty.fish.domain.IExpressionsRepository;
@@ -19,18 +18,21 @@ public class MediaControlsPresenter implements
     private final IExpressionEvaluator _evaluator;
     private final IExpressionsRepository _repo;
     private final IAudioPlayer _audio;
-
+    private final BufferVisualsPresenter _visuals;
 
     public MediaControlsPresenter(
             IExpressionEvaluator evaluator,
             IExpressionsRepository repo,
-            IAudioPlayer audio
+            IAudioPlayer audio,
+            BufferVisualsPresenter visuals
     )
     {
         _evaluator = evaluator;
         _repo = repo;
         _repo.setIExpressionsRepositoryListener(this);
         _audio = audio;
+        _visuals = visuals;
+        _visuals.setBuffer(_audio.getBuffer());
     }
 
     private void updateView() {
@@ -45,6 +47,7 @@ public class MediaControlsPresenter implements
     @Override
     public void OnStartPlay() {
         _audio.start();
+        _visuals.start();
     }
 
     @Override

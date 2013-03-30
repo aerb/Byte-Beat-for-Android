@@ -9,7 +9,7 @@ public class ParametersPresenter implements
         IExpressionsRepository.IExpressionsRepositoryListener
 {
 
-    private IParameterView _parametersView;
+    private IParameterView _view;
     private final IExpressionsRepository _repo;
     private final IExpressionEvaluator _evaluator;
 
@@ -22,25 +22,29 @@ public class ParametersPresenter implements
     }
 
     public void setView(IParameterView view){
-        _parametersView = view;
-        _parametersView.registerIDroidBeatViewListener(this);
+        _view = view;
+        _view.registerIParameterViewListener(this);
+        updateView();
     }
 
     private void updateView(){
-        if(_parametersView == null) return;
+        if(_view == null) return;
 
-        _parametersView.setTimescale(_repo.getActive().getSpeed());
-        _parametersView.setParameter(0, _repo.getActive().getArguement(0));
-        _parametersView.setParameter(1, _repo.getActive().getArguement(1));
-        _parametersView.setParameter(2, _repo.getActive().getArguement(2));
+        _view.setTimescale(_repo.getActive().getSpeed());
+        _view.setParameter(0, _repo.getActive().getArguement(0));
+        _view.setParameter(1, _repo.getActive().getArguement(1));
+        _view.setParameter(2, _repo.getActive().getArguement(2));
+        _view.update();
     }
 
     private void updateTimeScale(double inc) {
         _repo.getActive().setTimescale(inc);
+        _evaluator.updateTimescale(inc);
     }
 
     private void updateArgument(int i, double x) {
         _repo.getActive().setParameter(i, x);
+        _evaluator.updateArguement(i, x);
     }
 
     private void resetTime() {

@@ -5,17 +5,21 @@ import com.tasty.fish.domain.IExpressionEvaluator;
 
 public class AudioPlayer implements IAudioPlayer {
 
-    byte samples[];
+    byte _samples[];
     private final AndroidAudioDevice _audioDevice;
     private final IExpressionEvaluator _evaluator;
     private boolean _die;
 
     public AudioPlayer(IExpressionEvaluator evaluator) {
         _audioDevice = new AndroidAudioDevice();
-        samples = new byte[_audioDevice.getBufferSize()];
+        _samples = new byte[_audioDevice.getBufferSize()];
 
         _evaluator = evaluator;
         _die = false;
+    }
+
+    public byte[] getBuffer(){
+        return _samples;
     }
 
     @Override
@@ -25,10 +29,10 @@ public class AudioPlayer implements IAudioPlayer {
             public void run() {
                 _audioDevice.play();
                 while (true) {
-                    for (int i = 0; i < samples.length; i++){
-                        samples[i] = _evaluator.getNextSample();
+                    for (int i = 0; i < _samples.length; i++){
+                        _samples[i] = _evaluator.getNextSample();
                     }
-                    _audioDevice.writeSamples(samples);
+                    _audioDevice.writeSamples(_samples);
                     if (_die) {
                         _audioDevice.stop();
                         return;

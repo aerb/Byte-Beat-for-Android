@@ -4,7 +4,7 @@ import android.media.*;
 
 public class AndroidAudioDevice {
     // 44100,22050,11025,8000
-    int sampleRate = 44100;
+    int sampleRate = 22050;
     int format = AudioFormat.ENCODING_PCM_16BIT;
     int channelConfig = AudioFormat.CHANNEL_CONFIGURATION_MONO;
     AudioTrack _track;

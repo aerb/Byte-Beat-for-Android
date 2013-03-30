@@ -14,7 +14,7 @@ public class BufferVisualsPresenter {
         _evaluator = evaluator;
     }
 
-    public void setSamples(byte[] samples){
+    public void setBuffer(byte[] samples){
         _samples = samples;
     }
 
@@ -22,23 +22,27 @@ public class BufferVisualsPresenter {
         _bufferView = view;
     }
 
-    private void startVideo() {
+    public void start() {
+        _die = false;
+        _bufferView.setDisplayBuffer(_samples);
         new Thread(new Runnable() {
             public void run() {
                 while (true) {
-                    _bufferView.setDisplayBuffer(_samples, _evaluator.getTime());
-                    _bufferView.setTime(_evaluator.getTime());
+                    if (_die) return;
 
-                    if (_die) {
-                        return;
-                    }
+                    _bufferView.update();
                     try {
-                        Thread.sleep(250);
+                        Thread.sleep(30);
                     } catch (InterruptedException e) {
+                        System.err.println(e.getMessage());
                     }
                 }
             }
         }).start();
+    }
+
+    public void stop() {
+        _die = true;
     }
 }
 

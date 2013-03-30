@@ -65,17 +65,9 @@ public class DroidBeatActivity extends FragmentActivity implements
 
         getSupportFragmentManager()
                 .beginTransaction()
-                .add(R.id.mainActionsFragmentContainer, new ParametersFragment())
-                .commit();
-
-        getSupportFragmentManager()
-                .beginTransaction()
-                .add(R.id.mainBufferFragmentContainer, new BufferVisualsFragment())
-                .commit();
-
-        getSupportFragmentManager()
-                .beginTransaction()
                 .add(R.id.upperFragmentContainer, new ExpressionFragment())
+                .add(R.id.mainBufferFragmentContainer, new BufferVisualsFragment())
+                .add(R.id.mainActionsFragmentContainer, new ParametersFragment())
                 .commit();
 
         _expressionTitleTextView = (TextView)findViewById(R.id.expressionTitleTextView);

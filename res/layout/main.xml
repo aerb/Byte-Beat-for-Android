@@ -14,7 +14,9 @@
             android:id="@+id/mainBufferFragmentContainer"
             android:layout_width="fill_parent"
             android:layout_height="100dp"
-            android:layout_above="@+id/mainActionsFragmentContainer">
+            android:layout_above="@+id/mainActionsFragmentContainer"
+            android:layout_below="@+id/upperFragmentContainer"
+            >
     </FrameLayout>
 
     <FrameLayout

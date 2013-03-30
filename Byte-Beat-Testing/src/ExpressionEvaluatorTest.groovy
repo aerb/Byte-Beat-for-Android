@@ -20,7 +20,7 @@ class ExpressionEvaluatorTest extends GroovyTestCase{
             def expectingSample = eval.getNextSample();
             def end = System.nanoTime();
             average += end - start
-            //print expectingSample
+            println end - start
             //if (i != reps) print ", "
             byte actualSample = fixedPointOperators ? (byte)actual(i) : (byte)actual((long)i);
             assert actualSample == expectingSample, "Failed assertion on sample " + i

@@ -45,7 +45,8 @@ public class CompositionRoot {
            (_mediaControlsPresenter = new MediaControlsPresenter(
                 getExpressionEvaluator(),
                 getExpressionsRepository(),
-                getAudioPlayer()
+                getAudioPlayer(),
+                getBufferVisualsPresenter()
             ));
     }
 
@@ -81,4 +82,6 @@ public class CompositionRoot {
                   getExpressionsRepository()
               ));
     }
+
+
 }

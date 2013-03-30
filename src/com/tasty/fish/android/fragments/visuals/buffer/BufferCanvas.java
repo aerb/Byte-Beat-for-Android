@@ -9,73 +9,57 @@ import android.view.View;
 
 public class BufferCanvas extends View {
 
-	byte samples[] = null;
-	int t = 0;
-	int scaleAmount = 4;
-	String eq = "";
+    private static final int MAX = 512;
+    byte _buffer[] = null;
+    private Paint _paint;
+    private int _drawableLength;
 
-	public BufferCanvas(Context context) {
-		super(context);
-	}
+    public BufferCanvas(Context context) {
+        super(context);
+        initialize();
+    }
 
-	public BufferCanvas(Context context, AttributeSet attrs) {
-		super(context, attrs);
-	}
+    public BufferCanvas(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        initialize();
+    }
 
-	public void setSamples(byte[] samples) {
-		this.samples = samples;
-	}
+    public void setDisplayBuffer(byte[] buffer) {
+        _buffer = buffer;
+        _drawableLength = _buffer.length > MAX ?
+                MAX :
+                _buffer.length;
+    }
 
-	public void updateT(int t) {
-		this.t = t;
-	}
+    private void initialize() {
+        _paint = new Paint();
+        _paint.setColor(0xDD5FCCDD);
+        _paint.setStrokeWidth(5);
+    }
 
-	@Override
-	protected void onDraw(Canvas c) {
-		Paint p = new Paint();
-		p.setColor(Color.WHITE);
-		p.setStrokeWidth(5);
-		p.setTextSize(30);
+    @Override
+    protected void onDraw(Canvas c) {
+        if (_buffer == null ||
+            _paint == null)
+            return;
 
-		Paint p2 = new Paint();
-		p2.setColor(Color.WHITE);
-		p2.setStrokeWidth(5);
-		p2.setTextSize(20);
+        int h = getHeight();
+        int w = getWidth();
 
-		if (samples == null)
-			return;
+        for (int i = 0; i < _drawableLength; ++i) {
+            float y = h - h * (float)(_buffer[i] + 128) /  256;
+            float y1 = h - h * (float)(_buffer[i + 1] + 128) /  256;
 
-		int h = this.getHeight();
-		int w = this.getWidth();
+            float x = ((float) i) /  _drawableLength * w ;
+            float x1 = ((float) i + 1) / _drawableLength * w;
 
-		for (int i = 0; i < (1024 - 1) / scaleAmount; ++i) {
-			float y = h - (float) h * ((float) samples[i]) / (float) 255 * 2;
-			float y1 = h - (float) h * ((float) samples[i + 1]) / (float) 255
-					* 2;
-			float x = ((float) i) / ((float) 1024) * w * scaleAmount;
-			float x1 = ((float) i + 1) / ((float) 1024) * w
-					* scaleAmount;
-			c.drawLine(x, y, x1, y1, p);
-		}
-
-		/*
-		int scaleFactor = 10;
-		Paint p0 = new Paint();
-		p0.setStrokeWidth(scaleFactor);
-		int bgHeight = 64, bgWidth = 64;		
-		for (int x = 0; x < bgWidth; ++x) {
-			for (int y = 0; y < bgHeight; ++y) {
-				int sampleIndex = 0;
-				sampleIndex = y + x * bgWidth;
-				// val = y;
-				if (sampleIndex >= samples.length) continue;
-				int val = 0x000000FF & samples[sampleIndex];
-				p0.setColor(0xFF000000 | (val << 16) | (val << 8) | (val));
-				c.drawPoint(x * scaleFactor, y * scaleFactor, p0);
-			}
-		}
-		*/
-		//--bgHeight;
-		//c.drawText(String.format("%d", bgHeight), 10, 30, p);
-	}
+            c.drawLine(x, y, x1, y1, _paint);
+            c.drawRect(
+                    x,
+                    y > y1 ? y : y1,
+                    x1,
+                    (float)h,
+                    _paint);
+        }
+    }
 }
