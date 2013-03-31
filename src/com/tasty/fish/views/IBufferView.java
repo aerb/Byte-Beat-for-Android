@@ -8,6 +8,8 @@ public interface IBufferView {
     }
 
     void registerIBufferViewListener(IBufferView listener);
+
+    void setPerformanceText(String text);
     void setDisplayBuffer(byte[] samples);
     void update();
 }

@@ -12,5 +12,8 @@ public interface IExpressionEvaluator {
     void updateArguement(int i, double x);
 
     byte getNextSample();
+
     void resetTime();
+
+    long getExecutionTime();
 }

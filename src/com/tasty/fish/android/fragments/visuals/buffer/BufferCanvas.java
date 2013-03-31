@@ -2,7 +2,6 @@ package com.tasty.fish.android.fragments.visuals.buffer;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.View;
@@ -34,7 +33,7 @@ public class BufferCanvas extends View {
     private void initialize() {
         _paint = new Paint();
         _paint.setColor(0xDD5FCCDD);
-        _paint.setStrokeWidth(5);
+        _paint.setStrokeWidth(1);
     }
 
     @Override
@@ -53,7 +52,7 @@ public class BufferCanvas extends View {
             float x = ((float) i) /  _drawableLength * w ;
             float x1 = ((float) i + 1) / _drawableLength * w;
 
-            c.drawLine(x, y, x1, y1, _paint);
+            //c.drawLine(x, y, x1, y1, _paint);
             c.drawRect(
                     x,
                     y > y1 ? y : y1,

@@ -29,10 +29,14 @@ public class BufferVisualsPresenter {
             public void run() {
                 while (true) {
                     if (_die) return;
-
+                    long time = _evaluator.getExecutionTime();
+                    _bufferView.setPerformanceText(String.format("%d µs \n%f kHz",
+                            time/1000,
+                            (1f/((double)time/1000000000)/1000)
+                    ));
                     _bufferView.update();
                     try {
-                        Thread.sleep(30);
+                        Thread.sleep(100);
                     } catch (InterruptedException e) {
                         System.err.println(e.getMessage());
                     }

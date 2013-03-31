@@ -13,6 +13,10 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
     private double _t;
     private double[] _args = {1,1,1};
 
+    private int _timeIndex = 0;
+    private int _timeHistory = 100;
+    private long[] _times = new long[_timeHistory];
+
     public ExpressionEvaluator() {
         _parser = new FastParse();
         _t = 0;
@@ -21,6 +25,8 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
     public void setExpression(ByteBeatExpression expression) throws ExpressionParsingException {
         if(expression == null)
             throw new IllegalArgumentException("Expression cannot be null");
+
+        _t = 0;
 
         _expression = expression;
         _timescale = _expression.getTimeScale();
@@ -52,8 +58,15 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
         _t += _timescale;
         _parser.setTime((long) _t);
 
+        long start = System.nanoTime();
         // Don't ask.
-        return  (byte)(long)_parser.evaluate();
+        byte sample = (byte)(long)_parser.evaluate();
+        long stop = System.nanoTime();
+
+        _times[_timeIndex++] = (stop - start);
+        _timeIndex = _timeIndex >= _timeHistory ? 0 : _timeIndex;
+
+        return sample;
     }
 
     public int getTime() {
@@ -72,5 +85,13 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 
     public void resetTime() {
         _t = 0;
+    }
+
+    @Override
+    public long getExecutionTime() {
+        long total = 0;
+        for(int i=0;i < _timeHistory; ++i)
+            total += _times[i];
+        return (total/_timeHistory);
     }
 }

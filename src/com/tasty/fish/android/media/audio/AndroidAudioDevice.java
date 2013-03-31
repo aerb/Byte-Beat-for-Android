@@ -8,13 +8,19 @@ public class AndroidAudioDevice {
     int format = AudioFormat.ENCODING_PCM_16BIT;
     int channelConfig = AudioFormat.CHANNEL_CONFIGURATION_MONO;
     AudioTrack _track;
+
     private final int _bufferSize;
 
+    private final int BASE_MULTIPLIER = 2;
+    private final int ROUND_TO = 512;
+
     public AndroidAudioDevice() {
-        _bufferSize = AudioTrack.getMinBufferSize(
+        int minSize = AudioTrack.getMinBufferSize(
                 sampleRate,
                 channelConfig,
-                format)*2;
+                format)*BASE_MULTIPLIER;
+        _bufferSize = minSize + (ROUND_TO-minSize%ROUND_TO);
+
         _track = new AudioTrack(
                 AudioManager.STREAM_MUSIC,
                 sampleRate,
