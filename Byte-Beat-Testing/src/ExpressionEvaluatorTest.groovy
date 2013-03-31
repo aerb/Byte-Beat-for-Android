@@ -13,16 +13,14 @@ class ExpressionEvaluatorTest extends GroovyTestCase{
         eval.setExpression(new ByteBeatExpression("Hello",(String)expecting,1,p1,p2,p3));
 
         def average = 0;
-        def reps = 10000;
+        def reps = 100000;
         print "["
         for (i in 1..reps){
             def start = System.nanoTime();
-            def expectingSample = eval.getNextSample();
+            byte expectingSample = eval.getNextSample();
             def end = System.nanoTime();
             average += end - start
-            println end - start
-            //if (i != reps) print ", "
-            byte actualSample = fixedPointOperators ? (byte)actual(i) : (byte)actual((long)i);
+            byte actualSample = (byte)actual((long)i);
             assert actualSample == expectingSample, "Failed assertion on sample " + i
         }
         average = (average/reps) / 1000000000
@@ -39,7 +37,7 @@ class ExpressionEvaluatorTest extends GroovyTestCase{
     }
 
     void testMult(){
-        def equ = { t -> t * t }
+        def equ = { t -> (long)t * (long)t }
         DoABunchOfTimes(equ, "t*t", true)
     }
 
@@ -48,10 +46,10 @@ class ExpressionEvaluatorTest extends GroovyTestCase{
         DoABunchOfTimes(equ , "((t%(p1*777))|(p3*t))&((0xFF*p2))-t", true)
     }
 
-//    void test_tarism(){
-//        def equ = { t ->      (((p1*t)>>1%(p2*128))+20)*3*t>>14*t>>(p3*18)}
-//        DoABunchOfTimes(equ ,"(((p1*t)>>1%(p2*128))+20)*3*t>>14*t>>(p3*18)", true)
-//    }
+    void test_tarism(){
+        def equ = { t ->      (((p1*t)>>1%(p2*128))+20)*3*t>>14*t>>(p3*18)}
+        DoABunchOfTimes(equ ,"(((p1*t)>>1%(p2*128))+20)*3*t>>14*t>>(p3*18)", true)
+    }
 
     void test_tangent128(){
         def equ = { t -> t*(((t>>9)&(p3*10))|(((p2*t)>>11)&24)^((t>>10)&15&((p1*t)>>15)))}

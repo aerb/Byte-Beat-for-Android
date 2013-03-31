@@ -9,7 +9,7 @@ import android.view.View;
 
 public class BufferCanvas extends View {
 
-    private static final int MAX = 512;
+    private static final int MAX = 256;
     byte _buffer[] = null;
     private Paint _paint;
     private int _drawableLength;

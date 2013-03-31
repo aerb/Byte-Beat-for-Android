@@ -28,9 +28,12 @@ public class MediaControlsPresenter implements
     )
     {
         _evaluator = evaluator;
+
         _repo = repo;
         _repo.setIExpressionsRepositoryListener(this);
+
         _audio = audio;
+
         _visuals = visuals;
         _visuals.setBuffer(_audio.getBuffer());
     }
