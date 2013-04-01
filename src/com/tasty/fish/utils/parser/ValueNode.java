@@ -7,10 +7,6 @@ public class ValueNode implements IExpressionNode{
 
     }
 
-    public boolean isFixed() {
-        return true;
-    }
-
     public double eval() {
         return _value;
     }

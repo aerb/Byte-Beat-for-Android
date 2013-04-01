@@ -7,9 +7,6 @@ public class FloatingVariableNode implements IExpressionNode{
         _variableValue = d;
     }
 
-    public boolean isFixed() {
-        return true;
-    }
 
     public double eval() {
         return _variableValue.Value;

@@ -217,16 +217,12 @@ public class FastParse {
                 p1 = parse(subExp[2]);
                 String opStr = subExp[1];
                 Op operator = opMap.get(opStr);
-                if ((p0 != null && p1 != null) && (
-                        !requiresFixedArgument(opStr) ||
-                            (p0.isFixed() && p1.isFixed())
-                        )
-                    )
+                if ((p0 != null && p1 != null))
                 {
                     return new OperatorNode(operator, p0, p1);
                 }
                 else
-                    throw new ExpressionParsingException("Operator " + opStr + " cannot have floating arguments.");
+                    throw new ExpressionParsingException("Operator " + opStr + " has null inputs");
             }
             break;
         case Value:

@@ -7,10 +7,6 @@ public class FixedVariableNode implements IExpressionNode{
         _variableValue = i;
     }
 
-    public boolean isFixed() {
-        return true;
-    }
-
     public double eval() {
         return _variableValue.Value;
     }
