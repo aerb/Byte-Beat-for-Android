@@ -4,11 +4,12 @@ import com.tasty.fish.domain.implementation.ByteBeatExpression;
 import com.tasty.fish.utils.parser.utils.ExpressionParsingException;
 
 public interface IExpressionEvaluator {
+
     void setExpression(ByteBeatExpression expression) throws ExpressionParsingException;
     void updateExpression(String newExpression) throws ExpressionParsingException;
-    int getTime();
+    long getTime();
 
-    void updateTimescale(double t);
+    void updateTimedelta(double t);
     void updateArgument(int i, long x);
 
     byte getNextSample();

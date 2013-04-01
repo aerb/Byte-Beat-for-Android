@@ -60,7 +60,7 @@ public class ParametersFragment extends Fragment implements
     }
 
     //region Conversion methods
-    private double convertSeekBarToTimescaleValue(double arg1) {
+    private double convertSeekBarToTimeDeltaValue(double arg1) {
         return arg1 / 100;
     }
     //endregion
@@ -89,9 +89,9 @@ public class ParametersFragment extends Fragment implements
         }
     }
 
-    private void NotifyTimeScaleChanged(double value){
+    private void NotifyTimeDeltaChanged(double value){
         for(IParameterViewListener listener : _listeners){
-            listener.OnTimeScaleChanged(value);
+            listener.OnTimeDeltaChanged(value);
         }
     }
 
@@ -106,8 +106,8 @@ public class ParametersFragment extends Fragment implements
     @Override
     public void onProgressChanged(SeekBar arg0, int arg1, boolean arg2) {
         if (arg0 == _seekBarSpeed) {
-            double inc = convertSeekBarToTimescaleValue(arg1);
-            NotifyTimeScaleChanged(inc);
+            double inc = convertSeekBarToTimeDeltaValue(arg1);
+            NotifyTimeDeltaChanged(inc);
             _textSpeed.setText("" + inc);
         } else {
             if (arg0 == _seekBarArgs[0]) {
@@ -137,7 +137,7 @@ public class ParametersFragment extends Fragment implements
     }
 
     @Override
-    public void setTimescale(double value) {
+    public void setTimeDelta(double value) {
         _seekBarSpeed.setProgress((int) (value * 100));
     }
 

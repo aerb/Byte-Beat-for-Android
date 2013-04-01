@@ -6,7 +6,7 @@ public interface IParameterView {
     public interface IParameterViewListener
     {
         void OnParameterChanged(int index, int value);
-        void OnTimeScaleChanged(double value);
+        void OnTimeDeltaChanged(double value);
 
         void OnResetParameters();
         void OnResetTime();
@@ -14,7 +14,7 @@ public interface IParameterView {
 
     void registerIParameterViewListener(IParameterViewListener listener);
 
-    public void setTimescale(double value);
+    public void setTimeDelta(double value);
     void setParameter(int id, int speed);
     void update();
 }

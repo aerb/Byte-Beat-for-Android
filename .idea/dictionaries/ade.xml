@@ -2,6 +2,7 @@
   <dictionary name="ade">
     <words>
       <w>eval</w>
+      <w>timedelta</w>
     </words>
   </dictionary>
 </component>

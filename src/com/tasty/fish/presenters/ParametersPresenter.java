@@ -30,7 +30,7 @@ public class ParametersPresenter implements
     private void updateView(){
         if(_view == null) return;
 
-        _view.setTimescale(_repo.getActive().getSpeed());
+        _view.setTimeDelta(_repo.getActive().getTimeDelta());
         _view.setParameter(0, _repo.getActive().getArgument(0));
         _view.setParameter(1, _repo.getActive().getArgument(1));
         _view.setParameter(2, _repo.getActive().getArgument(2));
@@ -38,8 +38,8 @@ public class ParametersPresenter implements
     }
 
     private void updateTimeScale(double inc) {
-        _repo.getActive().setTimescale(inc);
-        _evaluator.updateTimescale(inc);
+        _repo.getActive().setTimeDelta(inc);
+        _evaluator.updateTimedelta(inc);
     }
 
     private void updateArgument(int i, int x) {
@@ -52,7 +52,7 @@ public class ParametersPresenter implements
     }
 
     private void resetArgs() {
-        _repo.getActive().resetParametersAndTimescale();
+        _repo.getActive().resetParametersAndTimeDelta();
         updateView();
     }
 
@@ -63,7 +63,7 @@ public class ParametersPresenter implements
     }
 
     @Override
-    public void OnTimeScaleChanged(double value) {
+    public void OnTimeDeltaChanged(double value) {
         updateTimeScale(value);
     }
 

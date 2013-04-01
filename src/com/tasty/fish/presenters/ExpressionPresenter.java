@@ -25,7 +25,7 @@ public class ExpressionPresenter implements
 
     private void setActiveExpression(ByteBeatExpression exp){
         _expression = exp;
-        _text = _expression.getExpressionAsString() + " ";
+        _text = _expression.getExpressionString() + " ";
         _cursor = _text.length() - 1;
     }
 

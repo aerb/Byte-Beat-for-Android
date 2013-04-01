@@ -6,7 +6,7 @@ import com.tasty.fish.utils.parser.operators.Iop;
 import com.tasty.fish.utils.parser.utils.ExpressionParsingException;
 import com.tasty.fish.utils.parser.utils.MutableFixed;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -15,16 +15,16 @@ public class FastParse {
 
     private Map<String, Iop> _opMap = Definitions.getOperatorDefinitions();
 
-    private ArrayList<MutableFixed> _argsMap;
+    private HashMap<String ,MutableFixed> _parametersMap;
 
     private IExpressionNode rootNode = null;
-    private MutableFixed _t = new MutableFixed(0);
 
     //region Operator precedence definitions
     private String[][] operators = { { "|" }, { "^" }, { "&" }, { "==", "!=" },
             { ">=", "<=" }, { ">>", "<<" }, { "+", "-" }, { "*", "/", "%" } };
 
     private char lb = '(', rb = ')';
+
     //endregion
 
     //region Parsing definitions
@@ -43,10 +43,10 @@ public class FastParse {
     private Pattern var = Pattern.compile("[a-zA-Z0-9]+");
     //endregion
 
-    public FastParse() {
-        _argsMap = new ArrayList<MutableFixed>();
-        for (int i = 0; i < 4; ++i)
-            _argsMap.add(new MutableFixed(0));
+    public FastParse(String[] parameterKeys) {
+        _parametersMap = new HashMap<String, MutableFixed>();
+        for(String k : parameterKeys)
+            _parametersMap.put(k, new MutableFixed(0));
     }
 
     //region Bracket matching
@@ -198,24 +198,12 @@ public class FastParse {
     //endregion
 
     //region Getters & Setters
-    public void setTime(long value) {
-        _t.Value = value;
-    }
-
-    public void setVariable(int key, long value) {
-        _argsMap.get(key + 1).Value = value;
+    public Map<String, MutableFixed> getParametersMap(){
+        return _parametersMap;
     }
 
     private VariableNode getVariableNode(String key) {
-        MutableFixed found = null;
-        if (key.compareTo("t") == 0)
-            found =  _t;
-        else if (key.compareTo("p1") == 0)
-            found =  _argsMap.get(1);
-        else if (key.compareTo("p2") == 0)
-            found =  _argsMap.get(2);
-        else if (key.compareTo("p3") == 0)
-            found =  _argsMap.get(3);
+        MutableFixed found = _parametersMap.get(key);
         return found != null ? new VariableNode(found) : null;
     }
     //endregion

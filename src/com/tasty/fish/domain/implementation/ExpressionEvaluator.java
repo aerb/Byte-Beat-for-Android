@@ -3,22 +3,33 @@ package com.tasty.fish.domain.implementation;
 import com.tasty.fish.domain.IExpressionEvaluator;
 import com.tasty.fish.utils.parser.utils.ExpressionParsingException;
 import com.tasty.fish.utils.parser.FastParse;
+import com.tasty.fish.utils.parser.utils.MutableFixed;
 
 public class ExpressionEvaluator implements IExpressionEvaluator {
 
     private ByteBeatExpression _expression;
+
     private FastParse _parser;
+    private MutableFixed _parserTime;
+    private MutableFixed[] _parserArgs;
 
-    private double _timescale;
+    private double _timeDelta;
     private double _t;
-    private long[] _args = {1,1,1};
 
-    private int _timeIndex = 0;
-    private int _timeHistory = 100;
-    private long[] _times = new long[_timeHistory];
+    private int _sampleIndex = 0;
+    private int _numSamples = 100;
+    private long[] _samplesTimes = new long[_numSamples];
 
     public ExpressionEvaluator() {
-        _parser = new FastParse();
+        _parser = new FastParse(ByteBeat.EXPRESSION_PARAMETERS);
+
+        _parserArgs = new MutableFixed[3];
+        _parserTime = _parser.getParametersMap().get(ByteBeat.TIME_SYMBOL);
+
+        _parserArgs[0] = _parser.getParametersMap().get(ByteBeat.P0);
+        _parserArgs[1] = _parser.getParametersMap().get(ByteBeat.P1);
+        _parserArgs[2] = _parser.getParametersMap().get(ByteBeat.P2);
+
         _t = 0;
     }
 
@@ -29,69 +40,56 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
         _t = 0;
 
         _expression = expression;
-        _timescale = _expression.getTimeScale();
-        _args[0] = _expression.getArgument(0);
-        _args[1] = _expression.getArgument(1);
-        _args[2] = _expression.getArgument(2);
+        _timeDelta = _expression.getTimeDelta();
 
-        _parser.setVariable(0, _expression.getArgument(0));
-        _parser.setVariable(1, _expression.getArgument(1));
-        _parser.setVariable(2, _expression.getArgument(2));
+        _parserArgs[0].Value = _expression.getArgument(0);
+        _parserArgs[1].Value = _expression.getArgument(1);
+        _parserArgs[2].Value = _expression.getArgument(2);
 
-        _parser.tryParse(expression.getExpressionAsString());
+        _parser.tryParse(expression.getExpressionString());
     }
 
     public void updateExpression(String e) throws ExpressionParsingException {
-        FastParse parser = new FastParse();
-        parser.setTime(0);
-        parser.setVariable(0, _expression.getArgument(0));
-        parser.setVariable(1, _expression.getArgument(1));
-        parser.setVariable(2, _expression.getArgument(2));
-
-        parser.tryParse(e);
-
-        _parser = parser;
-        _expression.setExpression(e.trim());
+        _parser.tryParse(e);
+        _expression.setExpressionString(e.trim());
     }
 
     public byte getNextSample() {
-        _t += _timescale;
-        _parser.setTime((long) _t);
+        _t += _timeDelta;
+        _parserTime.Value = (long) _t;
 
         long start = System.nanoTime();
-        // Don't ask.
         byte sample = (byte)_parser.evaluate();
         long stop = System.nanoTime();
 
-        _times[_timeIndex++] = (stop - start);
-        _timeIndex = _timeIndex >= _timeHistory ? 0 : _timeIndex;
+        _samplesTimes[_sampleIndex++] = (stop - start);
+        _sampleIndex = _sampleIndex >= _numSamples ? 0 : _sampleIndex;
 
         return sample;
     }
 
-    public int getTime() {
-        return (int) _t;
+    public long getTime() {
+        return (long)_t;
     }
 
-    public void updateTimescale(double t){
-        _timescale = t;
+    public void updateTimedelta(double t){
+        _timeDelta = t;
     }
 
     public void updateArgument(int i, long x) {
         if (i >= 3 || i < 0)
             return;
-        _parser.setVariable(i, x);
+        _parserArgs[i].Value = x;
     }
 
     public void resetTime() {
         _t = 0;
     }
 
-    @Override
     public long getExecutionTime() {
         long total = 0;
-        for(int i=0;i < _timeHistory; ++i)
-            total += _times[i];
-        return (total/_timeHistory);
+        for(int i=0;i < _numSamples; ++i)
+            total += _samplesTimes[i];
+        return (total/ _numSamples);
     }
 }

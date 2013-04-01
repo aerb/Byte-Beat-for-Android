@@ -1,39 +1,40 @@
 package com.tasty.fish.domain.implementation;
 
 public class ByteBeatExpression {
+
+
     private int[] _args = { 0, 0, 0 };
 
-    private double _timescale = 0;
-    private String _expression;
-    private double _t = 0;
+    private double _timeDelta = 0;
+    private String _expressionString;
     private String _name;
 
     public ByteBeatExpression(
             String name,
             String expression,
-            float timescale,
+            double timeDelta,
             int a1,
             int a2,
             int a3)
     {
         _name = name;
-        _timescale = timescale;
+        _timeDelta = timeDelta;
         _args[0] = a1;
         _args[1] = a2;
         _args[2] = a3;
-        _expression = expression;
+        _expressionString = expression;
     }
 
-    public String getExpressionAsString() {
-        return _expression;
+    public String getExpressionString() {
+        return _expressionString;
     }
 
-    public void setExpression(String expression) {
-        _expression = expression;
+    public void setExpressionString(String expression) {
+        _expressionString = expression;
     }
 
-    public void setTimescale(double inc) {
-        _timescale = inc;
+    public void setTimeDelta(double inc) {
+        _timeDelta = inc;
     }
 
     public void setParameter(int i, int x) {
@@ -42,24 +43,20 @@ public class ByteBeatExpression {
         }
     }
 
-    public double getSpeed() {
-        return _timescale;
+    public double getTimeDelta() {
+        return _timeDelta;
     }
 
     public int getArgument(int i) {
         return _args[i];
     }
 
-    public double getTimeScale() {
-        return _timescale;
-    }
-
     public String getName() {
         return _name;
     }
 
-    public void resetParametersAndTimescale() {
-        setTimescale(0.5f);
+    public void resetParametersAndTimeDelta() {
+        setTimeDelta(0.5f);
         setParameter(0, 1);
         setParameter(1, 1);
         setParameter(2, 1);
