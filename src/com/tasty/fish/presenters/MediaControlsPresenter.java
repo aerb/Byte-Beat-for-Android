@@ -14,8 +14,6 @@ public class MediaControlsPresenter implements
 {
     private IMediaControlsView _view;
 
-    private ByteBeatExpression _activeExpression = null;
-
     private final IExpressionEvaluator _evaluator;
     private final IExpressionsRepository _repo;
     private final IAudioPlayer _audio;
@@ -35,6 +33,12 @@ public class MediaControlsPresenter implements
         _repo = repo;
         _repo.setIExpressionsRepositoryListener(this);
 
+        try {
+            _evaluator.setExpression(_repo.getActive());
+        } catch (ExpressionParsingException e) {
+            e.printStackTrace();
+        }
+
         _audio = audio;
 
         _visuals = visuals;
@@ -44,11 +48,12 @@ public class MediaControlsPresenter implements
     }
 
     private void updateView() {
-        _view.setTitle(_activeExpression.getName());
+        _view.setTitle(_repo.getActive().getName());
     }
 
     public void setView(IMediaControlsView view) {
         _view = view;
+        updateView();
     }
 
     //region IMediaControlsListener methods
@@ -61,6 +66,7 @@ public class MediaControlsPresenter implements
     @Override
     public void OnStopPlay() {
         _audio.stop();
+        _visuals.stop();
     }
     //endregion
 
@@ -73,7 +79,6 @@ public class MediaControlsPresenter implements
         } catch (ExpressionParsingException e) {
             e.printStackTrace();
         }
-        _activeExpression = exp;
         updateView();
     }
     //endregion

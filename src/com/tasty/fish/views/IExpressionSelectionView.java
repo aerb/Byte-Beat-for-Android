@@ -5,6 +5,8 @@ import com.tasty.fish.domain.implementation.ByteBeatExpression;
 import java.util.List;
 
 public interface IExpressionSelectionView {
+    void update();
+
     public interface IExpressionSelectionViewListener
     {
         void OnExpressionSelected(int position);

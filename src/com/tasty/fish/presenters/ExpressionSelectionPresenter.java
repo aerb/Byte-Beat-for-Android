@@ -4,7 +4,8 @@ import com.tasty.fish.domain.IExpressionsRepository;
 import com.tasty.fish.views.IAppController;
 import com.tasty.fish.views.IExpressionSelectionView;
 
-public class ExpressionSelectionPresenter implements IExpressionSelectionView.IExpressionSelectionViewListener {
+public class ExpressionSelectionPresenter implements
+        IExpressionSelectionView.IExpressionSelectionViewListener, IExpressionsRepository.IExpressionsRepositoryListener {
     private IExpressionSelectionView _view;
     private IExpressionsRepository _expressionsRepository;
     private final IAppController _appController;
@@ -12,7 +13,9 @@ public class ExpressionSelectionPresenter implements IExpressionSelectionView.IE
     public ExpressionSelectionPresenter(
             IExpressionsRepository expressionsRepository,
             IAppController appController) {
+
         _expressionsRepository = expressionsRepository;
+        _expressionsRepository.setIExpressionsRepositoryListener(this);
         _appController = appController;
     }
 
@@ -30,5 +33,10 @@ public class ExpressionSelectionPresenter implements IExpressionSelectionView.IE
     @Override
     public void OnCancelRequested() {
         _appController.CloseSelector();
+    }
+
+    @Override
+    public void OnActiveExpressionChanged() {
+        _view.update();
     }
 }

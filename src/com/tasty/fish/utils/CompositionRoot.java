@@ -86,6 +86,7 @@ public class CompositionRoot {
         return _expressionPresenter != null ?
                _expressionPresenter :
               (_expressionPresenter = new ExpressionPresenter(
+                  getExpressionEvaluator(),
                   getExpressionsRepository(),
                   getAppController()
               ));
@@ -95,5 +96,11 @@ public class CompositionRoot {
         return _appController != null ?
                _appController :
               (_appController = new AppController());
+    }
+
+    public CreateExpressionPresenter getCreateExpressionPresenter() {
+        return new CreateExpressionPresenter(
+                getExpressionsRepository()
+        );
     }
 }

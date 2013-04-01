@@ -15,5 +15,5 @@
             android:layout_width="fill_parent"
             android:layout_height="225dp"
             android:id="@+id/listView"
-            />
+            android:background="@android:color/black" android:paddingTop="10dp" android:paddingBottom="10dp"/>
 </LinearLayout>

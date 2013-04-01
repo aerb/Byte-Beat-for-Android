@@ -18,6 +18,7 @@ public class ParametersPresenter implements
         IExpressionEvaluator evaluator)
     {
         _repo = repo;
+        _repo.setIExpressionsRepositoryListener(this);
         _evaluator = evaluator;
     }
 

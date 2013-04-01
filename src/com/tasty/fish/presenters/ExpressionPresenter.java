@@ -1,7 +1,9 @@
 package com.tasty.fish.presenters;
 
+import com.tasty.fish.domain.IExpressionEvaluator;
 import com.tasty.fish.domain.IExpressionsRepository;
 import com.tasty.fish.domain.implementation.ByteBeatExpression;
+import com.tasty.fish.utils.parser.utils.ExpressionParsingException;
 import com.tasty.fish.views.IAppController;
 import com.tasty.fish.views.IKeyboardDisplayView;
 import com.tasty.fish.views.IExpressionView;
@@ -17,11 +19,14 @@ public class ExpressionPresenter implements
     private IKeyboardDisplayView _keyboardView;
     private final IExpressionsRepository _expressionRepo;
     private final IAppController _appController;
+    private final IExpressionEvaluator _evaluator;
 
     public ExpressionPresenter(
+            IExpressionEvaluator evaluator,
             IExpressionsRepository expressionsRepository,
             IAppController appController)
     {
+        _evaluator = evaluator;
         _expressionRepo = expressionsRepository;
         _expressionRepo.setIExpressionsRepositoryListener(this);
         setActiveExpression(_expressionRepo.getActive());
@@ -66,7 +71,18 @@ public class ExpressionPresenter implements
                     + _text.substring(_cursor);
             advanceCursor(-1);
         }
+
+        updateDomain();
         updateView();
+    }
+
+    private void updateDomain(){
+        _expressionRepo.getActive().setExpressionString(_text);
+
+        try {
+            _evaluator.updateExpression(_text);
+        } catch (ExpressionParsingException e) {
+        }
     }
 
     @Override
@@ -74,6 +90,8 @@ public class ExpressionPresenter implements
         _text = _text.substring(0, _cursor) + element
                 + _text.substring(_cursor);
         advanceCursor(element.length());
+
+        updateDomain();
         updateView();
     }
 

@@ -17,7 +17,6 @@ public class ExpressionsRepository implements IExpressionsRepository {
         initializeExpressions();
     }
 
-
     private void initializeExpressions(){
         for(ByteBeatExpression e : DefaultExpressions.get())
             addNewExpression(e);
@@ -25,8 +24,13 @@ public class ExpressionsRepository implements IExpressionsRepository {
         setActiveExpression(0);
     }
 
-    private void addNewExpression(ByteBeatExpression e) {
+    public void addNewExpression(ByteBeatExpression e) {
         _expressions.add(e);
+    }
+
+    @Override
+    public void setActiveExpressionLast() {
+        setActiveExpression(_expressions.size() - 1);
     }
 
     @Override

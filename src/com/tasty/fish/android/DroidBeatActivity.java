@@ -9,11 +9,11 @@ import android.widget.*;
 
 import com.tasty.fish.R;
 import com.tasty.fish.android.fragments.keyboard.KeyboardFragment;
+import com.tasty.fish.android.fragments.naming.CreateExpressionFragment;
 import com.tasty.fish.android.fragments.parameters.ParametersFragment;
 import com.tasty.fish.android.fragments.visuals.buffer.BufferVisualsFragment;
 import com.tasty.fish.android.fragments.selection.ExpressionSelectionFragment;
 import com.tasty.fish.android.fragments.visuals.expression.ExpressionFragment;
-import com.tasty.fish.presenters.ExpressionPresenter;
 import com.tasty.fish.presenters.MediaControlsPresenter;
 import com.tasty.fish.utils.CompositionRoot;
 import com.tasty.fish.views.IAppController;
@@ -36,11 +36,10 @@ public class DroidBeatActivity extends FragmentActivity implements
     private MediaControlsPresenter _mediaControlsPresenter;
 
     private ArrayList<IMediaControlsListener> _listeners;
-    private ExpressionPresenter _expressionPresenter;
     private TextView _expressionTitleTextView;
     private CompositionRoot _root;
-    private View _refreshBtn;
-    private View _paramsBtn;
+    private View _copyBtn;
+    private View _addBtn;
 
     private View _keyboardContainer;
     private View _selectorContainer;
@@ -62,13 +61,6 @@ public class DroidBeatActivity extends FragmentActivity implements
 
         _listeners = new ArrayList<IMediaControlsListener>();
 
-        _appController = getCompositionRoot().getAppController();
-        ((AppController)_appController).setActivity(this);
-
-        _mediaControlsPresenter = _root.getMediaControlsPresenter();
-        _mediaControlsPresenter.setView(this);
-        registerIMediaControlsListener(_mediaControlsPresenter);
-
         getSupportFragmentManager()
                 .beginTransaction()
                 .add(R.id.upperFragmentContainer, new ExpressionFragment())
@@ -84,17 +76,23 @@ public class DroidBeatActivity extends FragmentActivity implements
         _selectorContainer = findViewById(R.id.mainSelectorFragmentContainer);
         _paramsContainer = findViewById(R.id.mainParametersFragmentContainer);
 
-        _appController.ShowParams();
-
         _loadNewExpressionBtn = findViewById(R.id.selectNewExpressionLayout);
         _stopBtn = findViewById(R.id.buttonStop);
-        _refreshBtn = findViewById(R.id.refreshButton);
-        _paramsBtn = findViewById(R.id.parametersButton);
+        _copyBtn = findViewById(R.id.mainCopyButton);
+        _addBtn = findViewById(R.id.mainAddButton);
 
         _loadNewExpressionBtn.setOnClickListener(this);
         _stopBtn.setOnClickListener(this);
-        _refreshBtn.setOnClickListener(this);
-        _paramsBtn.setOnClickListener(this);
+        _copyBtn.setOnClickListener(this);
+        _addBtn.setOnClickListener(this);
+
+        _appController = getCompositionRoot().getAppController();
+        ((AppController)_appController).setActivity(this);
+        _appController.ShowParams();
+
+        _mediaControlsPresenter = _root.getMediaControlsPresenter();
+        _mediaControlsPresenter.setView(this);
+        registerIMediaControlsListener(_mediaControlsPresenter);
     }
 
     public void onPause() {
@@ -117,8 +115,14 @@ public class DroidBeatActivity extends FragmentActivity implements
             }
         } else if(arg0 == _loadNewExpressionBtn){
             _appController.ShowSelector();
-        } else if(arg0 == _paramsBtn){
-            //setActionsFragment(new ParametersFragment());
+        } else if(arg0 == _addBtn){
+            new CreateExpressionFragment().show(getSupportFragmentManager(),"NamingDialog");
+        } else if(arg0 == _copyBtn){
+            CreateExpressionFragment frag = new CreateExpressionFragment();
+            Bundle bundle = new Bundle();
+            bundle.putBoolean(CreateExpressionFragment.CopyArguement, true);
+            frag.setArguments(bundle);
+            frag.show(getSupportFragmentManager(), "NamingDialog");
         }
     }
     //endregion

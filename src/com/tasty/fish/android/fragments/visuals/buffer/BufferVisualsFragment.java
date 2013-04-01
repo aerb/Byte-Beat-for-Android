@@ -23,6 +23,7 @@ public class BufferVisualsFragment extends Fragment implements IBufferView {
         _layout = (LinearLayout) inflater.inflate(R.layout.buffer_display, null);
         _canvas = (BufferCanvas)_layout.findViewById(R.id.bufferCanvas);
         _performanceText = (TextView) _layout.findViewById(R.id.performanceText);
+        _performanceText.setVisibility(View.GONE);
 
         _presenter =
             ((DroidBeatActivity)getActivity())

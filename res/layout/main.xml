@@ -82,18 +82,18 @@
                         android:id="@+id/textView" android:textStyle="bold" android:layout_gravity="center_vertical"/>
             </LinearLayout>
             <ImageView
-                    android:id="@+id/parametersButton"
-                    android:layout_toLeftOf="@+id/refreshButton"
+                    android:id="@+id/mainAddButton"
+                    android:layout_toLeftOf="@+id/mainCopyButton"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@drawable/controls_button_white_style"
+                    android:src="@drawable/add_button_white_style"
                     android:padding="5dp"/>
             <ImageView
-                    android:id="@+id/refreshButton"
+                    android:id="@+id/mainCopyButton"
                     android:layout_alignParentRight="true"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@drawable/refresh_button_white_style"
+                    android:src="@drawable/copy_button_white_style"
                     android:padding="5dp"/>
         </RelativeLayout>
     </LinearLayout>
@@ -106,7 +106,7 @@
     <LinearLayout
             android:orientation="vertical"
             android:layout_width="fill_parent"
-            android:layout_height="200dp" android:id="@+id/mainBufferFragmentAlignment"
+            android:layout_height="225dp" android:id="@+id/mainBufferFragmentAlignment"
             android:layout_alignParentBottom="true">
     </LinearLayout>
 </RelativeLayout>
