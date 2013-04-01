@@ -49,7 +49,7 @@ public class Definitions {
         });
         _ops.put("%", new Iop() {
             public long Ex(long a, long b) {
-                return a % b;
+                return b != 0 ? a % b : 0;
             }
         });
         _ops.put("+", new Iop() {
@@ -69,7 +69,7 @@ public class Definitions {
         });
         _ops.put("/", new Iop() {
             public long Ex(long a, long b) {
-                return a / b;
+                return b != 0 ? a / b : Long.MAX_VALUE;
             }
         });
         _ops.put(">>", new Iop() {

@@ -25,32 +25,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/tasty/fish/utils/parser/operators/Definitions.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/tasty/fish/utils/parser/operators/Iop.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/tasty/fish/utils/parser/node/VariableNode.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/ade.xml" />
-      <change type="DELETED" beforePath="C:\Users\ade\Dev\Byte-Beat-for-Android-2\src\com\tasty\fish\utils\parser\FixedVariableNode.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\ade\Dev\Byte-Beat-for-Android-2\src\com\tasty\fish\utils\parser\FloatingVariableNode.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\ade\Dev\Byte-Beat-for-Android-2\src\com\tasty\fish\utils\parser\MutableFloating.java" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\ade\Dev\Byte-Beat-for-Android-2\src\com\tasty\fish\utils\parser\ExpressionParsingException.java" afterPath="$PROJECT_DIR$/src/com/tasty/fish/utils/parser/utils/ExpressionParsingException.java" />
-      <change type="MOVED" beforePath="C:\Users\ade\Dev\Byte-Beat-for-Android-2\src\com\tasty\fish\utils\parser\IExpressionNode.java" afterPath="$PROJECT_DIR$/src/com/tasty/fish/utils/parser/node/IExpressionNode.java" />
-      <change type="MOVED" beforePath="C:\Users\ade\Dev\Byte-Beat-for-Android-2\src\com\tasty\fish\utils\parser\MutableFixed.java" afterPath="$PROJECT_DIR$/src/com/tasty/fish/utils/parser/utils/MutableFixed.java" />
-      <change type="MOVED" beforePath="C:\Users\ade\Dev\Byte-Beat-for-Android-2\src\com\tasty\fish\utils\parser\OperatorNode.java" afterPath="$PROJECT_DIR$/src/com/tasty/fish/utils/parser/node/OperatorNode.java" />
-      <change type="MOVED" beforePath="C:\Users\ade\Dev\Byte-Beat-for-Android-2\src\com\tasty\fish\utils\parser\ValueNode.java" afterPath="$PROJECT_DIR$/src/com/tasty/fish/utils/parser/node/ValueNode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/tasty/fish/domain/implementation/ByteBeatExpression.java" afterPath="$PROJECT_DIR$/src/com/tasty/fish/domain/implementation/ByteBeatExpression.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/tasty/fish/domain/implementation/ExpressionEvaluator.java" afterPath="$PROJECT_DIR$/src/com/tasty/fish/domain/implementation/ExpressionEvaluator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/tasty/fish/domain/implementation/ExpressionsRepository.java" afterPath="$PROJECT_DIR$/src/com/tasty/fish/domain/implementation/ExpressionsRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/tasty/fish/utils/parser/FastParse.java" afterPath="$PROJECT_DIR$/src/com/tasty/fish/utils/parser/FastParse.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/tasty/fish/domain/IExpressionEvaluator.java" afterPath="$PROJECT_DIR$/src/com/tasty/fish/domain/IExpressionEvaluator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/tasty/fish/views/IParameterView.java" afterPath="$PROJECT_DIR$/src/com/tasty/fish/views/IParameterView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/tasty/fish/presenters/MediaControlsPresenter.java" afterPath="$PROJECT_DIR$/src/com/tasty/fish/presenters/MediaControlsPresenter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/tasty/fish/android/fragments/parameters/ParametersFragment.java" afterPath="$PROJECT_DIR$/src/com/tasty/fish/android/fragments/parameters/ParametersFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/tasty/fish/presenters/ParametersPresenter.java" afterPath="$PROJECT_DIR$/src/com/tasty/fish/presenters/ParametersPresenter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/tasty/fish/utils/parser/operators/Definitions.java" afterPath="$PROJECT_DIR$/src/com/tasty/fish/utils/parser/operators/Definitions.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Byte-Beat-for-Android.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1364740414340" ignored="false" />
+    <file path="/Dummy.txt" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1364815907467" ignored="false" />
     <file path="/IDroidBeatView.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1364560015474" ignored="false" />
     <file path="/DroidBeatView.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1361738346745" ignored="false" />
     <file path="/DroidBeatPresenter.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1364559850925" ignored="false" />
@@ -113,7 +93,7 @@
     <file path="/expression_selector.xml" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1364667261446" ignored="false" />
     <file path="/Dummy.groovy" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1364731951319" ignored="false" />
     <file path="/IBufferView.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1364735812348" ignored="false" />
-    <file path="/Definitions.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1364811897230" ignored="false" />
+    <file path="/Definitions.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1364816057933" ignored="false" />
     <file path="/MutableFloating.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1364812504708" ignored="false" />
     <file path="/ByteBeatExpression.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1364812796973" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -225,52 +205,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ParametersPresenter.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/presenters/ParametersPresenter.java">
+      <file leaf-file-name="OperatorNode.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/utils/parser/node/OperatorNode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="33" selection-start="864" selection-end="864" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="method#ParametersPresenter#0;class#ParametersPresenter#0" expanded="true" />
-                <element signature="method#setView#0;class#ParametersPresenter#0" expanded="true" />
-                <element signature="method#updateArgument#0;class#ParametersPresenter#0" expanded="true" />
-                <element signature="method#resetTime#0;class#ParametersPresenter#0" expanded="true" />
-                <element signature="method#resetArgs#0;class#ParametersPresenter#0" expanded="true" />
-                <element signature="method#OnParameterChanged#0;class#ParametersPresenter#0" expanded="true" />
-                <element signature="method#OnTimeScaleChanged#0;class#ParametersPresenter#0" expanded="true" />
-                <element signature="method#OnActiveExpressionChanged#0;class#ParametersPresenter#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VariableNode.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/utils/parser/node/VariableNode.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="0" selection-start="278" selection-end="278" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="method#VariableNode#0;class#VariableNode#0" expanded="true" />
-                <element signature="method#eval#0;class#VariableNode#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MutableFixed.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/utils/parser/utils/MutableFixed.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="0" selection-start="95" selection-end="95" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="method#MutableFixed#0;class#MutableFixed#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ExpressionParsingException.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/utils/parser/utils/ExpressionParsingException.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="1" selection-start="330" selection-end="330" vertical-scroll-proportion="0.0">
+            <state line="5" column="20" selection-start="168" selection-end="168" vertical-scroll-proportion="0.0">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Definitions.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/utils/parser/operators/Definitions.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="0" selection-start="266" selection-end="266" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="initializer##0;class#Definitions#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -278,7 +228,7 @@
       <file leaf-file-name="FastParse.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/utils/parser/FastParse.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="227" column="21" selection-start="6994" selection-end="6994" vertical-scroll-proportion="1.4788733">
+            <state line="216" column="42" selection-start="6677" selection-end="6677" vertical-scroll-proportion="0.47479674">
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#FastParse#0;class#FastParse#0" expanded="true" />
@@ -291,68 +241,18 @@
                 <element signature="method#removeRedundantBrackets#0;class#FastParse#0" expanded="true" />
                 <element signature="method#splitExpression#0;class#FastParse#0" expanded="true" />
                 <element signature="method#setVariable#0;class#FastParse#0" expanded="true" />
-                <element signature="method#getVariableNode#0;class#FastParse#0" expanded="true" />
                 <element signature="method#evaluate#0;class#FastParse#0" expanded="true" />
+                <element signature="method#tryParse#0;class#FastParse#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ExpressionEvaluator.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/domain/implementation/ExpressionEvaluator.java">
+      <file leaf-file-name="Iop.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/utils/parser/operators/Iop.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="0" selection-start="2156" selection-end="2156" vertical-scroll-proportion="0.0">
+            <state line="5" column="0" selection-start="102" selection-end="102" vertical-scroll-proportion="0.0">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IExpressionNode.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/utils/parser/node/IExpressionNode.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="9" selection-start="87" selection-end="87" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ValueNode.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/utils/parser/node/ValueNode.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="13" selection-start="56" selection-end="56" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="method#ValueNode#0;class#ValueNode#0" expanded="true" />
-                <element signature="method#eval#0;class#ValueNode#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OperatorNode.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/utils/parser/node/OperatorNode.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="16" selection-start="401" selection-end="401" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="method#OperatorNode#0;class#OperatorNode#0" expanded="true" />
-                <element signature="method#eval#0;class#OperatorNode#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ByteBeatExpression.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/domain/implementation/ByteBeatExpression.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="method#ByteBeatExpression#0;class#ByteBeatExpression#0" expanded="true" />
-                <element signature="method#getExpressionAsString#0;class#ByteBeatExpression#0" expanded="false" />
-                <element signature="method#setExpression#0;class#ByteBeatExpression#0" expanded="false" />
-                <element signature="method#setTimescale#0;class#ByteBeatExpression#0" expanded="false" />
-                <element signature="method#getSpeed#0;class#ByteBeatExpression#0" expanded="false" />
-                <element signature="method#getTimeScale#0;class#ByteBeatExpression#0" expanded="false" />
-                <element signature="method#getName#0;class#ByteBeatExpression#0" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -379,7 +279,6 @@
         <option value="$PROJECT_DIR$/src/com/tasty/fish/utils/parser/ValueNode.java" />
         <option value="$PROJECT_DIR$/src/com/tasty/fish/utils/parser/OperatorNode.java" />
         <option value="$PROJECT_DIR$/src/com/tasty/fish/utils/parser/operators/Iop.java" />
-        <option value="$PROJECT_DIR$/src/com/tasty/fish/utils/parser/operators/Definitions.java" />
         <option value="$PROJECT_DIR$/src/com/tasty/fish/utils/parser/node/IExpressionNode.java" />
         <option value="$PROJECT_DIR$/src/com/tasty/fish/utils/parser/node/OperatorNode.java" />
         <option value="$PROJECT_DIR$/src/com/tasty/fish/utils/parser/node/FloatingVariableNode.java" />
@@ -391,6 +290,7 @@
         <option value="$PROJECT_DIR$/src/com/tasty/fish/utils/parser/node/VariableNode.java" />
         <option value="$PROJECT_DIR$/src/com/tasty/fish/utils/parser/FastParse.java" />
         <option value="$PROJECT_DIR$/src/com/tasty/fish/domain/implementation/ExpressionEvaluator.java" />
+        <option value="$PROJECT_DIR$/src/com/tasty/fish/utils/parser/operators/Definitions.java" />
       </list>
     </option>
   </component>
@@ -620,12 +520,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="All" />
-      </pane>
-      <pane id="PackagesPane">
-        <subPane />
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -948,6 +842,12 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope">
+        <subPane subId="All" />
+      </pane>
+      <pane id="PackagesPane">
+        <subPane />
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -970,9 +870,9 @@
     <property name="restartRequiresConfirmation" value="true" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="options.searchVisible" value="true" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -998,7 +898,7 @@
       <recent name="C:\Users\ade\Dev\Byte-Beat-for-Android-2\src\com\tasty\fish\tests" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ExpressionEvaluatorTest">
+  <component name="RunManager" selected="Android Application.Byte-Beat-for-Android">
     <configuration default="false" name="ExpressionEvaluatorTest.test_miiro" type="JUnit" factoryName="JUnit" temporary="true">
       <module name="Byte-Beat-Testing" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -1150,19 +1050,6 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -1188,6 +1075,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -1387,13 +1287,9 @@
     <frame x="-8" y="-8" width="1824" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31328037" sideWeight="0.68157613" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21623155" sideWeight="0.68157613" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290735" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32973894" sideWeight="0.67199147" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32694355" sideWeight="0.41089672" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42172524" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5005314" sideWeight="0.50283766" order="7" side_tool="true" content_ui="tabs" />
@@ -1405,11 +1301,15 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24971624" sideWeight="0.5782748" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2167991" sideWeight="0.68157613" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24971624" sideWeight="0.6805112" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31842387" sideWeight="0.49318954" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2167991" sideWeight="0.6826411" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31735888" sideWeight="0.49318954" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31328037" sideWeight="0.68157613" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21623155" sideWeight="0.68157613" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32973894" sideWeight="0.67199147" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32694355" sideWeight="0.41089672" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24971624" sideWeight="0.6805112" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1486,13 +1386,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/utils/parser/operators/Iop.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="47" selection-end="47" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Byte-Beat-Testing/src/ExpressionEvaluatorTest.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="15" selection-start="229" selection-end="229" vertical-scroll-proportion="0.14333895">
@@ -1517,44 +1410,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/utils/parser/operators/Definitions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="45" selection-start="259" selection-end="259" vertical-scroll-proportion="0.27687296">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="initializer##0;class#Definitions#0" expanded="true" />
-            <element signature="e#346#465#0" expanded="true" />
-            <element signature="e#454#455#0" expanded="true" />
-            <element signature="e#491#610#0" expanded="true" />
-            <element signature="e#599#600#0" expanded="true" />
-            <element signature="e#636#755#0" expanded="true" />
-            <element signature="e#744#745#0" expanded="true" />
-            <element signature="e#781#900#0" expanded="true" />
-            <element signature="e#889#890#0" expanded="true" />
-            <element signature="e#925#1035#0" expanded="true" />
-            <element signature="e#1024#1025#0" expanded="true" />
-            <element signature="e#1060#1170#0" expanded="true" />
-            <element signature="e#1159#1160#0" expanded="true" />
-            <element signature="e#1195#1305#0" expanded="true" />
-            <element signature="e#1294#1295#0" expanded="true" />
-            <element signature="e#1330#1440#0" expanded="true" />
-            <element signature="e#1429#1430#0" expanded="true" />
-            <element signature="e#1465#1575#0" expanded="true" />
-            <element signature="e#1564#1565#0" expanded="true" />
-            <element signature="e#1600#1710#0" expanded="true" />
-            <element signature="e#1699#1700#0" expanded="true" />
-            <element signature="e#1735#1845#0" expanded="true" />
-            <element signature="e#1834#1835#0" expanded="true" />
-            <element signature="e#1870#1980#0" expanded="true" />
-            <element signature="e#1969#1970#0" expanded="true" />
-            <element signature="e#2006#2117#0" expanded="true" />
-            <element signature="e#2106#2107#0" expanded="true" />
-            <element signature="e#2143#2254#0" expanded="true" />
-            <element signature="e#2243#2244#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/android/fragments/parameters/ParametersFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="144" column="22" selection-start="4700" selection-end="4700" vertical-scroll-proportion="0.0">
@@ -1567,100 +1422,88 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/domain/implementation/ByteBeatExpression.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="method#ByteBeatExpression#0;class#ByteBeatExpression#0" expanded="true" />
-            <element signature="method#getExpressionAsString#0;class#ByteBeatExpression#0" expanded="false" />
-            <element signature="method#setExpression#0;class#ByteBeatExpression#0" expanded="false" />
-            <element signature="method#setTimescale#0;class#ByteBeatExpression#0" expanded="false" />
-            <element signature="method#getSpeed#0;class#ByteBeatExpression#0" expanded="false" />
-            <element signature="method#getTimeScale#0;class#ByteBeatExpression#0" expanded="false" />
-            <element signature="method#getName#0;class#ByteBeatExpression#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/presenters/ParametersPresenter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="33" selection-start="864" selection-end="864" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="method#ParametersPresenter#0;class#ParametersPresenter#0" expanded="true" />
-            <element signature="method#setView#0;class#ParametersPresenter#0" expanded="true" />
-            <element signature="method#updateArgument#0;class#ParametersPresenter#0" expanded="true" />
-            <element signature="method#resetTime#0;class#ParametersPresenter#0" expanded="true" />
-            <element signature="method#resetArgs#0;class#ParametersPresenter#0" expanded="true" />
-            <element signature="method#OnParameterChanged#0;class#ParametersPresenter#0" expanded="true" />
-            <element signature="method#OnTimeScaleChanged#0;class#ParametersPresenter#0" expanded="true" />
-            <element signature="method#OnActiveExpressionChanged#0;class#ParametersPresenter#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/utils/parser/node/ValueNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="13" selection-start="56" selection-end="56" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="method#ValueNode#0;class#ValueNode#0" expanded="true" />
-            <element signature="method#eval#0;class#ValueNode#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/utils/parser/node/VariableNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="278" selection-end="278" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="method#VariableNode#0;class#VariableNode#0" expanded="true" />
-            <element signature="method#eval#0;class#VariableNode#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/utils/parser/utils/ExpressionParsingException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="1" selection-start="330" selection-end="330" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/domain/implementation/ExpressionEvaluator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="0" selection-start="2156" selection-end="2156" vertical-scroll-proportion="0.0">
+        <state line="13" column="1" selection-start="330" selection-end="330" vertical-scroll-proportion="0.24720357">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/utils/parser/utils/MutableFixed.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="95" selection-end="95" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="method#MutableFixed#0;class#MutableFixed#0" expanded="true" />
-          </folding>
+        <state line="4" column="0" selection-start="95" selection-end="95" vertical-scroll-proportion="0.07431694">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/utils/parser/node/VariableNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="0" selection-start="278" selection-end="278" vertical-scroll-proportion="0.20437159">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/presenters/ParametersPresenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="33" selection-start="864" selection-end="864" vertical-scroll-proportion="0.018579235">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/domain/implementation/ExpressionEvaluator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="67" column="0" selection-start="2156" selection-end="2156" vertical-scroll-proportion="0.33114755">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/utils/parser/node/IExpressionNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="9" selection-start="87" selection-end="87" vertical-scroll-proportion="0.0">
+        <state line="3" column="9" selection-start="87" selection-end="87" vertical-scroll-proportion="0.055737704">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/utils/parser/node/ValueNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="13" selection-start="56" selection-end="56" vertical-scroll-proportion="0.03715847">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/domain/implementation/ByteBeatExpression.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/utils/parser/operators/Iop.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="0" selection-start="102" selection-end="102" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/utils/parser/node/OperatorNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="16" selection-start="401" selection-end="401" vertical-scroll-proportion="0.0">
+        <state line="5" column="20" selection-start="168" selection-end="168" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/utils/parser/operators/Definitions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="0" selection-start="266" selection-end="266" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="method#OperatorNode#0;class#OperatorNode#0" expanded="true" />
-            <element signature="method#eval#0;class#OperatorNode#0" expanded="true" />
+            <element signature="initializer##0;class#Definitions#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/utils/parser/FastParse.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="227" column="21" selection-start="6994" selection-end="6994" vertical-scroll-proportion="1.4788733">
+        <state line="216" column="42" selection-start="6677" selection-end="6677" vertical-scroll-proportion="0.47479674">
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#FastParse#0;class#FastParse#0" expanded="true" />
@@ -1673,8 +1516,8 @@
             <element signature="method#removeRedundantBrackets#0;class#FastParse#0" expanded="true" />
             <element signature="method#splitExpression#0;class#FastParse#0" expanded="true" />
             <element signature="method#setVariable#0;class#FastParse#0" expanded="true" />
-            <element signature="method#getVariableNode#0;class#FastParse#0" expanded="true" />
             <element signature="method#evaluate#0;class#FastParse#0" expanded="true" />
+            <element signature="method#tryParse#0;class#FastParse#0" expanded="true" />
           </folding>
         </state>
       </provider>
