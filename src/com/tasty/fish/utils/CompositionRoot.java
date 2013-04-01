@@ -1,5 +1,6 @@
 package com.tasty.fish.utils;
 
+import com.tasty.fish.android.AppController;
 import com.tasty.fish.android.DroidBeatActivity;
 import com.tasty.fish.android.media.audio.AudioPlayer;
 import com.tasty.fish.android.media.audio.IAudioPlayer;
@@ -8,6 +9,7 @@ import com.tasty.fish.domain.IExpressionsRepository;
 import com.tasty.fish.domain.implementation.ExpressionEvaluator;
 import com.tasty.fish.domain.implementation.ExpressionsRepository;
 import com.tasty.fish.presenters.*;
+import com.tasty.fish.views.IAppController;
 
 public class CompositionRoot {
 
@@ -19,11 +21,15 @@ public class CompositionRoot {
     private BufferVisualsPresenter _bufferVisualsPresenter;
     private ParametersPresenter _parametersPresenter;
     private ExpressionPresenter _expressionPresenter;
+    private AppController _appController;
 
     public ExpressionSelectionPresenter getExpressionSelectorPresenter() {
         return _expressionSelectorPresenter != null ?
                _expressionSelectorPresenter :
-              (_expressionSelectorPresenter = new ExpressionSelectionPresenter(getExpressionsRepository()));
+              (_expressionSelectorPresenter = new ExpressionSelectionPresenter(
+                      getExpressionsRepository(),
+                      getAppController()
+              ));
     }
 
     public IExpressionEvaluator getExpressionEvaluator() {
@@ -46,7 +52,8 @@ public class CompositionRoot {
                 getExpressionEvaluator(),
                 getExpressionsRepository(),
                 getAudioPlayer(),
-                getBufferVisualsPresenter()
+                getBufferVisualsPresenter(),
+                getAppController()
             ));
     }
 
@@ -79,9 +86,14 @@ public class CompositionRoot {
         return _expressionPresenter != null ?
                _expressionPresenter :
               (_expressionPresenter = new ExpressionPresenter(
-                  getExpressionsRepository()
+                  getExpressionsRepository(),
+                  getAppController()
               ));
     }
 
-
+    public IAppController getAppController() {
+        return _appController != null ?
+               _appController :
+              (_appController = new AppController());
+    }
 }

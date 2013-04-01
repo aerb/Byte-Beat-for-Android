@@ -2,13 +2,13 @@ package com.tasty.fish.presenters;
 
 import com.tasty.fish.domain.IExpressionsRepository;
 import com.tasty.fish.domain.implementation.ByteBeatExpression;
+import com.tasty.fish.views.IAppController;
 import com.tasty.fish.views.IKeyboardDisplayView;
 import com.tasty.fish.views.IExpressionView;
 
 public class ExpressionPresenter implements
         IKeyboardDisplayView.IKeyboardDisplayViewListener,
-        IExpressionsRepository.IExpressionsRepositoryListener
-{
+        IExpressionsRepository.IExpressionsRepositoryListener, IExpressionView.IExpressionViewListener {
     private IExpressionView _view;
     private ByteBeatExpression _expression;
 
@@ -16,11 +16,17 @@ public class ExpressionPresenter implements
     private int _cursor = 0;
     private IKeyboardDisplayView _keyboardView;
     private final IExpressionsRepository _expressionRepo;
+    private final IAppController _appController;
 
-    public ExpressionPresenter(IExpressionsRepository expressionsRepository) {
+    public ExpressionPresenter(
+            IExpressionsRepository expressionsRepository,
+            IAppController appController)
+    {
         _expressionRepo = expressionsRepository;
         _expressionRepo.setIExpressionsRepositoryListener(this);
         setActiveExpression(_expressionRepo.getActive());
+
+        _appController = appController;
     }
 
     private void setActiveExpression(ByteBeatExpression exp){
@@ -29,9 +35,10 @@ public class ExpressionPresenter implements
         _cursor = _text.length() - 1;
     }
 
-    public void setExpressionView(IExpressionView view) {
+    public void setView(IExpressionView view) {
         _view = view;
         _view.setExpression(_text, _cursor);
+        _view.setIExpressionViewListener(this);
     }
 
     public void setKeyboardView(IKeyboardDisplayView keyboardView) {
@@ -69,6 +76,11 @@ public class ExpressionPresenter implements
         advanceCursor(element.length());
         updateView();
     }
+
+    @Override
+    public void OnCloseKeyboard() {
+        _appController.CloseKeyboard();
+    }
     //endregion
 
     private void advanceCursor(int spaces) {
@@ -85,5 +97,10 @@ public class ExpressionPresenter implements
     public void OnActiveExpressionChanged() {
         setActiveExpression(_expressionRepo.getActive());
         updateView();
+    }
+
+    @Override
+    public void OnRequestEdit() {
+        _appController.ShowKeyboard();
     }
 }

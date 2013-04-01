@@ -8,6 +8,6 @@ public interface IMediaControlsView
         void OnStopPlay();
     }
 
-    void registerIDroidBeatViewListener(IMediaControlsListener listener);
+    void registerIMediaControlsListener(IMediaControlsListener listener);
     void setTitle(String title);
 }

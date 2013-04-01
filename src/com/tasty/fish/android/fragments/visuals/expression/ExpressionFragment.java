@@ -31,7 +31,6 @@ public class ExpressionFragment extends Fragment implements
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         _listeners = new ArrayList<IExpressionViewListener>();
-        setIExpressionViewListener((DroidBeatActivity)getActivity());
 
         View layout = inflater.inflate(R.layout.expression_layout, null);
         _expressionTextView = (TextView)layout.findViewById(R.id.expressionTextView);
@@ -42,7 +41,7 @@ public class ExpressionFragment extends Fragment implements
             ((DroidBeatActivity)getActivity())
             .getCompositionRoot()
             .getExpressionPresenter();
-        _presenter.setExpressionView(this);
+        _presenter.setView(this);
 
         return layout;
     }

@@ -1,7 +1,6 @@
 package com.tasty.fish.android;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -17,14 +16,15 @@ import com.tasty.fish.android.fragments.visuals.expression.ExpressionFragment;
 import com.tasty.fish.presenters.ExpressionPresenter;
 import com.tasty.fish.presenters.MediaControlsPresenter;
 import com.tasty.fish.utils.CompositionRoot;
+import com.tasty.fish.views.IAppController;
 import com.tasty.fish.views.IMediaControlsView;
 import com.tasty.fish.views.IExpressionView;
 
 import java.util.ArrayList;
 
 public class DroidBeatActivity extends FragmentActivity implements
-                                                       OnClickListener,
-                                                       IExpressionView.IExpressionViewListener,
+        OnClickListener,
+        IExpressionView.IExpressionViewListener,
         IMediaControlsView
 {
     private static boolean s_dieFlag = true;
@@ -42,6 +42,11 @@ public class DroidBeatActivity extends FragmentActivity implements
     private View _refreshBtn;
     private View _paramsBtn;
 
+    private View _keyboardContainer;
+    private View _selectorContainer;
+    private View _paramsContainer;
+    private IAppController _appController;
+
     public CompositionRoot getCompositionRoot() {
         return _root != null ?
                _root :
@@ -57,20 +62,29 @@ public class DroidBeatActivity extends FragmentActivity implements
 
         _listeners = new ArrayList<IMediaControlsListener>();
 
-        getCompositionRoot();
+        _appController = getCompositionRoot().getAppController();
+        ((AppController)_appController).setActivity(this);
 
         _mediaControlsPresenter = _root.getMediaControlsPresenter();
         _mediaControlsPresenter.setView(this);
-        registerIDroidBeatViewListener(_mediaControlsPresenter);
+        registerIMediaControlsListener(_mediaControlsPresenter);
 
         getSupportFragmentManager()
                 .beginTransaction()
                 .add(R.id.upperFragmentContainer, new ExpressionFragment())
                 .add(R.id.mainBufferFragmentContainer, new BufferVisualsFragment())
-                .add(R.id.mainActionsFragmentContainer, new ParametersFragment())
+                .add(R.id.mainParametersFragmentContainer, new ParametersFragment())
+                .add(R.id.mainSelectorFragmentContainer, new ExpressionSelectionFragment())
+                .add(R.id.mainKeyboardFragmentContainer, new KeyboardFragment())
                 .commit();
 
         _expressionTitleTextView = (TextView)findViewById(R.id.expressionTitleTextView);
+
+        _keyboardContainer = findViewById(R.id.mainKeyboardFragmentContainer);
+        _selectorContainer = findViewById(R.id.mainSelectorFragmentContainer);
+        _paramsContainer = findViewById(R.id.mainParametersFragmentContainer);
+
+        _appController.ShowParams();
 
         _loadNewExpressionBtn = findViewById(R.id.selectNewExpressionLayout);
         _stopBtn = findViewById(R.id.buttonStop);
@@ -102,9 +116,9 @@ public class DroidBeatActivity extends FragmentActivity implements
                 NotifyStartPlay();
             }
         } else if(arg0 == _loadNewExpressionBtn){
-            setActionsFragment(new ExpressionSelectionFragment());
+            _appController.ShowSelector();
         } else if(arg0 == _paramsBtn){
-            setActionsFragment(new ParametersFragment());
+            //setActionsFragment(new ParametersFragment());
         }
     }
     //endregion
@@ -126,7 +140,7 @@ public class DroidBeatActivity extends FragmentActivity implements
 
     //region IMediaControlsView methods
 
-    public void registerIDroidBeatViewListener(IMediaControlsListener listener) {
+    public void registerIMediaControlsListener(IMediaControlsListener listener) {
         _listeners.add(listener);
     }
 
@@ -137,18 +151,28 @@ public class DroidBeatActivity extends FragmentActivity implements
 
     @Override
     public void OnRequestEdit() {
-        loadKeyboardFragment();
+        _keyboardContainer.setVisibility(View.VISIBLE);
     }
+
     //endregion
 
-    private void setActionsFragment(Fragment fragment){
-        getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.mainActionsFragmentContainer, fragment)
-                .commit();
+    //region IAppController methods
+    public void ShowKeyboard() {
+        _keyboardContainer.setVisibility(View.VISIBLE);
+        _selectorContainer.setVisibility(View.INVISIBLE);
+        _paramsContainer.setVisibility(View.INVISIBLE);
     }
 
-    private void loadKeyboardFragment() {
-        setActionsFragment(new KeyboardFragment());
+    public void ShowParams() {
+        _keyboardContainer.setVisibility(View.INVISIBLE);
+        _selectorContainer.setVisibility(View.INVISIBLE);
+        _paramsContainer.setVisibility(View.VISIBLE);
     }
+
+    public void ShowSelector() {
+        _keyboardContainer.setVisibility(View.INVISIBLE);
+        _selectorContainer.setVisibility(View.VISIBLE);
+        _paramsContainer.setVisibility(View.INVISIBLE);
+    }
+    //endregion
 }

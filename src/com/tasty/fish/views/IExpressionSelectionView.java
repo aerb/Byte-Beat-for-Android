@@ -8,6 +8,7 @@ public interface IExpressionSelectionView {
     public interface IExpressionSelectionViewListener
     {
         void OnExpressionSelected(int position);
+        void OnCancelRequested();
     }
 
     void addIExpressionSelectionViewListener(IExpressionSelectionViewListener listener);

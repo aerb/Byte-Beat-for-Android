@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import com.tasty.fish.R;
 import com.tasty.fish.android.DroidBeatActivity;
@@ -18,10 +19,11 @@ import com.tasty.fish.views.IExpressionSelectionView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ExpressionSelectionFragment extends Fragment implements IExpressionSelectionView, AdapterView.OnItemClickListener {
+public class ExpressionSelectionFragment extends Fragment implements IExpressionSelectionView, AdapterView.OnItemClickListener, View.OnClickListener {
     private List<ByteBeatExpression> _expressions;
     private ExpressionSelectionPresenter _presenter;
     private ArrayList<IExpressionSelectionViewListener> _listeners;
+    private ImageView _cancelBtn;
 
     @Override
     public void onAttach(Activity activity) {
@@ -40,6 +42,9 @@ public class ExpressionSelectionFragment extends Fragment implements IExpression
         ListView list = (ListView)view.findViewById(R.id.listView);
         list.setAdapter(new ExpressionSelectionAdapter(getActivity().getLayoutInflater(), _expressions));
         list.setOnItemClickListener(this);
+
+        _cancelBtn = (ImageView)view.findViewById(R.id.selectionCancel);
+        _cancelBtn.setOnClickListener(this);
         return view;
     }
 
@@ -57,5 +62,13 @@ public class ExpressionSelectionFragment extends Fragment implements IExpression
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
         for(IExpressionSelectionViewListener listener : _listeners)
             listener.OnExpressionSelected(i);
+    }
+
+    @Override
+    public void onClick(View view) {
+        if(view == _cancelBtn){
+            for(IExpressionSelectionViewListener l : _listeners)
+                l.OnCancelRequested();
+        }
     }
 }

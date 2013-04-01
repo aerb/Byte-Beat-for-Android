@@ -5,6 +5,7 @@ import com.tasty.fish.domain.IExpressionEvaluator;
 import com.tasty.fish.domain.IExpressionsRepository;
 import com.tasty.fish.domain.implementation.ByteBeatExpression;
 import com.tasty.fish.utils.parser.utils.ExpressionParsingException;
+import com.tasty.fish.views.IAppController;
 import com.tasty.fish.views.IMediaControlsView;
 
 public class MediaControlsPresenter implements
@@ -19,12 +20,14 @@ public class MediaControlsPresenter implements
     private final IExpressionsRepository _repo;
     private final IAudioPlayer _audio;
     private final BufferVisualsPresenter _visuals;
+    private final IAppController _appController;
 
     public MediaControlsPresenter(
             IExpressionEvaluator evaluator,
             IExpressionsRepository repo,
             IAudioPlayer audio,
-            BufferVisualsPresenter visuals
+            BufferVisualsPresenter visuals,
+            IAppController appController
     )
     {
         _evaluator = evaluator;
@@ -36,6 +39,8 @@ public class MediaControlsPresenter implements
 
         _visuals = visuals;
         _visuals.setBuffer(_audio.getBuffer());
+
+        _appController = appController;
     }
 
     private void updateView() {
@@ -66,7 +71,7 @@ public class MediaControlsPresenter implements
         try {
             _evaluator.setExpression(exp);
         } catch (ExpressionParsingException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            e.printStackTrace();
         }
         _activeExpression = exp;
         updateView();

@@ -9,6 +9,7 @@ public interface IKeyboardDisplayView {
         void OnMoveRight();
         void OnDelete();
         void OnAddElement(String element);
+        void OnCloseKeyboard();
     }
 
     void registerIKeyboardDisplayViewListener(IKeyboardDisplayViewListener listener);

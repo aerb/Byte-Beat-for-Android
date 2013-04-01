@@ -20,6 +20,7 @@ public class KeyboardFragment extends Fragment implements
 {
     private ExpressionPresenter _presenter;
     private ArrayList<IKeyboardDisplayViewListener> _listeners;
+    private View _cancelBtn;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -37,7 +38,10 @@ public class KeyboardFragment extends Fragment implements
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View keyboardView = inflater.inflate(R.layout.keyboard, null);
 
-        registerButtonListeners(keyboardView);
+        _cancelBtn = keyboardView.findViewById(R.id.keyboardCancelButton);
+        _cancelBtn.setOnClickListener(this);
+
+        registerButtonListeners(keyboardView.findViewById(R.id.keyboardLayout));
         return keyboardView;
     }
 
@@ -62,6 +66,12 @@ public class KeyboardFragment extends Fragment implements
 
     @Override
     public void onClick(View v) {
+        if(v == _cancelBtn){
+            for(IKeyboardDisplayViewListener l : _listeners)
+                l.OnCloseKeyboard();
+            return;
+        }
+
         if (!(v instanceof Button))
             return;
         Button b = (Button) v;

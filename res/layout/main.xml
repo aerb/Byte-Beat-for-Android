@@ -14,13 +14,19 @@
             android:id="@+id/mainBufferFragmentContainer"
             android:layout_width="fill_parent"
             android:layout_height="100dp"
-            android:layout_above="@+id/mainActionsFragmentContainer"
             android:layout_below="@+id/upperFragmentContainer"
-            >
+            android:layout_above="@+id/mainBufferFragmentAlignment">
     </FrameLayout>
 
     <FrameLayout
-            android:id="@+id/mainActionsFragmentContainer"
+            android:id="@+id/mainParametersFragmentContainer"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/mainBottomControls">
+    </FrameLayout>
+
+    <FrameLayout
+            android:id="@+id/mainSelectorFragmentContainer"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_above="@+id/mainBottomControls">
@@ -90,5 +96,17 @@
                     android:src="@drawable/refresh_button_white_style"
                     android:padding="5dp"/>
         </RelativeLayout>
+    </LinearLayout>
+
+    <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/mainKeyboardFragmentContainer" android:layout_alignParentBottom="true">
+    </FrameLayout>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="200dp" android:id="@+id/mainBufferFragmentAlignment"
+            android:layout_alignParentBottom="true">
     </LinearLayout>
 </RelativeLayout>
