@@ -1,4 +1,4 @@
-package com.tasty.fish.utils.parser;
+package com.tasty.fish.utils.parser.utils;
 
 public class MutableFixed {
     public long Value;

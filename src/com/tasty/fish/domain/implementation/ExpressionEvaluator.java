@@ -1,7 +1,7 @@
 package com.tasty.fish.domain.implementation;
 
 import com.tasty.fish.domain.IExpressionEvaluator;
-import com.tasty.fish.utils.parser.ExpressionParsingException;
+import com.tasty.fish.utils.parser.utils.ExpressionParsingException;
 import com.tasty.fish.utils.parser.FastParse;
 
 public class ExpressionEvaluator implements IExpressionEvaluator {
@@ -11,7 +11,7 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 
     private double _timescale;
     private double _t;
-    private double[] _args = {1,1,1};
+    private long[] _args = {1,1,1};
 
     private int _timeIndex = 0;
     private int _timeHistory = 100;
@@ -30,13 +30,13 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 
         _expression = expression;
         _timescale = _expression.getTimeScale();
-        _args[0] = _expression.getArguement(0);
-        _args[1] = _expression.getArguement(1);
-        _args[2] = _expression.getArguement(2);
+        _args[0] = _expression.getArgument(0);
+        _args[1] = _expression.getArgument(1);
+        _args[2] = _expression.getArgument(2);
 
-        _parser.setVariable(0, _expression.getArguement(0));
-        _parser.setVariable(1, _expression.getArguement(1));
-        _parser.setVariable(2, _expression.getArguement(2));
+        _parser.setVariable(0, _expression.getArgument(0));
+        _parser.setVariable(1, _expression.getArgument(1));
+        _parser.setVariable(2, _expression.getArgument(2));
 
         _parser.tryParse(expression.getExpressionAsString());
     }
@@ -44,9 +44,9 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
     public void updateExpression(String e) throws ExpressionParsingException {
         FastParse parser = new FastParse();
         parser.setTime(0);
-        parser.setVariable(0, _expression.getArguement(0));
-        parser.setVariable(1, _expression.getArguement(1));
-        parser.setVariable(2, _expression.getArguement(2));
+        parser.setVariable(0, _expression.getArgument(0));
+        parser.setVariable(1, _expression.getArgument(1));
+        parser.setVariable(2, _expression.getArgument(2));
 
         parser.tryParse(e);
 
@@ -60,7 +60,7 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
 
         long start = System.nanoTime();
         // Don't ask.
-        byte sample = (byte)(long)_parser.evaluate();
+        byte sample = (byte)_parser.evaluate();
         long stop = System.nanoTime();
 
         _times[_timeIndex++] = (stop - start);
@@ -77,7 +77,7 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
         _timescale = t;
     }
 
-    public void updateArguement(int i, double x) {
+    public void updateArgument(int i, long x) {
         if (i >= 3 || i < 0)
             return;
         _parser.setVariable(i, x);

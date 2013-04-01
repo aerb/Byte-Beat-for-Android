@@ -1,20 +1,20 @@
 package com.tasty.fish.domain.implementation;
 
 public class ByteBeatExpression {
-    private double[] _args = { 0, 0, 0 };
+    private int[] _args = { 0, 0, 0 };
 
     private double _timescale = 0;
     private String _expression;
-    private float _t = 0;
+    private double _t = 0;
     private String _name;
 
     public ByteBeatExpression(
             String name,
             String expression,
             float timescale,
-            float a1,
-            float a2,
-            float a3)
+            int a1,
+            int a2,
+            int a3)
     {
         _name = name;
         _timescale = timescale;
@@ -36,7 +36,7 @@ public class ByteBeatExpression {
         _timescale = inc;
     }
 
-    public void setParameter(int i, double x) {
+    public void setParameter(int i, int x) {
         if (i < 3 && i >= 0) {
             _args[i] = x;
         }
@@ -46,7 +46,7 @@ public class ByteBeatExpression {
         return _timescale;
     }
 
-    public double getArguement(int i) {
+    public int getArgument(int i) {
         return _args[i];
     }
 
@@ -60,8 +60,8 @@ public class ByteBeatExpression {
 
     public void resetParametersAndTimescale() {
         setTimescale(0.5f);
-        setParameter(0, 1f);
-        setParameter(1, 1f);
-        setParameter(2, 1f);
+        setParameter(0, 1);
+        setParameter(1, 1);
+        setParameter(2, 1);
     }
 }

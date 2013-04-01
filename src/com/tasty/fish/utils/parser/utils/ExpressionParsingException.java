@@ -1,4 +1,4 @@
-package com.tasty.fish.utils.parser;
+package com.tasty.fish.utils.parser.utils;
 
 /**
  * Created with IntelliJ IDEA.

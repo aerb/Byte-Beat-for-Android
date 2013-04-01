@@ -37,7 +37,7 @@ public class ExpressionsRepository implements IExpressionsRepository {
     }
 
     private boolean addNewExpression(String title, String exp) {
-        ByteBeatExpression e = new ByteBeatExpression(title, exp, 0.5f, 1f, 1f, 1f);
+        ByteBeatExpression e = new ByteBeatExpression(title, exp, 0.5f, 1, 1, 1);
         _expressions.add(e);
         return true;
     }

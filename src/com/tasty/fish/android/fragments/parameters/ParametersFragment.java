@@ -18,14 +18,14 @@ public class ParametersFragment extends Fragment implements
         SeekBar.OnSeekBarChangeListener,
         IParameterView
 {
-    private static SeekBar s_seekBarSpeed;
-    private static SeekBar[] s_seekBarArgs = new SeekBar[3];
+    private SeekBar _seekBarSpeed;
+    private SeekBar[] _seekBarArgs = new SeekBar[3];
 
-    private static TextView s_textSpeed;
-    private static TextView[] s_textArgs = new TextView[3];
+    private TextView _textSpeed;
+    private TextView[] _textArgs = new TextView[3];
 
-    private static Button s_resetTimeBtn;
-    private static Button s_resetArgsBtn;
+    private Button s_resetTimeBtn;
+    private Button s_resetArgsBtn;
 
     private ArrayList<IParameterViewListener> _listeners;
     private ParametersPresenter _presenter;
@@ -36,19 +36,19 @@ public class ParametersFragment extends Fragment implements
         _view = inflater.inflate(R.layout.params, null);
         _listeners = new ArrayList<IParameterViewListener>();
 
-        s_textSpeed = (TextView) _view.findViewById(R.id.textSpeed);
-        s_textArgs[0] = (TextView) _view.findViewById(R.id.textArg1);
-        s_textArgs[1] = (TextView) _view.findViewById(R.id.textArg2);
-        s_textArgs[2] = (TextView) _view.findViewById(R.id.textArg3);
-        s_seekBarSpeed = (SeekBar) _view.findViewById(R.id.seekBarSpeed);
-        s_seekBarArgs[0] = (SeekBar) _view.findViewById(R.id.seekBarArg1);
-        s_seekBarArgs[1] = (SeekBar) _view.findViewById(R.id.seekBarArg2);
-        s_seekBarArgs[2] = (SeekBar) _view.findViewById(R.id.seekBarArg3);
+        _textSpeed = (TextView) _view.findViewById(R.id.textSpeed);
+        _textArgs[0] = (TextView) _view.findViewById(R.id.textArg1);
+        _textArgs[1] = (TextView) _view.findViewById(R.id.textArg2);
+        _textArgs[2] = (TextView) _view.findViewById(R.id.textArg3);
+        _seekBarSpeed = (SeekBar) _view.findViewById(R.id.seekBarSpeed);
+        _seekBarArgs[0] = (SeekBar) _view.findViewById(R.id.seekBarArg1);
+        _seekBarArgs[1] = (SeekBar) _view.findViewById(R.id.seekBarArg2);
+        _seekBarArgs[2] = (SeekBar) _view.findViewById(R.id.seekBarArg3);
 
-        s_seekBarSpeed.setOnSeekBarChangeListener(this);
-        s_seekBarArgs[0].setOnSeekBarChangeListener(this);
-        s_seekBarArgs[1].setOnSeekBarChangeListener(this);
-        s_seekBarArgs[2].setOnSeekBarChangeListener(this);
+        _seekBarSpeed.setOnSeekBarChangeListener(this);
+        _seekBarArgs[0].setOnSeekBarChangeListener(this);
+        _seekBarArgs[1].setOnSeekBarChangeListener(this);
+        _seekBarArgs[2].setOnSeekBarChangeListener(this);
 
         _presenter =
             ((DroidBeatActivity)getActivity())
@@ -60,12 +60,6 @@ public class ParametersFragment extends Fragment implements
     }
 
     //region Conversion methods
-    private double convertSeekBarToParameterValue(double arg1) {
-        double x = ((float) arg1) / 100 * 2;
-        x = (float) (x == 0 ? 0.01 : x);
-        return x;
-    }
-
     private double convertSeekBarToTimescaleValue(double arg1) {
         return arg1 / 100;
     }
@@ -101,7 +95,7 @@ public class ParametersFragment extends Fragment implements
         }
     }
 
-    private void NotifyParameterChanged(int index, double value){
+    private void NotifyParameterChanged(int index, int value){
         for(IParameterViewListener listener : _listeners){
             listener.OnParameterChanged(index, value);
         }
@@ -111,21 +105,20 @@ public class ParametersFragment extends Fragment implements
     //region OnSeekBarChangeListeners methods
     @Override
     public void onProgressChanged(SeekBar arg0, int arg1, boolean arg2) {
-        if (arg0 == s_seekBarSpeed) {
+        if (arg0 == _seekBarSpeed) {
             double inc = convertSeekBarToTimescaleValue(arg1);
             NotifyTimeScaleChanged(inc);
-            s_textSpeed.setText("" + inc);
+            _textSpeed.setText("" + inc);
         } else {
-            double x = convertSeekBarToParameterValue(arg1);
-            if (arg0 == s_seekBarArgs[0]) {
-                NotifyParameterChanged(0, x);
-                s_textArgs[0].setText(String.format("%.2f", x));
-            } else if (arg0 == s_seekBarArgs[1]) {
-                NotifyParameterChanged(1, x);
-                s_textArgs[1].setText(String.format("%.2f", x));
-            } else if (arg0 == s_seekBarArgs[2]) {
-                NotifyParameterChanged(2, x);
-                s_textArgs[2].setText(String.format("%.2f", x));
+            if (arg0 == _seekBarArgs[0]) {
+                NotifyParameterChanged(0, arg1);
+                _textArgs[0].setText(String.format("%d", arg1));
+            } else if (arg0 == _seekBarArgs[1]) {
+                NotifyParameterChanged(1, arg1);
+                _textArgs[1].setText(String.format("%d", arg1));
+            } else if (arg0 == _seekBarArgs[2]) {
+                NotifyParameterChanged(2, arg1);
+                _textArgs[2].setText(String.format("%d", arg1));
             }
         }
     }
@@ -145,12 +138,12 @@ public class ParametersFragment extends Fragment implements
 
     @Override
     public void setTimescale(double value) {
-        s_seekBarSpeed.setProgress((int) (value * 100));
+        _seekBarSpeed.setProgress((int) (value * 100));
     }
 
     @Override
-    public void setParameter(int i, double value) {
-        s_seekBarArgs[i].setProgress((int) (value * 100 / 2));
+    public void setParameter(int i, int value) {
+        _seekBarArgs[i].setProgress(value);
     }
 
     @Override

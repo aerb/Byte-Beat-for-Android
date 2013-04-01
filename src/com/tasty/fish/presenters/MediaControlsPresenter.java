@@ -4,7 +4,7 @@ import com.tasty.fish.android.media.audio.IAudioPlayer;
 import com.tasty.fish.domain.IExpressionEvaluator;
 import com.tasty.fish.domain.IExpressionsRepository;
 import com.tasty.fish.domain.implementation.ByteBeatExpression;
-import com.tasty.fish.utils.parser.ExpressionParsingException;
+import com.tasty.fish.utils.parser.utils.ExpressionParsingException;
 import com.tasty.fish.views.IMediaControlsView;
 
 public class MediaControlsPresenter implements
