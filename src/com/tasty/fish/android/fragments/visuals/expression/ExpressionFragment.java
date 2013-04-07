@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import com.tasty.fish.android.DroidBeatActivity;
 import com.tasty.fish.R;
@@ -25,7 +26,7 @@ public class ExpressionFragment extends Fragment implements
     private ExpressionPresenter _presenter;
     private TextView _expressionTextView;
     private ArrayList<IExpressionViewListener> _listeners;
-    private ImageButton _editExpressionBtn;
+    private ImageView _editExpressionBtn;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -34,7 +35,7 @@ public class ExpressionFragment extends Fragment implements
 
         View layout = inflater.inflate(R.layout.expression_layout, null);
         _expressionTextView = (TextView)layout.findViewById(R.id.expressionTextView);
-        _editExpressionBtn = (ImageButton)layout.findViewById(R.id.editExpressionBtn);
+        _editExpressionBtn = (ImageView)layout.findViewById(R.id.editExpressionBtn);
         _editExpressionBtn.setOnClickListener(this);
 
         _presenter =

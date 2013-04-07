@@ -59,12 +59,6 @@ public class ParametersFragment extends Fragment implements
         return _view;
     }
 
-    //region Conversion methods
-    private double convertSeekBarToTimeDeltaValue(double arg1) {
-        return arg1 / 100;
-    }
-    //endregion
-
     //region OnClickListener methods
     @Override
     public void onClick(View arg0) {
@@ -106,9 +100,9 @@ public class ParametersFragment extends Fragment implements
     @Override
     public void onProgressChanged(SeekBar arg0, int arg1, boolean arg2) {
         if (arg0 == _seekBarSpeed) {
-            double inc = convertSeekBarToTimeDeltaValue(arg1);
+            double inc = ((double)arg1*2)/100;
             NotifyTimeDeltaChanged(inc);
-            _textSpeed.setText("" + inc);
+            _textSpeed.setText(String.format("%.2f", inc));
         } else {
             if (arg0 == _seekBarArgs[0]) {
                 NotifyParameterChanged(0, arg1);
@@ -138,7 +132,7 @@ public class ParametersFragment extends Fragment implements
 
     @Override
     public void setTimeDelta(double value) {
-        _seekBarSpeed.setProgress((int) (value * 100));
+        _seekBarSpeed.setProgress((int) ((value/2) * 100));
     }
 
     @Override

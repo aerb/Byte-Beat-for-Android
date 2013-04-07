@@ -11,7 +11,7 @@ mkdir $SVG_FOLDER -p
 mkdir $LAYOUT_FOLDER -p
 mkdir $PNG_FOLDER -p
 
-ICONS=('controls' 'folder' 'start' 'refresh' 'check' 'cross' 'add' 'copy')
+ICONS=('controls' 'folder' 'start' 'refresh' 'check' 'cross' 'add' 'copy' 'pencil')
 for ICON in "${ICONS[@]}"
 do
 	echo Exporting $ICON
@@ -36,7 +36,7 @@ do
 	GENERATED_WHITE_LAYOUT=$LAYOUT_FOLDER/$ICON\_button\_white\_style.xml
 
 	sed 's/fill:'$BASE_COLOR'/fill:#333333/g' $BASE_SVG > $SVG_STANDARD
-	sed 's/fill:'$BASE_COLOR'/fill:#f44800/g' $BASE_SVG > $SVG_PRESSED
+	sed 's/fill:'$BASE_COLOR'/fill:#ffc83d/g' $BASE_SVG > $SVG_PRESSED
 	sed 's/fill:'$BASE_COLOR'/fill:#909090/g' $BASE_SVG > $SVG_DISABLED
 	sed 's/fill:'$BASE_COLOR'/fill:#ffffff/g' $BASE_SVG > $SVG_WHITE
 

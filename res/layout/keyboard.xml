@@ -11,13 +11,13 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:id="@+id/keyboardCancelButton" android:src="@drawable/cross_button_white_style"
-                android:padding="5dp" android:background="#cd4d33"/>
+                android:padding="10dp" android:background="#cd4d33"/>
     </RelativeLayout>
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" android:background="@android:color/black" android:id="@+id/keyboardLayout"
-        android:paddingTop="10dp" android:paddingBottom="10dp">
+        android:paddingTop="5dp">
 
         <LinearLayout
             android:layout_width="0dip"

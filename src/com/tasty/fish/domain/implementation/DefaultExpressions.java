@@ -68,5 +68,14 @@ public class DefaultExpressions {
                         50,
                         50
                 ));
+        _defaults.add(
+                new ByteBeatExpression(
+                        "simple",
+                        "t*t/p0",
+                        0.5,
+                        50,
+                        50,
+                        50
+                ));
     }
 }
