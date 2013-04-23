@@ -16,6 +16,15 @@ public class DefaultExpressions {
         _defaults = new ArrayList<ByteBeatExpression>();
         _defaults.add(
                 new ByteBeatExpression(
+                        "miiro",
+                        "((p0*t)/50)*5&(((p1*t)/50)>>7)|((p2*t*3)/50)&(t*4>>10)",
+                        0.5,
+                        50,
+                        50,
+                        50
+                ));
+        _defaults.add(
+                new ByteBeatExpression(
                         "bleullama-fun",
                         "((t%((p0*777)/50))|((p2*t)/50))&((0xFF*p1)/50)-t",
                         0.5,
@@ -36,15 +45,6 @@ public class DefaultExpressions {
                 new ByteBeatExpression(
                         "tangent128",
                         "t*(((t>>9)&((p2*10)/50))|((((p1*t)/50)>>11)&24)^((t>>10)&15&(((p0*t)/50)>>15)))",
-                        0.5,
-                        50,
-                        50,
-                        50
-                ));
-        _defaults.add(
-                new ByteBeatExpression(
-                        "miiro",
-                        "((p0*t)/50)*5&(((p1*t)/50)>>7)|((p2*t*3)/50)&(t*4>>10)",
                         0.5,
                         50,
                         50,
