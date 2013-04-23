@@ -1,0 +1,9 @@
+1.1
+-Rewrite of expression parser, to be more consistent with other bytebeat machines.
+-Ui improvments with appreciated help.
+-Expression copying.
+
+1.01
+-Added ability for dynamic parsing, and custom function input.
+-Currently supports +-*/&|^<<>> operators, and more to come.
+-Support for saving functions to come soon.
