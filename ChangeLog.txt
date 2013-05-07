@@ -1,4 +1,7 @@
-1.1
+1.2.1
+-Copy and paste to system clipboard.
+
+1.2
 -Rewrite of expression parser, to be more consistent with other bytebeat machines.
 -Ui improvments with appreciated help.
 -Expression copying.
