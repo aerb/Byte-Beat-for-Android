@@ -12,7 +12,8 @@ public class AudioPlayer implements IAudioPlayer {
 
     public AudioPlayer(IExpressionEvaluator evaluator) {
         _audioDevice = new AndroidAudioDevice();
-        _samples = new byte[_audioDevice.getBufferSize()];
+
+        _samples = new byte[512];
 
         _evaluator = evaluator;
         _die = false;

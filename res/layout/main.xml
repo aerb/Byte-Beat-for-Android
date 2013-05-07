@@ -90,11 +90,18 @@
                     android:padding="5dp"/>
             <ImageView
                     android:id="@+id/mainCopyButton"
-                    android:layout_alignParentRight="true"
+                    android:layout_toLeftOf="@+id/mainPasteButton"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:src="@drawable/copy_button_white_style"
                     android:padding="5dp"/>
+            <ImageView
+                android:id="@+id/mainPasteButton"
+                android:layout_alignParentRight="true"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/paste_button_white_style"
+                android:padding="5dp"/>
         </RelativeLayout>
     </LinearLayout>
 

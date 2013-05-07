@@ -25,11 +25,77 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/tasty/fish/android/media/audio/AndroidAudioDevice.java" afterPath="$PROJECT_DIR$/src/com/tasty/fish/android/media/audio/AndroidAudioDevice.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/tasty/fish/android/media/audio/AudioPlayer.java" afterPath="$PROJECT_DIR$/src/com/tasty/fish/android/media/audio/AudioPlayer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/tasty/fish/android/fragments/visuals/buffer/BufferCanvas.java" afterPath="$PROJECT_DIR$/src/com/tasty/fish/android/fragments/visuals/buffer/BufferCanvas.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/com/tasty/fish/BuildConfig.java" afterPath="$PROJECT_DIR$/gen/com/tasty/fish/BuildConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/tasty/fish/android/fragments/naming/CreateExpressionFragment.java" afterPath="$PROJECT_DIR$/src/com/tasty/fish/android/fragments/naming/CreateExpressionFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/tasty/fish/presenters/CreateExpressionPresenter.java" afterPath="$PROJECT_DIR$/src/com/tasty/fish/presenters/CreateExpressionPresenter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/tasty/fish/android/DroidBeatActivity.java" afterPath="$PROJECT_DIR$/src/com/tasty/fish/android/DroidBeatActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Byte-Beat-Testing/src/ExpressionEvaluatorTest.groovy" afterPath="$PROJECT_DIR$/Byte-Beat-Testing/src/ExpressionEvaluatorTest.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/com/tasty/fish/Manifest.java" afterPath="$PROJECT_DIR$/gen/com/tasty/fish/Manifest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/svgs/add.svg" afterPath="$PROJECT_DIR$/scripts/svgs/add.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/drawable/add_button_style.xml" afterPath="$PROJECT_DIR$/res/drawable/add_button_style.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/drawable/add_button_white_style.xml" afterPath="$PROJECT_DIR$/res/drawable/add_button_white_style.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/svgs/add_disable.svg" afterPath="$PROJECT_DIR$/scripts/svgs/add_disable.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/svgs/add_press.svg" afterPath="$PROJECT_DIR$/scripts/svgs/add_press.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/svgs/add_white.svg" afterPath="$PROJECT_DIR$/scripts/svgs/add_white.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/svgs/check.svg" afterPath="$PROJECT_DIR$/scripts/svgs/check.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/drawable/check_button_style.xml" afterPath="$PROJECT_DIR$/res/drawable/check_button_style.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/drawable/check_button_white_style.xml" afterPath="$PROJECT_DIR$/res/drawable/check_button_white_style.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/svgs/check_disable.svg" afterPath="$PROJECT_DIR$/scripts/svgs/check_disable.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/svgs/check_press.svg" afterPath="$PROJECT_DIR$/scripts/svgs/check_press.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/svgs/check_white.svg" afterPath="$PROJECT_DIR$/scripts/svgs/check_white.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/svgs/controls.svg" afterPath="$PROJECT_DIR$/scripts/svgs/controls.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/drawable/controls_button_style.xml" afterPath="$PROJECT_DIR$/res/drawable/controls_button_style.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/drawable/controls_button_white_style.xml" afterPath="$PROJECT_DIR$/res/drawable/controls_button_white_style.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/svgs/controls_disable.svg" afterPath="$PROJECT_DIR$/scripts/svgs/controls_disable.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/svgs/controls_press.svg" afterPath="$PROJECT_DIR$/scripts/svgs/controls_press.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/svgs/controls_white.svg" afterPath="$PROJECT_DIR$/scripts/svgs/controls_white.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/svgs/copy.svg" afterPath="$PROJECT_DIR$/scripts/svgs/copy.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/drawable/copy_button_style.xml" afterPath="$PROJECT_DIR$/res/drawable/copy_button_style.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/drawable/copy_button_white_style.xml" afterPath="$PROJECT_DIR$/res/drawable/copy_button_white_style.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/svgs/copy_disable.svg" afterPath="$PROJECT_DIR$/scripts/svgs/copy_disable.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/svgs/copy_press.svg" afterPath="$PROJECT_DIR$/scripts/svgs/copy_press.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/svgs/copy_white.svg" afterPath="$PROJECT_DIR$/scripts/svgs/copy_white.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/svgs/cross.svg" afterPath="$PROJECT_DIR$/scripts/svgs/cross.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/drawable/cross_button_style.xml" afterPath="$PROJECT_DIR$/res/drawable/cross_button_style.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/drawable/cross_button_white_style.xml" afterPath="$PROJECT_DIR$/res/drawable/cross_button_white_style.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/svgs/cross_disable.svg" afterPath="$PROJECT_DIR$/scripts/svgs/cross_disable.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/svgs/cross_press.svg" afterPath="$PROJECT_DIR$/scripts/svgs/cross_press.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/svgs/cross_white.svg" afterPath="$PROJECT_DIR$/scripts/svgs/cross_white.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/svgs/folder.svg" afterPath="$PROJECT_DIR$/scripts/svgs/folder.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/drawable/folder_button_style.xml" afterPath="$PROJECT_DIR$/res/drawable/folder_button_style.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/drawable/folder_button_white_style.xml" afterPath="$PROJECT_DIR$/res/drawable/folder_button_white_style.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/svgs/folder_disable.svg" afterPath="$PROJECT_DIR$/scripts/svgs/folder_disable.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/svgs/folder_press.svg" afterPath="$PROJECT_DIR$/scripts/svgs/folder_press.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/svgs/folder_white.svg" afterPath="$PROJECT_DIR$/scripts/svgs/folder_white.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/gen_layouts.sh" afterPath="$PROJECT_DIR$/scripts/gen_layouts.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/main.xml" afterPath="$PROJECT_DIR$/res/layout/main.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/svgs/pencil.svg" afterPath="$PROJECT_DIR$/scripts/svgs/pencil.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/drawable/pencil_button_style.xml" afterPath="$PROJECT_DIR$/res/drawable/pencil_button_style.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/drawable/pencil_button_white_style.xml" afterPath="$PROJECT_DIR$/res/drawable/pencil_button_white_style.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/svgs/pencil_disable.svg" afterPath="$PROJECT_DIR$/scripts/svgs/pencil_disable.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/svgs/pencil_press.svg" afterPath="$PROJECT_DIR$/scripts/svgs/pencil_press.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/svgs/pencil_white.svg" afterPath="$PROJECT_DIR$/scripts/svgs/pencil_white.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/svgs/refresh.svg" afterPath="$PROJECT_DIR$/scripts/svgs/refresh.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/drawable/refresh_button_style.xml" afterPath="$PROJECT_DIR$/res/drawable/refresh_button_style.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/drawable/refresh_button_white_style.xml" afterPath="$PROJECT_DIR$/res/drawable/refresh_button_white_style.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/svgs/refresh_disable.svg" afterPath="$PROJECT_DIR$/scripts/svgs/refresh_disable.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/svgs/refresh_press.svg" afterPath="$PROJECT_DIR$/scripts/svgs/refresh_press.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/svgs/refresh_white.svg" afterPath="$PROJECT_DIR$/scripts/svgs/refresh_white.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/svgs/start.svg" afterPath="$PROJECT_DIR$/scripts/svgs/start.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/drawable/start_button_style.xml" afterPath="$PROJECT_DIR$/res/drawable/start_button_style.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/drawable/start_button_white_style.xml" afterPath="$PROJECT_DIR$/res/drawable/start_button_white_style.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/svgs/start_disable.svg" afterPath="$PROJECT_DIR$/scripts/svgs/start_disable.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/svgs/start_press.svg" afterPath="$PROJECT_DIR$/scripts/svgs/start_press.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/svgs/start_white.svg" afterPath="$PROJECT_DIR$/scripts/svgs/start_white.svg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Byte-Beat-for-Android.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1366745259793" ignored="false" />
+    <file path="/Dummy.txt" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1367960405361" ignored="false" />
     <file path="/IDroidBeatView.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1364560015474" ignored="false" />
     <file path="/DroidBeatView.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1361738346745" ignored="false" />
     <file path="/DroidBeatPresenter.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1364559850925" ignored="false" />
@@ -40,7 +106,7 @@
     <file path="/ExpressionSelectionView.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1361734693929" ignored="false" />
     <file path="/ExpressionSelectionAdapter.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1361112737888" ignored="false" />
     <file path="/expression_selector_row.xml" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1365358891913" ignored="false" />
-    <file path="/main.xml" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1364824518173" ignored="false" />
+    <file path="/main.xml" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1367965132232" ignored="false" />
     <file path="/IExpressionSelectionView.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1364827304108" ignored="false" />
     <file path="/ExpressionSelectionPresenter.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1364836680813" ignored="false" />
     <file path="/DroidBeatApplication.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1364559485091" ignored="false" />
@@ -58,15 +124,15 @@
     <file path="/IExpressionView.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1361731598829" ignored="false" />
     <file path="/ExpressionSelectionFragment.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1364837020141" ignored="false" />
     <file path="/IExpressionsRepository.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1364832392981" ignored="false" />
-    <file path="/DroidBeatActivity.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1364833337103" ignored="false" />
+    <file path="/DroidBeatActivity.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1367965737487" ignored="false" />
     <file path="/BufferFragment.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1363600940224" ignored="false" />
     <file path="/buffer_display.xml" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1364735737833" ignored="false" />
     <file path="/BufferCanvas.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1364667728717" ignored="false" />
-    <file path="/AndroidAudioDevice.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1364734648988" ignored="false" />
+    <file path="/AndroidAudioDevice.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1367962730806" ignored="false" />
     <file path="/ExpressionEvaluatorTest.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1361869724943" ignored="false" />
     <file path="/ExpressionEvaluatorTest.groovy" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1364737888543" ignored="false" />
     <file path="/FastParse.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1364817633755" ignored="false" />
-    <file path="/a.dummy" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1364821232762" ignored="false" />
+    <file path="/a.dummy" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1367963820223" ignored="false" />
     <file path="/ParseNode.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1362938002049" ignored="false" />
     <file path="/IExpressionNode.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1364812165858" ignored="false" />
     <file path="/ValueNode.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1364812737885" ignored="false" />
@@ -78,7 +144,7 @@
     <file path="/FloatingVariableNode.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1364812252164" ignored="false" />
     <file path="/ParametersFragment.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1365360887437" ignored="false" />
     <file path="/IAudioPlayer.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1363600091420" ignored="false" />
-    <file path="/AudioPlayer.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1364661766555" ignored="false" />
+    <file path="/AudioPlayer.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1367961444186" ignored="false" />
     <file path="/BufferVisualsPresenter.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1364738867802" ignored="false" />
     <file path="/ParametersPresenter.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1364835288273" ignored="false" />
     <file path="/BufferVisualsFragment.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1364835452101" ignored="false" />
@@ -101,14 +167,13 @@
     <file path="/IAppController.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1364826467314" ignored="false" />
     <file path="/ChangeNameFragment.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1364832586229" ignored="false" />
     <file path="/ICreateExpressionView.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1364831509909" ignored="false" />
-    <file path="/CreateExpressionPresenter.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1364832451620" ignored="false" />
-    <file path="/CreateExpressionFragment.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1364832552856" ignored="false" />
+    <file path="/CreateExpressionPresenter.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1367965643219" ignored="false" />
+    <file path="/CreateExpressionFragment.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1367965501650" ignored="false" />
     <file path="/listview_item_style" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1365353302625" ignored="false" />
     <file path="/listview_item_style.xml" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1365358715182" ignored="false" />
     <file path="/listview_pressed.xml" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1365354381340" ignored="false" />
     <file path="/styles.xml" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1365355561653" ignored="false" />
     <file path="/listview_selector_background.xml" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1365358467750" ignored="false" />
-    <file path="$PROJECT_DIR$/gen/com/tasty/fish/BuildConfig.java" changelist="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" time="1366745635035" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +189,6 @@
   </component>
   <component name="DebuggerManager">
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
-    <method_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint url="file://$PROJECT_DIR$/src/com/tasty/fish/presenters/ParametersPresenter.java" line="33" class="com.tasty.fish.presenters.ParametersPresenter" package="com.tasty.fish.presenters">
         <option name="ENABLED" value="true" />
@@ -189,6 +253,7 @@
         <option name="LOG_MESSAGE" value="&#13;&#13;JAVA" />
       </breakpoint>
     </breakpoint_any>
+    <method_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -198,31 +263,90 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ParametersFragment.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/android/fragments/parameters/ParametersFragment.java">
+      <file leaf-file-name="MediaControlsPresenter.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/presenters/MediaControlsPresenter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="114" column="64" selection-start="4039" selection-end="4039" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DefaultExpressions.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/domain/implementation/DefaultExpressions.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="19" selection-start="709" selection-end="709" vertical-scroll-proportion="0.0">
+            <state line="72" column="42" selection-start="2034" selection-end="2034" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#get#0;class#DefaultExpressions#0" expanded="true" />
+                <element signature="method#MediaControlsPresenter#0;class#MediaControlsPresenter#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="DroidBeatActivity.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/android/DroidBeatActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="77" column="88" selection-start="2929" selection-end="2929" vertical-scroll-proportion="0.25">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#onClick#0;class#DroidBeatActivity#0" expanded="true" />
+                <element signature="e#4987#5207#0" expanded="true" />
+                <element signature="e#5192#5193#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="62" selection-start="601" selection-end="601" vertical-scroll-proportion="0.44227642">
+            <state line="25" column="11" selection-start="948" selection-end="948" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CreateExpressionFragment.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/android/fragments/naming/CreateExpressionFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="48" column="31" selection-start="1758" selection-end="1758" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="method#onCreateDialog#0;class#CreateExpressionFragment#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CreateExpressionPresenter.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/presenters/CreateExpressionPresenter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="28" column="54" selection-start="822" selection-end="822" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="method#CreateExpressionPresenter#0;class#CreateExpressionPresenter#0" expanded="true" />
+                <element signature="method#requestDefaultName#0;class#CreateExpressionPresenter#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClipboardManager.class" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/android-sdk-win/platforms/android-7/android.jar!/android/text/ClipboardManager.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="34" selection-start="256" selection-end="256" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="method#getText#0;class#ClipboardManager#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+          <provider selected="true" editor-type-id="android-designer">
+            <state />
+          </provider>
+          <provider editor-type-id="text-editor">
+            <state line="104" column="25" selection-start="4670" selection-end="4670" vertical-scroll-proportion="-15.84">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AppController.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/android/AppController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="13" selection-start="90" selection-end="90" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -250,14 +374,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/tasty/fish/android/DroidBeatActivity.java" />
-        <option value="$PROJECT_DIR$/src/com/tasty/fish/presenters/MediaControlsPresenter.java" />
-        <option value="$PROJECT_DIR$/res/drawable/listview_item_style" />
-        <option value="$PROJECT_DIR$/res/drawable/listview_pressed.xml" />
-        <option value="$PROJECT_DIR$/res/values/styles.xml" />
-        <option value="$PROJECT_DIR$/res/drawable/listview_background_style.xml" />
-        <option value="$PROJECT_DIR$/res/drawable/listview_selector_background.xml" />
-        <option value="$PROJECT_DIR$/res/layout/expression_selector_row.xml" />
         <option value="$PROJECT_DIR$/res/layout/expression_selector.xml" />
         <option value="$PROJECT_DIR$/res/drawable/listview_item_style.xml" />
         <option value="$PROJECT_DIR$/res/layout/keyboard.xml" />
@@ -265,6 +381,14 @@
         <option value="$PROJECT_DIR$/src/com/tasty/fish/android/fragments/visuals/expression/ExpressionFragment.java" />
         <option value="$PROJECT_DIR$/src/com/tasty/fish/android/fragments/parameters/ParametersFragment.java" />
         <option value="$PROJECT_DIR$/src/com/tasty/fish/domain/implementation/DefaultExpressions.java" />
+        <option value="$PROJECT_DIR$/src/com/tasty/fish/android/fragments/visuals/buffer/BufferCanvas.java" />
+        <option value="$PROJECT_DIR$/src/com/tasty/fish/android/media/audio/AudioPlayer.java" />
+        <option value="$PROJECT_DIR$/Byte-Beat-Testing/src/ExpressionEvaluatorTest.groovy" />
+        <option value="$PROJECT_DIR$/src/com/tasty/fish/android/media/audio/AndroidAudioDevice.java" />
+        <option value="$PROJECT_DIR$/res/layout/main.xml" />
+        <option value="$PROJECT_DIR$/src/com/tasty/fish/android/fragments/naming/CreateExpressionFragment.java" />
+        <option value="$PROJECT_DIR$/src/com/tasty/fish/presenters/CreateExpressionPresenter.java" />
+        <option value="$PROJECT_DIR$/src/com/tasty/fish/android/DroidBeatActivity.java" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
       </list>
     </option>
@@ -495,7 +619,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -517,6 +640,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -527,9 +651,9 @@
     <property name="options.splitter.main.proportions" value="0.22833334" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="ExportedApkPath" value="C:\Users\ade\Dev\Byte-Beat-for-Android-2\Byte-Beat-for-Android.apk" />
+    <property name="ExportedApkPath" value="C:\Users\ade\Desktop\Byte-Beat-for-Android.apk" />
     <property name="ExportedModule" value="Byte-Beat-for-Android" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Dropbox/Keys/adk_signed/aerb" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Dropbox/Keys/adk_signed/aerb2" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
@@ -899,10 +1023,10 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.ExpressionEvaluatorTest.testAdd" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.ExpressionEvaluatorTest.test_sample_average" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.ExpressionEvaluatorTest.testMult" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.ExpressionEvaluatorTest.test_xpansive" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.ExpressionEvaluatorTest.test_xpansive" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.ExpressionEvaluatorTest.testAdd" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.ExpressionEvaluatorTest.test_sample_average" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.ExpressionEvaluatorTest.testMult" />
         <item index="4" class="java.lang.String" itemvalue="JUnit.ExpressionEvaluatorTest.test_miiro" />
       </list>
     </recent_temporary>
@@ -959,12 +1083,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1824" height="1096" extended-state="6" />
+    <frame x="-8" y="-8" width="1824" height="1096" extended-state="7" />
     <editor active="true" />
     <layout>
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3059024" sideWeight="0.68370605" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20828603" sideWeight="0.68370605" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290735" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32973894" sideWeight="0.67199147" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32694355" sideWeight="0.41089672" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42172524" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5005314" sideWeight="0.50283766" order="7" side_tool="true" content_ui="tabs" />
@@ -976,14 +1104,10 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24971624" sideWeight="0.5782748" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2167991" sideWeight="0.6826411" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31735888" sideWeight="0.49318954" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30646992" sideWeight="0.6826411" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2167991" sideWeight="0.68370605" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31629393" sideWeight="0.49318954" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20885357" sideWeight="0.6826411" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32973894" sideWeight="0.67199147" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32694355" sideWeight="0.41089672" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24971624" sideWeight="0.6805112" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1052,108 +1176,141 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/domain/IExpressionEvaluator.java">
+    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/presenters/BufferVisualsPresenter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="17" selection-start="183" selection-end="183" vertical-scroll-proportion="0.09289618">
+        <state line="26" column="30" selection-start="674" selection-end="674" vertical-scroll-proportion="0.52970296">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/android/media/audio/IAudioPlayer.java">
+    <entry file="file://$PROJECT_DIR$/Byte-Beat-Testing/src/ExpressionEvaluatorTest.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="17" selection-start="62" selection-end="62" vertical-scroll-proportion="0.03715847" />
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/android-sdk-win/platforms/android-7/android.jar!/android/widget/ListAdapter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="17" selection-start="161" selection-end="161" vertical-scroll-proportion="0.11147541" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/domain/implementation/ByteBeat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="13" selection-start="60" selection-end="60" vertical-scroll-proportion="0.03715847">
-          <folding />
+        <state line="67" column="0" selection-start="2339" selection-end="2339" vertical-scroll-proportion="1.3246753">
+          <folding>
+            <element signature="n#!!block;n#DoABunchOfTimes#0;n#!!block;n#ExpressionEvaluatorTest#0" expanded="true" />
+            <element signature="n#!!block;n#test_xpansive#0;n#!!block;n#ExpressionEvaluatorTest#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/android-sdk-win/platforms/android-7/android.jar!/android/widget/TextView.class">
+    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/android/media/audio/AndroidAudioDevice.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="13" selection-start="196" selection-end="196" vertical-scroll-proportion="0.16585366" />
+        <state line="31" column="0" selection-start="832" selection-end="832" vertical-scroll-proportion="0.77272725">
+          <folding>
+            <element signature="method#AndroidAudioDevice#0;class#AndroidAudioDevice#0" expanded="true" />
+            <element signature="method#writeSamples#0;class#AndroidAudioDevice#0" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/drawable/copy_button_style.xml">
+    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/android/media/audio/AudioPlayer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="11" selection-start="372" selection-end="372" vertical-scroll-proportion="0.27642277" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/expression_selector_row.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state line="5" column="65" selection-start="279" selection-end="279" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/expression_selector.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state line="19" column="14" selection-start="803" selection-end="803" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/android/DroidBeatActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="92" column="28" selection-start="3578" selection-end="3578" vertical-scroll-proportion="0.1453552" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/drawable/listview_item_style.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="11" selection-start="684" selection-end="684" vertical-scroll-proportion="0.66341466" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/android/fragments/visuals/expression/ExpressionFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="33" selection-start="1554" selection-end="1554" vertical-scroll-proportion="0.74634147" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/expression_layout.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="0" selection-start="836" selection-end="836" vertical-scroll-proportion="0.74915254" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/keyboard.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/android/fragments/parameters/ParametersFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="114" column="64" selection-start="4039" selection-end="4039" vertical-scroll-proportion="0.0">
+        <state line="15" column="33" selection-start="440" selection-end="440" vertical-scroll-proportion="0.41396105">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/domain/implementation/DefaultExpressions.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="19" selection-start="709" selection-end="709" vertical-scroll-proportion="0.0">
+        <state line="17" column="39" selection-start="462" selection-end="462" vertical-scroll-proportion="0.33116883">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/android/fragments/parameters/ParametersFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="114" column="64" selection-start="4039" selection-end="4039" vertical-scroll-proportion="0.116883114">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/android/fragments/visuals/buffer/BufferCanvas.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="52" selection-start="1170" selection-end="1170" vertical-scroll-proportion="0.60714287">
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#get#0;class#DefaultExpressions#0" expanded="true" />
+            <element signature="method#setDisplayBuffer#0;class#BufferCanvas#0" expanded="true" />
+            <element signature="method#initialize#0;class#BufferCanvas#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/presenters/ParametersPresenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="13" selection-start="198" selection-end="198" vertical-scroll-proportion="0.11221122">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/android/AppController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="13" selection-start="90" selection-end="90" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/presenters/MediaControlsPresenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="42" selection-start="2034" selection-end="2034" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="method#MediaControlsPresenter#0;class#MediaControlsPresenter#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state line="104" column="25" selection-start="4670" selection-end="4670" vertical-scroll-proportion="-15.84">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/android-sdk-win/platforms/android-7/android.jar!/android/text/ClipboardManager.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="34" selection-start="256" selection-end="256" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="method#getText#0;class#ClipboardManager#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/android/fragments/naming/CreateExpressionFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="31" selection-start="1758" selection-end="1758" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="method#onCreateDialog#0;class#CreateExpressionFragment#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/presenters/CreateExpressionPresenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="54" selection-start="822" selection-end="822" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="method#CreateExpressionPresenter#0;class#CreateExpressionPresenter#0" expanded="true" />
+            <element signature="method#requestDefaultName#0;class#CreateExpressionPresenter#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="62" selection-start="601" selection-end="601" vertical-scroll-proportion="0.44227642">
+        <state line="25" column="11" selection-start="948" selection-end="948" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tasty/fish/android/DroidBeatActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="77" column="88" selection-start="2929" selection-end="2929" vertical-scroll-proportion="0.25">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#onClick#0;class#DroidBeatActivity#0" expanded="true" />
+            <element signature="e#4987#5207#0" expanded="true" />
+            <element signature="e#5192#5193#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

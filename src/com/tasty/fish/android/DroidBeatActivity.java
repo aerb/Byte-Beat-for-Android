@@ -2,6 +2,7 @@ package com.tasty.fish.android;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.text.ClipboardManager;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
@@ -14,6 +15,7 @@ import com.tasty.fish.android.fragments.parameters.ParametersFragment;
 import com.tasty.fish.android.fragments.visuals.buffer.BufferVisualsFragment;
 import com.tasty.fish.android.fragments.selection.ExpressionSelectionFragment;
 import com.tasty.fish.android.fragments.visuals.expression.ExpressionFragment;
+import com.tasty.fish.domain.IExpressionsRepository;
 import com.tasty.fish.presenters.MediaControlsPresenter;
 import com.tasty.fish.utils.CompositionRoot;
 import com.tasty.fish.views.IAppController;
@@ -39,12 +41,15 @@ public class DroidBeatActivity extends FragmentActivity implements
     private TextView _expressionTitleTextView;
     private CompositionRoot _root;
     private View _copyBtn;
+    private View _pasteBtn;
     private View _addBtn;
 
     private View _keyboardContainer;
     private View _selectorContainer;
     private View _paramsContainer;
     private IAppController _appController;
+    private ClipboardManager _clipboard;
+    private IExpressionsRepository _repo;
 
     public CompositionRoot getCompositionRoot() {
         return _root != null ?
@@ -79,20 +84,26 @@ public class DroidBeatActivity extends FragmentActivity implements
         _loadNewExpressionBtn = findViewById(R.id.selectNewExpressionLayout);
         _stopBtn = findViewById(R.id.buttonStop);
         _copyBtn = findViewById(R.id.mainCopyButton);
+        _pasteBtn = findViewById(R.id.mainPasteButton);
         _addBtn = findViewById(R.id.mainAddButton);
 
         _loadNewExpressionBtn.setOnClickListener(this);
         _stopBtn.setOnClickListener(this);
         _copyBtn.setOnClickListener(this);
+        _pasteBtn.setOnClickListener(this);
         _addBtn.setOnClickListener(this);
 
         _appController = getCompositionRoot().getAppController();
         ((AppController)_appController).setActivity(this);
         _appController.ShowParams();
 
+        _repo = _root.getExpressionsRepository();
+
         _mediaControlsPresenter = _root.getMediaControlsPresenter();
         _mediaControlsPresenter.setView(this);
         registerIMediaControlsListener(_mediaControlsPresenter);
+
+        _clipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
     }
 
     public void onPause() {
@@ -118,9 +129,18 @@ public class DroidBeatActivity extends FragmentActivity implements
         } else if(arg0 == _addBtn){
             new CreateExpressionFragment().show(getSupportFragmentManager(),"NamingDialog");
         } else if(arg0 == _copyBtn){
+
+            _clipboard.setText(_repo.getActive().getExpressionString());
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Toast.makeText(getApplicationContext(),"Copied to clipboard", Toast.LENGTH_SHORT).show();
+                }
+            });
+        } else if(arg0 == _pasteBtn){
             CreateExpressionFragment frag = new CreateExpressionFragment();
             Bundle bundle = new Bundle();
-            bundle.putBoolean(CreateExpressionFragment.CopyArguement, true);
+            bundle.putString(CreateExpressionFragment.NewExpression, (String) _clipboard.getText());
             frag.setArguments(bundle);
             frag.show(getSupportFragmentManager(), "NamingDialog");
         }

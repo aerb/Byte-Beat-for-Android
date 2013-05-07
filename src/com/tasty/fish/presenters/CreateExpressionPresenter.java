@@ -20,15 +20,15 @@ public class CreateExpressionPresenter {
         _view = view;
     }
 
-    public void requestDefaultName(boolean fromActive){
-        String defaultName = fromActive ? _repo.getActive().getName() + "_copy" : "new_expression";
+    public void requestDefaultName(){
+        String defaultName = "new_expression";
         _view.setDefaultName(defaultName);
     }
 
-    public void addNewExpression(String text, boolean copy) {
+    public void addNewExpression(String text, String copy) {
         _repo.addNewExpression(new ByteBeatExpression(
                 text,
-                copy ? _repo.getActive().getExpressionString() : "t",
+                copy != null ? copy : "t",
                 0.5,
                 50,
                 50,

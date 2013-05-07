@@ -13,7 +13,7 @@ class ExpressionEvaluatorTest extends GroovyTestCase{
         eval.setExpression(new ByteBeatExpression("Hello",(String)expecting,1,p0,p1,p2));
 
         def average = 0;
-        def reps = 100000;
+        def reps = 500000;
         print "["
         for (i in 1..reps){
             def start = System.nanoTime();

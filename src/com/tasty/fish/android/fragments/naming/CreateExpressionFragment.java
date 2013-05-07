@@ -20,20 +20,20 @@ public class CreateExpressionFragment extends DialogFragment implements
     private EditText _name;
     private CreateExpressionPresenter _presenter;
 
-    public static final String CopyArguement = "Copy";
-    private boolean _copy;
+    public static String NewExpression = "NewExpression";
+    private String _copy;
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         _view = getActivity().getLayoutInflater().inflate(R.layout.name_dialog, null);
         _name = (EditText)_view.findViewById(R.id.namingTextBox);
-        _copy = getArguments() != null ? getArguments().getBoolean(CopyArguement) : false;
+        _copy = getArguments() != null ? getArguments().getString(NewExpression) : null;
 
         _presenter = ((DroidBeatActivity)getActivity())
                 .getCompositionRoot()
                 .getCreateExpressionPresenter();
         _presenter.setView(this);
-        _presenter.requestDefaultName(_copy);
+        _presenter.requestDefaultName();
 
         return new AlertDialog.Builder(getActivity())
                 .setTitle("Define Name")

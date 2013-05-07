@@ -45,14 +45,13 @@ public class BufferCanvas extends View {
         int h = getHeight();
         int w = getWidth();
 
-        for (int i = 0; i < _drawableLength; ++i) {
+        for (int i = 0; i < _drawableLength - 1; ++i) {
             float y = h - h * (float)(_buffer[i] + 128) /  256;
             float y1 = h - h * (float)(_buffer[i + 1] + 128) /  256;
 
             float x = ((float) i) /  _drawableLength * w ;
             float x1 = ((float) i + 1) / _drawableLength * w;
 
-            //c.drawLine(x, y, x1, y1, _paint);
             c.drawRect(
                     x,
                     y > y1 ? y : y1,
