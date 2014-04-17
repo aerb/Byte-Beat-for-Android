@@ -1,0 +1,19 @@
+apply plugin: 'android'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.9.0'
+    }
+}
+
+android {
+    compileSdkVersion 10
+    buildToolsVersion "19.0.3"
+    lintOptions {
+        abortOnError false
+    }
+}
