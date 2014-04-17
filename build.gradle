@@ -1,5 +1,3 @@
-apply plugin: 'android'
-
 buildscript {
     repositories {
         mavenCentral()
@@ -10,10 +8,39 @@ buildscript {
     }
 }
 
-android {
-    compileSdkVersion 10
-    buildToolsVersion "19.0.3"
-    lintOptions {
-        abortOnError false
+project(":droidbeat"){
+    apply plugin: 'android'
+
+    dependencies{
+        compile project(':libbytebeat')
+    }
+
+    android {
+        compileSdkVersion 10
+        buildToolsVersion "19.0.3"
+        lintOptions {
+            abortOnError false
+        }
     }
 }
+
+project(":libbytebeat"){
+    apply plugin: 'java'
+}
+
+project(":testing"){
+    apply plugin: 'java'
+    apply plugin: 'groovy'
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        compile project(':libbytebeat')
+
+        testCompile 'junit:junit:4.11'
+        testCompile 'org.codehaus.groovy:groovy-all:2.2.0'
+    }
+}
+

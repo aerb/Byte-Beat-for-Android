@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello"> </string>
+    <string name="app_name">DroidBeat</string>
+
+    <string-array name="bytes">
+        <item>bleullama-fun</item>
+        <item>harism</item>
+        <item>tangent128</item>
+        <item>miiro</item>
+        <item>xpansive</item>
+        <item>tejeez</item>
+    </string-array>
+</resources>

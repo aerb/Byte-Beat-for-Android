@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+        >
+
+    <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/selectionCancel" android:layout_gravity="center_vertical|left"
+            android:src="@drawable/cross_button_white_style" android:background="#cd4d33" android:padding="10dp"/>
+    <ListView
+            android:layout_width="fill_parent"
+            android:layout_height="225dp"
+            android:id="@+id/listView"
+            android:fadingEdge="none"
+            android:clickable="true"
+            />
+
+</LinearLayout>
