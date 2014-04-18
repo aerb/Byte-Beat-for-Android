@@ -30,7 +30,236 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\Byte-Beat-Testing\Byte-Beat-Testing.iml" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\Byte-Beat-Testing\src\ExpressionEvaluatorTest.groovy" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\ChangeLog.txt" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\README" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\bin\classes.dex" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\bin\res\drawable-hdpi\bb.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\bin\res\drawable-hdpi\ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\bin\res\drawable-ldpi\ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\bin\res\drawable-mdpi\ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\bin\resources.ap_" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\android\AppController.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\android\DroidBeatActivity.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\android\DroidBeatApplication.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\android\fragments\keyboard\KeyboardFragment.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\android\fragments\naming\CreateExpressionFragment.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\android\fragments\parameters\ParametersFragment.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\android\fragments\selection\ExpressionSelectionAdapter.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\android\fragments\selection\ExpressionSelectionFragment.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\android\fragments\visuals\buffer\BufferCanvas.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\android\fragments\visuals\buffer\BufferVisualsFragment.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\android\fragments\visuals\expression\ExpressionFragment.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\android\media\audio\AndroidAudioDevice.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\android\media\audio\AudioPlayer.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\android\media\audio\IAudioPlayer.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\presenters\BufferVisualsPresenter.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\presenters\CreateExpressionPresenter.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\presenters\ExpressionPresenter.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\presenters\ExpressionSelectionPresenter.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\presenters\KeyboardPresenter.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\presenters\MediaControlsPresenter.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\presenters\ParametersPresenter.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\utils\CompositionRoot.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\views\IAppController.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\views\IBufferView.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\views\ICreateExpressionView.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\views\IExpressionSelectionView.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\views\IExpressionView.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\views\IKeyboardDisplayView.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\views\IMediaControlsView.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\views\IParameterView.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\gen\com\tasty\fish\BuildConfig.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\gen\com\tasty\fish\Manifest.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\gen\com\tasty\fish\R.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\proguard.cfg" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\project.properties" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\add.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\android_button_template.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\android_button_template_white.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\check.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\controls.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\copy.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\cross.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\folder.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\gen_layouts.sh" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\paste.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\pencil.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\refresh.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\start.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\add.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\add_disable.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\add_press.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\add_white.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\check.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\check_disable.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\check_press.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\check_white.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\controls.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\controls_disable.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\controls_press.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\controls_white.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\copy.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\copy_disable.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\copy_press.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\copy_white.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\cross.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\cross_disable.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\cross_press.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\cross_white.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\folder.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\folder_disable.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\folder_press.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\folder_white.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\paste.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\paste_disable.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\paste_press.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\paste_white.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\pencil.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\pencil_disable.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\pencil_press.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\pencil_white.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\refresh.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\refresh_disable.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\refresh_press.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\refresh_white.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\start.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\start_disable.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\start_press.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\start_white.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\AndroidManifest.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\android\AppController.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\android\DroidBeatActivity.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\android\DroidBeatApplication.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\android\fragments\keyboard\KeyboardFragment.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\android\fragments\naming\CreateExpressionFragment.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\android\fragments\parameters\ParametersFragment.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\android\fragments\selection\ExpressionSelectionAdapter.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\android\fragments\selection\ExpressionSelectionFragment.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\android\fragments\visuals\buffer\BufferCanvas.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\android\fragments\visuals\buffer\BufferVisualsFragment.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\android\fragments\visuals\expression\ExpressionFragment.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\android\media\audio\AndroidAudioDevice.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\android\media\audio\AudioPlayer.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\android\media\audio\IAudioPlayer.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\domain\IExpressionEvaluator.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\domain\IExpressionsRepository.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\domain\implementation\ByteBeat.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\domain\implementation\ByteBeatExpression.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\domain\implementation\DefaultExpressions.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\domain\implementation\ExpressionEvaluator.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\domain\implementation\ExpressionsRepository.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\presenters\BufferVisualsPresenter.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\presenters\CreateExpressionPresenter.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\presenters\ExpressionPresenter.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\presenters\ExpressionSelectionPresenter.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\presenters\KeyboardPresenter.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\presenters\MediaControlsPresenter.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\presenters\ParametersPresenter.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\utils\CompositionRoot.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\utils\parser\FastParse.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\utils\parser\node\IExpressionNode.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\utils\parser\node\OperatorNode.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\utils\parser\node\ValueNode.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\utils\parser\node\VariableNode.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\utils\parser\operators\Definitions.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\utils\parser\operators\Iop.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\utils\parser\utils\ExpressionParsingException.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\utils\parser\utils\MutableFixed.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\views\IAppController.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\views\IBufferView.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\views\ICreateExpressionView.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\views\IExpressionSelectionView.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\views\IExpressionView.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\views\IKeyboardDisplayView.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\views\IMediaControlsView.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\views\IParameterView.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable-hdpi\bb.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable-hdpi\google_4_collections_collection.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable-hdpi\google_5_content_edit.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable-hdpi\google_dark_4_collections_collection.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable-hdpi\ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable-ldpi\ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable-mdpi\google_4_collections_collection.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable-mdpi\google_5_content_edit.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable-mdpi\google_dark_4_collections_collection.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable-mdpi\ic_launcher.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\add.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\add_button_style.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\add_button_white_style.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\add_disable.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\add_press.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\add_white.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\check.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\check_button_style.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\check_button_white_style.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\check_disable.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\check_press.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\check_white.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\controls.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\controls_button_style.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\controls_button_white_style.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\controls_disable.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\controls_press.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\controls_white.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\copy.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\copy_button_style.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\copy_button_white_style.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\copy_disable.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\copy_press.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\copy_white.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\cross.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\cross_button_style.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\cross_button_white_style.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\cross_disable.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\cross_press.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\cross_white.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\flat_seekbar_style.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\flat_seekbar_thumb_style.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\folder.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\folder_button_style.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\folder_button_white_style.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\folder_disable.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\folder_press.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\folder_white.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\listview_item_style.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\paste.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\paste_button_style.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\paste_button_white_style.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\paste_disable.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\paste_press.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\paste_white.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\pencil.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\pencil_button_style.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\pencil_button_white_style.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\pencil_disable.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\pencil_press.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\pencil_white.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\refresh.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\refresh_button_style.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\refresh_button_white_style.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\refresh_disable.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\refresh_press.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\refresh_white.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\start.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\start_button_style.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\start_button_white_style.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\start_disable.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\start_press.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\start_white.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\layout\buffer_display.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\layout\expression_layout.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\layout\expression_selector.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\layout\expression_selector_row.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\layout\keyboard.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\layout\main.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\layout\name_dialog.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\layout\params.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\values\strings.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Byte-Beat-for-Android.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -94,43 +323,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AppController.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/com/tasty/fish/android/AppController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="0" selection-start="510" selection-end="510" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="731">
-              <folding>
-                <element signature="e#229#230#0" expanded="false" />
-                <element signature="e#264#265#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="build.gradle" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="build.gradle" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="1" selection-start="291" selection-end="291" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
+            <state line="29" column="1" selection-start="522" selection-end="522" vertical-scroll-proportion="0.6440678" vertical-offset="189" max-vertical-offset="901">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/AndroidManifest.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="43" selection-start="484" selection-end="484" vertical-scroll-proportion="0.47887325" vertical-offset="0" max-vertical-offset="527">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DroidBeatActivity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/com/tasty/fish/android/DroidBeatActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="26" selection-start="1344" selection-end="1344" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3162">
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -171,6 +368,18 @@
           </key>
           <value>
             <list>
+              <ExternalProjectPojo>
+                <option name="name" value=":libbytebeat" />
+                <option name="path" value="$PROJECT_DIR$/libbytebeat" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value=":droidbeat" />
+                <option name="path" value="$PROJECT_DIR$/droidbeat" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value=":testing" />
+                <option name="path" value="$PROJECT_DIR$/testing" />
+              </ExternalProjectPojo>
               <ExternalProjectPojo>
                 <option name="name" value="Byte-Beat-for-Android" />
                 <option name="path" value="$PROJECT_DIR$" />
@@ -544,11 +753,550 @@
             </list>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/droidbeat">
+          <value>
+            <list>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the Android dependencies of the project" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="androidDependencies" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles all variants of all applications and secondary packages." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="assemble" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles all Debug builds" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="assembleDebug" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles the Test build for the Debug build" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="assembleDebugTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles all Release builds" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="assembleRelease" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles and tests this project." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="build" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles and tests this project and all projects that depend on it." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="buildDependents" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles and tests this project and all projects it depends on." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="buildNeeded" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Runs all checks." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="check" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="checkDebugManifest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="checkReleaseManifest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Deletes the build directory." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="clean" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="compileDebugAidl" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="compileDebugJava" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="compileDebugNdk" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="compileDebugRenderscript" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="compileDebugTestAidl" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="compileDebugTestJava" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="compileDebugTestNdk" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="compileDebugTestRenderscript" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="compileLint" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="compileReleaseAidl" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="compileReleaseJava" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="compileReleaseNdk" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="compileReleaseRenderscript" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Installs and runs the tests for Build 'debug' on connected devices." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="connectedAndroidTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Runs all device checks on currently connected devices." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="connectedCheck" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Runs all device checks using Device Providers and Test Servers." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="deviceCheck" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="dexDebug" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="dexDebugTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="dexRelease" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="generateDebugBuildConfig" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="generateDebugResValues" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="generateDebugResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="generateDebugSources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="generateDebugTestBuildConfig" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="generateDebugTestResValues" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="generateDebugTestResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="generateDebugTestSources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="generateReleaseBuildConfig" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="generateReleaseResValues" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="generateReleaseResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="generateReleaseSources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Installs the Debug build" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="installDebug" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Installs the Test build for the Debug build" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="installDebugTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Runs lint on all variants." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="lint" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Runs lint on the Debug build" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="lintDebug" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Runs lint on the Release build" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="lintRelease" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Runs lint on just the fatal issues in the Release build" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="lintVitalRelease" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="mergeDebugAssets" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="mergeDebugResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="mergeDebugTestAssets" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="mergeDebugTestResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="mergeReleaseAssets" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="mergeReleaseResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="packageDebug" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="packageDebugTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="packageRelease" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="preBuild" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="preDebugBuild" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="preDebugTestBuild" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="preDexDebug" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="preDexDebugTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="preDexRelease" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="preReleaseBuild" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="prepareDebugDependencies" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="prepareDebugTestDependencies" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="prepareReleaseDependencies" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="processDebugJavaRes" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="processDebugManifest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="processDebugResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="processDebugTestJavaRes" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="processDebugTestManifest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="processDebugTestResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="processReleaseJavaRes" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="processReleaseManifest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="processReleaseResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the signing info for each variant" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="signingReport" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Uninstall all applications." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="uninstallAll" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Uninstalls the Debug build" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="uninstallDebug" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Uninstalls the Test build for the Debug build" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="uninstallDebugTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Uninstalls the Release build" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="uninstallRelease" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/droidbeat" />
+                <option name="name" value="validateDebugSigning" />
+              </ExternalTaskPojo>
+            </list>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/libbytebeat">
+          <value>
+            <list>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles the outputs of this project." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/libbytebeat" />
+                <option name="name" value="assemble" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles and tests this project." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/libbytebeat" />
+                <option name="name" value="build" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles and tests this project and all projects that depend on it." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/libbytebeat" />
+                <option name="name" value="buildDependents" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles and tests this project and all projects it depends on." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/libbytebeat" />
+                <option name="name" value="buildNeeded" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Runs all checks." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/libbytebeat" />
+                <option name="name" value="check" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles classes 'main'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/libbytebeat" />
+                <option name="name" value="classes" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Deletes the build directory." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/libbytebeat" />
+                <option name="name" value="clean" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Compiles Java source 'main:java'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/libbytebeat" />
+                <option name="name" value="compileJava" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Compiles Java source 'test:java'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/libbytebeat" />
+                <option name="name" value="compileTestJava" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles a jar archive containing the main classes." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/libbytebeat" />
+                <option name="name" value="jar" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Generates Javadoc API documentation for the main source code." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/libbytebeat" />
+                <option name="name" value="javadoc" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Processes resources 'main:resources'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/libbytebeat" />
+                <option name="name" value="processResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Processes resources 'test:resources'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/libbytebeat" />
+                <option name="name" value="processTestResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Runs the unit tests." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/libbytebeat" />
+                <option name="name" value="test" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles classes 'test'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/libbytebeat" />
+                <option name="name" value="testClasses" />
+              </ExternalTaskPojo>
+            </list>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/testing">
+          <value>
+            <list>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles the outputs of this project." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/testing" />
+                <option name="name" value="assemble" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles and tests this project." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/testing" />
+                <option name="name" value="build" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles and tests this project and all projects that depend on it." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/testing" />
+                <option name="name" value="buildDependents" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles and tests this project and all projects it depends on." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/testing" />
+                <option name="name" value="buildNeeded" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Runs all checks." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/testing" />
+                <option name="name" value="check" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles classes 'main'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/testing" />
+                <option name="name" value="classes" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Deletes the build directory." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/testing" />
+                <option name="name" value="clean" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Compiles the main Groovy source." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/testing" />
+                <option name="name" value="compileGroovy" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Compiles Java source 'main:java'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/testing" />
+                <option name="name" value="compileJava" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Compiles the test Groovy source." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/testing" />
+                <option name="name" value="compileTestGroovy" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Compiles Java source 'test:java'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/testing" />
+                <option name="name" value="compileTestJava" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Generates Groovydoc API documentation for the main source code." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/testing" />
+                <option name="name" value="groovydoc" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles a jar archive containing the main classes." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/testing" />
+                <option name="name" value="jar" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Generates Javadoc API documentation for the main source code." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/testing" />
+                <option name="name" value="javadoc" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Processes resources 'main:resources'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/testing" />
+                <option name="name" value="processResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Processes resources 'test:resources'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/testing" />
+                <option name="name" value="processTestResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Runs the unit tests." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/testing" />
+                <option name="name" value="test" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles classes 'test'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/testing" />
+                <option name="name" value="testClasses" />
+              </ExternalTaskPojo>
+            </list>
+          </value>
+        </entry>
       </map>
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="1397738067080" />
+        <entry key="$PROJECT_DIR$" value="1397759864420" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -561,7 +1309,172 @@
                   <entry key="$PROJECT_DIR$">
                     <value>
                       <ExternalModuleBuildClasspathPojo>
+                        <option name="entries">
+                          <list>
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/gradle/0.9.0/ea9da6d56751eb1b742bd2e491598b312e5bfd0f/gradle-0.9.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.1/33fc26c02f8043ab0ede19eadc8c9885386b255c/httpcore-4.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.1.1/5043bfebc3db072ed80fbd362e7caf00e885d8ae/commons-logging-1.1.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.4/4216af16d38465bbab0f3dff8efa14204f7a399a/commons-codec-1.4.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpclient/4.1.1/3d1d918f32709e33ba7ddb2c4e8d1c543ebe713e/httpclient-4.1.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpmime/4.1/9ba2dcdf94ce35c8a8e9bff242db0618ca932e92/httpmime-4.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/15.0/ed727a8d9f247e2050281cb083f1c77b09dcb5cd/guava-15.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools/common/22.7.0/b58414163169320682431ce16822345ee46b300c/common-22.7.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sf.kxml/kxml2/2.3.0/ccbc77a5fd907ef863c29f3596c6f54ffa4e9442/kxml2-2.3.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.layoutlib/layoutlib-api/22.7.0/7f12dcc1cd5541743d6009a5fb1cab2577da52b1/layoutlib-api-22.7.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools/dvlib/22.7.0/aa5205b1cd1da94bb17ff1d8c9e582a87b7dd6d7/dvlib-22.7.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-compress/1.0/995ae384a0b1e2c66269e6bc5198db8561fb45a2/commons-compress-1.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools/sdklib/22.7.0/9c446bec0bad3341c2519b68148dfd89804d4fda/sdklib-22.7.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools/sdk-common/22.7.0/c7a21ff9cc49baae34988a5f4a7aafc521c04e83/sdk-common-22.7.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/manifest-merger/22.7.0/c871c3ca77a4b61b06d028a33289c21b9fc36764/manifest-merger-22.7.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.ddms/ddmlib/22.7.0/9d56101b42f1184b55d4c7166e1d13bfe6d1592d/ddmlib-22.7.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup/javawriter/2.2.1/d6dac1da0b24ab9ea9a6b5d49c2586d85f17e597/javawriter-2.2.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/builder-test-api/0.9.0/9fce59f3741d61133ee95bcd352cc8ee2be2aa6a/builder-test-api-0.9.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/builder-model/0.9.0/d62494d730dc558c461083a6f70b21c2f3c11bc7/builder-model-0.9.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.bouncycastle/bcprov-jdk15on/1.48/960dea7c9181ba0b17e8bab0c06a43f0a5f04e65/bcprov-jdk15on-1.48.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.bouncycastle/bcpkix-jdk15on/1.48/28b7614b908a47844bb27e3c94b45b6893656265/bcpkix-jdk15on-1.48.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/builder/0.9.0/528c29a6feff3b066363e6be07206eefc7020511/builder-0.9.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.jdt.core.compiler/ecj/4.2.2/d9fd79499c664bccaf24dbe04be417de6c6af64a/ecj-4.2.2.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm/4.0/659add6efc75a4715d738e73f07505246edf4d66/asm-4.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.external.lombok/lombok-ast/0.2.2/57e560b535ceaa14fb6f15422d74594acd6c5b64/lombok-ast-0.2.2.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-tree/4.0/67bd266cd17adcee486b76952ece4cc85fe248b8/asm-tree-4.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.lint/lint-api/22.7.0/2d87f384743c5cf28d88df78e89f695867c3926e/lint-api-22.7.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-analysis/4.0/1c45d52b6f6c638db13cf3ac12adeb56b254cdd7/asm-analysis-4.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.lint/lint-checks/22.7.0/f57c2075d59fa99944ba2e7ff9239d49fdb013e3/lint-checks-22.7.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.lint/lint/22.7.0/4ed955d40d0478015bec12e969d23bb0ac6875e3/lint-22.7.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sf.proguard/proguard-base/4.10/46e891272ae0338af3f5de5e14d8d2641edefc2c/proguard-base-4.10.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sf.proguard/proguard-gradle/4.10/edad1b6af1c08c54a58fb39da9fa48e03bc6678d/proguard-gradle-4.10.jar" />
+                          </list>
+                        </option>
                         <option name="path" value="$PROJECT_DIR$" />
+                      </ExternalModuleBuildClasspathPojo>
+                    </value>
+                  </entry>
+                  <entry key="$PROJECT_DIR$/droidbeat">
+                    <value>
+                      <ExternalModuleBuildClasspathPojo>
+                        <option name="entries">
+                          <list>
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/gradle/0.9.0/ea9da6d56751eb1b742bd2e491598b312e5bfd0f/gradle-0.9.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.1/33fc26c02f8043ab0ede19eadc8c9885386b255c/httpcore-4.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.1.1/5043bfebc3db072ed80fbd362e7caf00e885d8ae/commons-logging-1.1.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.4/4216af16d38465bbab0f3dff8efa14204f7a399a/commons-codec-1.4.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpclient/4.1.1/3d1d918f32709e33ba7ddb2c4e8d1c543ebe713e/httpclient-4.1.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpmime/4.1/9ba2dcdf94ce35c8a8e9bff242db0618ca932e92/httpmime-4.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/15.0/ed727a8d9f247e2050281cb083f1c77b09dcb5cd/guava-15.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools/common/22.7.0/b58414163169320682431ce16822345ee46b300c/common-22.7.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sf.kxml/kxml2/2.3.0/ccbc77a5fd907ef863c29f3596c6f54ffa4e9442/kxml2-2.3.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.layoutlib/layoutlib-api/22.7.0/7f12dcc1cd5541743d6009a5fb1cab2577da52b1/layoutlib-api-22.7.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools/dvlib/22.7.0/aa5205b1cd1da94bb17ff1d8c9e582a87b7dd6d7/dvlib-22.7.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-compress/1.0/995ae384a0b1e2c66269e6bc5198db8561fb45a2/commons-compress-1.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools/sdklib/22.7.0/9c446bec0bad3341c2519b68148dfd89804d4fda/sdklib-22.7.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools/sdk-common/22.7.0/c7a21ff9cc49baae34988a5f4a7aafc521c04e83/sdk-common-22.7.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/manifest-merger/22.7.0/c871c3ca77a4b61b06d028a33289c21b9fc36764/manifest-merger-22.7.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.ddms/ddmlib/22.7.0/9d56101b42f1184b55d4c7166e1d13bfe6d1592d/ddmlib-22.7.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup/javawriter/2.2.1/d6dac1da0b24ab9ea9a6b5d49c2586d85f17e597/javawriter-2.2.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/builder-test-api/0.9.0/9fce59f3741d61133ee95bcd352cc8ee2be2aa6a/builder-test-api-0.9.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/builder-model/0.9.0/d62494d730dc558c461083a6f70b21c2f3c11bc7/builder-model-0.9.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.bouncycastle/bcprov-jdk15on/1.48/960dea7c9181ba0b17e8bab0c06a43f0a5f04e65/bcprov-jdk15on-1.48.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.bouncycastle/bcpkix-jdk15on/1.48/28b7614b908a47844bb27e3c94b45b6893656265/bcpkix-jdk15on-1.48.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/builder/0.9.0/528c29a6feff3b066363e6be07206eefc7020511/builder-0.9.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.jdt.core.compiler/ecj/4.2.2/d9fd79499c664bccaf24dbe04be417de6c6af64a/ecj-4.2.2.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm/4.0/659add6efc75a4715d738e73f07505246edf4d66/asm-4.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.external.lombok/lombok-ast/0.2.2/57e560b535ceaa14fb6f15422d74594acd6c5b64/lombok-ast-0.2.2.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-tree/4.0/67bd266cd17adcee486b76952ece4cc85fe248b8/asm-tree-4.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.lint/lint-api/22.7.0/2d87f384743c5cf28d88df78e89f695867c3926e/lint-api-22.7.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-analysis/4.0/1c45d52b6f6c638db13cf3ac12adeb56b254cdd7/asm-analysis-4.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.lint/lint-checks/22.7.0/f57c2075d59fa99944ba2e7ff9239d49fdb013e3/lint-checks-22.7.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.lint/lint/22.7.0/4ed955d40d0478015bec12e969d23bb0ac6875e3/lint-22.7.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sf.proguard/proguard-base/4.10/46e891272ae0338af3f5de5e14d8d2641edefc2c/proguard-base-4.10.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sf.proguard/proguard-gradle/4.10/edad1b6af1c08c54a58fb39da9fa48e03bc6678d/proguard-gradle-4.10.jar" />
+                          </list>
+                        </option>
+                        <option name="path" value="$PROJECT_DIR$/droidbeat" />
+                      </ExternalModuleBuildClasspathPojo>
+                    </value>
+                  </entry>
+                  <entry key="$PROJECT_DIR$/libbytebeat">
+                    <value>
+                      <ExternalModuleBuildClasspathPojo>
+                        <option name="entries">
+                          <list>
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/gradle/0.9.0/ea9da6d56751eb1b742bd2e491598b312e5bfd0f/gradle-0.9.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.1/33fc26c02f8043ab0ede19eadc8c9885386b255c/httpcore-4.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.1.1/5043bfebc3db072ed80fbd362e7caf00e885d8ae/commons-logging-1.1.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.4/4216af16d38465bbab0f3dff8efa14204f7a399a/commons-codec-1.4.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpclient/4.1.1/3d1d918f32709e33ba7ddb2c4e8d1c543ebe713e/httpclient-4.1.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpmime/4.1/9ba2dcdf94ce35c8a8e9bff242db0618ca932e92/httpmime-4.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/15.0/ed727a8d9f247e2050281cb083f1c77b09dcb5cd/guava-15.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools/common/22.7.0/b58414163169320682431ce16822345ee46b300c/common-22.7.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sf.kxml/kxml2/2.3.0/ccbc77a5fd907ef863c29f3596c6f54ffa4e9442/kxml2-2.3.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.layoutlib/layoutlib-api/22.7.0/7f12dcc1cd5541743d6009a5fb1cab2577da52b1/layoutlib-api-22.7.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools/dvlib/22.7.0/aa5205b1cd1da94bb17ff1d8c9e582a87b7dd6d7/dvlib-22.7.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-compress/1.0/995ae384a0b1e2c66269e6bc5198db8561fb45a2/commons-compress-1.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools/sdklib/22.7.0/9c446bec0bad3341c2519b68148dfd89804d4fda/sdklib-22.7.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools/sdk-common/22.7.0/c7a21ff9cc49baae34988a5f4a7aafc521c04e83/sdk-common-22.7.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/manifest-merger/22.7.0/c871c3ca77a4b61b06d028a33289c21b9fc36764/manifest-merger-22.7.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.ddms/ddmlib/22.7.0/9d56101b42f1184b55d4c7166e1d13bfe6d1592d/ddmlib-22.7.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup/javawriter/2.2.1/d6dac1da0b24ab9ea9a6b5d49c2586d85f17e597/javawriter-2.2.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/builder-test-api/0.9.0/9fce59f3741d61133ee95bcd352cc8ee2be2aa6a/builder-test-api-0.9.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/builder-model/0.9.0/d62494d730dc558c461083a6f70b21c2f3c11bc7/builder-model-0.9.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.bouncycastle/bcprov-jdk15on/1.48/960dea7c9181ba0b17e8bab0c06a43f0a5f04e65/bcprov-jdk15on-1.48.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.bouncycastle/bcpkix-jdk15on/1.48/28b7614b908a47844bb27e3c94b45b6893656265/bcpkix-jdk15on-1.48.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/builder/0.9.0/528c29a6feff3b066363e6be07206eefc7020511/builder-0.9.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.jdt.core.compiler/ecj/4.2.2/d9fd79499c664bccaf24dbe04be417de6c6af64a/ecj-4.2.2.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm/4.0/659add6efc75a4715d738e73f07505246edf4d66/asm-4.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.external.lombok/lombok-ast/0.2.2/57e560b535ceaa14fb6f15422d74594acd6c5b64/lombok-ast-0.2.2.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-tree/4.0/67bd266cd17adcee486b76952ece4cc85fe248b8/asm-tree-4.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.lint/lint-api/22.7.0/2d87f384743c5cf28d88df78e89f695867c3926e/lint-api-22.7.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-analysis/4.0/1c45d52b6f6c638db13cf3ac12adeb56b254cdd7/asm-analysis-4.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.lint/lint-checks/22.7.0/f57c2075d59fa99944ba2e7ff9239d49fdb013e3/lint-checks-22.7.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.lint/lint/22.7.0/4ed955d40d0478015bec12e969d23bb0ac6875e3/lint-22.7.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sf.proguard/proguard-base/4.10/46e891272ae0338af3f5de5e14d8d2641edefc2c/proguard-base-4.10.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sf.proguard/proguard-gradle/4.10/edad1b6af1c08c54a58fb39da9fa48e03bc6678d/proguard-gradle-4.10.jar" />
+                          </list>
+                        </option>
+                        <option name="path" value="$PROJECT_DIR$/libbytebeat" />
+                      </ExternalModuleBuildClasspathPojo>
+                    </value>
+                  </entry>
+                  <entry key="$PROJECT_DIR$/testing">
+                    <value>
+                      <ExternalModuleBuildClasspathPojo>
+                        <option name="entries">
+                          <list>
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/gradle/0.9.0/ea9da6d56751eb1b742bd2e491598b312e5bfd0f/gradle-0.9.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.1/33fc26c02f8043ab0ede19eadc8c9885386b255c/httpcore-4.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.1.1/5043bfebc3db072ed80fbd362e7caf00e885d8ae/commons-logging-1.1.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.4/4216af16d38465bbab0f3dff8efa14204f7a399a/commons-codec-1.4.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpclient/4.1.1/3d1d918f32709e33ba7ddb2c4e8d1c543ebe713e/httpclient-4.1.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpmime/4.1/9ba2dcdf94ce35c8a8e9bff242db0618ca932e92/httpmime-4.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/15.0/ed727a8d9f247e2050281cb083f1c77b09dcb5cd/guava-15.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools/common/22.7.0/b58414163169320682431ce16822345ee46b300c/common-22.7.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sf.kxml/kxml2/2.3.0/ccbc77a5fd907ef863c29f3596c6f54ffa4e9442/kxml2-2.3.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.layoutlib/layoutlib-api/22.7.0/7f12dcc1cd5541743d6009a5fb1cab2577da52b1/layoutlib-api-22.7.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools/dvlib/22.7.0/aa5205b1cd1da94bb17ff1d8c9e582a87b7dd6d7/dvlib-22.7.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-compress/1.0/995ae384a0b1e2c66269e6bc5198db8561fb45a2/commons-compress-1.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools/sdklib/22.7.0/9c446bec0bad3341c2519b68148dfd89804d4fda/sdklib-22.7.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools/sdk-common/22.7.0/c7a21ff9cc49baae34988a5f4a7aafc521c04e83/sdk-common-22.7.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/manifest-merger/22.7.0/c871c3ca77a4b61b06d028a33289c21b9fc36764/manifest-merger-22.7.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.ddms/ddmlib/22.7.0/9d56101b42f1184b55d4c7166e1d13bfe6d1592d/ddmlib-22.7.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup/javawriter/2.2.1/d6dac1da0b24ab9ea9a6b5d49c2586d85f17e597/javawriter-2.2.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/builder-test-api/0.9.0/9fce59f3741d61133ee95bcd352cc8ee2be2aa6a/builder-test-api-0.9.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/builder-model/0.9.0/d62494d730dc558c461083a6f70b21c2f3c11bc7/builder-model-0.9.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.bouncycastle/bcprov-jdk15on/1.48/960dea7c9181ba0b17e8bab0c06a43f0a5f04e65/bcprov-jdk15on-1.48.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.bouncycastle/bcpkix-jdk15on/1.48/28b7614b908a47844bb27e3c94b45b6893656265/bcpkix-jdk15on-1.48.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/builder/0.9.0/528c29a6feff3b066363e6be07206eefc7020511/builder-0.9.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.jdt.core.compiler/ecj/4.2.2/d9fd79499c664bccaf24dbe04be417de6c6af64a/ecj-4.2.2.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm/4.0/659add6efc75a4715d738e73f07505246edf4d66/asm-4.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.external.lombok/lombok-ast/0.2.2/57e560b535ceaa14fb6f15422d74594acd6c5b64/lombok-ast-0.2.2.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-tree/4.0/67bd266cd17adcee486b76952ece4cc85fe248b8/asm-tree-4.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.lint/lint-api/22.7.0/2d87f384743c5cf28d88df78e89f695867c3926e/lint-api-22.7.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-analysis/4.0/1c45d52b6f6c638db13cf3ac12adeb56b254cdd7/asm-analysis-4.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.lint/lint-checks/22.7.0/f57c2075d59fa99944ba2e7ff9239d49fdb013e3/lint-checks-22.7.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.lint/lint/22.7.0/4ed955d40d0478015bec12e969d23bb0ac6875e3/lint-22.7.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sf.proguard/proguard-base/4.10/46e891272ae0338af3f5de5e14d8d2641edefc2c/proguard-base-4.10.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sf.proguard/proguard-gradle/4.10/edad1b6af1c08c54a58fb39da9fa48e03bc6678d/proguard-gradle-4.10.jar" />
+                          </list>
+                        </option>
+                        <option name="path" value="$PROJECT_DIR$/testing" />
                       </ExternalModuleBuildClasspathPojo>
                     </value>
                   </entry>
@@ -679,6 +1592,7 @@
         <option value="$PROJECT_DIR$/src/com/tasty/fish/presenters/CreateExpressionPresenter.java" />
         <option value="$PROJECT_DIR$/src/com/tasty/fish/android/DroidBeatActivity.java" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/build.gradle" />
       </list>
     </option>
   </component>
@@ -929,6 +1843,68 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="libbytebeat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Byte-Beat-for-Android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Byte-Beat-for-Android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="libbytebeat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fish" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Byte-Beat-for-Android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Byte-Beat-for-Android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="droidbeat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Byte-Beat-for-Android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Byte-Beat-for-Android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="droidbeat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -939,8 +1915,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -951,6 +1927,9 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="recentsLimit" value="5" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -1129,6 +2108,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -1154,19 +2146,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -1384,11 +2363,8 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42172524" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5005314" sideWeight="0.50283766" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32973894" sideWeight="0.5782748" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290735" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32800853" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42385516" sideWeight="0.49772984" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290735" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24971624" sideWeight="0.5782748" order="1" side_tool="true" content_ui="tabs" />
@@ -1398,12 +2374,15 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21679197" sideWeight="0.68370605" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31538463" sideWeight="0.49318954" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24971624" sideWeight="0.6805112" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32973894" sideWeight="0.67199147" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32694355" sideWeight="0.41089672" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32800853" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42385516" sideWeight="0.49772984" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1432,50 +2411,16 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/com/tasty/fish/android/AppController.java">
+    <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="731">
-          <folding>
-            <element signature="e#229#230#0" expanded="false" />
-            <element signature="e#264#265#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Byte-Beat-Testing/src/ExpressionEvaluatorTest.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="0" selection-start="2339" selection-end="2339" vertical-scroll-proportion="1.3246753" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/com/tasty/fish/android/DroidBeatActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="26" selection-start="1344" selection-end="1344" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3162">
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/com/tasty/fish/android/AppController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="510" selection-end="510" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="731">
-          <folding>
-            <element signature="e#229#230#0" expanded="false" />
-            <element signature="e#264#265#0" expanded="false" />
-          </folding>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="1" selection-start="291" selection-end="291" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="43" selection-start="484" selection-end="484" vertical-scroll-proportion="0.47887325" vertical-offset="0" max-vertical-offset="527">
+        <state line="29" column="1" selection-start="522" selection-end="522" vertical-scroll-proportion="0.6440678" vertical-offset="189" max-vertical-offset="901">
           <folding />
         </state>
       </provider>
@@ -1498,7 +2443,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>Android (Byte-Beat-for-Android)|Android</last-edited>
+          <last-edited>No facets are configured</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1522,7 +2467,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>Android API 19 Platform</last-edited>
+          <last-edited>Android API 10 Platform</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1534,7 +2479,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>Android|Byte-Beat-for-Android</last-edited>
+          <last-edited>testing</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

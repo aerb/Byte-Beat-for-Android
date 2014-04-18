@@ -13,6 +13,7 @@ project(":droidbeat"){
 
     dependencies{
         compile project(':libbytebeat')
+        compile 'com.android.support:support-v4:13.0.0'
     }
 
     android {

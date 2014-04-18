@@ -3,5 +3,5 @@
 build/
 .gradle/
 local.properties
-Byte-Beat-for-Android.iml
+*.iml
 .idea/
