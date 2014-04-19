@@ -30,235 +30,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb8f4cfa-f918-4c34-b948-ee82485dc7b1" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\Byte-Beat-Testing\Byte-Beat-Testing.iml" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\Byte-Beat-Testing\src\ExpressionEvaluatorTest.groovy" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\ChangeLog.txt" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\README" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\bin\classes.dex" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\bin\res\drawable-hdpi\bb.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\bin\res\drawable-hdpi\ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\bin\res\drawable-ldpi\ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\bin\res\drawable-mdpi\ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\bin\resources.ap_" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\android\AppController.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\android\DroidBeatActivity.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\android\DroidBeatApplication.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\android\fragments\keyboard\KeyboardFragment.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\android\fragments\naming\CreateExpressionFragment.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\android\fragments\parameters\ParametersFragment.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\android\fragments\selection\ExpressionSelectionAdapter.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\android\fragments\selection\ExpressionSelectionFragment.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\android\fragments\visuals\buffer\BufferCanvas.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\android\fragments\visuals\buffer\BufferVisualsFragment.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\android\fragments\visuals\expression\ExpressionFragment.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\android\media\audio\AndroidAudioDevice.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\android\media\audio\AudioPlayer.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\android\media\audio\IAudioPlayer.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\presenters\BufferVisualsPresenter.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\presenters\CreateExpressionPresenter.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\presenters\ExpressionPresenter.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\presenters\ExpressionSelectionPresenter.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\presenters\KeyboardPresenter.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\presenters\MediaControlsPresenter.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\presenters\ParametersPresenter.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\utils\CompositionRoot.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\views\IAppController.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\views\IBufferView.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\views\ICreateExpressionView.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\views\IExpressionSelectionView.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\views\IExpressionView.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\views\IKeyboardDisplayView.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\views\IMediaControlsView.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\src\main\com\tasty\fish\views\IParameterView.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\gen\com\tasty\fish\BuildConfig.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\gen\com\tasty\fish\Manifest.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\gen\com\tasty\fish\R.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\proguard.cfg" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\project.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\add.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\android_button_template.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\android_button_template_white.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\check.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\controls.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\copy.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\cross.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\folder.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\gen_layouts.sh" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\paste.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\pencil.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\refresh.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\start.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\add.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\add_disable.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\add_press.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\add_white.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\check.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\check_disable.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\check_press.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\check_white.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\controls.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\controls_disable.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\controls_press.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\controls_white.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\copy.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\copy_disable.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\copy_press.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\copy_white.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\cross.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\cross_disable.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\cross_press.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\cross_white.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\folder.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\folder_disable.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\folder_press.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\folder_white.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\paste.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\paste_disable.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\paste_press.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\paste_white.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\pencil.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\pencil_disable.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\pencil_press.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\pencil_white.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\refresh.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\refresh_disable.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\refresh_press.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\refresh_white.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\start.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\start_disable.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\start_press.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\scripts\svgs\start_white.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\AndroidManifest.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\android\AppController.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\android\DroidBeatActivity.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\android\DroidBeatApplication.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\android\fragments\keyboard\KeyboardFragment.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\android\fragments\naming\CreateExpressionFragment.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\android\fragments\parameters\ParametersFragment.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\android\fragments\selection\ExpressionSelectionAdapter.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\android\fragments\selection\ExpressionSelectionFragment.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\android\fragments\visuals\buffer\BufferCanvas.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\android\fragments\visuals\buffer\BufferVisualsFragment.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\android\fragments\visuals\expression\ExpressionFragment.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\android\media\audio\AndroidAudioDevice.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\android\media\audio\AudioPlayer.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\android\media\audio\IAudioPlayer.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\domain\IExpressionEvaluator.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\domain\IExpressionsRepository.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\domain\implementation\ByteBeat.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\domain\implementation\ByteBeatExpression.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\domain\implementation\DefaultExpressions.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\domain\implementation\ExpressionEvaluator.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\domain\implementation\ExpressionsRepository.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\presenters\BufferVisualsPresenter.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\presenters\CreateExpressionPresenter.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\presenters\ExpressionPresenter.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\presenters\ExpressionSelectionPresenter.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\presenters\KeyboardPresenter.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\presenters\MediaControlsPresenter.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\presenters\ParametersPresenter.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\utils\CompositionRoot.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\utils\parser\FastParse.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\utils\parser\node\IExpressionNode.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\utils\parser\node\OperatorNode.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\utils\parser\node\ValueNode.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\utils\parser\node\VariableNode.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\utils\parser\operators\Definitions.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\utils\parser\operators\Iop.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\utils\parser\utils\ExpressionParsingException.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\utils\parser\utils\MutableFixed.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\views\IAppController.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\views\IBufferView.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\views\ICreateExpressionView.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\views\IExpressionSelectionView.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\views\IExpressionView.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\views\IKeyboardDisplayView.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\views\IMediaControlsView.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\com\tasty\fish\views\IParameterView.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable-hdpi\bb.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable-hdpi\google_4_collections_collection.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable-hdpi\google_5_content_edit.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable-hdpi\google_dark_4_collections_collection.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable-hdpi\ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable-ldpi\ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable-mdpi\google_4_collections_collection.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable-mdpi\google_5_content_edit.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable-mdpi\google_dark_4_collections_collection.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable-mdpi\ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\add.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\add_button_style.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\add_button_white_style.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\add_disable.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\add_press.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\add_white.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\check.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\check_button_style.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\check_button_white_style.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\check_disable.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\check_press.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\check_white.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\controls.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\controls_button_style.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\controls_button_white_style.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\controls_disable.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\controls_press.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\controls_white.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\copy.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\copy_button_style.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\copy_button_white_style.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\copy_disable.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\copy_press.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\copy_white.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\cross.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\cross_button_style.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\cross_button_white_style.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\cross_disable.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\cross_press.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\cross_white.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\flat_seekbar_style.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\flat_seekbar_thumb_style.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\folder.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\folder_button_style.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\folder_button_white_style.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\folder_disable.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\folder_press.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\folder_white.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\listview_item_style.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\paste.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\paste_button_style.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\paste_button_white_style.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\paste_disable.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\paste_press.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\paste_white.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\pencil.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\pencil_button_style.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\pencil_button_white_style.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\pencil_disable.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\pencil_press.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\pencil_white.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\refresh.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\refresh_button_style.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\refresh_button_white_style.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\refresh_disable.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\refresh_press.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\refresh_white.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\start.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\start_button_style.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\start_button_white_style.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\start_disable.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\start_press.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\drawable\start_white.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\layout\buffer_display.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\layout\expression_layout.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\layout\expression_selector.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\layout\expression_selector_row.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\layout\keyboard.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\layout\main.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\layout\name_dialog.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\layout\params.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\src\main\res\values\strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\ChangeLog.txt" afterPath="" />
+      <change type="DELETED" beforePath="C:\cygwin\home\vizuser\dev\Byte-Beat-for-Android\droidbeat\proguard.cfg" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/droidbeat/src/main/java/com/tasty/fish/android/media/audio/AndroidAudioDevice.java" afterPath="$PROJECT_DIR$/droidbeat/src/main/java/com/tasty/fish/android/media/audio/AndroidAudioDevice.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/droidbeat/src/main/java/com/tasty/fish/android/AppController.java" afterPath="$PROJECT_DIR$/droidbeat/src/main/java/com/tasty/fish/android/AppController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testing/src/test/groovy/ExpressionEvaluatorTest.groovy" afterPath="$PROJECT_DIR$/testing/src/test/groovy/ExpressionEvaluatorTest.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Byte-Beat-for-Android.iws" />
@@ -323,10 +101,50 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="build.gradle" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="build.gradle" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="1" selection-start="522" selection-end="522" vertical-scroll-proportion="0.6440678" vertical-offset="189" max-vertical-offset="901">
+            <state line="32" column="1" selection-start="599" selection-end="599" vertical-scroll-proportion="0.0" vertical-offset="544" max-vertical-offset="952">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AppController.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/droidbeat/src/main/java/com/tasty/fish/android/AppController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="0" selection-start="131" selection-end="131" vertical-scroll-proportion="-2.64" vertical-offset="2" max-vertical-offset="731">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WavExporter.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/libbytebeat/src/main/java/com/tasty/fish/io/WavExporter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="36" selection-start="337" selection-end="337" vertical-scroll-proportion="-8.84" vertical-offset="0" max-vertical-offset="459">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ExpressionEvaluatorTest.groovy" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/testing/src/test/groovy/ExpressionEvaluatorTest.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="39" column="43" selection-start="1486" selection-end="1486" vertical-scroll-proportion="0.5596708" vertical-offset="255" max-vertical-offset="1564">
+              <folding>
+                <element signature="e#0#62#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AndroidAudioDevice.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/droidbeat/src/main/java/com/tasty/fish/android/media/audio/AndroidAudioDevice.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="35" selection-start="197" selection-end="197" vertical-scroll-proportion="-4.76" vertical-offset="0" max-vertical-offset="1020">
               <folding />
             </state>
           </provider>
@@ -1296,7 +1114,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="1397759864420" />
+        <entry key="$PROJECT_DIR$" value="1397808865180" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -1593,6 +1411,10 @@
         <option value="$PROJECT_DIR$/src/com/tasty/fish/android/DroidBeatActivity.java" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/droidbeat/src/main/java/com/tasty/fish/android/AppController.java" />
+        <option value="$PROJECT_DIR$/droidbeat/src/main/java/com/tasty/fish/android/media/audio/AndroidAudioDevice.java" />
+        <option value="$PROJECT_DIR$/libbytebeat/src/main/java/com/tasty/fish/io/WavExporter.java" />
+        <option value="$PROJECT_DIR$/testing/src/test/groovy/ExpressionEvaluatorTest.groovy" />
       </list>
     </option>
   </component>
@@ -1610,182 +1432,12 @@
             <id />
           </State>
           <State>
-            <id>Abstraction issues</id>
-          </State>
-          <State>
-            <id>Android</id>
-          </State>
-          <State>
             <id>Android Lint</id>
-          </State>
-          <State>
-            <id>Assignment issues</id>
-          </State>
-          <State>
-            <id>Assignment issuesGroovy</id>
-          </State>
-          <State>
-            <id>Class metrics</id>
-          </State>
-          <State>
-            <id>Class structure</id>
-          </State>
-          <State>
-            <id>Cloning issues</id>
-          </State>
-          <State>
-            <id>Code style issues</id>
-          </State>
-          <State>
-            <id>Concurrency annotation issues</id>
-          </State>
-          <State>
-            <id>Control FlowGroovy</id>
-          </State>
-          <State>
-            <id>Control flow issues</id>
-          </State>
-          <State>
-            <id>Data flow issues</id>
-          </State>
-          <State>
-            <id>Data flow issuesGroovy</id>
-          </State>
-          <State>
-            <id>Declaration redundancy</id>
-          </State>
-          <State>
-            <id>Declaration redundancyGroovy</id>
-          </State>
-          <State>
-            <id>Encapsulation issues</id>
           </State>
           <State>
             <id>Error handling</id>
           </State>
-          <State>
-            <id>Error handlingGroovy</id>
-          </State>
-          <State>
-            <id>Finalization issues</id>
-          </State>
-          <State>
-            <id>GPath inspectionsGroovy</id>
-          </State>
-          <State>
-            <id>General</id>
-          </State>
-          <State>
-            <id>Groovy</id>
-          </State>
-          <State>
-            <id>HTML</id>
-          </State>
-          <State>
-            <id>Imports</id>
-          </State>
-          <State>
-            <id>Inheritance issues</id>
-          </State>
-          <State>
-            <id>Initialization issues</id>
-          </State>
-          <State>
-            <id>Internationalization issues</id>
-          </State>
-          <State>
-            <id>J2ME issues</id>
-          </State>
-          <State>
-            <id>JUnit issues</id>
-          </State>
-          <State>
-            <id>Java language level issues</id>
-          </State>
-          <State>
-            <id>Java language level migration aids</id>
-          </State>
-          <State>
-            <id>Javadoc issues</id>
-          </State>
-          <State>
-            <id>Logging issues</id>
-          </State>
-          <State>
-            <id>Method MetricsGroovy</id>
-          </State>
-          <State>
-            <id>Method metrics</id>
-          </State>
-          <State>
-            <id>Modularization issues</id>
-          </State>
-          <State>
-            <id>Naming conventions</id>
-          </State>
-          <State>
-            <id>Numeric issues</id>
-          </State>
-          <State>
-            <id>Packaging issues</id>
-          </State>
-          <State>
-            <id>Pattern Validation</id>
-          </State>
-          <State>
-            <id>Performance issues</id>
-          </State>
-          <State>
-            <id>Portability issues</id>
-          </State>
-          <State>
-            <id>Potentially confusing code constructsGroovy</id>
-          </State>
-          <State>
-            <id>Probable bugs</id>
-          </State>
-          <State>
-            <id>Probable bugsGroovy</id>
-          </State>
-          <State>
-            <id>Properties Files</id>
-          </State>
-          <State>
-            <id>RELAX NG</id>
-          </State>
-          <State>
-            <id>Resource management issues</id>
-          </State>
-          <State>
-            <id>Serialization issues</id>
-          </State>
-          <State>
-            <id>TestNG</id>
-          </State>
-          <State>
-            <id>Threading issues</id>
-          </State>
-          <State>
-            <id>Threading issuesGroovy</id>
-          </State>
-          <State>
-            <id>Verbose or redundant code constructs</id>
-          </State>
-          <State>
-            <id>Visibility issues</id>
-          </State>
-          <State>
-            <id>XML</id>
-          </State>
-          <State>
-            <id>toString() issues</id>
-          </State>
         </expanded-state>
-        <selected-state>
-          <State>
-            <id>Abstraction issues</id>
-          </State>
-        </selected-state>
       </profile-state>
     </entry>
   </component>
@@ -1815,12 +1467,17 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="Byte-Beat-for-Android" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -1830,6 +1487,46 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Byte-Beat-for-Android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Byte-Beat-for-Android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Byte-Beat-for-Android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Byte-Beat-for-Android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Byte-Beat-for-Android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="groovy" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1887,21 +1584,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="droidbeat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Byte-Beat-for-Android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Byte-Beat-for-Android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="droidbeat" />
+              <option name="myItemId" value="libbytebeat" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -1912,11 +1595,22 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fish" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="io" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1927,18 +1621,23 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="options.lastSelected" value="editor.preferences.appearance" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs/musicg-1.4.2.0.jar!/" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.tasty.fish.domain" />
       <recent name="com.tasty.fish" />
       <recent name="com.tasty.fish.tests" />
-    </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ade\Dev\Byte-Beat-for-Android-2\res\drawable" />
@@ -1950,12 +1649,12 @@
       <recent name="com.tasty.fish.android.media.video" />
       <recent name="com.tasty.fish.utils" />
     </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="com.tasty.fish" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\ade\Dev\Byte-Beat-for-Android-2\res\drawable" />
       <recent name="C:\Users\ade\Dev\Byte-Beat-for-Android-2\src\com\tasty\fish\tests" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.tasty.fish" />
     </key>
   </component>
   <component name="RunManager" selected="Android Application.Byte-Beat-for-Android">
@@ -2359,7 +2058,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290735" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20828603" sideWeight="0.68370605" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32948717" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32948717" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42172524" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5005314" sideWeight="0.50283766" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32973894" sideWeight="0.5782748" order="2" side_tool="true" content_ui="tabs" />
@@ -2381,7 +2080,7 @@
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32973894" sideWeight="0.67199147" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32694355" sideWeight="0.41089672" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32800853" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32692307" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42385516" sideWeight="0.49772984" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -2420,8 +2119,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="1" selection-start="522" selection-end="522" vertical-scroll-proportion="0.6440678" vertical-offset="189" max-vertical-offset="901">
+        <state line="32" column="1" selection-start="599" selection-end="599" vertical-scroll-proportion="0.0" vertical-offset="544" max-vertical-offset="952">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/droidbeat/src/main/java/com/tasty/fish/android/AppController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="131" selection-end="131" vertical-scroll-proportion="-2.64" vertical-offset="2" max-vertical-offset="731">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/droidbeat/src/main/java/com/tasty/fish/android/media/audio/AndroidAudioDevice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="35" selection-start="197" selection-end="197" vertical-scroll-proportion="-4.76" vertical-offset="0" max-vertical-offset="1020">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libbytebeat/src/main/java/com/tasty/fish/io/WavExporter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="36" selection-start="337" selection-end="337" vertical-scroll-proportion="-8.84" vertical-offset="0" max-vertical-offset="459">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testing/src/test/groovy/ExpressionEvaluatorTest.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="43" selection-start="1486" selection-end="1486" vertical-scroll-proportion="0.5596708" vertical-offset="255" max-vertical-offset="1564">
+          <folding>
+            <element signature="e#0#62#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2491,6 +2222,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
+          <last-edited>musicg-1.4.2.0</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
