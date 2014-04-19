@@ -7,7 +7,7 @@ import com.musicg.wave.WaveHeader;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class WavExporter {
+public class WaveExporter {
 
     public void Encode(byte[] data){
         WaveHeader header = new WaveHeader();
