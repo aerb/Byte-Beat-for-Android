@@ -82,6 +82,14 @@
                         android:id="@+id/textView" android:textStyle="bold" android:layout_gravity="center_vertical"/>
             </LinearLayout>
             <ImageView
+                    android:id="@+id/mainRecordButton"
+                    android:layout_toRightOf="@+id/buttonStop"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/record_button_white_style"
+                    android:padding="5dp"/>
+            <ImageView
                     android:id="@+id/mainAddButton"
                     android:layout_toLeftOf="@+id/mainCopyButton"
                     android:layout_width="50dp"

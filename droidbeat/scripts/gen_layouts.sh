@@ -11,7 +11,7 @@ mkdir $SVG_FOLDER -p
 mkdir $LAYOUT_FOLDER -p
 mkdir $PNG_FOLDER -p
 
-ICONS=('paste' 'controls' 'folder' 'start' 'refresh' 'check' 'cross' 'add' 'copy' 'pencil')
+ICONS=('paste' 'controls' 'folder' 'start' 'refresh' 'check' 'cross' 'add' 'copy' 'pencil' 'record')
 for ICON in "${ICONS[@]}"
 do
 	echo Exporting $ICON
