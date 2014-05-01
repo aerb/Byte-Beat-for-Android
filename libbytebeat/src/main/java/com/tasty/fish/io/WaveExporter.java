@@ -4,19 +4,28 @@ import com.musicg.wave.Wave;
 import com.musicg.wave.WaveFileManager;
 import com.musicg.wave.WaveHeader;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 
 public class WaveExporter {
 
-    public void Encode(byte[] data){
+    private WaveFileManager wfm;
+
+    public void init() throws IOException {
         WaveHeader header = new WaveHeader();
         header.setSampleRate(22055);
         header.setChannels(1);
 
-        Wave w = new Wave(header, data);
+        wfm = new WaveFileManager("what.wav");
+        wfm.writeHeader(header);
+    }
 
-        WaveFileManager io = new WaveFileManager(w);
-        io.saveWaveAsFile("what.wav");
+    public void write(byte[] data) throws IOException {
+        wfm.writeData(data);
+    }
+
+    public void close() throws IOException {
+        wfm.close();
     }
 }
