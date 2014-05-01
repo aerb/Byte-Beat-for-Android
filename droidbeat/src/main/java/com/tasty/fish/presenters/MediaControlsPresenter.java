@@ -4,12 +4,14 @@ import com.tasty.fish.android.media.audio.IAudioPlayer;
 import com.tasty.fish.domain.IExpressionEvaluator;
 import com.tasty.fish.domain.IExpressionsRepository;
 import com.tasty.fish.domain.implementation.ByteBeatExpression;
+import com.tasty.fish.utils.FileSystem;
 import com.tasty.fish.utils.parser.utils.ExpressionParsingException;
 import com.tasty.fish.views.IAppController;
 import com.tasty.fish.views.IMediaControlsView;
 
+import java.io.IOException;
+
 public class MediaControlsPresenter implements
-        IMediaControlsView.IMediaControlsListener,
         IExpressionsRepository.IExpressionsRepositoryListener
 {
     private IMediaControlsView _view;
@@ -56,19 +58,21 @@ public class MediaControlsPresenter implements
         updateView();
     }
 
-    //region IMediaControlsListener methods
-    @Override
-    public void OnStartPlay() {
+    public void startRecord() throws IOException {
+        String path = new FileSystem().getNextExportName();
+        _audio.startAndRecord(path);
+        _visuals.start();
+    }
+
+    public void startPlay() {
         _audio.start();
         _visuals.start();
     }
 
-    @Override
-    public void OnStopPlay() {
+    public void stop() {
         _audio.stop();
         _visuals.stop();
     }
-    //endregion
 
     //region IExpressionRepository methods
     @Override

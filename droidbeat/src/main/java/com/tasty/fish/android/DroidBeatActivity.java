@@ -22,6 +22,7 @@ import com.tasty.fish.views.IAppController;
 import com.tasty.fish.views.IMediaControlsView;
 import com.tasty.fish.views.IExpressionView;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class DroidBeatActivity extends FragmentActivity implements
@@ -33,11 +34,11 @@ public class DroidBeatActivity extends FragmentActivity implements
 
     private View _loadNewExpressionBtn;
 
-    private View _stopBtn;
+    private View _startStopBtn;
+    private View _recordBtn;
 
     private MediaControlsPresenter _mediaControlsPresenter;
 
-    private ArrayList<IMediaControlsListener> _listeners;
     private TextView _expressionTitleTextView;
     private CompositionRoot _root;
     private View _copyBtn;
@@ -51,6 +52,7 @@ public class DroidBeatActivity extends FragmentActivity implements
     private ClipboardManager _clipboard;
     private IExpressionsRepository _repo;
 
+
     public CompositionRoot getCompositionRoot() {
         return _root != null ?
                _root :
@@ -63,8 +65,6 @@ public class DroidBeatActivity extends FragmentActivity implements
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.main);
-
-        _listeners = new ArrayList<IMediaControlsListener>();
 
         getSupportFragmentManager()
                 .beginTransaction()
@@ -82,13 +82,16 @@ public class DroidBeatActivity extends FragmentActivity implements
         _paramsContainer = findViewById(R.id.mainParametersFragmentContainer);
 
         _loadNewExpressionBtn = findViewById(R.id.selectNewExpressionLayout);
-        _stopBtn = findViewById(R.id.buttonStop);
+        _startStopBtn = findViewById(R.id.buttonStop);
+        _recordBtn = findViewById(R.id.mainRecordButton);
+
         _copyBtn = findViewById(R.id.mainCopyButton);
         _pasteBtn = findViewById(R.id.mainPasteButton);
         _addBtn = findViewById(R.id.mainAddButton);
 
         _loadNewExpressionBtn.setOnClickListener(this);
-        _stopBtn.setOnClickListener(this);
+        _startStopBtn.setOnClickListener(this);
+        _recordBtn.setOnClickListener(this);
         _copyBtn.setOnClickListener(this);
         _pasteBtn.setOnClickListener(this);
         _addBtn.setOnClickListener(this);
@@ -101,7 +104,6 @@ public class DroidBeatActivity extends FragmentActivity implements
 
         _mediaControlsPresenter = _root.getMediaControlsPresenter();
         _mediaControlsPresenter.setView(this);
-        registerIMediaControlsListener(_mediaControlsPresenter);
 
         _clipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
     }
@@ -109,27 +111,40 @@ public class DroidBeatActivity extends FragmentActivity implements
     public void onPause() {
         super.onPause();
         s_dieFlag = true;
-        NotifyStopPlay();
+        _mediaControlsPresenter.stop();
     }
     //endregion
+
 
     //region OnClickListener methods
     @Override
     public void onClick(View arg0) {
-        if (arg0 == _stopBtn) {
+        if (arg0 == _startStopBtn) {
             if (s_dieFlag == false) {
                 s_dieFlag = true;
-                NotifyStopPlay();
+                _mediaControlsPresenter.stop();
             } else {
                 s_dieFlag = false;
-                NotifyStartPlay();
+                _mediaControlsPresenter.startPlay();
+            }
+        } else if(arg0 == _recordBtn) {
+            if (s_dieFlag == false) {
+                s_dieFlag = true;
+                _mediaControlsPresenter.stop();
+            } else {
+                try {
+                    _mediaControlsPresenter.startRecord();
+                    s_dieFlag = false;
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    Toast.makeText(this, "Unable to save to file.\n" + e.getMessage(), Toast.LENGTH_LONG).show();
+                }
             }
         } else if(arg0 == _loadNewExpressionBtn){
             _appController.ShowSelector();
         } else if(arg0 == _addBtn){
             new CreateExpressionFragment().show(getSupportFragmentManager(),"NamingDialog");
         } else if(arg0 == _copyBtn){
-
             _clipboard.setText(_repo.getActive().getExpressionString());
             runOnUiThread(new Runnable() {
                 @Override
@@ -147,26 +162,7 @@ public class DroidBeatActivity extends FragmentActivity implements
     }
     //endregion
 
-    //region Notification methods
-    private void NotifyStartPlay(){
-        for(IMediaControlsListener listener : _listeners){
-            listener.OnStartPlay();
-        }
-    }
-
-    private void NotifyStopPlay(){
-        for(IMediaControlsListener listener : _listeners){
-            listener.OnStopPlay();
-        }
-    }
-
-    //endregion
-
     //region IMediaControlsView methods
-
-    public void registerIMediaControlsListener(IMediaControlsListener listener) {
-        _listeners.add(listener);
-    }
 
     @Override
     public void setTitle(String title) {

@@ -26,6 +26,7 @@ public class WaveFileManager{
     private final FileOutputStream fos;
 
     public WaveFileManager(String filename) throws FileNotFoundException {
+
         fos = new FileOutputStream(filename);
     }
 
@@ -70,8 +71,10 @@ public class WaveFileManager{
         fos.write(new byte[] { (byte) (bitsPerSample),
                 (byte) (bitsPerSample >> 8) });
         fos.write(WaveHeader.DATA_HEADER.getBytes());
-        fos.write(new byte[] { (byte) (subChunk2Size),
-                (byte) (subChunk2Size >> 8), (byte) (subChunk2Size >> 16),
+        fos.write(new byte[] {
+                (byte) (subChunk2Size),
+                (byte) (subChunk2Size >> 8),
+                (byte) (subChunk2Size >> 16),
                 (byte) (subChunk2Size >> 24) });
 	}
 }

@@ -1,6 +1,7 @@
 import com.tasty.fish.domain.implementation.ByteBeatExpression
 import com.tasty.fish.domain.implementation.ExpressionEvaluator
 import com.tasty.fish.io.WaveExporter;
+import com.musicg.wave.Wave;
 
 class ExpressionEvaluatorTest extends GroovyTestCase{
     def p0 = 1;
@@ -33,15 +34,20 @@ class ExpressionEvaluatorTest extends GroovyTestCase{
     }
 
     void testEncode(){
-        def eval = new ExpressionEvaluator();
-        eval.setExpression(new ByteBeatExpression("Hello","(((p0*t)*((p1*t)>>8|t>>9)&(p2*46)&t>>8))^(t&t>>13|t>>6)",0.5,p0,p1,p2));
+        def eval = new ExpressionEvaluator()
+        eval.setExpression(new ByteBeatExpression("Hello","(((p0*t)*((p1*t)>>8|t>>9)&(p2*46)&t>>8))^(t&t>>13|t>>6)",0.5,p0,p1,p2))
 
-        def export = new WaveExporter();
-        export.init();
+        def export = new WaveExporter()
+        def filename = "test.wav"
+        export.init filename
+        println export
+        println()
         for (i in 1..1000000){
-            export.write(eval.getNextSample());
+            export.write(eval.getNextSample())
         }
 
+        def readWav = new Wave(filename);
+        println readWav
     }
 
     void testAdd(){
