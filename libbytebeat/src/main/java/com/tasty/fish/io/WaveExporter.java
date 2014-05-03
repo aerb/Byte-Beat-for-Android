@@ -20,7 +20,6 @@ public class WaveExporter {
         _header.setBlockAlign(1);
         _header.setSampleRate(22055);
         _header.setByteRate(_header.getSampleRate()*bytesPerSample);
-        System.out.println("BYTes ====> " + _byteCount);
         _header.setSubChunk2Size(_byteCount);
         _header.setChunkSize(_header.getSubChunk2Size() - 8);
         _header.setBlockAlign(_header.getChannels() * bytesPerSample);
