@@ -9,25 +9,28 @@ public class WaveExporter {
 
     private WaveFileManager wfm;
     private WaveHeader _header;
+    private long _byteCount;
+    private int bytesPerSample = 1;
 
-    public void init(String path) throws IOException {
+    private void writeWaveHeader() throws IOException {
         _header = new WaveHeader();
-
-        int bytesPerSample = 1;
-        _header.setByteRate(_header.getChannels()* _header.getSampleRate()*bytesPerSample);
         _header.setAudioFormat(1);
         _header.setBitsPerSample(8*bytesPerSample);
         _header.setChannels(1);
         _header.setBlockAlign(1);
         _header.setSampleRate(22055);
-
-        _header.setSubChunk2Size(1000000);
+        _header.setByteRate(_header.getSampleRate()*bytesPerSample);
+        System.out.println("BYTes ====> " + _byteCount);
+        _header.setSubChunk2Size(_byteCount);
         _header.setChunkSize(_header.getSubChunk2Size() - 8);
-
         _header.setBlockAlign(_header.getChannels() * bytesPerSample);
-
-        wfm = new WaveFileManager(path);
         wfm.writeHeader(_header);
+    }
+
+    public void init(String path) throws IOException {
+        _byteCount = 0;
+        wfm = new WaveFileManager(path);
+        writeWaveHeader();
     }
 
     @Override
@@ -37,9 +40,12 @@ public class WaveExporter {
 
     public void write(byte[] data) throws IOException {
         wfm.writeData(data);
+        _byteCount += data.length;
     }
 
     public void close() throws IOException {
+        wfm.seek(0);
+        writeWaveHeader();
         wfm.close();
     }
 }

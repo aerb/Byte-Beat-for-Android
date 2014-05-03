@@ -19,15 +19,15 @@ package com.musicg.wave;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.RandomAccessFile;
 
 
 public class WaveFileManager{
 
-    private final FileOutputStream fos;
+    private final RandomAccessFile fos;
 
     public WaveFileManager(String filename) throws FileNotFoundException {
-
-        fos = new FileOutputStream(filename);
+        fos = new RandomAccessFile(filename, "rw");
     }
 
     public void close() throws IOException {
@@ -77,4 +77,8 @@ public class WaveFileManager{
                 (byte) (subChunk2Size >> 16),
                 (byte) (subChunk2Size >> 24) });
 	}
+
+    public void seek(long pos) throws IOException {
+        fos.seek(pos);
+    }
 }

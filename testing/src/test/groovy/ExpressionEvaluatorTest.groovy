@@ -45,6 +45,7 @@ class ExpressionEvaluatorTest extends GroovyTestCase{
         for (i in 1..1000000){
             export.write(eval.getNextSample())
         }
+        export.close()
 
         def readWav = new Wave(filename);
         println readWav
