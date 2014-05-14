@@ -4,14 +4,14 @@ BASE_COLOR='#000000'
 
 
 SVG_FOLDER='svgs'
-LAYOUT_FOLDER='../res/drawable'
-PNG_FOLDER='../res/drawable'
+LAYOUT_FOLDER='../src/main/res/drawable'
+PNG_FOLDER='../src/main/res/drawable'
 
 mkdir $SVG_FOLDER -p
 mkdir $LAYOUT_FOLDER -p
 mkdir $PNG_FOLDER -p
 
-ICONS=('paste' 'controls' 'folder' 'start' 'refresh' 'check' 'cross' 'add' 'copy' 'pencil' 'record')
+ICONS=('paste' 'controls' 'folder' 'start' 'stop' 'refresh' 'check' 'cross' 'add' 'copy' 'pencil' 'record')
 for ICON in "${ICONS[@]}"
 do
 	echo Exporting $ICON
@@ -35,10 +35,10 @@ do
 	GENERATED_LAYOUT=$LAYOUT_FOLDER/$ICON\_button\_style.xml
 	GENERATED_WHITE_LAYOUT=$LAYOUT_FOLDER/$ICON\_button\_white\_style.xml
 
-	sed 's/fill:'$BASE_COLOR'/fill:#333333/g' $BASE_SVG > $SVG_STANDARD
-	sed 's/fill:'$BASE_COLOR'/fill:#ffc83d/g' $BASE_SVG > $SVG_PRESSED
-	sed 's/fill:'$BASE_COLOR'/fill:#909090/g' $BASE_SVG > $SVG_DISABLED
-	sed 's/fill:'$BASE_COLOR'/fill:#ffffff/g' $BASE_SVG > $SVG_WHITE
+	sed 's/'$BASE_COLOR'/#333333/g' $BASE_SVG > $SVG_STANDARD
+	sed 's/'$BASE_COLOR'/#ffc83d/g' $BASE_SVG > $SVG_PRESSED
+	sed 's/'$BASE_COLOR'/#909090/g' $BASE_SVG > $SVG_DISABLED
+	sed 's/'$BASE_COLOR'/#ffffff/g' $BASE_SVG > $SVG_WHITE
 
 	sed -e 's/STANDARD_STATE/'$ICON'/g' -e 's/DISABLED_STATE/'$ICON_DISABLE'/g' -e 's/PRESSED_STATE/'$ICON_PRESS'/g' $LAYOUT_TEMPLATE > $GENERATED_LAYOUT
 	sed -e 's/STANDARD_STATE/'$ICON_WHITE'/g' -e 's/DISABLED_STATE/'$ICON_DISABLE'/g' -e 's/PRESSED_STATE/'$ICON_PRESS'/g' $LAYOUT_TEMPLATE > $GENERATED_WHITE_LAYOUT

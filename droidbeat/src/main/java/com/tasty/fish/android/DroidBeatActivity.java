@@ -23,18 +23,16 @@ import com.tasty.fish.views.IMediaControlsView;
 import com.tasty.fish.views.IExpressionView;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class DroidBeatActivity extends FragmentActivity implements
         OnClickListener,
         IExpressionView.IExpressionViewListener,
         IMediaControlsView
 {
-    private static boolean s_dieFlag = true;
-
     private View _loadNewExpressionBtn;
 
-    private View _startStopBtn;
+    private View _startBtn;
+    private View _stopBtn;
     private View _recordBtn;
 
     private MediaControlsPresenter _mediaControlsPresenter;
@@ -82,7 +80,10 @@ public class DroidBeatActivity extends FragmentActivity implements
         _paramsContainer = findViewById(R.id.mainParametersFragmentContainer);
 
         _loadNewExpressionBtn = findViewById(R.id.selectNewExpressionLayout);
-        _startStopBtn = findViewById(R.id.buttonStop);
+        _startBtn = findViewById(R.id.mainStartBtn);
+        _stopBtn = findViewById(R.id.mainStopBtn);
+        _stopBtn.setVisibility(View.INVISIBLE);
+
         _recordBtn = findViewById(R.id.mainRecordButton);
 
         _copyBtn = findViewById(R.id.mainCopyButton);
@@ -90,7 +91,8 @@ public class DroidBeatActivity extends FragmentActivity implements
         _addBtn = findViewById(R.id.mainAddButton);
 
         _loadNewExpressionBtn.setOnClickListener(this);
-        _startStopBtn.setOnClickListener(this);
+        _startBtn.setOnClickListener(this);
+        _stopBtn.setOnClickListener(this);
         _recordBtn.setOnClickListener(this);
         _copyBtn.setOnClickListener(this);
         _pasteBtn.setOnClickListener(this);
@@ -110,46 +112,43 @@ public class DroidBeatActivity extends FragmentActivity implements
 
     public void onPause() {
         super.onPause();
-        s_dieFlag = true;
         _mediaControlsPresenter.stop();
     }
     //endregion
 
+    private void setPlaying(boolean playing){
+        _startBtn.setVisibility (playing ? View.GONE : View.VISIBLE);
+        _recordBtn.setVisibility(playing ? View.GONE : View.VISIBLE);
+        _stopBtn.setVisibility  (playing ? View.VISIBLE : View.GONE);
+    }
 
     //region OnClickListener methods
     @Override
     public void onClick(View arg0) {
-        if (arg0 == _startStopBtn) {
-            if (s_dieFlag == false) {
-                s_dieFlag = true;
-                _mediaControlsPresenter.stop();
-            } else {
-                s_dieFlag = false;
-                _mediaControlsPresenter.startPlay();
-            }
+        if (arg0 == _stopBtn) {
+            setPlaying(false);
+            _mediaControlsPresenter.stop();
+        }else if (arg0 == _startBtn) {
+            setPlaying(true);
+            _mediaControlsPresenter.startPlay();
         } else if(arg0 == _recordBtn) {
-            if (s_dieFlag == false) {
-                s_dieFlag = true;
-                _mediaControlsPresenter.stop();
-            } else {
-                try {
-                    _mediaControlsPresenter.startRecord();
-                    s_dieFlag = false;
-                } catch (IOException e) {
-                    e.printStackTrace();
-                    Toast.makeText(this, "Unable to save to file.\n" + e.getMessage(), Toast.LENGTH_LONG).show();
-                }
+            try {
+                _mediaControlsPresenter.startRecord();
+                setPlaying(true);
+            } catch (IOException e) {
+                e.printStackTrace();
+                Toast.makeText(this, "Unable to save to file.\n" + e.getMessage(), Toast.LENGTH_LONG).show();
             }
         } else if(arg0 == _loadNewExpressionBtn){
             _appController.ShowSelector();
         } else if(arg0 == _addBtn){
-            new CreateExpressionFragment().show(getSupportFragmentManager(),"NamingDialog");
+            new CreateExpressionFragment().show(getSupportFragmentManager(), "NamingDialog");
         } else if(arg0 == _copyBtn){
             _clipboard.setText(_repo.getActive().getExpressionString());
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    Toast.makeText(getApplicationContext(),"Copied to clipboard", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Copied to clipboard", Toast.LENGTH_SHORT).show();
                 }
             });
         } else if(arg0 == _pasteBtn){

@@ -17,6 +17,7 @@ public class BufferVisualsFragment extends Fragment implements IBufferView {
     private BufferCanvas _canvas;
     private BufferVisualsPresenter _presenter;
     private TextView _performanceText;
+    private View _recordingText;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -24,6 +25,9 @@ public class BufferVisualsFragment extends Fragment implements IBufferView {
         _canvas = (BufferCanvas)_layout.findViewById(R.id.bufferCanvas);
         _performanceText = (TextView) _layout.findViewById(R.id.performanceText);
         _performanceText.setVisibility(View.GONE);
+
+        _recordingText = _layout.findViewById(R.id.recordingText);
+        _recordingText.setVisibility(View.INVISIBLE);
 
         _presenter =
             ((DroidBeatActivity)getActivity())

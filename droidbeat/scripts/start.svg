@@ -33,17 +33,17 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.35"
-     inkscape:cx="375"
-     inkscape:cy="14.285715"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="62.862207"
+     inkscape:cy="113.86132"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="777"
-     inkscape:window-height="525"
-     inkscape:window-x="1480"
-     inkscape:window-y="200"
-     inkscape:window-maximized="0" />
+     inkscape:window-width="1600"
+     inkscape:window-height="838"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
   <metadata
      id="metadata4625">
     <rdf:RDF>
@@ -63,7 +63,7 @@
      transform="translate(0,-752.36218)">
     <g
        id="g824"
-       transform="matrix(4.3865743,0,0,-4.3865743,31.983036,759.6711)"
+       transform="matrix(4.3512357,0,0,-3.9581546,32.993189,769.77263)"
        style="fill:#000000">
       <path
          d="M 0,0 0,-66.02 57.17,-33.01 0,0 z"
