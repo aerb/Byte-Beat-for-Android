@@ -1,1 +1,1 @@
-include 'droidbeat', 'testing', 'libbytebeat', 'musicg'
+include 'droidbeat', 'testing', 'libbytebeat', 'musicg', 'release:free', 'release:paid'

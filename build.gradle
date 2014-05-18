@@ -8,8 +8,37 @@ buildscript {
     }
 }
 
-project(":droidbeat"){
+project(":release:paid"){
     apply plugin: 'android'
+    dependencies{
+        compile project(':droidbeat')
+    }
+    android {
+        compileSdkVersion 10
+        buildToolsVersion "19.0.3"
+        lintOptions {
+            abortOnError false
+        }
+    }
+}
+
+
+project(":release:free"){
+    apply plugin: 'android'
+    dependencies{
+        compile project(':droidbeat')
+    }
+    android {
+        compileSdkVersion 10
+        buildToolsVersion "19.0.3"
+        lintOptions {
+            abortOnError false
+        }
+    }
+}
+
+project(":droidbeat"){
+    apply plugin: 'android-library'
 
     dependencies{
         compile project(':libbytebeat')

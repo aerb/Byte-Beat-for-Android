@@ -85,19 +85,15 @@ public class KeyboardFragment extends Fragment implements
             for(IKeyboardDisplayViewListener l : _listeners)
                 l.OnAddElement(btnText);
         } else {
-            switch (bid) {
-                case R.id.buttonLeft:
-                    for(IKeyboardDisplayViewListener l : _listeners)
-                        l.OnMoveLeft();
-                    break;
-                case R.id.buttonRight:
-                    for(IKeyboardDisplayViewListener l : _listeners)
-                        l.OnMoveRight();
-                    break;
-                case R.id.buttonDel:
-                    for(IKeyboardDisplayViewListener l : _listeners)
-                        l.OnDelete();
-                    break;
+            if (bid == R.id.buttonLeft) {
+                for (IKeyboardDisplayViewListener l : _listeners)
+                    l.OnMoveLeft();
+            } else if (bid == R.id.buttonRight) {
+                for (IKeyboardDisplayViewListener l : _listeners)
+                    l.OnMoveRight();
+            } else if (bid == R.id.buttonDel) {
+                for (IKeyboardDisplayViewListener l : _listeners)
+                    l.OnDelete();
             }
         }
     }
