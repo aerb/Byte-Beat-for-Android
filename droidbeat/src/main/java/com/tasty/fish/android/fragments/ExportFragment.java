@@ -12,6 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TableLayout;
 import android.widget.TextView;
 
 import java.io.File;
@@ -39,20 +41,40 @@ public class ExportFragment extends DialogFragment{
                 textView.setPadding(10,10,10,10);
                 textView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
             layout.addView(textView);
-            Button
-                playBtn = new Button(c);
-                playBtn.setText("Play");
-                playBtn.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-                playBtn.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent intent = new Intent();
-                        intent.setAction(Intent.ACTION_VIEW);
-                        intent.setDataAndType(Uri.fromFile(new File(_path)), "audio/*");
-                        startActivity(intent);
-                    }
-                });
-            layout.addView(playBtn);
+            LinearLayout
+                buttonsLayout = new LinearLayout(c);
+                buttonsLayout.setOrientation(LinearLayout.HORIZONTAL);
+                buttonsLayout.setLayoutParams(new LinearLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+                Button
+                    playBtn = new Button(c);
+                    playBtn.setText("Play");
+                    playBtn.setLayoutParams(new TableLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT, 1f));
+                    playBtn.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent intent = new Intent();
+                            intent.setAction(Intent.ACTION_VIEW);
+                            intent.setDataAndType(Uri.fromFile(new File(_path)), "audio/*");
+                            startActivity(intent);
+                        }
+                    });
+                buttonsLayout.addView(playBtn);
+                Button
+                    exportBtn = new Button(c);
+                    exportBtn.setText("Export");
+                    exportBtn.setLayoutParams(new TableLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT, 1f));
+                    exportBtn.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                            Intent intent = new Intent();
+                            intent.setAction(Intent.ACTION_SEND);
+                            intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(new File(_path)));
+                            intent.setType("audio/vnd.wave");
+                            startActivity(intent);
+                        }
+                    });
+                buttonsLayout.addView(exportBtn);
+            layout.addView(buttonsLayout);
 
         return new AlertDialog.Builder(getActivity())
             .setTitle("Saved to")
