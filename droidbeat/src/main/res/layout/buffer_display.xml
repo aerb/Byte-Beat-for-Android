@@ -3,7 +3,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="fill_parent"
-              android:layout_height="fill_parent">
+              android:layout_height="fill_parent"
+              android:background="#338C9A">
 
     <TextView
             android:layout_width="wrap_content"
@@ -15,11 +16,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Recording"
+
             android:id="@+id/recordingText"
-            android:layout_gravity="left|center_vertical"/>
+            android:layout_gravity="left|center_vertical"
+        android:textColor="#ffffffff" />
     <com.tasty.fish.android.fragments.visuals.buffer.BufferCanvas
             android:id="@+id/bufferCanvas"
             android:layout_width="fill_parent"
             android:layout_height="154dp"
-            android:layout_weight="0.69" android:background="#338C9A"/>
+            android:layout_weight="0.69"/>
 </LinearLayout>

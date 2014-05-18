@@ -50,6 +50,7 @@ public class DroidBeatActivity extends FragmentActivity implements
     private IAppController _appController;
     private ClipboardManager _clipboard;
     private IExpressionsRepository _repo;
+    private BufferVisualsFragment _bufferVisuals;
 
 
     public CompositionRoot getCompositionRoot() {
@@ -65,10 +66,11 @@ public class DroidBeatActivity extends FragmentActivity implements
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.main);
 
+        _bufferVisuals = new BufferVisualsFragment();
         getSupportFragmentManager()
                 .beginTransaction()
                 .add(R.id.upperFragmentContainer, new ExpressionFragment())
-                .add(R.id.mainBufferFragmentContainer, new BufferVisualsFragment())
+                .add(R.id.mainBufferFragmentContainer, _bufferVisuals)
                 .add(R.id.mainParametersFragmentContainer, new ParametersFragment())
                 .add(R.id.mainSelectorFragmentContainer, new ExpressionSelectionFragment())
                 .add(R.id.mainKeyboardFragmentContainer, new KeyboardFragment())
@@ -123,12 +125,17 @@ public class DroidBeatActivity extends FragmentActivity implements
         _stopBtn.setVisibility  (playing ? View.VISIBLE : View.GONE);
     }
 
+    private void setRecording(boolean recording){
+        _bufferVisuals.setRecordingText(recording);
+    }
+
     //region OnClickListener methods
     @Override
     public void onClick(View arg0) {
         if (arg0 == _stopBtn) {
             boolean wasRecording = _mediaControlsPresenter.isRecording();
             setPlaying(false);
+            setRecording(false);
             _mediaControlsPresenter.stop();
             if(wasRecording)
                 showExportDialog(_mediaControlsPresenter.getRecordingPath());
@@ -140,6 +147,7 @@ public class DroidBeatActivity extends FragmentActivity implements
             try {
                 _mediaControlsPresenter.startRecord();
                 setPlaying(true);
+                setRecording(true);
             } catch (IOException e) {
                 e.printStackTrace();
                 Toast.makeText(this, "Unable to save to file.\n" + e.getMessage(), Toast.LENGTH_LONG).show();

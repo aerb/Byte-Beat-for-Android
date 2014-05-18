@@ -60,4 +60,8 @@ public class BufferVisualsFragment extends Fragment implements IBufferView {
     public void update(){
         _canvas.postInvalidate();
     }
+
+    public void setRecordingText(boolean showing) {
+        _recordingText.setVisibility(showing ? View.VISIBLE : View.INVISIBLE);
+    }
 }
