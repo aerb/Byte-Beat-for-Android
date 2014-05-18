@@ -21,6 +21,8 @@ public class MediaControlsPresenter implements
     private final IAudioPlayer _audio;
     private final BufferVisualsPresenter _visuals;
     private final IAppController _appController;
+    private boolean _recording;
+    private String _recordingPath;
 
     public MediaControlsPresenter(
             IExpressionEvaluator evaluator,
@@ -62,14 +64,22 @@ public class MediaControlsPresenter implements
         String path = new FileSystem().getNextExportName();
         _audio.startAndRecord(path);
         _visuals.start();
+        _recording = true;
+        _recordingPath = path;
     }
 
     public void startPlay() {
         _audio.start();
         _visuals.start();
+        _recording = false;
+    }
+
+    public boolean isRecording(){
+        return _recording;
     }
 
     public void stop() {
+        _recording = false;
         _audio.stop();
         _visuals.stop();
     }
@@ -84,6 +94,10 @@ public class MediaControlsPresenter implements
             e.printStackTrace();
         }
         updateView();
+    }
+
+    public String getRecordingPath() {
+        return _recordingPath;
     }
     //endregion
 }

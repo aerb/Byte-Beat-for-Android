@@ -9,6 +9,7 @@ import android.view.Window;
 import android.widget.*;
 
 import com.tasty.fish.R;
+import com.tasty.fish.android.fragments.ExportFragment;
 import com.tasty.fish.android.fragments.keyboard.KeyboardFragment;
 import com.tasty.fish.android.fragments.naming.CreateExpressionFragment;
 import com.tasty.fish.android.fragments.parameters.ParametersFragment;
@@ -126,8 +127,12 @@ public class DroidBeatActivity extends FragmentActivity implements
     @Override
     public void onClick(View arg0) {
         if (arg0 == _stopBtn) {
+            boolean wasRecording = _mediaControlsPresenter.isRecording();
             setPlaying(false);
             _mediaControlsPresenter.stop();
+            if(wasRecording)
+                showExportDialog(_mediaControlsPresenter.getRecordingPath());
+
         }else if (arg0 == _startBtn) {
             setPlaying(true);
             _mediaControlsPresenter.startPlay();
@@ -158,6 +163,12 @@ public class DroidBeatActivity extends FragmentActivity implements
             frag.setArguments(bundle);
             frag.show(getSupportFragmentManager(), "NamingDialog");
         }
+    }
+
+    private void showExportDialog(String recordingPath) {
+        ExportFragment frag = new ExportFragment();
+        frag.setSavedPath(recordingPath);
+        frag.show(getSupportFragmentManager(), "ExportFragment");
     }
     //endregion
 
