@@ -1,34 +1,23 @@
 package com.tasty.fish.io;
 
-import com.musicg.wave.WaveFileManager;
-import com.musicg.wave.WaveHeader;
-
 import java.io.IOException;
+import java.io.RandomAccessFile;
 
 public class WaveExporter {
 
-    private WaveFileManager wfm;
     private WaveHeader _header;
-    private long _byteCount;
-    private int bytesPerSample = 1;
+    private int _byteCount;
+    private RandomAccessFile _out;
 
     private void writeWaveHeader() throws IOException {
         _header = new WaveHeader();
-        _header.setAudioFormat(1);
-        _header.setBitsPerSample(8*bytesPerSample);
-        _header.setChannels(1);
-        _header.setBlockAlign(1);
-        _header.setSampleRate(22055);
-        _header.setByteRate(_header.getSampleRate()*bytesPerSample);
-        _header.setSubChunk2Size(_byteCount);
-        _header.setChunkSize(_header.getSubChunk2Size() - 8);
-        _header.setBlockAlign(_header.getChannels() * bytesPerSample);
-        wfm.writeHeader(_header);
+        _header.setPcmPayloadSize(_byteCount);
+        _header.write(_out);
     }
 
     public void init(String path) throws IOException {
         _byteCount = 0;
-        wfm = new WaveFileManager(path);
+        _out = new RandomAccessFile(path, "rw");
         writeWaveHeader();
     }
 
@@ -38,13 +27,13 @@ public class WaveExporter {
     }
 
     public void write(byte[] data) throws IOException {
-        wfm.writeData(data);
+        _out.write(data);
         _byteCount += data.length;
     }
 
     public void close() throws IOException {
-        wfm.seek(0);
+        _out.seek(0);
         writeWaveHeader();
-        wfm.close();
+        _out.close();
     }
 }
