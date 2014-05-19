@@ -1,5 +1,6 @@
 package com.tasty.fish.android;
 
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.text.ClipboardManager;
@@ -19,6 +20,7 @@ import com.tasty.fish.android.fragments.visuals.expression.ExpressionFragment;
 import com.tasty.fish.domain.IExpressionsRepository;
 import com.tasty.fish.presenters.MediaControlsPresenter;
 import com.tasty.fish.utils.CompositionRoot;
+import com.tasty.fish.utils.Manifest;
 import com.tasty.fish.views.IAppController;
 import com.tasty.fish.views.IMediaControlsView;
 import com.tasty.fish.views.IExpressionView;
@@ -51,6 +53,7 @@ public class DroidBeatActivity extends FragmentActivity implements
     private ClipboardManager _clipboard;
     private IExpressionsRepository _repo;
     private BufferVisualsFragment _bufferVisuals;
+    private boolean _paidVersion;
 
 
     public CompositionRoot getCompositionRoot() {
@@ -65,6 +68,13 @@ public class DroidBeatActivity extends FragmentActivity implements
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.main);
+
+        try {
+            _paidVersion = Manifest.isPaidVersion(this);
+        } catch (PackageManager.NameNotFoundException e) {
+            Toast.makeText(this, "There was a problem loading the app manifest.", Toast.LENGTH_LONG).show();
+            _paidVersion = true;
+        }
 
         _bufferVisuals = new BufferVisualsFragment();
         getSupportFragmentManager()
@@ -88,6 +98,9 @@ public class DroidBeatActivity extends FragmentActivity implements
         _stopBtn.setVisibility(View.INVISIBLE);
 
         _recordBtn = findViewById(R.id.mainRecordButton);
+        if(!_paidVersion){
+            _recordBtn.setVisibility(View.GONE);
+        }
 
         _copyBtn = findViewById(R.id.mainCopyButton);
         _pasteBtn = findViewById(R.id.mainPasteButton);
@@ -121,8 +134,10 @@ public class DroidBeatActivity extends FragmentActivity implements
 
     private void setPlaying(boolean playing){
         _startBtn.setVisibility (playing ? View.GONE : View.VISIBLE);
-        _recordBtn.setVisibility(playing ? View.GONE : View.VISIBLE);
         _stopBtn.setVisibility  (playing ? View.VISIBLE : View.GONE);
+
+        if(_paidVersion)
+            _recordBtn.setVisibility(playing ? View.GONE : View.VISIBLE);
     }
 
     private void setRecording(boolean recording){
