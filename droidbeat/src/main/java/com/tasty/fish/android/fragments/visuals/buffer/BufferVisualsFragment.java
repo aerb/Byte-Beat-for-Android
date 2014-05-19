@@ -13,21 +13,39 @@ import com.tasty.fish.presenters.BufferVisualsPresenter;
 import com.tasty.fish.views.IBufferView;
 
 public class BufferVisualsFragment extends Fragment implements IBufferView {
-    private LinearLayout _layout;
+    private View _layout;
     private BufferCanvas _canvas;
     private BufferVisualsPresenter _presenter;
     private TextView _performanceText;
     private View _recordingText;
+    private View _resetT;
+    private View _resetArgs;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        _layout = (LinearLayout) inflater.inflate(R.layout.buffer_display, null);
+        _layout = inflater.inflate(R.layout.buffer_display, null);
         _canvas = (BufferCanvas)_layout.findViewById(R.id.bufferCanvas);
         _performanceText = (TextView) _layout.findViewById(R.id.performanceText);
         _performanceText.setVisibility(View.GONE);
 
         _recordingText = _layout.findViewById(R.id.recordingText);
         _recordingText.setVisibility(View.INVISIBLE);
+
+        _resetT = _layout.findViewById(R.id.resetT);
+        _resetT.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                _presenter.resetT();
+            }
+        });
+
+        _resetArgs = _layout.findViewById(R.id.resetArgs);
+        _resetArgs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                _presenter.resetArgs();
+            }
+        });
 
         _presenter =
             ((DroidBeatActivity)getActivity())

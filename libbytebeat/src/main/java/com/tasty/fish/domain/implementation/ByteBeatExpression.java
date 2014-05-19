@@ -57,8 +57,8 @@ public class ByteBeatExpression {
 
     public void resetParametersAndTimeDelta() {
         setTimeDelta(0.5f);
-        setParameter(0, 1);
-        setParameter(1, 1);
-        setParameter(2, 1);
+        setParameter(0, 50);
+        setParameter(1, 50);
+        setParameter(2, 50);
     }
 }

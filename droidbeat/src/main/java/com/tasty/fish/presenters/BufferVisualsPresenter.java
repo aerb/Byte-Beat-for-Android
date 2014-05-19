@@ -4,14 +4,18 @@ import com.tasty.fish.domain.IExpressionEvaluator;
 import com.tasty.fish.views.IBufferView;
 
 public class BufferVisualsPresenter {
+    private final ParametersPresenter _paramaters;
     private IBufferView _bufferView;
     private boolean _die;
     private final IExpressionEvaluator _evaluator;
     private byte[] _samples;
 
-    public BufferVisualsPresenter(IExpressionEvaluator evaluator) {
+    public BufferVisualsPresenter(
+            ParametersPresenter parametersPresenter,
+            IExpressionEvaluator evaluator) {
         _die = false;
         _evaluator = evaluator;
+        _paramaters = parametersPresenter;
     }
 
     public void setBuffer(byte[] samples){
@@ -29,11 +33,6 @@ public class BufferVisualsPresenter {
             public void run() {
                 while (true) {
                     if (_die) return;
-//                    long time = _evaluator.getExecutionTime();
-//                    _bufferView.setPerformanceText(String.format("%d µs \n%f kHz",
-//                            time/1000,
-//                            (1f/((double)time/1000000000)/1000)
-//                    ));
                     _bufferView.update();
                     try {
                         Thread.sleep(100);
@@ -47,6 +46,14 @@ public class BufferVisualsPresenter {
 
     public void stop() {
         _die = true;
+    }
+
+    public void resetT() {
+        _evaluator.resetTime();
+    }
+
+    public void resetArgs() {
+        _paramaters.OnResetParameters();
     }
 }
 

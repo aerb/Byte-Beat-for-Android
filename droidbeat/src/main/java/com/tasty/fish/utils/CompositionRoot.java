@@ -70,7 +70,9 @@ public class CompositionRoot {
         return  _bufferVisualsPresenter != null ?
                 _bufferVisualsPresenter :
                (_bufferVisualsPresenter =
-                   new BufferVisualsPresenter(getExpressionEvaluator()));
+                   new BufferVisualsPresenter(
+                           getParametersPresenter(),
+                           getExpressionEvaluator()));
     }
 
     public ParametersPresenter getParametersPresenter() {
