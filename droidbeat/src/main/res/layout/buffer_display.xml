@@ -7,7 +7,7 @@
     <com.tasty.fish.android.fragments.visuals.buffer.BufferCanvas
         android:id="@+id/bufferCanvas"
         android:layout_width="fill_parent"
-        android:layout_height="250dp"/>
+        android:layout_height="fill_parent" />
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
