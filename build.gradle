@@ -45,6 +45,10 @@ project(":droidbeat"){
         compile 'com.android.support:support-v4:13.0.0'
     }
 
+    task genImages(type: Exec) {
+        commandLine 'python', '../scripts/genimg.py'
+    }
+
     android {
         compileSdkVersion 10
         buildToolsVersion "19.0.3"

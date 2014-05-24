@@ -7,3 +7,4 @@ local.properties
 .idea/
 test.wav
 droidbeat/scripts/svgs/
+*.generated.*

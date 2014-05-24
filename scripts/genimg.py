@@ -1,24 +1,36 @@
-droidbeat_template = {
-    "size":(50,50), 
-    "color-replace":("000000","ffffff")
+
+import os
+
+abspath = os.path.abspath(__file__)
+dname = os.path.dirname(abspath)
+os.chdir(dname)
+
+dark_style = {
+    "size": (50,50), 
+    "color-replace": ("000000","333333")
+}
+
+light_style = {
+    "size": (50,50), 
+    "color-replace": ("000000","ffffff")
 }
 
 svgs = {
     "icon" : {"size":(512,512)},
-    "add" : droidbeat_template,
-    "check" : droidbeat_template,
-    "controls" : droidbeat_template,
-    "copy" : droidbeat_template,
-    "cross" : droidbeat_template,
-    "folder" : droidbeat_template,
-    "paste" : droidbeat_template,
-    "pencil" : droidbeat_template,
-    "record" : droidbeat_template,
-    "refresh" : droidbeat_template,
-    "reset_args" : droidbeat_template,
-    "reset_t" : droidbeat_template,
-    "start" : droidbeat_template,
-    "stop" : droidbeat_template,
+    "add" : dark_style,
+    "check" : dark_style,
+    "controls" : dark_style,
+    "copy" : dark_style,
+    "cross" : dark_style,
+    "folder" : dark_style,
+    "paste" : dark_style,
+    "pencil" : dark_style,
+    "record" : dark_style,
+    "refresh" : dark_style,
+    "reset_args" : dark_style,
+    "reset_t" : dark_style,
+    "start" : dark_style,
+    "stop" : dark_style,
 }
 
 import inkscape
@@ -43,8 +55,9 @@ def save_svg(content, filename):
     fp.close()
 
 def compile_image(key):
-    out_path = join(export_path, key + ".png")
+    out_path = join(export_path, key + ".generated.png")
     if exists(out_path):
+        print out_path + " up-to-date."
         return
 
     svg_path = key + ".svg"
@@ -61,4 +74,3 @@ def compile_image(key):
 
 for svg in svgs:
     compile_image(svg)
-
