@@ -40,13 +40,13 @@ project(":release:free"){
 project(":droidbeat"){
     apply plugin: 'android-library'
 
+    task genImages(type: Exec) {
+        commandLine 'python', '../scripts/genimg.py'
+    }
+    
     dependencies{
         compile project(':libbytebeat')
         compile 'com.android.support:support-v4:13.0.0'
-    }
-
-    task genImages(type: Exec) {
-        commandLine 'python', '../scripts/genimg.py'
     }
 
     android {

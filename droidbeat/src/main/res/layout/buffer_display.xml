@@ -33,12 +33,12 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:padding="5dp"
-            android:src="@drawable/reset_t_button_white_style"/>
+            android:src="@drawable/reset_t"/>
         <ImageView
             android:id="@+id/resetArgs"
             android:padding="5dp"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/reset_args_button_white_style"/>
+            android:src="@drawable/reset_args"/>
     </LinearLayout>
 </RelativeLayout>

@@ -54,7 +54,7 @@
             <ImageView
                     android:layout_height="40dp"
                     android:layout_width="40dp"
-                    android:src="@drawable/folder_button_style"
+                    android:src="@drawable/folder"
                     android:layout_alignParentRight="true" android:layout_marginRight="20dp"/>
         </RelativeLayout>
 
@@ -71,7 +71,7 @@
                     android:id="@+id/playImage"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@drawable/start_button_white_style"
+                    android:src="@drawable/start"
                     android:padding="10dp"/>
                 <TextView
                         android:layout_width="wrap_content"
@@ -89,14 +89,15 @@
                     android:id="@+id/playImage"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@drawable/stop_button_white_style"
+                    android:src="@drawable/stop"
                     android:padding="10dp"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Stop"
                     android:textSize="20dp"
-                    android:id="@+id/textView" android:textStyle="bold" android:layout_gravity="center_vertical"/>
+                    android:id="@+id/textView"
+                    android:textStyle="bold" android:layout_gravity="center_vertical"/>
             </LinearLayout>
             <ImageView
                     android:id="@+id/mainRecordButton"
@@ -104,28 +105,28 @@
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_marginLeft="20dp"
-                    android:src="@drawable/record_button_white_style"
+                    android:src="@drawable/record"
                     android:padding="5dp"/>
             <ImageView
                     android:id="@+id/mainAddButton"
                     android:layout_toLeftOf="@+id/mainCopyButton"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@drawable/add_button_white_style"
+                    android:src="@drawable/add"
                     android:padding="5dp"/>
             <ImageView
                     android:id="@+id/mainCopyButton"
                     android:layout_toLeftOf="@+id/mainPasteButton"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@drawable/copy_button_white_style"
+                    android:src="@drawable/copy"
                     android:padding="5dp"/>
             <ImageView
                 android:id="@+id/mainPasteButton"
                 android:layout_alignParentRight="true"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:src="@drawable/paste_button_white_style"
+                android:src="@drawable/paste"
                 android:padding="5dp"/>
         </RelativeLayout>
     </LinearLayout>

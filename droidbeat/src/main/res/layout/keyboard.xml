@@ -10,7 +10,7 @@
         <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:id="@+id/keyboardCancelButton" android:src="@drawable/cross_button_white_style"
+                android:id="@+id/keyboardCancelButton" android:src="@drawable/cross"
                 android:padding="10dp" android:background="#cd4d33"/>
     </RelativeLayout>
 

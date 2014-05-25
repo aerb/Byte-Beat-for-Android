@@ -20,7 +20,7 @@
 
     <ImageView
             android:id="@+id/editExpressionBtn"
-            android:src="@drawable/pencil_button_white_style"
+            android:src="@drawable/pencil"
 
             android:layout_width="50dp"
             android:layout_height="50dp"

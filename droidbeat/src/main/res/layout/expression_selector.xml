@@ -10,7 +10,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:id="@+id/selectionCancel" android:layout_gravity="center_vertical|left"
-            android:src="@drawable/cross_button_white_style" android:background="#cd4d33" android:padding="10dp"/>
+            android:src="@drawable/cross" android:background="#cd4d33" android:padding="10dp"/>
     <ListView
             android:layout_width="fill_parent"
             android:layout_height="225dp"
