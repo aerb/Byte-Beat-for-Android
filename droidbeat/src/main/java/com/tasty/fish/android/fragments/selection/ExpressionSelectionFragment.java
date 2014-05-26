@@ -41,7 +41,7 @@ public class ExpressionSelectionFragment extends Fragment implements IExpression
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.expression_selector, container, false);
         _list = (ListView)view.findViewById(R.id.listView);
-        _adapter = new ExpressionSelectionAdapter(getActivity().getLayoutInflater(), _expressions);
+        _adapter = new ExpressionSelectionAdapter(getActivity(), _expressions);
         _list.setAdapter(_adapter);
         _list.setOnItemClickListener(this);
 

@@ -1,5 +1,6 @@
 package com.tasty.fish.android.fragments.selection;
 
+import android.content.Context;
 import android.database.DataSetObserver;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ListAdapter;
 import android.widget.TextView;
 import com.tasty.fish.R;
+import com.tasty.fish.android.ExpressionElement;
 import com.tasty.fish.domain.implementation.ByteBeatExpression;
 
 import java.util.List;
@@ -14,11 +16,11 @@ import java.util.List;
 public class ExpressionSelectionAdapter implements ListAdapter {
 
     private final List<ByteBeatExpression> _expressions;
-    private final LayoutInflater _inflater;
+    private final Context _context;
 
-    public ExpressionSelectionAdapter(LayoutInflater inflater, List<ByteBeatExpression> expressions) {
+    public ExpressionSelectionAdapter(Context context, List<ByteBeatExpression> expressions) {
         _expressions = expressions;
-        _inflater = inflater;
+        _context = context;
     }
 
     @Override
@@ -59,10 +61,9 @@ public class ExpressionSelectionAdapter implements ListAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        View row = _inflater.inflate(R.layout.expression_selector_row, null);
-        TextView text = (TextView)row.findViewById(R.id.expressionSelectorRowText);
-        text.setText(_expressions.get(i).getName());
-        return row;
+        ExpressionElement cell = new ExpressionElement(_context);
+        cell.setExpression(_expressions.get(i));
+        return cell;
     }
 
     @Override

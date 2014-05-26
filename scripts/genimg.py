@@ -31,6 +31,8 @@ svgs = {
     "reset_t" : light_style,
     "start" : light_style,
     "stop" : light_style,
+    "trash" : light_style,
+    "save" : light_style
 }
 
 import inkscape
