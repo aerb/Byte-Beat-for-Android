@@ -18,7 +18,7 @@
             android:inputType="textMultiLine"
             />
 
-    <ImageView
+    <com.tasty.fish.android.HighlightButton
             android:id="@+id/editExpressionBtn"
             android:src="@drawable/pencil"
 

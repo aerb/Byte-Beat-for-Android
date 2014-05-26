@@ -28,13 +28,13 @@
         android:padding="5dp"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-        <ImageView
+        <com.tasty.fish.android.HighlightButton
             android:id="@+id/resetT"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:padding="5dp"
             android:src="@drawable/reset_t"/>
-        <ImageView
+        <com.tasty.fish.android.HighlightButton
             android:id="@+id/resetArgs"
             android:padding="5dp"
             android:layout_width="50dp"

@@ -62,7 +62,7 @@
         <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
-            <LinearLayout
+            <com.tasty.fish.android.HighlightLayout
                 android:id="@+id/mainStartBtn"
                 android:orientation="horizontal"
                 android:layout_width="wrap_content"
@@ -78,9 +78,11 @@
                         android:layout_height="wrap_content"
                         android:text="Start"
                         android:textSize="20dp"
-                        android:id="@+id/textView" android:textStyle="bold" android:layout_gravity="center_vertical"/>
-            </LinearLayout>
-            <LinearLayout
+                        android:id="@+id/textView"
+                        android:textStyle="bold"
+                        android:layout_gravity="center_vertical"/>
+            </com.tasty.fish.android.HighlightLayout>
+            <com.tasty.fish.android.HighlightLayout
                 android:id="@+id/mainStopBtn"
                 android:orientation="horizontal"
                 android:layout_width="wrap_content"
@@ -90,6 +92,7 @@
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:src="@drawable/stop"
+
                     android:padding="10dp"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -98,8 +101,8 @@
                     android:textSize="20dp"
                     android:id="@+id/textView"
                     android:textStyle="bold" android:layout_gravity="center_vertical"/>
-            </LinearLayout>
-            <ImageView
+            </com.tasty.fish.android.HighlightLayout>
+            <com.tasty.fish.android.HighlightButton
                     android:id="@+id/mainRecordButton"
                     android:layout_toRightOf="@+id/mainStartBtn"
                     android:layout_width="50dp"
@@ -107,21 +110,21 @@
                     android:layout_marginLeft="20dp"
                     android:src="@drawable/record"
                     android:padding="5dp"/>
-            <ImageView
+            <com.tasty.fish.android.HighlightButton
                     android:id="@+id/mainAddButton"
                     android:layout_toLeftOf="@+id/mainCopyButton"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:src="@drawable/add"
                     android:padding="5dp"/>
-            <ImageView
+            <com.tasty.fish.android.HighlightButton
                     android:id="@+id/mainCopyButton"
                     android:layout_toLeftOf="@+id/mainPasteButton"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:src="@drawable/copy"
                     android:padding="5dp"/>
-            <ImageView
+            <com.tasty.fish.android.HighlightButton
                 android:id="@+id/mainPasteButton"
                 android:layout_alignParentRight="true"
                 android:layout_width="50dp"

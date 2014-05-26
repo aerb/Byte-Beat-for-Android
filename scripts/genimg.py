@@ -1,3 +1,4 @@
+import sys
 import os
 
 abspath = os.path.abspath(__file__)
@@ -5,31 +6,31 @@ dname = os.path.dirname(abspath)
 os.chdir(dname)
 
 dark_style = {
-    "size": (50,50), 
+    "size": (100,100), 
     "color-replace": ("000000","333333")
 }
 
 light_style = {
-    "size": (50,50), 
+    "size": (100,100), 
     "color-replace": ("000000","ffffff")
 }
 
 svgs = {
     "icon" : {"size":(512,512)},
-    "add" : dark_style,
-    "check" : dark_style,
-    "controls" : dark_style,
-    "copy" : dark_style,
-    "cross" : dark_style,
+    "add" : light_style,
+    "check" : light_style,
+    "controls" : light_style,
+    "copy" : light_style,
+    "cross" : light_style,
     "folder" : dark_style,
-    "paste" : dark_style,
-    "pencil" : dark_style,
-    "record" : dark_style,
-    "refresh" : dark_style,
-    "reset_args" : dark_style,
-    "reset_t" : dark_style,
-    "start" : dark_style,
-    "stop" : dark_style,
+    "paste" : light_style,
+    "pencil" : light_style,
+    "record" : light_style,
+    "refresh" : light_style,
+    "reset_args" : light_style,
+    "reset_t" : light_style,
+    "start" : light_style,
+    "stop" : light_style,
 }
 
 import inkscape
@@ -55,7 +56,7 @@ def save_svg(content, filename):
 
 def compile_image(key):
     out_path = join(export_path, key + ".generated.png")
-    if exists(out_path):
+    if exists(out_path) and not Force:
         print out_path + " up-to-date."
         return
 
@@ -70,6 +71,11 @@ def compile_image(key):
 
     size = svgs[key]["size"]
     inkscape.compile(svg=svg_path,png=out_path, width=size[0], height=size[1])
+
+
+Force = False
+if len(sys.argv) > 1 and sys.argv[1] == "-f":
+    Force = True
 
 for svg in svgs:
     compile_image(svg)

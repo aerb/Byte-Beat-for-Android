@@ -6,7 +6,7 @@
               android:layout_height="wrap_content"
         >
 
-    <ImageView
+    <com.tasty.fish.android.HighlightButton
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:id="@+id/selectionCancel" android:layout_gravity="center_vertical|left"

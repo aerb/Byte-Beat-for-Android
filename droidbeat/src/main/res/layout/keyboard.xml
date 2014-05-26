@@ -7,7 +7,7 @@
     <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content">
-        <ImageView
+        <com.tasty.fish.android.HighlightButton
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:id="@+id/keyboardCancelButton" android:src="@drawable/cross"
