@@ -7,6 +7,8 @@ import java.io.IOException;
 
 public class FileSystem {
 
+    public static String ext = ".droidbeat";
+
     private String mkDir(String f0, String f1) throws IOException {
         File f2 = new File(f0,f1);
         if(!f2.exists())
@@ -28,6 +30,10 @@ public class FileSystem {
 
     public String getExportsDirectory() throws IOException {
         return mkDir(getPublicDroidBeatDirectory(), "Exports");
+    }
+
+    public String getSavedDir() throws IOException {
+        return mkDir(getPublicDroidBeatDirectory(), "Saved");
     }
 
     public String getPublicDroidBeatDirectory() throws IOException {

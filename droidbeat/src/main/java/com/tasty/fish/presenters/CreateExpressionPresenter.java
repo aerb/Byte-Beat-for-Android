@@ -32,7 +32,8 @@ public class CreateExpressionPresenter {
                 0.5,
                 50,
                 50,
-                50
+                50,
+                false
         ));
         _repo.setActiveExpressionLast();
     }

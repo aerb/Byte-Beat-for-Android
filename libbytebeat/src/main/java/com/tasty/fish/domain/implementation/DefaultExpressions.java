@@ -21,7 +21,8 @@ public class DefaultExpressions {
                         0.5,
                         50,
                         50,
-                        50
+                        50,
+                        true
                 ));
         _defaults.add(
                 new ByteBeatExpression(
@@ -30,7 +31,8 @@ public class DefaultExpressions {
                         0.5,
                         50,
                         50,
-                        50
+                        50,
+                        true
             ));
         _defaults.add(
                 new ByteBeatExpression(
@@ -39,7 +41,8 @@ public class DefaultExpressions {
                         0.5,
                         50,
                         50,
-                        50
+                        50,
+                        true
                 ));
         _defaults.add(
                 new ByteBeatExpression(
@@ -48,7 +51,8 @@ public class DefaultExpressions {
                         0.5,
                         50,
                         50,
-                        50
+                        50,
+                        true
                 ));
         _defaults.add(
                 new ByteBeatExpression(
@@ -57,7 +61,8 @@ public class DefaultExpressions {
                         0.5,
                         50,
                         50,
-                        50
+                        50,
+                        true
                 ));
         _defaults.add(
                 new ByteBeatExpression(
@@ -66,7 +71,8 @@ public class DefaultExpressions {
                         0.5,
                         50,
                         50,
-                        50
+                        50,
+                        true
                 ));
         _defaults.add(
                 new ByteBeatExpression(
@@ -75,7 +81,8 @@ public class DefaultExpressions {
                         0.5,
                         50,
                         50,
-                        50
+                        50,
+                        true
                 ));
     }
 }

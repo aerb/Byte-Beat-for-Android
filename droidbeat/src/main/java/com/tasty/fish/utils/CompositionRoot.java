@@ -22,14 +22,21 @@ public class CompositionRoot {
     private ParametersPresenter _parametersPresenter;
     private ExpressionPresenter _expressionPresenter;
     private AppController _appController;
+    private ExpressionIO _expressionIO;
 
     public ExpressionSelectionPresenter getExpressionSelectorPresenter() {
         return _expressionSelectorPresenter != null ?
                _expressionSelectorPresenter :
               (_expressionSelectorPresenter = new ExpressionSelectionPresenter(
+                      getExpressionIO(),
                       getExpressionsRepository(),
                       getAppController()
               ));
+    }
+
+    public ExpressionIO getExpressionIO(){
+        return _expressionIO != null ?
+                _expressionIO : new ExpressionIO(new FileSystem());
     }
 
     public IExpressionEvaluator getExpressionEvaluator() {

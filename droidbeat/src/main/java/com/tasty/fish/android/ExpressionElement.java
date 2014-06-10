@@ -16,6 +16,8 @@ import com.tasty.fish.domain.implementation.ByteBeatExpression;
 public class ExpressionElement extends RelativeLayout {
     private final Context _context;
     private ByteBeatExpression _expression;
+    private IExpressionEventListener _onSave;
+    private IExpressionEventListener _onDelete;
 
     public ExpressionElement(Context context) {
         super(context);
@@ -24,10 +26,10 @@ public class ExpressionElement extends RelativeLayout {
 
     public void setExpression(ByteBeatExpression expression){
         _expression = expression;
-        init(_context);
     }
 
-    private void init(Context c){
+    public void create() {
+        Context c = _context;
         final int buttonLayoutId = 100;
 
         int rowHeight = (int)PixelConverter.ToPixels(50);
@@ -67,15 +69,43 @@ public class ExpressionElement extends RelativeLayout {
             buttonLayoutParams.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
             buttonLayout.setLayoutParams(buttonLayoutParams);
             HighlightButton
-                edit = new HighlightButton(c);
-                edit.setImageResource(R.drawable.save);
-                edit.setLayoutParams(new ViewGroup.LayoutParams(rowHeight,rowHeight));
-                buttonLayout.addView(edit);
+                save = new HighlightButton(c);
+                if(_expression.isReadOnly()){
+                    save.setAlpha(255/2);
+                    save.setEnabled(false);
+                }
+                save.setImageResource(R.drawable.save);
+                save.setLayoutParams(new ViewGroup.LayoutParams(rowHeight, rowHeight));
+                save.setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        _onSave.onEvent(_expression);
+                    }
+                });
+                buttonLayout.addView(save);
             HighlightButton
                 delete = new HighlightButton(c);
+                if(_expression.isReadOnly()){
+                    delete.setAlpha(255/2);
+                    delete.setEnabled(false);
+                }
+                delete.setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        _onDelete.onEvent(_expression);
+                    }
+                });
                 delete.setImageResource(R.drawable.trash);
                 delete.setLayoutParams(new ViewGroup.LayoutParams(rowHeight,rowHeight));
+
             buttonLayout.addView(delete);
         addView(buttonLayout);
+    }
+
+    public void setSaveListener(IExpressionEventListener listener) {
+        _onSave = listener;
+    }
+    public void setDeleteListener(IExpressionEventListener listener) {
+        _onDelete = listener;
     }
 }

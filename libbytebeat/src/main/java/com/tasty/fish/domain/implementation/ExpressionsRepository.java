@@ -2,6 +2,8 @@ package com.tasty.fish.domain.implementation;
 
 import com.tasty.fish.domain.IExpressionsRepository;
 
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,6 +34,7 @@ public class ExpressionsRepository implements IExpressionsRepository {
     public void setActiveExpressionLast() {
         setActiveExpression(_expressions.size() - 1);
     }
+
 
     @Override
     public void setIExpressionsRepositoryListener(IExpressionsRepositoryListener listener) {

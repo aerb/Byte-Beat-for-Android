@@ -8,11 +8,15 @@ import com.tasty.fish.presenters.ExpressionSelectionPresenter;
 
 public class DroidBeatApplication extends Application {
 
+    public static DroidBeatApplication instance;
+
+    public DroidBeatApplication() {
+        instance = this;
+    }
+
     @Override
     public void onCreate() {
         super.onCreate();
 
     }
-
-
 }

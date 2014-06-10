@@ -1,6 +1,7 @@
 package com.tasty.fish.android.fragments.selection;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -11,10 +12,13 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import com.tasty.fish.R;
 import com.tasty.fish.android.DroidBeatActivity;
+import com.tasty.fish.android.IExpressionEventListener;
+import com.tasty.fish.android.Message;
 import com.tasty.fish.domain.implementation.ByteBeatExpression;
 import com.tasty.fish.presenters.ExpressionSelectionPresenter;
 import com.tasty.fish.views.IExpressionSelectionView;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,6 +48,36 @@ public class ExpressionSelectionFragment extends Fragment implements IExpression
         _adapter = new ExpressionSelectionAdapter(getActivity(), _expressions);
         _list.setAdapter(_adapter);
         _list.setOnItemClickListener(this);
+        _adapter.setSaveListener(new IExpressionEventListener() {
+            @Override
+            public void onEvent(ByteBeatExpression expression) {
+                try {
+                    _presenter.save(expression);
+                    Message.std("Saved " + expression.getName());
+                } catch (IOException e) {
+                    Message.err("Could not save " + expression.getName());
+                }
+            }
+        });
+        _adapter.setDeleteListener(new IExpressionEventListener() {
+            @Override
+            public void onEvent(final ByteBeatExpression expression) {
+                Message.confirm(
+                    getActivity(),
+                    "Are you sure you want to delete " + expression.getName() + "?",
+                    new DialogInterface.OnClickListener(){
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            try {
+                                _presenter.delete(expression);
+                                Message.std("Deleted " + expression.getName());
+                            } catch (IOException e) {
+                                Message.err("Could not delete " + expression.getName());
+                            }
+                        }
+                    });
+            }
+        });
 
         _cancelBtn = (ImageView)view.findViewById(R.id.selectionCancel);
         _cancelBtn.setOnClickListener(this);
@@ -77,4 +111,6 @@ public class ExpressionSelectionFragment extends Fragment implements IExpression
     public void update(){
         _list.invalidateViews();
     }
+
+
 }

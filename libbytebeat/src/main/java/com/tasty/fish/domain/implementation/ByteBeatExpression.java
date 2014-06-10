@@ -8,6 +8,7 @@ public class ByteBeatExpression {
     private double _timeDelta = 0;
     private String _expressionString;
     private String _name;
+    private boolean _readOnly;
 
     public ByteBeatExpression(
             String name,
@@ -15,7 +16,8 @@ public class ByteBeatExpression {
             double timeDelta,
             int a1,
             int a2,
-            int a3)
+            int a3,
+            boolean readOnly)
     {
         _name = name;
         _timeDelta = timeDelta;
@@ -23,6 +25,7 @@ public class ByteBeatExpression {
         _args[1] = a2;
         _args[2] = a3;
         _expressionString = expression;
+        _readOnly = readOnly;
     }
 
     public String getExpressionString() {
@@ -60,5 +63,9 @@ public class ByteBeatExpression {
         setParameter(0, 50);
         setParameter(1, 50);
         setParameter(2, 50);
+    }
+
+    public boolean isReadOnly() {
+        return _readOnly;
     }
 }
