@@ -23,6 +23,7 @@ public class Message {
         builder
             .setMessage(message)
             .setPositiveButton("Yes", confirm)
+            .setNegativeButton("No", null)
             .show();
     }
 }

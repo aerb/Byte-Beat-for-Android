@@ -18,6 +18,7 @@ public class ExpressionSelectionAdapter implements ListAdapter {
     private final Context _context;
     private IExpressionEventListener _onSave;
     private IExpressionEventListener _onDelete;
+    private IExpressionEventListener _onSelect;
 
     public ExpressionSelectionAdapter(Context context, List<ByteBeatExpression> expressions) {
         _expressions = expressions;
@@ -64,6 +65,7 @@ public class ExpressionSelectionAdapter implements ListAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
         ExpressionElement cell = new ExpressionElement(_context);
         cell.setExpression(_expressions.get(i));
+        cell.setSelectionListener(_onSelect);
         cell.setSaveListener(_onSave);
         cell.setDeleteListener(_onDelete);
         cell.create();
@@ -85,10 +87,15 @@ public class ExpressionSelectionAdapter implements ListAdapter {
         return _expressions.isEmpty();
     }
 
+
     public void setSaveListener(IExpressionEventListener listener) {
         this._onSave = listener;
     }
     public void setDeleteListener(IExpressionEventListener listener) {
         _onDelete = listener;
+    }
+
+    public void setSelectListener(IExpressionEventListener _onSelect) {
+        this._onSelect = _onSelect;
     }
 }

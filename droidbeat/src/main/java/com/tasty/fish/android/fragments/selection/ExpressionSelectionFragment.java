@@ -7,9 +7,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
+
 import com.tasty.fish.R;
 import com.tasty.fish.android.DroidBeatActivity;
 import com.tasty.fish.android.IExpressionEventListener;
@@ -22,7 +22,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ExpressionSelectionFragment extends Fragment implements IExpressionSelectionView, AdapterView.OnItemClickListener, View.OnClickListener {
+public class ExpressionSelectionFragment extends Fragment implements IExpressionSelectionView {
     private List<ByteBeatExpression> _expressions;
     private ExpressionSelectionPresenter _presenter;
     private ArrayList<IExpressionSelectionViewListener> _listeners;
@@ -47,7 +47,6 @@ public class ExpressionSelectionFragment extends Fragment implements IExpression
         _list = (ListView)view.findViewById(R.id.listView);
         _adapter = new ExpressionSelectionAdapter(getActivity(), _expressions);
         _list.setAdapter(_adapter);
-        _list.setOnItemClickListener(this);
         _adapter.setSaveListener(new IExpressionEventListener() {
             @Override
             public void onEvent(ByteBeatExpression expression) {
@@ -78,9 +77,21 @@ public class ExpressionSelectionFragment extends Fragment implements IExpression
                     });
             }
         });
+        _adapter.setSelectListener(new IExpressionEventListener() {
+            @Override
+            public void onEvent(ByteBeatExpression expression) {
+                _presenter.selectExpression(expression);
+            }
+        });
 
         _cancelBtn = (ImageView)view.findViewById(R.id.selectionCancel);
-        _cancelBtn.setOnClickListener(this);
+        _cancelBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                for(IExpressionSelectionViewListener l : _listeners)
+                    l.OnCancelRequested();
+            }
+        });
         return view;
     }
 
@@ -92,20 +103,6 @@ public class ExpressionSelectionFragment extends Fragment implements IExpression
     @Override
     public void setDataSource(List<ByteBeatExpression> expressions) {
         _expressions = expressions;
-    }
-
-    @Override
-    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-        for(IExpressionSelectionViewListener listener : _listeners)
-            listener.OnExpressionSelected(i);
-    }
-
-    @Override
-    public void onClick(View view) {
-        if(view == _cancelBtn){
-            for(IExpressionSelectionViewListener l : _listeners)
-                l.OnCancelRequested();
-        }
     }
 
     public void update(){

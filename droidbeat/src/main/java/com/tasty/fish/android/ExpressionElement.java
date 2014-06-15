@@ -18,6 +18,7 @@ public class ExpressionElement extends RelativeLayout {
     private ByteBeatExpression _expression;
     private IExpressionEventListener _onSave;
     private IExpressionEventListener _onDelete;
+    private IExpressionEventListener _selection;
 
     public ExpressionElement(Context context) {
         super(context);
@@ -44,7 +45,7 @@ public class ExpressionElement extends RelativeLayout {
             textLayout.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    System.out.println(_expression.getName());
+                    _selection.onEvent(_expression);
                 }
             });
             RelativeLayout.LayoutParams
@@ -102,6 +103,11 @@ public class ExpressionElement extends RelativeLayout {
         addView(buttonLayout);
     }
 
+
+
+    public void setSelectionListener(IExpressionEventListener listener) {
+        _selection = listener;
+    }
     public void setSaveListener(IExpressionEventListener listener) {
         _onSave = listener;
     }

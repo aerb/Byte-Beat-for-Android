@@ -2,13 +2,14 @@ package com.tasty.fish.domain;
 
 import com.tasty.fish.domain.implementation.ByteBeatExpression;
 
-import java.io.FileNotFoundException;
 import java.util.List;
 
 public interface IExpressionsRepository {
     void addNewExpression(ByteBeatExpression byteBeatExpression);
 
     void setActiveExpressionLast();
+
+    void setActiveExpression(ByteBeatExpression expression);
 
 
     public interface IExpressionsRepositoryListener

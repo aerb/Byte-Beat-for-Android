@@ -1,14 +1,19 @@
 package com.tasty.fish.utils;
 
 import com.tasty.fish.android.AppController;
-import com.tasty.fish.android.DroidBeatActivity;
 import com.tasty.fish.android.media.audio.AudioPlayer;
 import com.tasty.fish.android.media.audio.IAudioPlayer;
 import com.tasty.fish.domain.IExpressionEvaluator;
 import com.tasty.fish.domain.IExpressionsRepository;
 import com.tasty.fish.domain.implementation.ExpressionEvaluator;
 import com.tasty.fish.domain.implementation.ExpressionsRepository;
-import com.tasty.fish.presenters.*;
+import com.tasty.fish.presenters.BufferVisualsPresenter;
+import com.tasty.fish.presenters.CreateExpressionPresenter;
+import com.tasty.fish.presenters.ExpressionIO;
+import com.tasty.fish.presenters.ExpressionPresenter;
+import com.tasty.fish.presenters.ExpressionSelectionPresenter;
+import com.tasty.fish.presenters.MediaControlsPresenter;
+import com.tasty.fish.presenters.ParametersPresenter;
 import com.tasty.fish.views.IAppController;
 
 public class CompositionRoot {
@@ -36,7 +41,7 @@ public class CompositionRoot {
 
     public ExpressionIO getExpressionIO(){
         return _expressionIO != null ?
-                _expressionIO : new ExpressionIO(new FileSystem());
+                _expressionIO : new ExpressionIO(new FileSystem(), getExpressionsRepository());
     }
 
     public IExpressionEvaluator getExpressionEvaluator() {

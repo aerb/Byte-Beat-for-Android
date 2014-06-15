@@ -18,6 +18,7 @@ import com.tasty.fish.android.fragments.visuals.buffer.BufferVisualsFragment;
 import com.tasty.fish.android.fragments.selection.ExpressionSelectionFragment;
 import com.tasty.fish.android.fragments.visuals.expression.ExpressionFragment;
 import com.tasty.fish.domain.IExpressionsRepository;
+import com.tasty.fish.presenters.ExpressionIO;
 import com.tasty.fish.presenters.MediaControlsPresenter;
 import com.tasty.fish.utils.CompositionRoot;
 import com.tasty.fish.utils.Manifest;
@@ -119,6 +120,12 @@ public class DroidBeatActivity extends FragmentActivity implements
         _appController.ShowParams();
 
         _repo = _root.getExpressionsRepository();
+        ExpressionIO io = _root.getExpressionIO();
+        try {
+            io.loadAll();
+        } catch (IOException e) {
+            Message.err("Could not load saved expressions.");
+        }
 
         _mediaControlsPresenter = _root.getMediaControlsPresenter();
         _mediaControlsPresenter.setView(this);
