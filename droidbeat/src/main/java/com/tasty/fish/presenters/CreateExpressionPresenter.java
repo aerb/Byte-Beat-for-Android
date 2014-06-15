@@ -1,12 +1,11 @@
 package com.tasty.fish.presenters;
-import android.text.Editable;
 import com.tasty.fish.domain.IExpressionsRepository;
 import com.tasty.fish.domain.implementation.ByteBeatExpression;
-import com.tasty.fish.views.ICreateExpressionView;
+
+import java.util.regex.Pattern;
 
 public class CreateExpressionPresenter {
 
-    private ICreateExpressionView _view;
     private final IExpressionsRepository _repo;
 
     public CreateExpressionPresenter(
@@ -14,15 +13,6 @@ public class CreateExpressionPresenter {
         )
     {
         _repo = repo;
-    }
-
-    public void setView(ICreateExpressionView view) {
-        _view = view;
-    }
-
-    public void requestDefaultName(){
-        String defaultName = "new_expression";
-        _view.setDefaultName(defaultName);
     }
 
     public void addNewExpression(String text, String copy) {
@@ -36,5 +26,23 @@ public class CreateExpressionPresenter {
                 false
         ));
         _repo.setActiveExpressionLast();
+    }
+
+    public String getSuggestedName() {
+        String nameBase = "new_expression_";
+        int i = 0;
+        String name;
+        do {
+            name = nameBase + i++;
+        } while (_repo.contains(name));
+        return name;
+    }
+
+    private Pattern validNames = Pattern.compile("[a-zA-Z0-9_]+");
+
+    public NamingResponse isValidName(String name) {
+        if(_repo.contains(name)) return NamingResponse.AlreadyExists;
+        if(!validNames.matcher(name).matches()) return NamingResponse.InvalidChar;
+        return NamingResponse.Valid;
     }
 }

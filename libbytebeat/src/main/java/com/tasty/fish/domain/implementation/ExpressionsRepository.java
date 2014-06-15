@@ -39,6 +39,13 @@ public class ExpressionsRepository implements IExpressionsRepository {
         if(index >= 0) setActiveExpression(index);
     }
 
+    @Override
+    public boolean contains(String name) {
+        for (ByteBeatExpression e : _expressions){
+            if(e.getName().equals(name)) return true;
+        }
+        return false;
+    }
 
     @Override
     public void setIExpressionsRepositoryListener(IExpressionsRepositoryListener listener) {

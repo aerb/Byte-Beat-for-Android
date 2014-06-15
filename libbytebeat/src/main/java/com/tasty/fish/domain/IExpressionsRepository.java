@@ -11,6 +11,8 @@ public interface IExpressionsRepository {
 
     void setActiveExpression(ByteBeatExpression expression);
 
+    boolean contains(String name);
+
 
     public interface IExpressionsRepositoryListener
     {
