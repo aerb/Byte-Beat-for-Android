@@ -1,5 +1,7 @@
 package com.tasty.fish.android;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -7,15 +9,16 @@ import android.text.ClipboardManager;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
-import android.widget.*;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.tasty.fish.R;
 import com.tasty.fish.android.fragments.ExportFragment;
 import com.tasty.fish.android.fragments.keyboard.KeyboardFragment;
 import com.tasty.fish.android.fragments.naming.CreateExpressionFragment;
 import com.tasty.fish.android.fragments.parameters.ParametersFragment;
-import com.tasty.fish.android.fragments.visuals.buffer.BufferVisualsFragment;
 import com.tasty.fish.android.fragments.selection.ExpressionSelectionFragment;
+import com.tasty.fish.android.fragments.visuals.buffer.BufferVisualsFragment;
 import com.tasty.fish.android.fragments.visuals.expression.ExpressionFragment;
 import com.tasty.fish.domain.IExpressionsRepository;
 import com.tasty.fish.presenters.ExpressionIO;
@@ -23,8 +26,8 @@ import com.tasty.fish.presenters.MediaControlsPresenter;
 import com.tasty.fish.utils.CompositionRoot;
 import com.tasty.fish.utils.Manifest;
 import com.tasty.fish.views.IAppController;
-import com.tasty.fish.views.IMediaControlsView;
 import com.tasty.fish.views.IExpressionView;
+import com.tasty.fish.views.IMediaControlsView;
 
 import java.io.IOException;
 
@@ -233,5 +236,24 @@ public class DroidBeatActivity extends FragmentActivity implements
         _selectorContainer.setVisibility(View.VISIBLE);
         _paramsContainer.setVisibility(View.INVISIBLE);
     }
+
+    @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder(this)
+            .setIcon(android.R.drawable.ic_dialog_alert)
+            .setTitle("Closing Activity")
+            .setMessage("Are you sure you want to close this activity?")
+            .setPositiveButton("Yes", new DialogInterface.OnClickListener()
+            {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    finish();
+                }
+
+            })
+            .setNegativeButton("No", null)
+            .show();
+    }
+
     //endregion
 }

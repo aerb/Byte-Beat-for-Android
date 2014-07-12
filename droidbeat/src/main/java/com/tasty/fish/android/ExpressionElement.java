@@ -1,7 +1,6 @@
 package com.tasty.fish.android;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -56,9 +55,10 @@ public class ExpressionElement extends RelativeLayout {
             TextView
                 text = new TextView(c);
                 text.setGravity(Gravity.CENTER_VERTICAL);
-                text.setTextColor(_expression.isDirty() ? Color.RED : Color.WHITE);
                 text.setTextSize(20);
-                text.setText(_expression.getName());
+                String cellText = _expression.getName();
+                cellText += _expression.isDirty() ? " *" : "";
+                text.setText(cellText);
             textLayout.addView(text);
         addView(textLayout);
         LinearLayout

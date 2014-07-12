@@ -9,9 +9,8 @@ import com.tasty.fish.views.IExpressionSelectionView;
 import java.io.IOException;
 
 public class ExpressionSelectionPresenter implements
-        IExpressionSelectionView.
-        IExpressionSelectionViewListener,
-        IExpressionListener {
+        IExpressionListener
+{
     private final ExpressionIO _io;
     private IExpressionSelectionView _view;
     private IExpressionsRepository _repo;
@@ -30,17 +29,6 @@ public class ExpressionSelectionPresenter implements
     public void setView(IExpressionSelectionView view){
         _view = view;
         _view.setDataSource(_repo.getExpressions());
-        _view.addIExpressionSelectionViewListener(this);
-    }
-
-    @Override
-    public void OnExpressionSelected(int position) {
-        _repo.setActiveExpression(position);
-    }
-
-    @Override
-    public void OnCancelRequested() {
-        _appController.CloseSelector();
     }
 
     @Override
@@ -60,5 +48,13 @@ public class ExpressionSelectionPresenter implements
 
     public void selectExpression(ByteBeatExpression expression) {
         _repo.setActiveExpression(expression);
+    }
+
+    public void select(int index){
+        _repo.setActiveExpression(index);
+    }
+
+    public void exitView() {
+        _appController.CloseSelector();
     }
 }

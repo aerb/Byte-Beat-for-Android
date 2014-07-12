@@ -19,13 +19,11 @@ import com.tasty.fish.presenters.ExpressionSelectionPresenter;
 import com.tasty.fish.views.IExpressionSelectionView;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class ExpressionSelectionFragment extends Fragment implements IExpressionSelectionView {
     private List<ByteBeatExpression> _expressions;
     private ExpressionSelectionPresenter _presenter;
-    private ArrayList<IExpressionSelectionViewListener> _listeners;
     private ImageView _cancelBtn;
     private ListView _list;
     private ExpressionSelectionAdapter _adapter;
@@ -33,7 +31,6 @@ public class ExpressionSelectionFragment extends Fragment implements IExpression
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-        _listeners = new ArrayList<IExpressionSelectionViewListener>();
         _presenter =
                 ((DroidBeatActivity)activity)
                 .getCompositionRoot()
@@ -50,37 +47,37 @@ public class ExpressionSelectionFragment extends Fragment implements IExpression
         _adapter.setSaveListener(new IExpressionEventListener() {
             @Override
             public void onEvent(ByteBeatExpression expression) {
-                try {
-                    _presenter.save(expression);
-                    Message.std("Saved " + expression.getName());
-                } catch (IOException e) {
-                    Message.err("Could not save " + expression.getName());
-                }
+            try {
+                _presenter.save(expression);
+                Message.std("Saved " + expression.getName());
+            } catch (IOException e) {
+                Message.err("Could not save " + expression.getName());
+            }
             }
         });
         _adapter.setDeleteListener(new IExpressionEventListener() {
             @Override
             public void onEvent(final ByteBeatExpression expression) {
-                Message.confirm(
-                    getActivity(),
-                    "Are you sure you want to delete " + expression.getName() + "?",
-                    new DialogInterface.OnClickListener(){
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            try {
-                                _presenter.delete(expression);
-                                Message.std("Deleted " + expression.getName());
-                            } catch (IOException e) {
-                                Message.err("Could not delete " + expression.getName());
-                            }
+            Message.confirm(
+                getActivity(),
+                "Are you sure you want to delete " + expression.getName() + "?",
+                new DialogInterface.OnClickListener(){
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        try {
+                            _presenter.delete(expression);
+                            Message.std("Deleted " + expression.getName());
+                        } catch (IOException e) {
+                            Message.err("Could not delete " + expression.getName());
                         }
-                    });
+                    }
+                });
             }
         });
         _adapter.setSelectListener(new IExpressionEventListener() {
             @Override
             public void onEvent(ByteBeatExpression expression) {
-                _presenter.selectExpression(expression);
+            _presenter.selectExpression(expression);
             }
         });
 
@@ -88,16 +85,10 @@ public class ExpressionSelectionFragment extends Fragment implements IExpression
         _cancelBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                for(IExpressionSelectionViewListener l : _listeners)
-                    l.OnCancelRequested();
+                _presenter.exitView();
             }
         });
         return view;
-    }
-
-    @Override
-    public void addIExpressionSelectionViewListener(IExpressionSelectionViewListener listener) {
-        _listeners.add(listener);
     }
 
     @Override
