@@ -63,12 +63,16 @@ public class ExpressionSelectionAdapter implements ListAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        ExpressionElement cell = new ExpressionElement(_context);
+        ExpressionElement cell = (ExpressionElement) view;
+
+        if(view == null) {
+            cell = new ExpressionElement(_context);
+            cell.setSelectionListener(_onSelect);
+            cell.setSaveListener(_onSave);
+            cell.setDeleteListener(_onDelete);
+        }
+
         cell.setExpression(_expressions.get(i));
-        cell.setSelectionListener(_onSelect);
-        cell.setSaveListener(_onSave);
-        cell.setDeleteListener(_onDelete);
-        cell.create();
         return cell;
     }
 

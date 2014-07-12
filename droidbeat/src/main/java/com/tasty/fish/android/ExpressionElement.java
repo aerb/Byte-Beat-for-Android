@@ -14,18 +14,44 @@ import com.tasty.fish.domain.implementation.ByteBeatExpression;
 
 public class ExpressionElement extends RelativeLayout {
     private final Context _context;
-    private ByteBeatExpression _expression;
+    private TextView _text;
+    private HighlightButton _save;
+    private HighlightButton _delete;
+
+    private IExpressionEventListener _selection;
     private IExpressionEventListener _onSave;
     private IExpressionEventListener _onDelete;
-    private IExpressionEventListener _selection;
+    private ByteBeatExpression _expression;
 
     public ExpressionElement(Context context) {
         super(context);
         _context = context;
+        create();
     }
 
     public void setExpression(ByteBeatExpression expression){
         _expression = expression;
+        String cellText = _expression.getName();
+        cellText += _expression.isDirty() ? " *" : "";
+        _text.setText(cellText);
+
+        if(_expression.isReadOnly()){
+            _save.setAlpha(255 / 2);
+            _save.setEnabled(false);
+        }
+        else {
+            _save.setAlpha(255);
+            _save.setEnabled(true);
+        }
+
+        if(_expression.isReadOnly()){
+            _delete.setAlpha(255 / 2);
+            _delete.setEnabled(false);
+        }
+        else {
+            _delete.setAlpha(255);
+            _delete.setEnabled(true);
+        }
     }
 
     public void create() {
@@ -52,14 +78,10 @@ public class ExpressionElement extends RelativeLayout {
             textLayoutParams.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
             textLayoutParams.addRule(RelativeLayout.LEFT_OF, buttonLayoutId);
             textLayout.setLayoutParams(textLayoutParams);
-            TextView
-                text = new TextView(c);
-                text.setGravity(Gravity.CENTER_VERTICAL);
-                text.setTextSize(20);
-                String cellText = _expression.getName();
-                cellText += _expression.isDirty() ? " *" : "";
-                text.setText(cellText);
-            textLayout.addView(text);
+                _text = new TextView(c);
+                _text.setGravity(Gravity.CENTER_VERTICAL);
+                _text.setTextSize(20);
+            textLayout.addView(_text);
         addView(textLayout);
         LinearLayout
             buttonLayout = new LinearLayout(c);
@@ -69,41 +91,29 @@ public class ExpressionElement extends RelativeLayout {
             buttonLayoutParams = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT);
             buttonLayoutParams.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
             buttonLayout.setLayoutParams(buttonLayoutParams);
-            HighlightButton
-                save = new HighlightButton(c);
-                if(_expression.isReadOnly()){
-                    save.setAlpha(255/2);
-                    save.setEnabled(false);
-                }
-                save.setImageResource(R.drawable.save);
-                save.setLayoutParams(new ViewGroup.LayoutParams(rowHeight, rowHeight));
-                save.setOnClickListener(new OnClickListener() {
+                _save = new HighlightButton(c);
+                _save.setImageResource(R.drawable.save);
+                _save.setLayoutParams(new ViewGroup.LayoutParams(rowHeight, rowHeight));
+                _save.setOnClickListener(new OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         _onSave.onEvent(_expression);
                     }
                 });
-                buttonLayout.addView(save);
-            HighlightButton
-                delete = new HighlightButton(c);
-                if(_expression.isReadOnly()){
-                    delete.setAlpha(255/2);
-                    delete.setEnabled(false);
-                }
-                delete.setOnClickListener(new OnClickListener() {
+            buttonLayout.addView(_save);
+                _delete = new HighlightButton(c);
+                _delete.setOnClickListener(new OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         _onDelete.onEvent(_expression);
                     }
                 });
-                delete.setImageResource(R.drawable.trash);
-                delete.setLayoutParams(new ViewGroup.LayoutParams(rowHeight,rowHeight));
+                _delete.setImageResource(R.drawable.trash);
+                _delete.setLayoutParams(new ViewGroup.LayoutParams(rowHeight, rowHeight));
 
-            buttonLayout.addView(delete);
+            buttonLayout.addView(_delete);
         addView(buttonLayout);
     }
-
-
 
     public void setSelectionListener(IExpressionEventListener listener) {
         _selection = listener;
