@@ -15,17 +15,19 @@ public class CreateExpressionPresenter {
         _repo = repo;
     }
 
-    public void addNewExpression(String text, String copy) {
-        _repo.addNewExpression(new ByteBeatExpression(
+    public ByteBeatExpression addNewExpression(String text, String expression) {
+        ByteBeatExpression exp = new ByteBeatExpression(
                 text,
-                copy != null ? copy : "t",
+                expression,
                 0.5,
                 50,
                 50,
                 50,
                 false
-        ));
-        _repo.setActiveExpressionLast();
+        );
+        exp.setExpressionString(expression);
+        _repo.addNewExpression(exp);
+        return exp;
     }
 
     public String getSuggestedName() {

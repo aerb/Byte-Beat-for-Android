@@ -64,8 +64,12 @@ project(":musicg"){
 
 project(":libbytebeat"){
     apply plugin: 'java'
+    repositories {
+       mavenCentral()
+    }
     dependencies {
         compile project(':musicg')
+        testCompile 'junit:junit:4.11'
     }
 }
 

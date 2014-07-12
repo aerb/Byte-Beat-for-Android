@@ -49,9 +49,8 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
         _parser.tryParse(expression.getExpressionString());
     }
 
-    public void updateExpression(String e) throws ExpressionParsingException {
+    public void tryParse(String e) throws ExpressionParsingException {
         _parser.tryParse(e);
-        _expression.setExpressionString(e.trim());
     }
 
     public byte getNextSample() {

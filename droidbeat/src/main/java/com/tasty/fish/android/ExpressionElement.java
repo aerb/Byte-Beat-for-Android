@@ -56,7 +56,7 @@ public class ExpressionElement extends RelativeLayout {
             TextView
                 text = new TextView(c);
                 text.setGravity(Gravity.CENTER_VERTICAL);
-                text.setTextColor(Color.WHITE);
+                text.setTextColor(_expression.isDirty() ? Color.RED : Color.WHITE);
                 text.setTextSize(20);
                 text.setText(_expression.getName());
             textLayout.addView(text);

@@ -26,6 +26,13 @@ public class ExpressionIO {
         return new File(_fileSystem.getSavedDir(), name + FileSystem.ext);
     }
 
+    public void saveAll() throws IOException {
+        for(ByteBeatExpression exp : _repo.getExpressions()){
+            if(exp.isDirty())
+                save(exp);
+        }
+    }
+
     public void save(ByteBeatExpression expression) throws IOException {
         if(expression.isReadOnly())
             throw new IllegalArgumentException("Cannot save readonly expression.");
@@ -35,6 +42,7 @@ public class ExpressionIO {
         try {
             pw = new PrintWriter(filename);
             pw.print(expression.getExpressionString());
+            expression.setIsDirty(false);
         }
         finally {
             if(pw != null) pw.close();

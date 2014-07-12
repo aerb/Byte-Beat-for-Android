@@ -9,6 +9,7 @@ public class ByteBeatExpression {
     private String _expressionString;
     private String _name;
     private boolean _readOnly;
+    private boolean _dirty;
 
     public ByteBeatExpression(
             String name,
@@ -34,6 +35,7 @@ public class ByteBeatExpression {
 
     public void setExpressionString(String expression) {
         _expressionString = expression;
+        _dirty = true;
     }
 
     public void setTimeDelta(double inc) {
@@ -67,5 +69,13 @@ public class ByteBeatExpression {
 
     public boolean isReadOnly() {
         return _readOnly;
+    }
+
+    public boolean isDirty() {
+        return _dirty;
+    }
+
+    public void setIsDirty(boolean dirty) {
+        _dirty = dirty;
     }
 }

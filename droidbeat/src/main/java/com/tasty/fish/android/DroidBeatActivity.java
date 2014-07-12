@@ -177,7 +177,8 @@ public class DroidBeatActivity extends FragmentActivity implements
         } else if(arg0 == _loadNewExpressionBtn){
             _appController.ShowSelector();
         } else if(arg0 == _addBtn){
-            new CreateExpressionFragment().show(getSupportFragmentManager(), "NamingDialog");
+            new CreateExpressionFragment()
+                .show(getSupportFragmentManager(), "NamingDialog");
         } else if(arg0 == _copyBtn){
             _clipboard.setText(_repo.getActive().getExpressionString());
             runOnUiThread(new Runnable() {
@@ -187,11 +188,9 @@ public class DroidBeatActivity extends FragmentActivity implements
                 }
             });
         } else if(arg0 == _pasteBtn){
-            CreateExpressionFragment frag = new CreateExpressionFragment();
-            Bundle bundle = new Bundle();
-            bundle.putString(CreateExpressionFragment.NewExpression, (String) _clipboard.getText());
-            frag.setArguments(bundle);
-            frag.show(getSupportFragmentManager(), "NamingDialog");
+            new CreateExpressionFragment()
+                .setExpressionToCreate((String) _clipboard.getText())
+                .show(getSupportFragmentManager(), "NamingDialog");
         }
     }
 

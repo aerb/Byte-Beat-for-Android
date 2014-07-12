@@ -1,5 +1,6 @@
 package com.tasty.fish.domain.implementation;
 
+import com.tasty.fish.domain.IExpressionListener;
 import com.tasty.fish.domain.IExpressionsRepository;
 
 import java.util.ArrayList;
@@ -9,11 +10,11 @@ public class ExpressionsRepository implements IExpressionsRepository {
 
     private final ArrayList<ByteBeatExpression> _expressions;
     private ByteBeatExpression _active;
-    private final ArrayList<IExpressionsRepositoryListener> _listeners;
+    private final ArrayList<IExpressionListener> _listeners;
 
     public ExpressionsRepository() {
         _expressions = new ArrayList<ByteBeatExpression>();
-        _listeners = new ArrayList<IExpressionsRepositoryListener>();
+        _listeners = new ArrayList<IExpressionListener>();
         initializeExpressions();
     }
 
@@ -26,11 +27,6 @@ public class ExpressionsRepository implements IExpressionsRepository {
 
     public void addNewExpression(ByteBeatExpression e) {
         _expressions.add(e);
-    }
-
-    @Override
-    public void setActiveExpressionLast() {
-        setActiveExpression(_expressions.size() - 1);
     }
 
     @Override
@@ -48,7 +44,7 @@ public class ExpressionsRepository implements IExpressionsRepository {
     }
 
     @Override
-    public void setIExpressionsRepositoryListener(IExpressionsRepositoryListener listener) {
+    public void setActiveChangedListener(IExpressionListener listener) {
         _listeners.add(listener);
     }
 
@@ -64,7 +60,14 @@ public class ExpressionsRepository implements IExpressionsRepository {
     @Override
     public void setActiveExpression(int position) {
         _active = _expressions.get(position);
-        for(IExpressionsRepositoryListener l: _listeners)
-            l.OnActiveExpressionChanged();
+        for(IExpressionListener l: _listeners)
+            l.onExpressionEvent();
+    }
+
+    @Override
+    public void updateActive(String text) {
+        getActive().setExpressionString(text);
+        for(IExpressionListener listener : _listeners)
+            listener.onExpressionEvent();
     }
 }

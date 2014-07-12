@@ -22,7 +22,8 @@ import com.tasty.fish.presenters.NamingResponse;
 public class CreateExpressionFragment extends DialogFragment
 {
 
-    public static String NewExpression = "NewExpression";
+    private EditText name;
+    private String expression = "t";
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -30,13 +31,12 @@ public class CreateExpressionFragment extends DialogFragment
             .getCompositionRoot()
             .getCreateExpressionPresenter();
         final Context c = getActivity();
-
         final AlertDialog dialog = new AlertDialog.Builder(c)
             .setTitle("Define Name")
             .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
-
+                    presenter.addNewExpression(name.getText().toString(), expression);
                 }
             })
             .setNegativeButton("Cancel", null)
@@ -51,7 +51,6 @@ public class CreateExpressionFragment extends DialogFragment
                     errorText.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
                     errorText.setTextColor(Color.RED);
                 view.addView(errorText);
-                final EditText
                     name = new EditText(c);
                     name.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
                     name.setText(presenter.getSuggestedName());
@@ -63,7 +62,7 @@ public class CreateExpressionFragment extends DialogFragment
 
                         @Override
                         public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-                            NamingResponse response = presenter.isValidName(name.getText().toString().trim());
+                            NamingResponse response = presenter.isValidName(name.getText().toString());
                             Button btn = dialog.getButton(AlertDialog.BUTTON_POSITIVE);
                             if(btn == null) btn = new Button(c);
                             switch (response) {
@@ -91,4 +90,8 @@ public class CreateExpressionFragment extends DialogFragment
         return dialog;
     }
 
+    public CreateExpressionFragment setExpressionToCreate(String expressionToCreate) {
+        this.expression = expressionToCreate;
+        return this;
+    }
 }

@@ -10,28 +10,18 @@ import android.widget.Button;
 import com.tasty.fish.android.DroidBeatActivity;
 import com.tasty.fish.R;
 import com.tasty.fish.presenters.ExpressionPresenter;
-import com.tasty.fish.views.IKeyboardDisplayView;
 
-import java.util.ArrayList;
-
-public class KeyboardFragment extends Fragment implements
-        View.OnClickListener,
-        IKeyboardDisplayView
+public class KeyboardFragment extends Fragment implements View.OnClickListener
 {
     private ExpressionPresenter _presenter;
-    private ArrayList<IKeyboardDisplayViewListener> _listeners;
     private View _cancelBtn;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        _listeners = new ArrayList<IKeyboardDisplayViewListener>();
-
         _presenter = ((DroidBeatActivity)getActivity())
                 .getCompositionRoot()
                 .getExpressionPresenter();
-
-        _presenter.setKeyboardView(this);
     }
 
     @Override
@@ -50,11 +40,9 @@ public class KeyboardFragment extends Fragment implements
             Button b = ((Button) view);
             b.setOnClickListener(this);
             if ("0123456789".indexOf((String) b.getText()) >= 0)
-                b.getBackground().setColorFilter(0xFFCCCC00,
-                        PorterDuff.Mode.MULTIPLY);
+                b.getBackground().setColorFilter(0xFFCCCC00, PorterDuff.Mode.MULTIPLY);
             else if ("%/*<<>>+-&^|=!".indexOf((String) b.getText()) >= 0)
-                b.getBackground().setColorFilter(0xFFFF5555,
-                        PorterDuff.Mode.MULTIPLY);
+                b.getBackground().setColorFilter(0xFFFF5555, PorterDuff.Mode.MULTIPLY);
             return;
         }
 
@@ -66,40 +54,25 @@ public class KeyboardFragment extends Fragment implements
 
     @Override
     public void onClick(View v) {
-        if(v == _cancelBtn){
-            for(IKeyboardDisplayViewListener l : _listeners)
-                l.OnCloseKeyboard();
+        if(v == _cancelBtn) {
+            _presenter.endEdit();
             return;
         }
 
         if (!(v instanceof Button))
             return;
+
         Button b = (Button) v;
         int bid = b.getId();
-        String btnText = (String) b.getText();
 
-        if (bid != R.id.buttonLeft &&
-            bid != R.id.buttonRight &&
-            bid != R.id.buttonDel)
-        {
-            for(IKeyboardDisplayViewListener l : _listeners)
-                l.OnAddElement(btnText);
+        if (bid == R.id.buttonLeft) {
+            _presenter.moveCursorLeft();
+        } else if (bid == R.id.buttonRight) {
+           _presenter.moveCursorRight();
+        } else if (bid == R.id.buttonDel) {
+            _presenter.deleteCharacter();
         } else {
-            if (bid == R.id.buttonLeft) {
-                for (IKeyboardDisplayViewListener l : _listeners)
-                    l.OnMoveLeft();
-            } else if (bid == R.id.buttonRight) {
-                for (IKeyboardDisplayViewListener l : _listeners)
-                    l.OnMoveRight();
-            } else if (bid == R.id.buttonDel) {
-                for (IKeyboardDisplayViewListener l : _listeners)
-                    l.OnDelete();
-            }
+            _presenter.addElement((String) b.getText());
         }
-    }
-
-    @Override
-    public void registerIKeyboardDisplayViewListener(IKeyboardDisplayViewListener listener) {
-        _listeners.add(listener);
     }
 }

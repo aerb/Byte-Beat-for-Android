@@ -1,5 +1,6 @@
 package com.tasty.fish.presenters;
 
+import com.tasty.fish.domain.IExpressionListener;
 import com.tasty.fish.domain.IExpressionsRepository;
 import com.tasty.fish.domain.implementation.ByteBeatExpression;
 import com.tasty.fish.views.IAppController;
@@ -8,20 +9,21 @@ import com.tasty.fish.views.IExpressionSelectionView;
 import java.io.IOException;
 
 public class ExpressionSelectionPresenter implements
-        IExpressionSelectionView.IExpressionSelectionViewListener, IExpressionsRepository.IExpressionsRepositoryListener {
+        IExpressionSelectionView.
+        IExpressionSelectionViewListener,
+        IExpressionListener {
     private final ExpressionIO _io;
     private IExpressionSelectionView _view;
     private IExpressionsRepository _repo;
     private final IAppController _appController;
 
     public ExpressionSelectionPresenter(
-            ExpressionIO io,
-            IExpressionsRepository expressionsRepository,
-            IAppController appController) {
-
+        ExpressionIO io,
+        IExpressionsRepository expressionsRepository,
+        IAppController appController) {
         _io = io;
         _repo = expressionsRepository;
-        _repo.setIExpressionsRepositoryListener(this);
+        _repo.setActiveChangedListener(this);
         _appController = appController;
     }
 
@@ -42,7 +44,7 @@ public class ExpressionSelectionPresenter implements
     }
 
     @Override
-    public void OnActiveExpressionChanged() {
+    public void onExpressionEvent() {
         _view.update();
     }
 

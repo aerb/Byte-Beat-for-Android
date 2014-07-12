@@ -1,12 +1,13 @@
 package com.tasty.fish.presenters;
 
 import com.tasty.fish.domain.IExpressionEvaluator;
+import com.tasty.fish.domain.IExpressionListener;
 import com.tasty.fish.domain.IExpressionsRepository;
 import com.tasty.fish.views.IParameterView;
 
 public class ParametersPresenter implements
         IParameterView.IParameterViewListener,
-        IExpressionsRepository.IExpressionsRepositoryListener
+        IExpressionListener
 {
 
     private IParameterView _view;
@@ -18,7 +19,7 @@ public class ParametersPresenter implements
         IExpressionEvaluator evaluator)
     {
         _repo = repo;
-        _repo.setIExpressionsRepositoryListener(this);
+        _repo.setActiveChangedListener(this);
         _evaluator = evaluator;
     }
 
@@ -81,7 +82,7 @@ public class ParametersPresenter implements
 
     //region IExpressionRepository methods
     @Override
-    public void OnActiveExpressionChanged() {
+    public void onExpressionEvent() {
         updateView();
     }
     //endregion

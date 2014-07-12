@@ -1,6 +1,8 @@
 package com.tasty.fish.views;
 
 public interface IExpressionView {
+    void indicateError(boolean b);
+
     interface IExpressionViewListener
     {
         void OnRequestEdit();

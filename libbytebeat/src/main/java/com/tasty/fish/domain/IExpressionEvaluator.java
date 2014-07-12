@@ -6,7 +6,7 @@ import com.tasty.fish.utils.parser.utils.ExpressionParsingException;
 public interface IExpressionEvaluator {
 
     void setExpression(ByteBeatExpression expression) throws ExpressionParsingException;
-    void updateExpression(String newExpression) throws ExpressionParsingException;
+    void tryParse(String newExpression) throws ExpressionParsingException;
     long getTime();
 
     void updateTimedelta(double t);

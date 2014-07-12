@@ -1,118 +1,102 @@
 package com.tasty.fish.presenters;
 
 import com.tasty.fish.domain.IExpressionEvaluator;
+import com.tasty.fish.domain.IExpressionListener;
 import com.tasty.fish.domain.IExpressionsRepository;
 import com.tasty.fish.domain.implementation.ByteBeatExpression;
+import com.tasty.fish.text.TextCursor;
+import com.tasty.fish.text.TextEditor;
 import com.tasty.fish.utils.parser.utils.ExpressionParsingException;
 import com.tasty.fish.views.IAppController;
-import com.tasty.fish.views.IKeyboardDisplayView;
 import com.tasty.fish.views.IExpressionView;
 
 public class ExpressionPresenter implements
-        IKeyboardDisplayView.IKeyboardDisplayViewListener,
-        IExpressionsRepository.IExpressionsRepositoryListener, IExpressionView.IExpressionViewListener {
+        IExpressionListener,
+        IExpressionView.IExpressionViewListener {
     private IExpressionView _view;
     private ByteBeatExpression _expression;
 
-    private String _text;
-    private int _cursor = 0;
-    private IKeyboardDisplayView _keyboardView;
+    private TextEditor _editor;
+    private TextCursor _cursor;
+
     private final IExpressionsRepository _expressionRepo;
     private final IAppController _appController;
     private final IExpressionEvaluator _evaluator;
 
     public ExpressionPresenter(
-            IExpressionEvaluator evaluator,
-            IExpressionsRepository expressionsRepository,
-            IAppController appController)
+        IExpressionEvaluator evaluator,
+        IExpressionsRepository expressionsRepository,
+        IAppController appController)
     {
         _evaluator = evaluator;
         _expressionRepo = expressionsRepository;
-        _expressionRepo.setIExpressionsRepositoryListener(this);
-        setActiveExpression(_expressionRepo.getActive());
-
+        _expressionRepo.setActiveChangedListener(this);
         _appController = appController;
+
+        _editor = new TextEditor(new TextCursor());
+        _cursor = _editor.getCursor();
+
+        setActiveExpression(_expressionRepo.getActive());
     }
 
     private void setActiveExpression(ByteBeatExpression exp){
         _expression = exp;
-        _text = _expression.getExpressionString() + " ";
-        _cursor = _text.length() - 1;
+        String text = _expression.getExpressionString();
+        System.out.println("text --> " + text);
+        System.out.println("editor --> " + _editor);
+        _editor.setText(text);
     }
 
     public void setView(IExpressionView view) {
         _view = view;
-        _view.setExpression(_text, _cursor);
+        _view.setExpression(_editor.getText(), _cursor.getPosition());
         _view.setIExpressionViewListener(this);
     }
 
-    public void setKeyboardView(IKeyboardDisplayView keyboardView) {
-        _keyboardView = keyboardView;
-        _keyboardView.registerIKeyboardDisplayViewListener(this);
-    }
-
-    //region IKeyboardDisplayViewListener
-    @Override
-    public void OnMoveLeft() {
-        advanceCursor(-1);
+    public void moveCursorLeft() {
+        _cursor.moveLeft();
         updateView();
     }
 
-    @Override
-    public void OnMoveRight() {
-        advanceCursor(1);
+    public void moveCursorRight() {
+        _cursor.moveRight();
         updateView();
     }
 
-    @Override
-    public void OnDelete() {
-        if (_cursor - 1 >= 0) {
-            _text = _text.substring(0, _cursor - 1)
-                    + _text.substring(_cursor);
-            advanceCursor(-1);
-        }
+    public void deleteCharacter() {
+        _editor.backspace();
 
         updateDomain();
         updateView();
     }
 
     private void updateDomain(){
-        _expressionRepo.getActive().setExpressionString(_text);
-
         try {
-            _evaluator.updateExpression(_text);
+            _expressionRepo.updateActive(_editor.getText());
+            _evaluator.tryParse(_editor.getText());
+            _view.indicateError(false);
         } catch (ExpressionParsingException e) {
+            _view.indicateError(true);
         }
     }
 
-    @Override
-    public void OnAddElement(String element) {
-        _text = _text.substring(0, _cursor) + element
-                + _text.substring(_cursor);
-        advanceCursor(element.length());
-
+    public void addElement(String element) {
+        element = element.trim();
+        _editor.add(element);
         updateDomain();
         updateView();
     }
 
-    @Override
-    public void OnCloseKeyboard() {
+    public void endEdit() {
         _appController.CloseKeyboard();
-    }
-    //endregion
-
-    private void advanceCursor(int spaces) {
-        _cursor = (_cursor + spaces < _text.length() && _cursor + spaces >= 0) ? _cursor
-                + spaces
-                : _cursor;
     }
 
     private void updateView(){
-        _view.setExpression(_text,_cursor);
+        _view.setExpression(_editor.getText(),_cursor.getPosition());
     }
 
     @Override
-    public void OnActiveExpressionChanged() {
+    public void onExpressionEvent() {
         setActiveExpression(_expressionRepo.getActive());
         updateView();
     }

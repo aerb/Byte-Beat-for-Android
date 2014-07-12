@@ -2,6 +2,7 @@ package com.tasty.fish.presenters;
 
 import com.tasty.fish.android.media.audio.IAudioPlayer;
 import com.tasty.fish.domain.IExpressionEvaluator;
+import com.tasty.fish.domain.IExpressionListener;
 import com.tasty.fish.domain.IExpressionsRepository;
 import com.tasty.fish.domain.implementation.ByteBeatExpression;
 import com.tasty.fish.utils.FileSystem;
@@ -11,8 +12,7 @@ import com.tasty.fish.views.IMediaControlsView;
 
 import java.io.IOException;
 
-public class MediaControlsPresenter implements
-        IExpressionsRepository.IExpressionsRepositoryListener
+public class MediaControlsPresenter implements IExpressionListener
 {
     private IMediaControlsView _view;
 
@@ -35,7 +35,7 @@ public class MediaControlsPresenter implements
         _evaluator = evaluator;
 
         _repo = repo;
-        _repo.setIExpressionsRepositoryListener(this);
+        _repo.setActiveChangedListener(this);
 
         try {
             _evaluator.setExpression(_repo.getActive());
@@ -84,9 +84,8 @@ public class MediaControlsPresenter implements
         _visuals.stop();
     }
 
-    //region IExpressionRepository methods
     @Override
-    public void OnActiveExpressionChanged() {
+    public void onExpressionEvent() {
         ByteBeatExpression exp = _repo.getActive();
         try {
             _evaluator.setExpression(exp);
