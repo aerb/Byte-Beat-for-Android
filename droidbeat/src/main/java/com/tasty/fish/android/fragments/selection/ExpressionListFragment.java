@@ -14,7 +14,7 @@ import com.tasty.fish.R;
 import com.tasty.fish.android.DroidBeatActivity;
 import com.tasty.fish.android.ExpressionElement;
 import com.tasty.fish.android.Message;
-import com.tasty.fish.domain.IExpressionsRepository;
+import com.tasty.fish.domain.IExpressionList;
 import com.tasty.fish.domain.Listener;
 import com.tasty.fish.domain.implementation.Expression;
 import com.tasty.fish.presenters.ExpressionSelectionPresenter;
@@ -22,12 +22,11 @@ import com.tasty.fish.presenters.ExpressionSelectionPresenter;
 import java.io.IOException;
 import java.util.List;
 
-public class ExpressionSelectionFragment extends Fragment {
+public class ExpressionListFragment extends Fragment {
     private ExpressionSelectionPresenter _presenter;
-    private ImageView _cancelBtn;
     private ListView _list;
     private ExpressionListAdapter _adapter;
-    private IExpressionsRepository _repo;
+    private IExpressionList _repo;
 
     @Override
     public void onAttach(Activity activity) {
@@ -85,7 +84,7 @@ public class ExpressionSelectionFragment extends Fragment {
             }
         });
 
-        _cancelBtn = (ImageView)view.findViewById(R.id.selectionCancel);
+        ImageView _cancelBtn = (ImageView) view.findViewById(R.id.selectionCancel);
         _cancelBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

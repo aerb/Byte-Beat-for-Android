@@ -1,12 +1,12 @@
 package com.tasty.fish.domain.implementation;
 
+import com.tasty.fish.domain.IExpressionList;
 import com.tasty.fish.domain.Listener;
-import com.tasty.fish.domain.IExpressionsRepository;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ExpressionsRepository implements IExpressionsRepository {
+public class ExpressionList implements IExpressionList {
 
     private final ArrayList<Expression> _expressions;
 
@@ -23,26 +23,25 @@ public class ExpressionsRepository implements IExpressionsRepository {
 
     private Expression _active;
 
-
-    public ExpressionsRepository() {
+    public ExpressionList() {
         _expressions = new ArrayList<Expression>();
-        initializeExpressions();
+        initialize();
     }
 
-    private void initializeExpressions(){
+    private void initialize(){
         for(Expression e : DefaultExpressions.get())
             add(e);
         setActiveExpression(0);
     }
 
-    public void add(Expression e) {
-        _expressions.add(e);
-        e.setChangeListener(eventRouter);
+    public void add(Expression expression) {
+        _expressions.add(expression);
+        expression.setChangeListener(eventRouter);
         _setChange.notify(_expressions);
     }
 
     @Override
-    public void setActiveExpression(Expression expression) {
+    public void setActive(Expression expression) {
         int index = _expressions.indexOf(expression);
         if(index >= 0) setActiveExpression(index);
     }
@@ -51,6 +50,15 @@ public class ExpressionsRepository implements IExpressionsRepository {
     public boolean contains(String name) {
         for (Expression e : _expressions){
             if(e.getName().equals(name)) return true;
+        }
+        return false;
+    }
+
+    @Override
+    public boolean hasDirty() {
+        for(Expression expression : _expressions){
+            if(expression.isDirty() && !expression.isReadOnly())
+                return true;
         }
         return false;
     }

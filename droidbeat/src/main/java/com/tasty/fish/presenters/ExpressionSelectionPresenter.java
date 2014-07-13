@@ -1,6 +1,6 @@
 package com.tasty.fish.presenters;
 
-import com.tasty.fish.domain.IExpressionsRepository;
+import com.tasty.fish.domain.IExpressionList;
 import com.tasty.fish.domain.implementation.Expression;
 import com.tasty.fish.views.IAppController;
 
@@ -9,12 +9,12 @@ import java.io.IOException;
 public class ExpressionSelectionPresenter
 {
     private final ExpressionIO _io;
-    private IExpressionsRepository _repo;
+    private IExpressionList _repo;
     private final IAppController _appController;
 
     public ExpressionSelectionPresenter(
         ExpressionIO io,
-        IExpressionsRepository expressionsRepository,
+        IExpressionList expressionsRepository,
         IAppController appController) {
         _io = io;
         _repo = expressionsRepository;
@@ -31,7 +31,7 @@ public class ExpressionSelectionPresenter
     }
 
     public void selectExpression(Expression expression) {
-        _repo.setActiveExpression(expression);
+        _repo.setActive(expression);
     }
 
     public void select(int index){

@@ -1,8 +1,8 @@
 package com.tasty.fish.presenters;
 
+import com.tasty.fish.domain.IExpressionList;
 import com.tasty.fish.domain.Listener;
 import com.tasty.fish.domain.IExpressionEvaluator;
-import com.tasty.fish.domain.IExpressionsRepository;
 import com.tasty.fish.domain.implementation.Expression;
 import com.tasty.fish.text.TextCursor;
 import com.tasty.fish.text.TextEditor;
@@ -17,13 +17,13 @@ public class ExpressionPresenter implements
     private TextEditor _editor;
     private TextCursor _cursor;
 
-    private final IExpressionsRepository _expressionRepo;
+    private final IExpressionList _expressionRepo;
     private final IAppController _appController;
     private final IExpressionEvaluator _evaluator;
 
     public ExpressionPresenter(
         IExpressionEvaluator evaluator,
-        IExpressionsRepository expressionsRepository,
+        IExpressionList expressionsRepository,
         IAppController appController)
     {
         _evaluator = evaluator;

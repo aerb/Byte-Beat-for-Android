@@ -1,8 +1,8 @@
 package com.tasty.fish.presenters;
 
+import com.tasty.fish.domain.IExpressionList;
 import com.tasty.fish.domain.Listener;
 import com.tasty.fish.domain.IExpressionEvaluator;
-import com.tasty.fish.domain.IExpressionsRepository;
 import com.tasty.fish.domain.implementation.Expression;
 import com.tasty.fish.views.IParameterView;
 
@@ -10,11 +10,11 @@ public class ParametersPresenter implements IParameterView.IParameterViewListene
 {
 
     private IParameterView _view;
-    private final IExpressionsRepository _repo;
+    private final IExpressionList _repo;
     private final IExpressionEvaluator _evaluator;
 
     public ParametersPresenter(
-        IExpressionsRepository repo,
+        IExpressionList repo,
         IExpressionEvaluator evaluator)
     {
         _repo = repo;

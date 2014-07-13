@@ -1,12 +1,11 @@
 package com.tasty.fish.presenters;
 
 import com.tasty.fish.android.media.audio.IAudioPlayer;
-import com.tasty.fish.domain.Listener;
 import com.tasty.fish.domain.IExpressionEvaluator;
-import com.tasty.fish.domain.IExpressionsRepository;
+import com.tasty.fish.domain.IExpressionList;
+import com.tasty.fish.domain.Listener;
 import com.tasty.fish.domain.implementation.Expression;
 import com.tasty.fish.utils.FileSystem;
-import com.tasty.fish.utils.parser.utils.ExpressionParsingException;
 import com.tasty.fish.views.IAppController;
 import com.tasty.fish.views.IMediaControlsView;
 
@@ -17,48 +16,26 @@ public class MediaControlsPresenter
     private IMediaControlsView _view;
 
     private final IExpressionEvaluator _evaluator;
-    private final IExpressionsRepository _repo;
+    private final IExpressionList _repo;
     private final IAudioPlayer _audio;
     private final BufferVisualsPresenter _visuals;
-    private final IAppController _appController;
     private boolean _recording;
     private String _recordingPath;
 
     public MediaControlsPresenter(
             IExpressionEvaluator evaluator,
-            IExpressionsRepository repo,
+            IExpressionList repo,
             IAudioPlayer audio,
             BufferVisualsPresenter visuals,
             IAppController appController
     )
     {
         _evaluator = evaluator;
-
         _repo = repo;
-        _repo.addActiveChangedListener(new Listener<Expression>() {
-            @Override
-            public void onEvent(Expression expression) {
-                try {
-                    _evaluator.setExpression(expression);
-                } catch (ExpressionParsingException e) {
-                    e.printStackTrace();
-                }
-                updateView();
-            }
-        });
-
-        try {
-            _evaluator.setExpression(_repo.getActive());
-        } catch (ExpressionParsingException e) {
-            e.printStackTrace();
-        }
-
+        _evaluator.setExpression(_repo.getActive());
         _audio = audio;
-
         _visuals = visuals;
         _visuals.setBuffer(_audio.getBuffer());
-
-        _appController = appController;
     }
 
     private void updateView() {
@@ -67,6 +44,13 @@ public class MediaControlsPresenter
 
     public void setView(IMediaControlsView view) {
         _view = view;
+        _repo.addActiveChangedListener(new Listener<Expression>() {
+            @Override
+            public void onEvent(Expression expression) {
+                _evaluator.setExpression(expression);
+                updateView();
+            }
+        });
         updateView();
     }
 

@@ -4,9 +4,9 @@ import com.tasty.fish.android.AppController;
 import com.tasty.fish.android.media.audio.AudioPlayer;
 import com.tasty.fish.android.media.audio.IAudioPlayer;
 import com.tasty.fish.domain.IExpressionEvaluator;
-import com.tasty.fish.domain.IExpressionsRepository;
+import com.tasty.fish.domain.IExpressionList;
 import com.tasty.fish.domain.implementation.ExpressionEvaluator;
-import com.tasty.fish.domain.implementation.ExpressionsRepository;
+import com.tasty.fish.domain.implementation.ExpressionList;
 import com.tasty.fish.presenters.BufferVisualsPresenter;
 import com.tasty.fish.presenters.CreateExpressionPresenter;
 import com.tasty.fish.presenters.ExpressionIO;
@@ -20,7 +20,7 @@ public class CompositionRoot {
 
     private ExpressionSelectionPresenter _expressionSelectorPresenter;
     private IExpressionEvaluator _expressionEvaluator;
-    private IExpressionsRepository _expressionsRepository;
+    private IExpressionList _expressionsRepository;
     private MediaControlsPresenter _mediaControlsPresenter;
     private IAudioPlayer _audioPlayer;
     private BufferVisualsPresenter _bufferVisualsPresenter;
@@ -50,10 +50,10 @@ public class CompositionRoot {
               (_expressionEvaluator = new ExpressionEvaluator());
     }
 
-    public IExpressionsRepository getExpressionsRepository() {
+    public IExpressionList getExpressionsRepository() {
         return _expressionsRepository != null ?
                _expressionsRepository :
-              (_expressionsRepository = new ExpressionsRepository());
+              (_expressionsRepository = new ExpressionList());
     }
 
     public MediaControlsPresenter getMediaControlsPresenter() {

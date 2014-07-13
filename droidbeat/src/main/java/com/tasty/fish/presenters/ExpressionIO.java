@@ -1,6 +1,6 @@
 package com.tasty.fish.presenters;
 
-import com.tasty.fish.domain.IExpressionsRepository;
+import com.tasty.fish.domain.IExpressionList;
 import com.tasty.fish.domain.implementation.Expression;
 import com.tasty.fish.utils.FileSystem;
 
@@ -12,11 +12,11 @@ import java.io.PrintWriter;
 
 public class ExpressionIO {
     private final FileSystem _fileSystem;
-    private final IExpressionsRepository _repo;
+    private final IExpressionList _repo;
 
     public ExpressionIO(
             FileSystem fileSystem,
-            IExpressionsRepository repo) {
+            IExpressionList repo) {
         _fileSystem = fileSystem;
         _repo = repo;
     }

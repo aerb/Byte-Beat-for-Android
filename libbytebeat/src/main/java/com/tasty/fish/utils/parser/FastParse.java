@@ -215,4 +215,13 @@ public class FastParse {
     public void tryParse(String expression) throws ExpressionParsingException {
         rootNode = parse(expression);
     }
+
+    public void clear(){
+        rootNode = new IExpressionNode() {
+            @Override
+            public long eval() {
+                return 0;
+            }
+        };
+    }
 }

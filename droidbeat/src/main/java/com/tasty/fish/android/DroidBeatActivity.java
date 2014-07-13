@@ -17,10 +17,10 @@ import com.tasty.fish.android.fragments.ExportFragment;
 import com.tasty.fish.android.fragments.keyboard.KeyboardFragment;
 import com.tasty.fish.android.fragments.naming.CreateExpressionFragment;
 import com.tasty.fish.android.fragments.parameters.ParametersFragment;
-import com.tasty.fish.android.fragments.selection.ExpressionSelectionFragment;
+import com.tasty.fish.android.fragments.selection.ExpressionListFragment;
 import com.tasty.fish.android.fragments.visuals.buffer.BufferVisualsFragment;
 import com.tasty.fish.android.fragments.visuals.expression.ExpressionFragment;
-import com.tasty.fish.domain.IExpressionsRepository;
+import com.tasty.fish.domain.IExpressionList;
 import com.tasty.fish.presenters.ExpressionIO;
 import com.tasty.fish.presenters.MediaControlsPresenter;
 import com.tasty.fish.utils.CompositionRoot;
@@ -55,7 +55,7 @@ public class DroidBeatActivity extends FragmentActivity implements
     private View _paramsContainer;
     private IAppController _appController;
     private ClipboardManager _clipboard;
-    private IExpressionsRepository _repo;
+    private IExpressionList _repo;
     private BufferVisualsFragment _bufferVisuals;
     private boolean _paidVersion;
 
@@ -86,7 +86,7 @@ public class DroidBeatActivity extends FragmentActivity implements
                 .add(R.id.upperFragmentContainer, new ExpressionFragment())
                 .add(R.id.mainBufferFragmentContainer, _bufferVisuals)
                 .add(R.id.mainParametersFragmentContainer, new ParametersFragment())
-                .add(R.id.mainSelectorFragmentContainer, new ExpressionSelectionFragment())
+                .add(R.id.mainSelectorFragmentContainer, new ExpressionListFragment())
                 .add(R.id.mainKeyboardFragmentContainer, new KeyboardFragment())
                 .commit();
 
@@ -239,17 +239,19 @@ public class DroidBeatActivity extends FragmentActivity implements
 
     @Override
     public void onBackPressed() {
+        if(!_repo.hasDirty()) {
+            finish();
+            return;
+        }
         new AlertDialog.Builder(this)
             .setIcon(android.R.drawable.ic_dialog_alert)
-            .setTitle("Closing Activity")
-            .setMessage("Are you sure you want to close this activity?")
-            .setPositiveButton("Yes", new DialogInterface.OnClickListener()
-            {
+            .setTitle("Unsaved Expressions")
+            .setMessage("Are you sure you want to exit and lose unsaved changes?")
+            .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     finish();
                 }
-
             })
             .setNegativeButton("No", null)
             .show();

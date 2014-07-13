@@ -1,15 +1,15 @@
 package com.tasty.fish.presenters;
-import com.tasty.fish.domain.IExpressionsRepository;
+import com.tasty.fish.domain.IExpressionList;
 import com.tasty.fish.domain.implementation.Expression;
 
 import java.util.regex.Pattern;
 
 public class CreateExpressionPresenter {
 
-    private final IExpressionsRepository _repo;
+    private final IExpressionList _repo;
 
     public CreateExpressionPresenter(
-            IExpressionsRepository repo
+            IExpressionList repo
         )
     {
         _repo = repo;

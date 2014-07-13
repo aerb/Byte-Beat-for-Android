@@ -7,8 +7,6 @@ import com.tasty.fish.utils.parser.utils.MutableFixed;
 
 public class ExpressionEvaluator implements IExpressionEvaluator {
 
-    private Expression _expression;
-
     private FastParse _parser;
     private MutableFixed _parserTime;
     private MutableFixed[] _parserArgs;
@@ -33,20 +31,23 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
         _t = 0;
     }
 
-    public void setExpression(Expression expression) throws ExpressionParsingException {
+    public void setExpression(Expression expression) {
         if(expression == null)
             throw new IllegalArgumentException("Expression cannot be null");
 
         _t = 0;
 
-        _expression = expression;
-        _timeDelta = _expression.getTimeDelta();
+        _timeDelta = expression.getTimeDelta();
 
-        _parserArgs[0].Value = _expression.getArgument(0);
-        _parserArgs[1].Value = _expression.getArgument(1);
-        _parserArgs[2].Value = _expression.getArgument(2);
+        _parserArgs[0].Value = expression.getArgument(0);
+        _parserArgs[1].Value = expression.getArgument(1);
+        _parserArgs[2].Value = expression.getArgument(2);
 
-        _parser.tryParse(expression.getExpressionString());
+        try {
+            _parser.tryParse(expression.getExpressionString());
+        } catch (ExpressionParsingException e) {
+            _parser.clear();
+        }
     }
 
     public void tryParse(String e) throws ExpressionParsingException {
