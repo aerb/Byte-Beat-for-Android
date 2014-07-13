@@ -45,7 +45,7 @@ public class CompositionRoot {
     public IExpressionEvaluator getExpressionEvaluator() {
         return _expressionEvaluator != null ?
                _expressionEvaluator :
-              (_expressionEvaluator = new ExpressionEvaluator());
+              (_expressionEvaluator = new ExpressionEvaluator(getExpressionsRepository()));
     }
 
     public IExpressionList getExpressionsRepository() {

@@ -45,12 +45,10 @@ public class ParametersPresenter implements IParameterView.IParameterViewListene
 
     private void updateTimeScale(double inc) {
         _repo.getActive().setTimeDelta(inc);
-        _evaluator.updateTimedelta(inc);
     }
 
     private void updateArgument(int i, int x) {
         _repo.getActive().setParameter(i, x);
-        _evaluator.updateArgument(i, x);
     }
 
     private void resetTime() {

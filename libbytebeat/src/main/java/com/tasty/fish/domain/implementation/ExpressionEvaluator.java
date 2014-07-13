@@ -1,15 +1,17 @@
 package com.tasty.fish.domain.implementation;
 
 import com.tasty.fish.domain.IExpressionEvaluator;
-import com.tasty.fish.parser.utils.ExpressionParsingException;
+import com.tasty.fish.domain.IExpressionList;
+import com.tasty.fish.domain.Listener;
 import com.tasty.fish.parser.FastParse;
-import com.tasty.fish.parser.utils.MutableFixed;
+import com.tasty.fish.parser.utils.ExpressionParsingException;
+import com.tasty.fish.parser.utils.ParseArgument;
 
 public class ExpressionEvaluator implements IExpressionEvaluator {
 
     private FastParse _parser;
-    private MutableFixed _parserTime;
-    private MutableFixed[] _parserArgs;
+    private ParseArgument _parserTime;
+    private ParseArgument[] _parserArgs;
 
     private double _timeDelta;
     private double _t;
@@ -17,37 +19,46 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
     private int _sampleIndex = 0;
     private int _numSamples = 100;
     private long[] _samplesTimes = new long[_numSamples];
+    private Expression _expression;
 
-    public ExpressionEvaluator() {
+    public ExpressionEvaluator(final IExpressionList expressions) {
         _parser = new FastParse(ByteBeat.EXPRESSION_PARAMETERS);
-
-        _parserArgs = new MutableFixed[3];
+        _parserArgs = new ParseArgument[3];
         _parserTime = _parser.getParametersMap().get(ByteBeat.TIME_SYMBOL);
-
         _parserArgs[0] = _parser.getParametersMap().get(ByteBeat.P0);
         _parserArgs[1] = _parser.getParametersMap().get(ByteBeat.P1);
         _parserArgs[2] = _parser.getParametersMap().get(ByteBeat.P2);
 
         _t = 0;
+
+        expressions.addExpressionUpdateListener(new Listener<Expression>() {
+            @Override
+            public void onEvent(Expression item) {
+                if(_expression == item)
+                    updateParser(_expression);
+            }
+        });
     }
 
     public void setExpression(Expression expression) {
         if(expression == null)
             throw new IllegalArgumentException("Expression cannot be null");
 
-        _t = 0;
-
-        _timeDelta = expression.getTimeDelta();
-
-        _parserArgs[0].Value = expression.getArgument(0);
-        _parserArgs[1].Value = expression.getArgument(1);
-        _parserArgs[2].Value = expression.getArgument(2);
-
         try {
+            _t = 0;
+            updateParser(expression);
             _parser.tryParse(expression.getExpressionString());
+            _expression = expression;
         } catch (ExpressionParsingException e) {
             _parser.clear();
         }
+    }
+
+    private void updateParser(Expression expression){
+        _timeDelta = expression.getTimeDelta();
+        _parserArgs[0].Value = expression.getArgument(0);
+        _parserArgs[1].Value = expression.getArgument(1);
+        _parserArgs[2].Value = expression.getArgument(2);
     }
 
     public void tryParse(String e) throws ExpressionParsingException {

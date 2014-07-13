@@ -1,11 +1,11 @@
 package com.tasty.fish.parser.node;
 
-import com.tasty.fish.parser.utils.MutableFixed;
+import com.tasty.fish.parser.utils.ParseArgument;
 
 public class VariableNode implements IExpressionNode{
-    private final MutableFixed _variableValue;
+    private final ParseArgument _variableValue;
 
-    public VariableNode(MutableFixed d) {
+    public VariableNode(ParseArgument d) {
         _variableValue = d;
     }
 

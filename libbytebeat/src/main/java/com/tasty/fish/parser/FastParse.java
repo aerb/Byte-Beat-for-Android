@@ -4,7 +4,7 @@ import com.tasty.fish.parser.node.*;
 import com.tasty.fish.parser.operators.Definitions;
 import com.tasty.fish.parser.operators.Iop;
 import com.tasty.fish.parser.utils.ExpressionParsingException;
-import com.tasty.fish.parser.utils.MutableFixed;
+import com.tasty.fish.parser.utils.ParseArgument;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -15,7 +15,7 @@ public class FastParse {
 
     private Map<String, Iop> _opMap = Definitions.getOperatorDefinitions();
 
-    private HashMap<String ,MutableFixed> _parametersMap;
+    private HashMap<String ,ParseArgument> _parametersMap;
 
     private IExpressionNode rootNode = null;
 
@@ -44,9 +44,9 @@ public class FastParse {
     //endregion
 
     public FastParse(String[] parameterKeys) {
-        _parametersMap = new HashMap<String, MutableFixed>();
+        _parametersMap = new HashMap<String, ParseArgument>();
         for(String k : parameterKeys)
-            _parametersMap.put(k, new MutableFixed(0));
+            _parametersMap.put(k, new ParseArgument(0));
     }
 
     //region Bracket matching
@@ -198,12 +198,12 @@ public class FastParse {
     //endregion
 
     //region Getters & Setters
-    public Map<String, MutableFixed> getParametersMap(){
+    public Map<String, ParseArgument> getParametersMap(){
         return _parametersMap;
     }
 
     private VariableNode getVariableNode(String key) {
-        MutableFixed found = _parametersMap.get(key);
+        ParseArgument found = _parametersMap.get(key);
         return found != null ? new VariableNode(found) : null;
     }
     //endregion
