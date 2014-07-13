@@ -21,20 +21,20 @@ import com.tasty.fish.android.fragments.selection.ExpressionListFragment;
 import com.tasty.fish.android.fragments.visuals.buffer.BufferVisualsFragment;
 import com.tasty.fish.android.fragments.visuals.expression.ExpressionFragment;
 import com.tasty.fish.domain.IExpressionList;
+import com.tasty.fish.domain.Listener;
+import com.tasty.fish.domain.implementation.Expression;
 import com.tasty.fish.presenters.ExpressionIO;
-import com.tasty.fish.presenters.MediaControlsPresenter;
+import com.tasty.fish.presenters.MediaController;
 import com.tasty.fish.utils.CompositionRoot;
 import com.tasty.fish.utils.Manifest;
 import com.tasty.fish.views.IAppController;
 import com.tasty.fish.views.IExpressionView;
-import com.tasty.fish.views.IMediaControlsView;
 
 import java.io.IOException;
 
 public class DroidBeatActivity extends FragmentActivity implements
         OnClickListener,
-        IExpressionView.IExpressionViewListener,
-        IMediaControlsView
+        IExpressionView.IExpressionViewListener
 {
     private View _loadNewExpressionBtn;
 
@@ -42,7 +42,7 @@ public class DroidBeatActivity extends FragmentActivity implements
     private View _stopBtn;
     private View _recordBtn;
 
-    private MediaControlsPresenter _mediaControlsPresenter;
+    private MediaController _mediaControlsPresenter;
 
     private TextView _expressionTitleTextView;
     private CompositionRoot _root;
@@ -123,6 +123,13 @@ public class DroidBeatActivity extends FragmentActivity implements
         _appController.ShowParams();
 
         _repo = _root.getExpressionsRepository();
+        _expressionTitleTextView.setText(_repo.getActive().getName());
+        _repo.addActiveChangedListener(new Listener<Expression>() {
+            @Override
+            public void onEvent(Expression expression) {
+                _expressionTitleTextView.setText(expression.getName());
+            }
+        });
         ExpressionIO io = _root.getExpressionIO();
         try {
             io.loadAll();
@@ -131,8 +138,6 @@ public class DroidBeatActivity extends FragmentActivity implements
         }
 
         _mediaControlsPresenter = _root.getMediaControlsPresenter();
-        _mediaControlsPresenter.setView(this);
-
         _clipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
     }
 
@@ -205,11 +210,6 @@ public class DroidBeatActivity extends FragmentActivity implements
     //endregion
 
     //region IMediaControlsView methods
-
-    @Override
-    public void setTitle(String title) {
-        _expressionTitleTextView.setText(title);
-    }
 
     @Override
     public void OnRequestEdit() {

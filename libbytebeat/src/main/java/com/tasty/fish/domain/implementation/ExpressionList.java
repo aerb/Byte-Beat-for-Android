@@ -31,7 +31,7 @@ public class ExpressionList implements IExpressionList {
     private void initialize(){
         for(Expression e : DefaultExpressions.get())
             add(e);
-        setActiveExpression(0);
+        setActive(0);
     }
 
     public void add(Expression expression) {
@@ -43,7 +43,7 @@ public class ExpressionList implements IExpressionList {
     @Override
     public void setActive(Expression expression) {
         int index = _expressions.indexOf(expression);
-        if(index >= 0) setActiveExpression(index);
+        if(index >= 0) setActive(index);
     }
 
     @Override
@@ -88,7 +88,7 @@ public class ExpressionList implements IExpressionList {
     }
 
     @Override
-    public void setActiveExpression(int position) {
+    public void setActive(int position) {
         _active = _expressions.get(position);
         _activeChange.notify(_active);
     }

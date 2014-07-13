@@ -12,7 +12,7 @@ import com.tasty.fish.presenters.CreateExpressionPresenter;
 import com.tasty.fish.presenters.ExpressionIO;
 import com.tasty.fish.presenters.ExpressionPresenter;
 import com.tasty.fish.presenters.ExpressionSelectionPresenter;
-import com.tasty.fish.presenters.MediaControlsPresenter;
+import com.tasty.fish.presenters.MediaController;
 import com.tasty.fish.presenters.ParametersPresenter;
 import com.tasty.fish.views.IAppController;
 
@@ -21,7 +21,7 @@ public class CompositionRoot {
     private ExpressionSelectionPresenter _expressionSelectorPresenter;
     private IExpressionEvaluator _expressionEvaluator;
     private IExpressionList _expressionsRepository;
-    private MediaControlsPresenter _mediaControlsPresenter;
+    private MediaController _mediaControlsPresenter;
     private IAudioPlayer _audioPlayer;
     private BufferVisualsPresenter _bufferVisualsPresenter;
     private ParametersPresenter _parametersPresenter;
@@ -56,11 +56,11 @@ public class CompositionRoot {
               (_expressionsRepository = new ExpressionList());
     }
 
-    public MediaControlsPresenter getMediaControlsPresenter() {
+    public MediaController getMediaControlsPresenter() {
         return
             _mediaControlsPresenter != null ?
             _mediaControlsPresenter :
-           (_mediaControlsPresenter = new MediaControlsPresenter(
+           (_mediaControlsPresenter = new MediaController(
                 getExpressionEvaluator(),
                 getExpressionsRepository(),
                 getAudioPlayer(),

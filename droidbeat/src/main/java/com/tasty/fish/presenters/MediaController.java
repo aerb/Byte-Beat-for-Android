@@ -7,14 +7,11 @@ import com.tasty.fish.domain.Listener;
 import com.tasty.fish.domain.implementation.Expression;
 import com.tasty.fish.utils.FileSystem;
 import com.tasty.fish.views.IAppController;
-import com.tasty.fish.views.IMediaControlsView;
 
 import java.io.IOException;
 
-public class MediaControlsPresenter
+public class MediaController
 {
-    private IMediaControlsView _view;
-
     private final IExpressionEvaluator _evaluator;
     private final IExpressionList _repo;
     private final IAudioPlayer _audio;
@@ -22,7 +19,7 @@ public class MediaControlsPresenter
     private boolean _recording;
     private String _recordingPath;
 
-    public MediaControlsPresenter(
+    public MediaController(
             IExpressionEvaluator evaluator,
             IExpressionList repo,
             IAudioPlayer audio,
@@ -36,22 +33,12 @@ public class MediaControlsPresenter
         _audio = audio;
         _visuals = visuals;
         _visuals.setBuffer(_audio.getBuffer());
-    }
-
-    private void updateView() {
-        _view.setTitle(_repo.getActive().getName());
-    }
-
-    public void setView(IMediaControlsView view) {
-        _view = view;
         _repo.addActiveChangedListener(new Listener<Expression>() {
             @Override
             public void onEvent(Expression expression) {
                 _evaluator.setExpression(expression);
-                updateView();
             }
         });
-        updateView();
     }
 
     public void startRecord() throws IOException {
@@ -81,5 +68,4 @@ public class MediaControlsPresenter
     public String getRecordingPath() {
         return _recordingPath;
     }
-    //endregion
 }

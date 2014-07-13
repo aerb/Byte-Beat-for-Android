@@ -35,7 +35,7 @@ public class ExpressionSelectionPresenter
     }
 
     public void select(int index){
-        _repo.setActiveExpression(index);
+        _repo.setActive(index);
     }
 
     public void exitView() {
