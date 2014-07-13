@@ -7,7 +7,7 @@ import com.tasty.fish.utils.parser.utils.MutableFixed;
 
 public class ExpressionEvaluator implements IExpressionEvaluator {
 
-    private ByteBeatExpression _expression;
+    private Expression _expression;
 
     private FastParse _parser;
     private MutableFixed _parserTime;
@@ -33,7 +33,7 @@ public class ExpressionEvaluator implements IExpressionEvaluator {
         _t = 0;
     }
 
-    public void setExpression(ByteBeatExpression expression) throws ExpressionParsingException {
+    public void setExpression(Expression expression) throws ExpressionParsingException {
         if(expression == null)
             throw new IllegalArgumentException("Expression cannot be null");
 

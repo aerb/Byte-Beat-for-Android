@@ -1,6 +1,6 @@
 package com.tasty.fish.domain;
 
-public interface IChangeListener<T>
+public interface Listener<T>
 {
     void onEvent(T expression);
 }

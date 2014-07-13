@@ -1,7 +1,7 @@
 package com.tasty.fish.presenters;
 
 import com.tasty.fish.domain.IExpressionsRepository;
-import com.tasty.fish.domain.implementation.ByteBeatExpression;
+import com.tasty.fish.domain.implementation.Expression;
 import com.tasty.fish.views.IAppController;
 
 import java.io.IOException;
@@ -21,16 +21,16 @@ public class ExpressionSelectionPresenter
         _appController = appController;
     }
 
-    public void save(ByteBeatExpression expression) throws IOException {
+    public void save(Expression expression) throws IOException {
         _io.save(expression);
     }
 
-    public void delete(ByteBeatExpression expression) throws IOException {
+    public void delete(Expression expression) throws IOException {
         _repo.remove(expression);
         _io.delete(expression);
     }
 
-    public void selectExpression(ByteBeatExpression expression) {
+    public void selectExpression(Expression expression) {
         _repo.setActiveExpression(expression);
     }
 

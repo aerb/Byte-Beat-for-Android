@@ -11,7 +11,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.tasty.fish.R;
-import com.tasty.fish.domain.implementation.ByteBeatExpression;
+import com.tasty.fish.domain.Listener;
+import com.tasty.fish.domain.implementation.Expression;
 
 public class ExpressionElement extends RelativeLayout {
     private final Context _context;
@@ -19,10 +20,10 @@ public class ExpressionElement extends RelativeLayout {
     private HighlightButton _save;
     private HighlightButton _delete;
 
-    private IExpressionEventListener _selection;
-    private IExpressionEventListener _onSave;
-    private IExpressionEventListener _onDelete;
-    private ByteBeatExpression _expression;
+    private Listener<Expression> _selection;
+    private Listener<Expression> _onSave;
+    private Listener<Expression> _onDelete;
+    private Expression _expression;
 
     public ExpressionElement(Context context) {
         super(context);
@@ -30,7 +31,7 @@ public class ExpressionElement extends RelativeLayout {
         create();
     }
 
-    public void setExpression(ByteBeatExpression expression){
+    public void setExpression(Expression expression){
         _expression = expression;
         if(_expression.isDirty() && !_expression.isReadOnly()){
             _text.setText(_expression.getName() + " *");
@@ -121,13 +122,13 @@ public class ExpressionElement extends RelativeLayout {
         addView(buttonLayout);
     }
 
-    public void setSelectionListener(IExpressionEventListener listener) {
+    public void setSelectionListener(Listener<Expression> listener) {
         _selection = listener;
     }
-    public void setSaveListener(IExpressionEventListener listener) {
+    public void setSaveListener(Listener<Expression> listener) {
         _onSave = listener;
     }
-    public void setDeleteListener(IExpressionEventListener listener) {
+    public void setDeleteListener(Listener<Expression> listener) {
         _onDelete = listener;
     }
 }

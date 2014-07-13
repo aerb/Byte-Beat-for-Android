@@ -7,20 +7,21 @@ import android.view.ViewGroup;
 import android.widget.ListAdapter;
 
 import com.tasty.fish.android.ExpressionElement;
-import com.tasty.fish.android.IExpressionEventListener;
-import com.tasty.fish.domain.implementation.ByteBeatExpression;
+import com.tasty.fish.domain.Listener;
+import com.tasty.fish.domain.implementation.Expression;
 
 import java.util.List;
 
-public class ExpressionSelectionAdapter implements ListAdapter {
+public class ExpressionListAdapter implements ListAdapter {
 
-    private final List<ByteBeatExpression> _expressions;
+    private final List<Expression> _expressions;
     private final Context _context;
-    private IExpressionEventListener _onSave;
-    private IExpressionEventListener _onDelete;
-    private IExpressionEventListener _onSelect;
 
-    public ExpressionSelectionAdapter(Context context, List<ByteBeatExpression> expressions) {
+    private Listener<Expression> _onSave;
+    private Listener<Expression> _onDelete;
+    private Listener<Expression> _onSelect;
+
+    public ExpressionListAdapter(Context context, List<Expression> expressions) {
         _expressions = expressions;
         _context = context;
     }
@@ -94,14 +95,14 @@ public class ExpressionSelectionAdapter implements ListAdapter {
     }
 
 
-    public void setSaveListener(IExpressionEventListener listener) {
+    public void setSaveListener(Listener<Expression> listener) {
         this._onSave = listener;
     }
-    public void setDeleteListener(IExpressionEventListener listener) {
+    public void setDeleteListener(Listener<Expression> listener) {
         _onDelete = listener;
     }
 
-    public void setSelectListener(IExpressionEventListener _onSelect) {
+    public void setSelectListener(Listener<Expression> _onSelect) {
         this._onSelect = _onSelect;
     }
 }

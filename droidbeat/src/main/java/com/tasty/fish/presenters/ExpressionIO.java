@@ -1,7 +1,7 @@
 package com.tasty.fish.presenters;
 
 import com.tasty.fish.domain.IExpressionsRepository;
-import com.tasty.fish.domain.implementation.ByteBeatExpression;
+import com.tasty.fish.domain.implementation.Expression;
 import com.tasty.fish.utils.FileSystem;
 
 import java.io.BufferedReader;
@@ -21,19 +21,19 @@ public class ExpressionIO {
         _repo = repo;
     }
 
-    private File getExpressionPath(ByteBeatExpression expression) throws IOException {
+    private File getExpressionPath(Expression expression) throws IOException {
         String name = expression.getName();
         return new File(_fileSystem.getSavedDir(), name + FileSystem.ext);
     }
 
     public void saveAll() throws IOException {
-        for(ByteBeatExpression exp : _repo.getExpressions()){
+        for(Expression exp : _repo.getExpressions()){
             if(exp.isDirty())
                 save(exp);
         }
     }
 
-    public void save(ByteBeatExpression expression) throws IOException {
+    public void save(Expression expression) throws IOException {
         if(expression.isReadOnly())
             throw new IllegalArgumentException("Cannot save readonly expression.");
 
@@ -49,7 +49,7 @@ public class ExpressionIO {
         }
     }
 
-    public void delete(ByteBeatExpression expression) throws IOException {
+    public void delete(Expression expression) throws IOException {
         File file = getExpressionPath(expression);
         file.delete();
     }
@@ -66,7 +66,7 @@ public class ExpressionIO {
                 String expression = readFile(file).trim();
                 String name = file.getName();
                 name = name.substring(0, name.indexOf(FileSystem.ext));
-                _repo.add(new ByteBeatExpression(name, expression, 0.5, 50, 50, 50, false));
+                _repo.add(new Expression(name, expression, 0.5, 50, 50, 50, false));
             }
             catch (IOException e) {
                 errorLoading = file.getName();

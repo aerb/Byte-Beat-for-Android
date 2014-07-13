@@ -1,22 +1,22 @@
 package com.tasty.fish.domain;
 
-import com.tasty.fish.domain.implementation.ByteBeatExpression;
+import com.tasty.fish.domain.implementation.Expression;
 
 import java.util.List;
 
 
 public interface IExpressionsRepository {
-    void add(ByteBeatExpression byteBeatExpression);
-    void setActiveExpression(ByteBeatExpression expression);
+    void add(Expression byteBeatExpression);
+    void setActiveExpression(Expression expression);
     void setActiveExpression(int position);
-    void remove(ByteBeatExpression expression);
+    void remove(Expression expression);
     boolean contains(String name);
-    List<ByteBeatExpression> getExpressions();
-    ByteBeatExpression getActive();
+    List<Expression> getExpressions();
+    Expression getActive();
 
-    public void addActiveChangedListener(IChangeListener<ByteBeatExpression> listener);
-    void addExpressionUpdateListener(IChangeListener<ByteBeatExpression> listener);
-    void addDataSetChangedListener(IChangeListener<List<ByteBeatExpression>> listener);
+    public void addActiveChangedListener(Listener<Expression> listener);
+    void addExpressionUpdateListener(Listener<Expression> listener);
+    void addDataSetChangedListener(Listener<List<Expression>> listener);
 
 
 }

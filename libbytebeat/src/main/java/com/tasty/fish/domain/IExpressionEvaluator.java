@@ -1,11 +1,11 @@
 package com.tasty.fish.domain;
 
-import com.tasty.fish.domain.implementation.ByteBeatExpression;
+import com.tasty.fish.domain.implementation.Expression;
 import com.tasty.fish.utils.parser.utils.ExpressionParsingException;
 
 public interface IExpressionEvaluator {
 
-    void setExpression(ByteBeatExpression expression) throws ExpressionParsingException;
+    void setExpression(Expression expression) throws ExpressionParsingException;
     void tryParse(String newExpression) throws ExpressionParsingException;
     long getTime();
 

@@ -1,9 +1,9 @@
 package com.tasty.fish.presenters;
 
-import com.tasty.fish.domain.IChangeListener;
+import com.tasty.fish.domain.Listener;
 import com.tasty.fish.domain.IExpressionEvaluator;
 import com.tasty.fish.domain.IExpressionsRepository;
-import com.tasty.fish.domain.implementation.ByteBeatExpression;
+import com.tasty.fish.domain.implementation.Expression;
 import com.tasty.fish.text.TextCursor;
 import com.tasty.fish.text.TextEditor;
 import com.tasty.fish.utils.parser.utils.ExpressionParsingException;
@@ -36,7 +36,7 @@ public class ExpressionPresenter implements
         setActiveExpression(_expressionRepo.getActive());
     }
 
-    private void setActiveExpression(ByteBeatExpression exp){
+    private void setActiveExpression(Expression exp){
         String text = exp.getExpressionString();
         _editor.setText(text);
     }
@@ -45,9 +45,9 @@ public class ExpressionPresenter implements
         _view = view;
         _view.setExpression(_editor.getText(), _cursor.getPosition());
         _view.setIExpressionViewListener(this);
-        _expressionRepo.addActiveChangedListener(new IChangeListener<ByteBeatExpression>() {
+        _expressionRepo.addActiveChangedListener(new Listener<Expression>() {
             @Override
-            public void onEvent(ByteBeatExpression expression) {
+            public void onEvent(Expression expression) {
                 setActiveExpression(_expressionRepo.getActive());
                 updateView();
             }

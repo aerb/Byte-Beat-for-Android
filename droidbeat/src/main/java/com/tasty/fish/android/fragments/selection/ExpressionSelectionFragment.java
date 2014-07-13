@@ -13,11 +13,10 @@ import android.widget.ListView;
 import com.tasty.fish.R;
 import com.tasty.fish.android.DroidBeatActivity;
 import com.tasty.fish.android.ExpressionElement;
-import com.tasty.fish.android.IExpressionEventListener;
 import com.tasty.fish.android.Message;
-import com.tasty.fish.domain.IChangeListener;
 import com.tasty.fish.domain.IExpressionsRepository;
-import com.tasty.fish.domain.implementation.ByteBeatExpression;
+import com.tasty.fish.domain.Listener;
+import com.tasty.fish.domain.implementation.Expression;
 import com.tasty.fish.presenters.ExpressionSelectionPresenter;
 
 import java.io.IOException;
@@ -27,7 +26,7 @@ public class ExpressionSelectionFragment extends Fragment {
     private ExpressionSelectionPresenter _presenter;
     private ImageView _cancelBtn;
     private ListView _list;
-    private ExpressionSelectionAdapter _adapter;
+    private ExpressionListAdapter _adapter;
     private IExpressionsRepository _repo;
 
     @Override
@@ -47,11 +46,11 @@ public class ExpressionSelectionFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.expression_selector, container, false);
         _list = (ListView)view.findViewById(R.id.listView);
-        _adapter = new ExpressionSelectionAdapter(getActivity(), _repo.getExpressions());
+        _adapter = new ExpressionListAdapter(getActivity(), _repo.getExpressions());
         _list.setAdapter(_adapter);
-        _adapter.setSaveListener(new IExpressionEventListener() {
+        _adapter.setSaveListener(new Listener<Expression>() {
             @Override
-            public void onEvent(ByteBeatExpression expression) {
+            public void onEvent(Expression expression) {
             try {
                 _presenter.save(expression);
                 Message.std("Saved " + expression.getName());
@@ -60,9 +59,9 @@ public class ExpressionSelectionFragment extends Fragment {
             }
             }
         });
-        _adapter.setDeleteListener(new IExpressionEventListener() {
+        _adapter.setDeleteListener(new Listener<Expression>() {
             @Override
-            public void onEvent(final ByteBeatExpression expression) {
+            public void onEvent(final Expression expression) {
             Message.confirm(
                 getActivity(),
                 "Are you sure you want to delete " + expression.getName() + "?",
@@ -79,9 +78,9 @@ public class ExpressionSelectionFragment extends Fragment {
                 });
             }
         });
-        _adapter.setSelectListener(new IExpressionEventListener() {
+        _adapter.setSelectListener(new Listener<Expression>() {
             @Override
-            public void onEvent(ByteBeatExpression expression) {
+            public void onEvent(Expression expression) {
             _presenter.selectExpression(expression);
             }
         });
@@ -94,15 +93,15 @@ public class ExpressionSelectionFragment extends Fragment {
             }
         });
 
-        _repo.addDataSetChangedListener(new IChangeListener<List<ByteBeatExpression>>() {
+        _repo.addDataSetChangedListener(new Listener<List<Expression>>() {
             @Override
-            public void onEvent(List<ByteBeatExpression> expression) {
+            public void onEvent(List<Expression> expression) {
                 _list.invalidateViews();
             }
         });
-        _repo.addExpressionUpdateListener(new IChangeListener<ByteBeatExpression>() {
+        _repo.addExpressionUpdateListener(new Listener<Expression>() {
             @Override
-            public void onEvent(ByteBeatExpression expression) {
+            public void onEvent(Expression expression) {
                 int index = _repo.getExpressions().indexOf(expression);
                 updateChild(index);
             }

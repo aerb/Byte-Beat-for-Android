@@ -1,6 +1,6 @@
 package com.tasty.fish.presenters;
 import com.tasty.fish.domain.IExpressionsRepository;
-import com.tasty.fish.domain.implementation.ByteBeatExpression;
+import com.tasty.fish.domain.implementation.Expression;
 
 import java.util.regex.Pattern;
 
@@ -15,8 +15,8 @@ public class CreateExpressionPresenter {
         _repo = repo;
     }
 
-    public ByteBeatExpression addNewExpression(String text, String expression) {
-        ByteBeatExpression exp = new ByteBeatExpression(
+    public Expression addNewExpression(String text, String expression) {
+        Expression exp = new Expression(
                 text,
                 expression,
                 0.5,

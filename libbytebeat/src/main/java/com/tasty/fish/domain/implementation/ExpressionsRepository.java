@@ -1,6 +1,6 @@
 package com.tasty.fish.domain.implementation;
 
-import com.tasty.fish.domain.IChangeListener;
+import com.tasty.fish.domain.Listener;
 import com.tasty.fish.domain.IExpressionsRepository;
 
 import java.util.ArrayList;
@@ -8,74 +8,74 @@ import java.util.List;
 
 public class ExpressionsRepository implements IExpressionsRepository {
 
-    private final ArrayList<ByteBeatExpression> _expressions;
+    private final ArrayList<Expression> _expressions;
 
-    private final ChangeListeners<ByteBeatExpression> _activeChange = new ChangeListeners<ByteBeatExpression>();
-    private final ChangeListeners<ByteBeatExpression> _itemChange = new ChangeListeners<ByteBeatExpression>();
-    private final ChangeListeners<List<ByteBeatExpression>> _setChange = new ChangeListeners<List<ByteBeatExpression>>();
+    private final ListenerSet<Expression> _activeChange = new ListenerSet<Expression>();
+    private final ListenerSet<Expression> _itemChange = new ListenerSet<Expression>();
+    private final ListenerSet<List<Expression>> _setChange = new ListenerSet<List<Expression>>();
 
-    private IChangeListener<ByteBeatExpression> eventRouter = new IChangeListener<ByteBeatExpression>() {
+    private Listener<Expression> eventRouter = new Listener<Expression>() {
         @Override
-        public void onEvent(ByteBeatExpression expression) {
+        public void onEvent(Expression expression) {
             _itemChange.notify(expression);
         }
     };
 
-    private ByteBeatExpression _active;
+    private Expression _active;
 
 
     public ExpressionsRepository() {
-        _expressions = new ArrayList<ByteBeatExpression>();
+        _expressions = new ArrayList<Expression>();
         initializeExpressions();
     }
 
     private void initializeExpressions(){
-        for(ByteBeatExpression e : DefaultExpressions.get())
+        for(Expression e : DefaultExpressions.get())
             add(e);
         setActiveExpression(0);
     }
 
-    public void add(ByteBeatExpression e) {
+    public void add(Expression e) {
         _expressions.add(e);
         e.setChangeListener(eventRouter);
         _setChange.notify(_expressions);
     }
 
     @Override
-    public void setActiveExpression(ByteBeatExpression expression) {
+    public void setActiveExpression(Expression expression) {
         int index = _expressions.indexOf(expression);
         if(index >= 0) setActiveExpression(index);
     }
 
     @Override
     public boolean contains(String name) {
-        for (ByteBeatExpression e : _expressions){
+        for (Expression e : _expressions){
             if(e.getName().equals(name)) return true;
         }
         return false;
     }
 
     @Override
-    public void addActiveChangedListener(IChangeListener<ByteBeatExpression> listener) {
+    public void addActiveChangedListener(Listener<Expression> listener) {
         _activeChange.add(listener);
     }
 
     @Override
-    public void addExpressionUpdateListener(IChangeListener<ByteBeatExpression> listener) {
+    public void addExpressionUpdateListener(Listener<Expression> listener) {
         _itemChange.add(listener);
     }
 
     @Override
-    public void addDataSetChangedListener(IChangeListener<List<ByteBeatExpression>> listener) {
+    public void addDataSetChangedListener(Listener<List<Expression>> listener) {
         _setChange.add(listener);
     }
 
     @Override
-    public List<ByteBeatExpression> getExpressions() {
+    public List<Expression> getExpressions() {
         return _expressions;
     }
 
-    public ByteBeatExpression getActive() {
+    public Expression getActive() {
         return _active;
     }
 
@@ -86,7 +86,7 @@ public class ExpressionsRepository implements IExpressionsRepository {
     }
 
     @Override
-    public void remove(ByteBeatExpression expression) {
+    public void remove(Expression expression) {
         if(_expressions.remove(expression))
             _setChange.notify(_expressions);
     }
