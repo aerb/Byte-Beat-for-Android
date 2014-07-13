@@ -49,29 +49,29 @@ public class ExpressionListFragment extends Fragment {
         _list.setAdapter(_adapter);
         _adapter.setSaveListener(new Listener<Expression>() {
             @Override
-            public void onEvent(Expression expression) {
+            public void onEvent(Expression item) {
             try {
-                _presenter.save(expression);
-                Message.std("Saved " + expression.getName());
+                _presenter.save(item);
+                Message.std("Saved " + item.getName());
             } catch (IOException e) {
-                Message.err("Could not save " + expression.getName());
+                Message.err("Could not save " + item.getName());
             }
             }
         });
         _adapter.setDeleteListener(new Listener<Expression>() {
             @Override
-            public void onEvent(final Expression expression) {
+            public void onEvent(final Expression item) {
             Message.confirm(
                 getActivity(),
-                "Are you sure you want to delete " + expression.getName() + "?",
+                "Are you sure you want to delete " + item.getName() + "?",
                 new DialogInterface.OnClickListener(){
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         try {
-                            _presenter.delete(expression);
-                            Message.std("Deleted " + expression.getName());
+                            _presenter.delete(item);
+                            Message.std("Deleted " + item.getName());
                         } catch (IOException e) {
-                            Message.err("Could not delete " + expression.getName());
+                            Message.err("Could not delete " + item.getName());
                         }
                     }
                 });
@@ -79,8 +79,8 @@ public class ExpressionListFragment extends Fragment {
         });
         _adapter.setSelectListener(new Listener<Expression>() {
             @Override
-            public void onEvent(Expression expression) {
-            _presenter.selectExpression(expression);
+            public void onEvent(Expression item) {
+            _presenter.selectExpression(item);
             }
         });
 
@@ -94,14 +94,14 @@ public class ExpressionListFragment extends Fragment {
 
         _repo.addDataSetChangedListener(new Listener<List<Expression>>() {
             @Override
-            public void onEvent(List<Expression> expression) {
+            public void onEvent(List<Expression> item) {
                 _list.invalidateViews();
             }
         });
         _repo.addExpressionUpdateListener(new Listener<Expression>() {
             @Override
-            public void onEvent(Expression expression) {
-                int index = _repo.getExpressions().indexOf(expression);
+            public void onEvent(Expression item) {
+                int index = _repo.getExpressions().indexOf(item);
                 updateChild(index);
             }
         });

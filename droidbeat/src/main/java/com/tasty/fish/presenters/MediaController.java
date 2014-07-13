@@ -5,6 +5,7 @@ import com.tasty.fish.domain.IExpressionEvaluator;
 import com.tasty.fish.domain.IExpressionList;
 import com.tasty.fish.domain.Listener;
 import com.tasty.fish.domain.implementation.Expression;
+import com.tasty.fish.domain.implementation.ListenerSet;
 import com.tasty.fish.utils.FileSystem;
 import com.tasty.fish.views.IAppController;
 
@@ -15,15 +16,15 @@ public class MediaController
     private final IExpressionEvaluator _evaluator;
     private final IExpressionList _repo;
     private final IAudioPlayer _audio;
-    private final BufferVisualsPresenter _visuals;
     private boolean _recording;
     private String _recordingPath;
+    private ListenerSet<MediaController> _startListener = new ListenerSet<MediaController>();
+    private ListenerSet<MediaController> _stopListener = new ListenerSet<MediaController>();
 
     public MediaController(
             IExpressionEvaluator evaluator,
             IExpressionList repo,
             IAudioPlayer audio,
-            BufferVisualsPresenter visuals,
             IAppController appController
     )
     {
@@ -31,27 +32,33 @@ public class MediaController
         _repo = repo;
         _evaluator.setExpression(_repo.getActive());
         _audio = audio;
-        _visuals = visuals;
-        _visuals.setBuffer(_audio.getBuffer());
         _repo.addActiveChangedListener(new Listener<Expression>() {
             @Override
-            public void onEvent(Expression expression) {
-                _evaluator.setExpression(expression);
+            public void onEvent(Expression item) {
+                _evaluator.setExpression(item);
             }
         });
+    }
+
+    public void addStartListener(Listener<MediaController> listener){
+        _startListener.add(listener);
+    }
+
+    public void addStopListener(Listener<MediaController> listener){
+        _stopListener.add(listener);
     }
 
     public void startRecord() throws IOException {
         String path = new FileSystem().getNextExportName();
         _audio.startAndRecord(path);
-        _visuals.start();
+        _startListener.notify(this);
         _recording = true;
         _recordingPath = path;
     }
 
     public void startPlay() {
         _audio.start();
-        _visuals.start();
+        _startListener.notify(this);
         _recording = false;
     }
 
@@ -62,10 +69,14 @@ public class MediaController
     public void stop() {
         _recording = false;
         _audio.stop();
-        _visuals.stop();
+        _stopListener.notify(this);
     }
 
     public String getRecordingPath() {
         return _recordingPath;
+    }
+
+    public IAudioPlayer getAudio() {
+        return _audio;
     }
 }

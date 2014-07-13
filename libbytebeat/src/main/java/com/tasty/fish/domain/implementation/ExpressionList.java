@@ -16,8 +16,8 @@ public class ExpressionList implements IExpressionList {
 
     private Listener<Expression> eventRouter = new Listener<Expression>() {
         @Override
-        public void onEvent(Expression expression) {
-            _itemChange.notify(expression);
+        public void onEvent(Expression item) {
+            _itemChange.notify(item);
         }
     };
 

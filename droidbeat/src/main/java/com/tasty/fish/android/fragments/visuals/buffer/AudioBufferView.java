@@ -6,19 +6,26 @@ import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.View;
 
-public class BufferCanvas extends View {
+import com.tasty.fish.domain.Listener;
+import com.tasty.fish.presenters.MediaController;
+
+import java.util.Timer;
+import java.util.TimerTask;
+
+public class AudioBufferView extends View {
 
     private static final int MAX = 256;
     byte _buffer[] = null;
     private Paint _paint;
     private int _drawableLength;
+    private Timer _updateTimer = new Timer();
 
-    public BufferCanvas(Context context) {
+    public AudioBufferView(Context context) {
         super(context);
         initialize();
     }
 
-    public BufferCanvas(Context context, AttributeSet attrs) {
+    public AudioBufferView(Context context, AttributeSet attrs) {
         super(context, attrs);
         initialize();
     }
@@ -59,5 +66,28 @@ public class BufferCanvas extends View {
                     (float)h,
                     _paint);
         }
+    }
+
+    public void setMediaController(final MediaController mediaController) {
+        mediaController.addStartListener(new Listener<MediaController>() {
+            @Override
+            public void onEvent(final MediaController item) {
+                setDisplayBuffer(mediaController.getAudio().getBuffer());
+                _updateTimer.schedule(new TimerTask() {
+                    @Override
+                    public void run() {
+
+                        postInvalidate();
+                    }
+                }, 0, 100);
+            }
+        });
+        mediaController.addStopListener(new Listener<MediaController>() {
+            @Override
+            public void onEvent(MediaController item) {
+                _updateTimer.cancel();
+                _updateTimer = new Timer();
+            }
+        });
     }
 }

@@ -7,7 +7,6 @@ import com.tasty.fish.domain.IExpressionEvaluator;
 import com.tasty.fish.domain.IExpressionList;
 import com.tasty.fish.domain.implementation.ExpressionEvaluator;
 import com.tasty.fish.domain.implementation.ExpressionList;
-import com.tasty.fish.presenters.BufferVisualsPresenter;
 import com.tasty.fish.presenters.CreateExpressionPresenter;
 import com.tasty.fish.presenters.ExpressionIO;
 import com.tasty.fish.presenters.ExpressionPresenter;
@@ -21,9 +20,8 @@ public class CompositionRoot {
     private ExpressionSelectionPresenter _expressionSelectorPresenter;
     private IExpressionEvaluator _expressionEvaluator;
     private IExpressionList _expressionsRepository;
-    private MediaController _mediaControlsPresenter;
+    private MediaController _mediaController;
     private IAudioPlayer _audioPlayer;
-    private BufferVisualsPresenter _bufferVisualsPresenter;
     private ParametersPresenter _parametersPresenter;
     private ExpressionPresenter _expressionPresenter;
     private AppController _appController;
@@ -56,15 +54,14 @@ public class CompositionRoot {
               (_expressionsRepository = new ExpressionList());
     }
 
-    public MediaController getMediaControlsPresenter() {
+    public MediaController getMediaController() {
         return
-            _mediaControlsPresenter != null ?
-            _mediaControlsPresenter :
-           (_mediaControlsPresenter = new MediaController(
+            _mediaController != null ?
+            _mediaController :
+           (_mediaController = new MediaController(
                 getExpressionEvaluator(),
                 getExpressionsRepository(),
                 getAudioPlayer(),
-                getBufferVisualsPresenter(),
                 getAppController()
             ));
     }
@@ -76,15 +73,6 @@ public class CompositionRoot {
             (_audioPlayer = new AudioPlayer(
                 getExpressionEvaluator()
             ));
-    }
-
-    public BufferVisualsPresenter getBufferVisualsPresenter() {
-        return  _bufferVisualsPresenter != null ?
-                _bufferVisualsPresenter :
-               (_bufferVisualsPresenter =
-                   new BufferVisualsPresenter(
-                           getParametersPresenter(),
-                           getExpressionEvaluator()));
     }
 
     public ParametersPresenter getParametersPresenter() {

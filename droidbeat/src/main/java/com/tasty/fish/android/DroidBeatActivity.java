@@ -126,8 +126,8 @@ public class DroidBeatActivity extends FragmentActivity implements
         _expressionTitleTextView.setText(_repo.getActive().getName());
         _repo.addActiveChangedListener(new Listener<Expression>() {
             @Override
-            public void onEvent(Expression expression) {
-                _expressionTitleTextView.setText(expression.getName());
+            public void onEvent(Expression item) {
+                _expressionTitleTextView.setText(item.getName());
             }
         });
         ExpressionIO io = _root.getExpressionIO();
@@ -137,7 +137,7 @@ public class DroidBeatActivity extends FragmentActivity implements
             Message.err("Could not load saved expressions.");
         }
 
-        _mediaControlsPresenter = _root.getMediaControlsPresenter();
+        _mediaControlsPresenter = _root.getMediaController();
         _clipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
     }
 

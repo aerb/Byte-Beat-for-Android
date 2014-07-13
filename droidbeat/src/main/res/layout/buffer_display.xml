@@ -4,7 +4,7 @@
               android:layout_width="fill_parent"
               android:layout_height="fill_parent"
               android:background="#338C9A">
-    <com.tasty.fish.android.fragments.visuals.buffer.BufferCanvas
+    <com.tasty.fish.android.fragments.visuals.buffer.AudioBufferView
         android:id="@+id/bufferCanvas"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" />

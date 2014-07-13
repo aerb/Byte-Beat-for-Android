@@ -20,7 +20,7 @@ public class ParametersPresenter implements IParameterView.IParameterViewListene
         _repo = repo;
         _repo.addActiveChangedListener(new Listener<Expression>() {
             @Override
-            public void onEvent(Expression expression) {
+            public void onEvent(Expression item) {
                 updateView();
             }
         });

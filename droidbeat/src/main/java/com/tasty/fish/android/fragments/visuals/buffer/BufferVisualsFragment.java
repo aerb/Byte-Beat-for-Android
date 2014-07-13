@@ -5,63 +5,65 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import com.tasty.fish.android.DroidBeatActivity;
-import com.tasty.fish.R;
-import com.tasty.fish.presenters.BufferVisualsPresenter;
-import com.tasty.fish.views.IBufferView;
 
-public class BufferVisualsFragment extends Fragment implements IBufferView {
-    private View _layout;
-    private BufferCanvas _canvas;
-    private BufferVisualsPresenter _presenter;
+import com.tasty.fish.R;
+import com.tasty.fish.android.DroidBeatActivity;
+import com.tasty.fish.domain.IExpressionEvaluator;
+import com.tasty.fish.domain.IExpressionList;
+import com.tasty.fish.presenters.MediaController;
+
+
+public class BufferVisualsFragment extends Fragment {
     private TextView _performanceText;
     private View _recordingText;
-    private View _resetT;
-    private View _resetArgs;
+    private IExpressionList _expressions;
+    private IExpressionEvaluator _evaluator;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        _layout = inflater.inflate(R.layout.buffer_display, null);
-        _canvas = (BufferCanvas)_layout.findViewById(R.id.bufferCanvas);
-        _performanceText = (TextView) _layout.findViewById(R.id.performanceText);
+        View layout = inflater.inflate(R.layout.buffer_display, null);
+        if(layout == null) throw new IllegalArgumentException();
+
+        _performanceText = (TextView) layout.findViewById(R.id.performanceText);
         _performanceText.setVisibility(View.GONE);
 
-        _recordingText = _layout.findViewById(R.id.recordingText);
+        _recordingText = layout.findViewById(R.id.recordingText);
         _recordingText.setVisibility(View.INVISIBLE);
 
-        _resetT = _layout.findViewById(R.id.resetT);
+        MediaController _mediaController = ((DroidBeatActivity) getActivity())
+                .getCompositionRoot()
+                .getMediaController();
+        _expressions =
+            ((DroidBeatActivity) getActivity())
+            .getCompositionRoot()
+            .getExpressionsRepository();
+        _evaluator =
+            ((DroidBeatActivity) getActivity())
+            .getCompositionRoot()
+            .getExpressionEvaluator();
+
+        View _resetT = layout.findViewById(R.id.resetT);
         _resetT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                _presenter.resetT();
+                _evaluator.resetTime();
             }
         });
 
-        _resetArgs = _layout.findViewById(R.id.resetArgs);
+        View _resetArgs = layout.findViewById(R.id.resetArgs);
         _resetArgs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                _presenter.resetArgs();
+                _expressions.getActive().resetParametersAndTimeDelta();
             }
         });
 
-        _presenter =
-            ((DroidBeatActivity)getActivity())
-            .getCompositionRoot()
-            .getBufferVisualsPresenter();
-
-        _presenter.setView(this);
-        return _layout;
+        AudioBufferView bufferView = (AudioBufferView) layout.findViewById(R.id.bufferCanvas);
+        bufferView.setMediaController(_mediaController);
+        return layout;
     }
 
-    @Override
-    public void registerIBufferViewListener(IBufferView listener) {
-        //don't really care right now.
-    }
-
-    @Override
     public void setPerformanceText(final String text) {
         getActivity().runOnUiThread(new Runnable() {
             @Override
@@ -69,14 +71,6 @@ public class BufferVisualsFragment extends Fragment implements IBufferView {
                 _performanceText.setText(text);
             }
         });
-    }
-
-    public void setDisplayBuffer(byte[] samples) {
-        _canvas.setDisplayBuffer(samples);
-    }
-
-    public void update(){
-        _canvas.postInvalidate();
     }
 
     public void setRecordingText(boolean showing) {

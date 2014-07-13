@@ -47,7 +47,7 @@ public class ExpressionPresenter implements
         _view.setIExpressionViewListener(this);
         _expressionRepo.addActiveChangedListener(new Listener<Expression>() {
             @Override
-            public void onEvent(Expression expression) {
+            public void onEvent(Expression item) {
                 setActiveExpression(_expressionRepo.getActive());
                 updateView();
             }
