@@ -1,6 +1,6 @@
-package com.tasty.fish.utils.parser.node;
+package com.tasty.fish.parser.node;
 
-import com.tasty.fish.utils.parser.operators.Iop;
+import com.tasty.fish.parser.operators.Iop;
 
 public class OperatorNode implements IExpressionNode{
     private final Iop _o;

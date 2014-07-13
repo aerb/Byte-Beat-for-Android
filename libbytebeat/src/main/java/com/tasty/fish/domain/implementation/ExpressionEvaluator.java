@@ -1,9 +1,9 @@
 package com.tasty.fish.domain.implementation;
 
 import com.tasty.fish.domain.IExpressionEvaluator;
-import com.tasty.fish.utils.parser.utils.ExpressionParsingException;
-import com.tasty.fish.utils.parser.FastParse;
-import com.tasty.fish.utils.parser.utils.MutableFixed;
+import com.tasty.fish.parser.utils.ExpressionParsingException;
+import com.tasty.fish.parser.FastParse;
+import com.tasty.fish.parser.utils.MutableFixed;
 
 public class ExpressionEvaluator implements IExpressionEvaluator {
 

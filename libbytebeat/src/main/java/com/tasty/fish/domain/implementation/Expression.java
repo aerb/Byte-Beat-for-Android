@@ -17,17 +17,13 @@ public class Expression {
     public Expression(
             String name,
             String expression,
-            double timeDelta,
-            int a1,
-            int a2,
-            int a3,
             boolean readOnly)
     {
         _name = name;
-        _timeDelta = timeDelta;
-        _args[0] = a1;
-        _args[1] = a2;
-        _args[2] = a3;
+        _timeDelta = 0.5;
+        _args[0] = 50;
+        _args[1] = 50;
+        _args[2] = 50;
         _expressionString = expression;
         _readOnly = readOnly;
     }

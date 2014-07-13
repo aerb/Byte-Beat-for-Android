@@ -1,10 +1,10 @@
-package com.tasty.fish.utils.parser;
+package com.tasty.fish.parser;
 
-import com.tasty.fish.utils.parser.node.*;
-import com.tasty.fish.utils.parser.operators.Definitions;
-import com.tasty.fish.utils.parser.operators.Iop;
-import com.tasty.fish.utils.parser.utils.ExpressionParsingException;
-import com.tasty.fish.utils.parser.utils.MutableFixed;
+import com.tasty.fish.parser.node.*;
+import com.tasty.fish.parser.operators.Definitions;
+import com.tasty.fish.parser.operators.Iop;
+import com.tasty.fish.parser.utils.ExpressionParsingException;
+import com.tasty.fish.parser.utils.MutableFixed;
 
 import java.util.HashMap;
 import java.util.Map;

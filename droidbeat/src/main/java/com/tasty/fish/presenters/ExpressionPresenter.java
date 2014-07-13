@@ -6,7 +6,7 @@ import com.tasty.fish.domain.IExpressionEvaluator;
 import com.tasty.fish.domain.implementation.Expression;
 import com.tasty.fish.text.TextCursor;
 import com.tasty.fish.text.TextEditor;
-import com.tasty.fish.utils.parser.utils.ExpressionParsingException;
+import com.tasty.fish.parser.utils.ExpressionParsingException;
 import com.tasty.fish.views.IAppController;
 import com.tasty.fish.views.IExpressionView;
 

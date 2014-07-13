@@ -1,4 +1,4 @@
-package com.tasty.fish.presenters;
+package com.tasty.fish.utils;
 
 public enum NamingResponse {
     AlreadyExists,

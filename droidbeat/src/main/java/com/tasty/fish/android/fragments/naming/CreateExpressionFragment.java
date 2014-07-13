@@ -16,8 +16,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.tasty.fish.android.DroidBeatActivity;
-import com.tasty.fish.presenters.CreateExpressionPresenter;
-import com.tasty.fish.presenters.NamingResponse;
+import com.tasty.fish.presenters.ExpressionBuilder;
+import com.tasty.fish.utils.NamingResponse;
 
 public class CreateExpressionFragment extends DialogFragment
 {
@@ -27,7 +27,7 @@ public class CreateExpressionFragment extends DialogFragment
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        final CreateExpressionPresenter presenter = ((DroidBeatActivity) getActivity())
+        final ExpressionBuilder presenter = ((DroidBeatActivity) getActivity())
             .getCompositionRoot()
             .getCreateExpressionPresenter();
         final Context c = getActivity();

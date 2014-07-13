@@ -7,7 +7,7 @@ import com.tasty.fish.domain.IExpressionEvaluator;
 import com.tasty.fish.domain.IExpressionList;
 import com.tasty.fish.domain.implementation.ExpressionEvaluator;
 import com.tasty.fish.domain.implementation.ExpressionList;
-import com.tasty.fish.presenters.CreateExpressionPresenter;
+import com.tasty.fish.presenters.ExpressionBuilder;
 import com.tasty.fish.presenters.ExpressionIO;
 import com.tasty.fish.presenters.ExpressionPresenter;
 import com.tasty.fish.presenters.ExpressionSelectionPresenter;
@@ -100,8 +100,8 @@ public class CompositionRoot {
               (_appController = new AppController());
     }
 
-    public CreateExpressionPresenter getCreateExpressionPresenter() {
-        return new CreateExpressionPresenter(
+    public ExpressionBuilder getCreateExpressionPresenter() {
+        return new ExpressionBuilder(
                 getExpressionsRepository()
         );
     }

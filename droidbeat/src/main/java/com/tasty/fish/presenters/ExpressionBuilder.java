@@ -1,16 +1,16 @@
 package com.tasty.fish.presenters;
 import com.tasty.fish.domain.IExpressionList;
 import com.tasty.fish.domain.implementation.Expression;
+import com.tasty.fish.utils.NamingResponse;
+import com.tasty.fish.utils.NamingRules;
 
-import java.util.regex.Pattern;
-
-public class CreateExpressionPresenter {
+public class ExpressionBuilder {
 
     private final IExpressionList _repo;
 
-    public CreateExpressionPresenter(
+    public ExpressionBuilder(
             IExpressionList repo
-        )
+    )
     {
         _repo = repo;
     }
@@ -19,10 +19,6 @@ public class CreateExpressionPresenter {
         Expression exp = new Expression(
                 text,
                 expression,
-                0.5,
-                50,
-                50,
-                50,
                 false
         );
         exp.setExpressionString(expression);
@@ -40,11 +36,9 @@ public class CreateExpressionPresenter {
         return name;
     }
 
-    private Pattern validNames = Pattern.compile("[a-zA-Z0-9_]+");
-
     public NamingResponse isValidName(String name) {
         if(_repo.contains(name)) return NamingResponse.AlreadyExists;
-        if(!validNames.matcher(name).matches()) return NamingResponse.InvalidChar;
+        if(!NamingRules.check(name)) return NamingResponse.InvalidChar;
         return NamingResponse.Valid;
     }
 }

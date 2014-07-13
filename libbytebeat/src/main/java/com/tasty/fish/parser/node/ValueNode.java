@@ -1,4 +1,4 @@
-package com.tasty.fish.utils.parser.node;
+package com.tasty.fish.parser.node;
 
 public class ValueNode implements IExpressionNode{
     private final long _value;

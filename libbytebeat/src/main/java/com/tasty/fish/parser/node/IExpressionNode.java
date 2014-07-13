@@ -1,4 +1,4 @@
-package com.tasty.fish.utils.parser.node;
+package com.tasty.fish.parser.node;
 
 public interface IExpressionNode {
     long eval();

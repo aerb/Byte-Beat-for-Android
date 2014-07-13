@@ -1,4 +1,4 @@
-package com.tasty.fish.utils.parser.operators;
+package com.tasty.fish.parser.operators;
 
 import java.util.HashMap;
 import java.util.Map;
