@@ -6,18 +6,17 @@ import java.util.List;
 
 
 public interface IExpressionsRepository {
-    void addNewExpression(ByteBeatExpression byteBeatExpression);
-
+    void add(ByteBeatExpression byteBeatExpression);
     void setActiveExpression(ByteBeatExpression expression);
-
+    void setActiveExpression(int position);
+    void remove(ByteBeatExpression expression);
     boolean contains(String name);
-
-    void setActiveChangedListener(IExpressionListener listener);
-
     List<ByteBeatExpression> getExpressions();
     ByteBeatExpression getActive();
 
-    void setActiveExpression(int position);
+    public void addActiveChangedListener(IChangeListener<ByteBeatExpression> listener);
+    void addExpressionUpdateListener(IChangeListener<ByteBeatExpression> listener);
+    void addDataSetChangedListener(IChangeListener<List<ByteBeatExpression>> listener);
 
-    void updateActive(String text);
+
 }

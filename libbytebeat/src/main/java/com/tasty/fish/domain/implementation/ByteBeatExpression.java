@@ -1,7 +1,8 @@
 package com.tasty.fish.domain.implementation;
 
-public class ByteBeatExpression {
+import com.tasty.fish.domain.IChangeListener;
 
+public class ByteBeatExpression {
 
     private int[] _args = { 0, 0, 0 };
 
@@ -10,6 +11,8 @@ public class ByteBeatExpression {
     private String _name;
     private boolean _readOnly;
     private boolean _dirty;
+
+    private IChangeListener<ByteBeatExpression> _listener;
 
     public ByteBeatExpression(
             String name,
@@ -36,16 +39,19 @@ public class ByteBeatExpression {
     public void setExpressionString(String expression) {
         _expressionString = expression;
         _dirty = true;
+        notifyChange();
     }
 
     public void setTimeDelta(double inc) {
         _timeDelta = inc;
+        notifyChange();
     }
 
     public void setParameter(int i, int x) {
         if (i < 3 && i >= 0) {
             _args[i] = x;
         }
+        notifyChange();
     }
 
     public double getTimeDelta() {
@@ -77,5 +83,14 @@ public class ByteBeatExpression {
 
     public void setIsDirty(boolean dirty) {
         _dirty = dirty;
+        notifyChange();
+    }
+
+    private void notifyChange(){
+        if(_listener != null) _listener.onEvent(this);
+    }
+
+    public void setChangeListener(IChangeListener<ByteBeatExpression> listener){
+        _listener = listener;
     }
 }

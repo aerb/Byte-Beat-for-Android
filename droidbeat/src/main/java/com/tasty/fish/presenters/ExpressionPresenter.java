@@ -1,7 +1,7 @@
 package com.tasty.fish.presenters;
 
+import com.tasty.fish.domain.IChangeListener;
 import com.tasty.fish.domain.IExpressionEvaluator;
-import com.tasty.fish.domain.IExpressionListener;
 import com.tasty.fish.domain.IExpressionsRepository;
 import com.tasty.fish.domain.implementation.ByteBeatExpression;
 import com.tasty.fish.text.TextCursor;
@@ -11,10 +11,8 @@ import com.tasty.fish.views.IAppController;
 import com.tasty.fish.views.IExpressionView;
 
 public class ExpressionPresenter implements
-        IExpressionListener,
         IExpressionView.IExpressionViewListener {
     private IExpressionView _view;
-    private ByteBeatExpression _expression;
 
     private TextEditor _editor;
     private TextCursor _cursor;
@@ -30,7 +28,6 @@ public class ExpressionPresenter implements
     {
         _evaluator = evaluator;
         _expressionRepo = expressionsRepository;
-        _expressionRepo.setActiveChangedListener(this);
         _appController = appController;
 
         _editor = new TextEditor(new TextCursor());
@@ -40,10 +37,7 @@ public class ExpressionPresenter implements
     }
 
     private void setActiveExpression(ByteBeatExpression exp){
-        _expression = exp;
-        String text = _expression.getExpressionString();
-        System.out.println("text --> " + text);
-        System.out.println("editor --> " + _editor);
+        String text = exp.getExpressionString();
         _editor.setText(text);
     }
 
@@ -51,6 +45,13 @@ public class ExpressionPresenter implements
         _view = view;
         _view.setExpression(_editor.getText(), _cursor.getPosition());
         _view.setIExpressionViewListener(this);
+        _expressionRepo.addActiveChangedListener(new IChangeListener<ByteBeatExpression>() {
+            @Override
+            public void onEvent(ByteBeatExpression expression) {
+                setActiveExpression(_expressionRepo.getActive());
+                updateView();
+            }
+        });
     }
 
     public void moveCursorLeft() {
@@ -72,7 +73,7 @@ public class ExpressionPresenter implements
 
     private void updateDomain(){
         try {
-            _expressionRepo.updateActive(_editor.getText());
+            _expressionRepo.getActive().setExpressionString(_editor.getText());
             _evaluator.tryParse(_editor.getText());
             _view.indicateError(false);
         } catch (ExpressionParsingException e) {
@@ -95,11 +96,6 @@ public class ExpressionPresenter implements
         _view.setExpression(_editor.getText(),_cursor.getPosition());
     }
 
-    @Override
-    public void onExpressionEvent() {
-        setActiveExpression(_expressionRepo.getActive());
-        updateView();
-    }
 
     @Override
     public void OnRequestEdit() {

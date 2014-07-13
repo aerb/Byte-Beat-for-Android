@@ -1,6 +1,7 @@
 package com.tasty.fish.android;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,9 +32,14 @@ public class ExpressionElement extends RelativeLayout {
 
     public void setExpression(ByteBeatExpression expression){
         _expression = expression;
-        String cellText = _expression.getName();
-        cellText += _expression.isDirty() ? " *" : "";
-        _text.setText(cellText);
+        if(_expression.isDirty() && !_expression.isReadOnly()){
+            _text.setText(_expression.getName() + " *");
+            _text.setTextColor(Color.WHITE);
+        }
+        else {
+            _text.setText(_expression.getName());
+            _text.setTextColor(Color.LTGRAY);
+        }
 
         if(_expression.isReadOnly()){
             _save.setAlpha(255 / 2);

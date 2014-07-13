@@ -66,7 +66,7 @@ public class ExpressionIO {
                 String expression = readFile(file).trim();
                 String name = file.getName();
                 name = name.substring(0, name.indexOf(FileSystem.ext));
-                _repo.addNewExpression(new ByteBeatExpression(name, expression, 0.5,50,50,50,false));
+                _repo.add(new ByteBeatExpression(name, expression, 0.5, 50, 50, 50, false));
             }
             catch (IOException e) {
                 errorLoading = file.getName();

@@ -1,13 +1,12 @@
 package com.tasty.fish.presenters;
 
+import com.tasty.fish.domain.IChangeListener;
 import com.tasty.fish.domain.IExpressionEvaluator;
-import com.tasty.fish.domain.IExpressionListener;
 import com.tasty.fish.domain.IExpressionsRepository;
+import com.tasty.fish.domain.implementation.ByteBeatExpression;
 import com.tasty.fish.views.IParameterView;
 
-public class ParametersPresenter implements
-        IParameterView.IParameterViewListener,
-        IExpressionListener
+public class ParametersPresenter implements IParameterView.IParameterViewListener
 {
 
     private IParameterView _view;
@@ -19,7 +18,12 @@ public class ParametersPresenter implements
         IExpressionEvaluator evaluator)
     {
         _repo = repo;
-        _repo.setActiveChangedListener(this);
+        _repo.addActiveChangedListener(new IChangeListener<ByteBeatExpression>() {
+            @Override
+            public void onEvent(ByteBeatExpression expression) {
+                updateView();
+            }
+        });
         _evaluator = evaluator;
     }
 
@@ -77,13 +81,6 @@ public class ParametersPresenter implements
     @Override
     public void OnResetTime() {
         resetTime();
-    }
-    //endregion
-
-    //region IExpressionRepository methods
-    @Override
-    public void onExpressionEvent() {
-        updateView();
     }
     //endregion
 }

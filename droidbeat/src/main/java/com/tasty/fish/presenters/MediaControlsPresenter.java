@@ -1,8 +1,8 @@
 package com.tasty.fish.presenters;
 
 import com.tasty.fish.android.media.audio.IAudioPlayer;
+import com.tasty.fish.domain.IChangeListener;
 import com.tasty.fish.domain.IExpressionEvaluator;
-import com.tasty.fish.domain.IExpressionListener;
 import com.tasty.fish.domain.IExpressionsRepository;
 import com.tasty.fish.domain.implementation.ByteBeatExpression;
 import com.tasty.fish.utils.FileSystem;
@@ -12,7 +12,7 @@ import com.tasty.fish.views.IMediaControlsView;
 
 import java.io.IOException;
 
-public class MediaControlsPresenter implements IExpressionListener
+public class MediaControlsPresenter
 {
     private IMediaControlsView _view;
 
@@ -35,7 +35,17 @@ public class MediaControlsPresenter implements IExpressionListener
         _evaluator = evaluator;
 
         _repo = repo;
-        _repo.setActiveChangedListener(this);
+        _repo.addActiveChangedListener(new IChangeListener<ByteBeatExpression>() {
+            @Override
+            public void onEvent(ByteBeatExpression expression) {
+                try {
+                    _evaluator.setExpression(expression);
+                } catch (ExpressionParsingException e) {
+                    e.printStackTrace();
+                }
+                updateView();
+            }
+        });
 
         try {
             _evaluator.setExpression(_repo.getActive());
@@ -82,17 +92,6 @@ public class MediaControlsPresenter implements IExpressionListener
         _recording = false;
         _audio.stop();
         _visuals.stop();
-    }
-
-    @Override
-    public void onExpressionEvent() {
-        ByteBeatExpression exp = _repo.getActive();
-        try {
-            _evaluator.setExpression(exp);
-        } catch (ExpressionParsingException e) {
-            e.printStackTrace();
-        }
-        updateView();
     }
 
     public String getRecordingPath() {

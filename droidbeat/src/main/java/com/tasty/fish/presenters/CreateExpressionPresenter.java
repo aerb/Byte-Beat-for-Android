@@ -26,7 +26,7 @@ public class CreateExpressionPresenter {
                 false
         );
         exp.setExpressionString(expression);
-        _repo.addNewExpression(exp);
+        _repo.add(exp);
         return exp;
     }
 
